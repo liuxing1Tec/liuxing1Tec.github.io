@@ -1701,9 +1701,9 @@ redis 的 Set 是 String 类型的无序集合，元素不允许重复。
 <p>恩，剩下来的工作就和原来一样了。</p>
 ]]></content>
       <tags>
+        <tag>C</tag>
         <tag>cmake</tag>
         <tag>tools</tag>
-        <tag>C</tag>
       </tags>
   </entry>
   <entry>
