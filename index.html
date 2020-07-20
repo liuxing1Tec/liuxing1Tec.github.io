@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="Swan L">
@@ -122,12 +122,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">22</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">31</span></a>
 
   </li>
   </ul>
@@ -184,7 +184,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-07-20 00:00:00 / Modified: 11:08:24" itemprop="dateCreated datePublished" datetime="2020-07-20T00:00:00+08:00">2020-07-20</time>
+              <time title="Created: 2020-07-20 00:00:00 / Modified: 18:52:32" itemprop="dateCreated datePublished" datetime="2020-07-20T00:00:00+08:00">2020-07-20</time>
             </span>
 
           
@@ -199,68 +199,14 @@
 
       
           <p>在<strong>安装</strong>配置之前，需要先大概了解一下 MyODBC 的架构，MyODBC 体系结构建立在 5 个组件上，如下图所示：<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggwm30f77xj30a20b3aah.jpg" alt=""></p>
-<p><strong>Driver Manager</strong><br>负责管理应用程序和驱动程序间的通信，主要功能包括：解析 DSN (数据源名称，ODBC 的数据源名称在 odbc.ini 文件中配置)，加载和卸载驱动程序，处理 ODBC 调用，将其传递给驱动程序。</p>
-<p><strong>ODBC.INI</strong><br>odbc.ini 是 ODBC 配置文件，记录了连接到服务器所需的驱动信息和数据库信息。Driver Manager 将使用它来确定加载哪个驱动程序（使用数据源名 DSN ）。驱动程序将根据指定的DSN来读取连接参数。</p>
-<p><strong>Connector/ODBC(MyODBC驱动程序)</strong><br>实现 ODBC API 所提供的功能，它负责处理 ODBC 函数调用，将 SQL 请求提交给 MySQL 服务器，并将结果返回给应用程序。</p>
-<p>在 Linux 下配置 mysql ODBC 需要有以下步骤：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 安装 Driver Manager，本案例使用 unixODBC 来作为 Driver Manager。</span><br><span class="line">2. 安装 MySQL 驱动程序，本案例使用 Connector&#x2F;ODBC。</span><br><span class="line">3. 配置 ODBC.INI</span><br></pre></td></tr></table></figure>
-
-<h2 id="第一步：下载安装包"><a href="#第一步：下载安装包" class="headerlink" title="第一步：下载安装包"></a>第一步：下载安装包</h2><p>需要下载两个安装包 <code>unixODBC 2.3.0</code> 和 <code>mysql Connector/ODBC 3.51</code><br>unixODBC 源码包：<code>ftp://ftp.unixodbc.org/pub/unixODBC/unixODBC-2.3.0.tar.gz</code><br>mysql Connector/ODBC 源码包：<code>http://dev.mysql.com/downloads/connector/odbc/3.51.html%23downloads</code><br>选择</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">版本：5.1.11</span><br><span class="line">平台：Oracle&amp;Red Hat Linux6</span><br><span class="line">下载：mysql-connector-odbc-5.1.11-linux-el6-x86-64bit.tar.gz</span><br></pre></td></tr></table></figure>
-
-<h2 id="第二步：安装-unixODBC"><a href="#第二步：安装-unixODBC" class="headerlink" title="第二步：安装 unixODBC"></a>第二步：安装 unixODBC</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf unixODBC-2.3.4.tar.gz</span><br><span class="line"><span class="built_in">cd</span> unixODBC-2.3.4</span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/unixODBC-2.3.4 --includedir=/usr/include --libdir=/usr/<span class="built_in">local</span>/lib -bindir=/usr/bin --sysconfdir=/usr/<span class="built_in">local</span>/etc</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<p>安装完成后,可以在/usr/bin目录下有下面的文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-rwxr-xr-x 1 root root      75312 Nov 1 16:22 odbcinst</span><br><span class="line">-rwxr-xr-x 1 root root      10922 Nov 1 16:22 odbc_config</span><br><span class="line">-rwxr-xr-x 1 root root      37650 Nov 1 16:22 iusql</span><br><span class="line">-rwxr-xr-x 1 root root      44400 Nov 1 16:22 isql</span><br><span class="line">-rwxr-xr-x 1 root root      95903 Nov 1 16:22 dltest</span><br></pre></td></tr></table></figure>
-<p>在/usr/local/lib目录下面有这些文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">-rwxr-xr-x 1 root root 422955 Nov 1 16:22 libodbcinst.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     20 Nov 1 16:22 libodbcinst.so.1 -&gt; libodbcinst.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     20 Nov 1 16:22 libodbcinst.so -&gt; libodbcinst.so.1.0.0</span><br><span class="line">-rwxr-xr-x 1 root root    981 Nov 1 16:22 libodbcinst.la</span><br><span class="line">-rwxr-xr-x 1 root root 169157 Nov 1 16:22 libodbc.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     16 Nov 1 16:22 libodbc.so.1 -&gt; libodbc.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     16 Nov 1 16:22 libodbc.so -&gt; libodbc.so.1.0.0</span><br><span class="line">-rwxr-xr-x 1 root root    957 Nov 1 16:22 libodbc.la</span><br><span class="line">-rwxr-xr-x 1 root root 489405 Nov 1 16:22 libodbccr.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     18 Nov 1 16:22 libodbccr.so.1 -&gt; libodbccr.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     18 Nov 1 16:22 libodbccr.so -&gt; libodbccr.so.1.0.0</span><br><span class="line">-rwxr-xr-x 1 root root    969 Nov 1 16:22 libodbccr.la</span><br></pre></td></tr></table></figure>
-
-<h2 id="第三步：安装-mysql-Connector-ODBC"><a href="#第三步：安装-mysql-Connector-ODBC" class="headerlink" title="第三步：安装 mysql Connector/ODBC"></a>第三步：安装 mysql Connector/ODBC</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf mysql-connector-odbc-5.1.11-linux-el6-x86-64bit.tar.gz</span><br><span class="line"><span class="built_in">cd</span> mysql-connector-odbc-5.1.11-linux-el6-x86-64bit/lib</span><br><span class="line">cp libmyodbc5.so /usr/<span class="built_in">local</span>/lib</span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line"><span class="built_in">cd</span> bin</span><br></pre></td></tr></table></figure>
-<p><strong>注册驱动</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./myodbc-installer -d -a -n <span class="string">"MySQL ODBC 5.1 Driver"</span> -t <span class="string">"DRIVER=/usr/local/lib/libmyodbc5.so;SETUP=/usr/local/lib/libmyodbc5.so"</span></span><br><span class="line"></span><br><span class="line">//odbc 5.3及以上是libmyodbc5a.so和libmyodbc5w.so。其中c5a是Ansi版，c5w是Unicode版</span><br></pre></td></tr></table></figure>
-<p>假如注册的时候报错找不到libodbc.so.2,但是之前确实装成功了unixodbc,可能是因为系统找不到/usr/local/lib库目录，需要添加系统搜索库目录路径：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/ld.so.conf</span><br><span class="line"></span><br><span class="line">//将/usr/<span class="built_in">local</span>/lib直接添加在配置文件里</span><br><span class="line"></span><br><span class="line">ldconfig</span><br><span class="line"></span><br><span class="line">//重新缓存配置文件(为了加快程序执行时对共享库的定位速度，避免使用搜索路径查找共享库的低效率，所以是直接读取库列表文件/etc/ld.so.cache缓存文件并从中进行搜索的)</span><br></pre></td></tr></table></figure>
-
-<h2 id="第四步：配置-ODBC-INI"><a href="#第四步：配置-ODBC-INI" class="headerlink" title="第四步：配置 ODBC.INI"></a>第四步：配置 ODBC.INI</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">odbcinst -j</span><br><span class="line"></span><br><span class="line">unixODBC 2.3.1</span><br><span class="line">DRIVERS............: /etc/odbcinst.ini</span><br><span class="line">SYSTEM DATA SOURCES: /etc/odbc.ini</span><br><span class="line">FILE DATA SOURCES..: /etc/ODBCDataSources</span><br><span class="line">USER DATA SOURCES..: /root/.odbc.ini</span><br><span class="line">SQLULEN Size.......: 8</span><br><span class="line">SQLLEN Size........: 8</span><br><span class="line">SQLSETPOSIROW Size.: 8</span><br></pre></td></tr></table></figure>
-<p>编辑文件<code>/etc/odbc.ini</code>，把下面的内容加上去。不同版本<code>mysql</code>驱动的配置方法，有细微差异。此处使用的版本是<code>mysql Connector 3.51</code>。</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysqlDSN]</span></span><br><span class="line"><span class="attr">Driver</span>      = /usr/local/lib/libmyodbc5.so</span><br><span class="line"><span class="attr">Description</span> = MyODBC <span class="number">5</span> Driver DSN</span><br><span class="line"><span class="attr">SERVER</span>      = <span class="number">172.31</span>.<span class="number">108.133</span></span><br><span class="line"><span class="attr">PORT</span>        = <span class="number">3306</span></span><br><span class="line"><span class="attr">USER</span>        = root</span><br><span class="line"><span class="attr">Password</span>    = <span class="number">123456</span></span><br><span class="line"><span class="attr">Database</span>    = PM</span><br><span class="line"><span class="attr">OPTION</span>      = <span class="number">3</span></span><br><span class="line"><span class="attr">charset</span>     = UTF8</span><br></pre></td></tr></table></figure>
-
-<h2 id="第五步：设置环境变量"><a href="#第五步：设置环境变量" class="headerlink" title="第五步：设置环境变量"></a>第五步：设置环境变量</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> DBCINI=/usr/<span class="built_in">local</span>/etc/odbc.ini</span><br><span class="line"><span class="built_in">export</span> DBCSYSINI=/usr/<span class="built_in">local</span>/etc</span><br></pre></td></tr></table></figure>
-
-<h2 id="第六步：重启电脑"><a href="#第六步：重启电脑" class="headerlink" title="第六步：重启电脑"></a>第六步：重启电脑</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
-
-<h2 id="第七步：测试ODBC配置是否成功"><a href="#第七步：测试ODBC配置是否成功" class="headerlink" title="第七步：测试ODBC配置是否成功"></a>第七步：测试ODBC配置是否成功</h2><p>isql 是 unixODBC 带的一个 ODBC 客户端访问工具，使用<code>isql +数据源名</code>来访问目标数据库。如果 ODBC 配置正确，会显示下面的界面。在<code>SQL&gt;</code>提示符下输入 SQL 语句查询数据库。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">isql mysqlDSN</span><br><span class="line"></span><br><span class="line">+---------------------------------------+</span><br><span class="line">| Connected!                           |</span><br><span class="line">|                                      |</span><br><span class="line">| sql-statement                        |</span><br><span class="line">| <span class="built_in">help</span> [tablename]                     |</span><br><span class="line">| quit                                 |</span><br><span class="line">|                                      |</span><br><span class="line">+---------------------------------------+</span><br></pre></td></tr></table></figure>
-
-<h2 id="遇到的问题："><a href="#遇到的问题：" class="headerlink" title="遇到的问题："></a>遇到的问题：</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>在第三步安装 mysql connector/ODBC 中的注册驱动中，我总是会出现<code>./myodbc-installer: error while loading shared libraries: libodbc.so.2: cannot open shared object file: No such file or directory.</code>这种错误，后来发现错误有两点：</p>
-<ol>
-<li>我下载的是 mysql-connector-5.3.6 ，可能版本比较高，而我初次下载用的是unixODBC-2.3.0，版本较低，里面没有 libodbc.so.2 这个库文件（可以用<code>find / -name libodbc.so.2</code>来查）。后来下载了一个 unixODBC-2.3.4 就好了。</li>
-<li>改了版本之后，我发现还是有这个错误，在网上查了下，说是程序查找默认路径为 /lib 和 /usr/lib，而我的 libmyodbc5w.so 和 libmmyodbc5a.so 都在 /usr/local/lib 中，所以查不到，所以需要设置一下共享库路径，以下我贴一下网上查的内容：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/ld.so.conf</span><br><span class="line">include ld.so.conf.d/*.conf</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"/usr/local/lib"</span> &gt;&gt; /etc/ld.so.conf</span><br><span class="line">ldconfig</span><br></pre></td></tr></table></figure>
-
-<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>如果共享库文件安装到了其它”非 /lib 或 /usr/lib “ 目录下，但是又不想在 /etc/ld.so.conf 中加路径(或者是没有权限加路径)。那可以 export 一个全局变量 LD_LIBRARY_PATH ，然后运行程序的时候就会去这个目录中找共享库。</p>
-<p>LD_LIBRARY_PATH 的意思是告诉 loader 在哪些目录中可以找到共享库。</p>
-<p>可以设置多个搜索目录，这些目录之间用冒号分隔开。</p>
-<p>比如：</p>
-<p>安装了一个 mysql 到 /usr/local/mysql 目录下，其中有一大堆库文件在 /usr/local/mysql/lib 下面，则可以在 .bashrc 或 .bash_profile 或 shell 里加入以下语句即可：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/usr/<span class="built_in">local</span>/mysql/lib:<span class="variable">$LD_LIBRARY_PATH</span></span><br></pre></td></tr></table></figure>
-
-<p>一般来讲这只是一种临时的解决方案，在没有权限或临时需要的时候使用。</p>
-<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p>如果程序需要的库文件比系统目前存在的村文件版本低，可以做一个链接<br>比如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">error while loading shared libraries: libncurses.so.4: cannot open shared</span><br><span class="line">object file: No such file or directory</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls /usr/lib/libncu*</span><br><span class="line">/usr/lib/libncurses.a   /usr/lib/libncurses.so.5</span><br><span class="line">/usr/lib/libncurses.so  /usr/lib/libncurses.so.5.3</span><br></pre></td></tr></table></figure>
-<p>可见虽然没有 libncurses.so.4，但有 libncurses.so.5，是可以向下兼容的<br>建一个链接就好了</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s  /usr/lib/libncurses.so.5.3  /usr/lib/libncurses.so.4</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><p>isql 连接数据库失败，重新注册驱动：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/myodbc-installer  -d -a -n <span class="string">"MySQL_UNICODE"</span>  -t <span class="string">"DRIVER=/usr/lib64/libmyodbc8w.so;SETUP=/usr/lib64/libmyodbc8w.so"</span></span><br><span class="line">/usr/bin/myodbc-installer  -d -a -n <span class="string">"MySQL_ANSI"</span>  -t <span class="string">"DRIVER=/usr/lib64/libmyodbc8a.so;SETUP=/usr/lib64/libmyodbc8a.so"</span></span><br></pre></td></tr></table></figure>
-<p>使用 rpm 命令查看 rpm 包的内容</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qpl xxx.rpm</span><br></pre></td></tr></table></figure>
-<p>可以看到<code>mysql-connector-odbc-8.0.20-1.el7.x86_64.rpm</code>的包内容</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">warning: mysql-connector-odbc-8.0.20-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY</span><br><span class="line">/usr/bin/myodbc-installer</span><br><span class="line">/usr/lib64/libmyodbc8a.so</span><br><span class="line">/usr/lib64/libmyodbc8w.so</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20/ChangeLog</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20/INFO_BIN</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20/INFO_SRC</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20/LICENSE.txt</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20/README.txt</span><br></pre></td></tr></table></figure>
-<p>可以知道 rpm 包 安装的时候各个基础件的安装位置。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/20/MySQL_ODBC%E9%85%8D%E7%BD%AE/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -293,7 +239,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/07/18/docker%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">docker环境搭建</a>
+            <a href="/2020/07/18/docker%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">Docker 基础知识</a>
         </h2>
 
         <div class="post-meta">
@@ -310,7 +256,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-20 11:10:21" itemprop="dateModified" datetime="2020-07-20T11:10:21+08:00">2020-07-20</time>
+                <time title="Modified: 2020-07-20 18:53:37" itemprop="dateModified" datetime="2020-07-20T18:53:37+08:00">2020-07-20</time>
               </span>
 
           
@@ -324,7 +270,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Docker基础知识"><a href="#Docker基础知识" class="headerlink" title="Docker基础知识"></a>Docker基础知识</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run ubuntu:15.10 /bin/<span class="built_in">echo</span> <span class="string">"Hello world"</span></span><br></pre></td></tr></table></figure>
+          <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run ubuntu:15.10 /bin/<span class="built_in">echo</span> <span class="string">"Hello world"</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>参数含义：</strong></p>
 <ul>
 <li><code>docker</code>：Docker 的二进制执行文件。</li>
@@ -332,172 +279,9 @@
 <li><code>ubuntu:15.10</code>：指定要运行的镜像，Docker 首先从本地主机上查找镜像是否存在，如果不存在，Docker 就会从镜像仓库 Docker Hub 下载公共镜像。</li>
 <li><code>/bin/echo &quot;Hello world&quot;</code>：在启动的容器里执行的命令</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -i -t ubuntu:15.10 /bin/bash</span><br></pre></td></tr></table></figure>
-<p><strong>参数含义：</strong></p>
-<ul>
-<li><code>-t</code>：在新容器内指定一个伪终端或终端。</li>
-<li><code>-i</code>：允许你对容器内的标准输入 <code>stdin</code> 进行交互</li>
-<li>可以通过运行 <code>exit</code> 命令或者使用 <code>ctrl+D</code> 来退出容器，会导致容器停止</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -P training/webapp python app.py</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>-d</code>：让容器在后台运行。</li>
-<li><code>-P</code>：将容器内部使用的网络端口随机映射到我们使用的主机上。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit &lt;CONTAINER ID&gt; &lt;REPOSITORY&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>参数含义：</strong><br><code>-a</code>：提交的镜像作者;<br><code>-c</code>：使用Dockerfile指令来创建镜像;<br><code>-m</code>：提交时的说明文字;<br><code>-p</code>：在commit时，将容器暂停</p>
-<table>
-<thead>
-<tr>
-<th>commend</th>
-<th>result</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>docker ps</code></td>
-<td>查看正在运行的容器</td>
-</tr>
-<tr>
-<td><code>docker ps -a</code></td>
-<td>查看所有容器</td>
-</tr>
-<tr>
-<td><code>docker stop &lt;CONTAINER ID/REPOSITORY&gt;</code></td>
-<td>关闭容器</td>
-</tr>
-<tr>
-<td><code>docker logs &lt;CONTAINER ID/REPOSITORY&gt;</code></td>
-<td>查看容器内的标准输出</td>
-</tr>
-<tr>
-<td><code>docker pull &lt;IMAGE_NAME&gt;</code></td>
-<td>载入镜像</td>
-</tr>
-<tr>
-<td><code>docker restart &lt;CONTAINER ID&gt;</code></td>
-<td>重启停止的容器</td>
-</tr>
-<tr>
-<td><code>docker attach &lt;CONTAINER ID&gt;</code></td>
-<td>进入后台运行中的容器</td>
-</tr>
-<tr>
-<td><code>docker exec &lt;CONTAINER ID&gt;</code></td>
-<td>退出容器，不会导致容器的停止</td>
-</tr>
-<tr>
-<td><code>docker export &lt;CONTAINER ID&gt; &gt; xxx.tar</code></td>
-<td>导出本地某个容器</td>
-</tr>
-<tr>
-<td>`cat docker/xxx.tar</td>
-<td>docker import - <EPOSITORY>:<TAG>`</td>
-</tr>
-<tr>
-<td><code>docker import &lt;URL&gt; &lt;EPOSITORY&gt;</code></td>
-<td>导入容器快照</td>
-</tr>
-<tr>
-<td><code>docker rm -f &lt;CONTAINER ID&gt;</code></td>
-<td>删除容器<code>-f</code>:强制删除;<code>-no-prune</code>:不要删除未带标签的父镜像</td>
-</tr>
-<tr>
-<td><code>docker container prune</code></td>
-<td>清理掉所有处于终止状态的容器</td>
-</tr>
-<tr>
-<td><code>docker rm $(docker container ls -aq)</code></td>
-<td>删除所有容器</td>
-</tr>
-<tr>
-<td><code>docker commit &lt;CONTAINER ID&gt; &lt;REPOSITORY&gt;</code></td>
-<td>把容器打包成镜像</td>
-</tr>
-<tr>
-<td><code>docker inspect &lt;REPOSITORY&gt;:&lt;CONTAINER ID&gt;</code></td>
-<td>查看镜像的详细信息</td>
-</tr>
-<tr>
-<td><code>docker rm $(docker container ls -f &quot;status=exited&quot; -q)</code></td>
-<td>同时删除多个符合筛选条件(状态为“exited”)的容器</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/10/myself/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="vousmevoyez">
-      <meta itemprop="description" content="Swan L">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vousmevoyez">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/10/myself/" class="post-title-link" itemprop="url">Getbusyliving 的经历汇报</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-05-10 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-10T00:00:00+08:00">2020-05-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-11 16:21:50" itemprop="dateModified" datetime="2020-05-11T16:21:50+08:00">2020-05-11</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="刘某2-2"><a href="#刘某2-2" class="headerlink" title="刘某2.2"></a><center><strong>刘某2.2</strong></center></h1><h2 id="2019年大事记——进入神州数码。"><a href="#2019年大事记——进入神州数码。" class="headerlink" title="2019年大事记——进入神州数码。"></a>2019年大事记——进入神州数码。</h2><h3 id="gt-简述："><a href="#gt-简述：" class="headerlink" title="&gt; 简述："></a>&gt; 简述：</h3><blockquote>
-<p>由于小米武汉的研发团队被拆分重组，于是决定进入到更加具有时间沉淀更有底蕴的联想神州数码云科网络有限公司进行学习。稳定代表着沉淀自己的机会。在公司企业文化培训活动的一周时间中，短期内获得了多个领导的赏识，并获得了最佳新员工奖以及神州云角副总裁的赠礼以及微信联系方式。</p>
-</blockquote>
-<h3 id="gt-相关留存资料："><a href="#gt-相关留存资料：" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h3><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gem9ue5n0ij31400u0u0y.jpg" alt=""></p>
-
-
-	<div class="row">
-		<iframe src="https://drive.google.com/file/d/1iVcxWI0FD4_TEgh5zP25YuUReXTyoNCT/preview" style="width:100%; height:550px"></iframe>
-	</div>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/05/10/myself/#more" rel="contents">
+              <a class="btn" href="/2020/07/18/docker%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -617,10 +401,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-09-06 00:00:00 / Modified: 14:23:47" itemprop="dateCreated datePublished" datetime="2019-09-06T00:00:00+08:00">2019-09-06</time>
+              <time title="Created: 2019-09-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-06T00:00:00+08:00">2019-09-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-20 18:35:13" itemprop="dateModified" datetime="2020-07-20T18:35:13+08:00">2020-07-20</time>
+              </span>
 
           
 
@@ -635,30 +425,31 @@
       
           <h1 id="Redis学习笔记"><a href="#Redis学习笔记" class="headerlink" title="Redis学习笔记"></a>Redis学习笔记</h1></br>
 
-<h2 id="1-Redis-简介"><a href="#1-Redis-简介" class="headerlink" title="1-Redis 简介"></a>1-<a href="https://www.vousmevoyez.pro/2019/09/05/redis1/" target="_blank" rel="noopener">Redis 简介</a></h2></br>
-## 2-[Redis 基础命令](https://www.vousmevoyez.pro/2019/09/05/redis2/)
-</br>
-## 3-[Redis 配置](https://www.vousmevoyez.pro/2019/09/05/redis3/)
-</br>
-## 4-[Redis KEY键的操作](https://www.vousmevoyez.pro/2019/09/05/redis4/)
-</br>
-## 5-[Redis 数据类型](https://www.vousmevoyez.pro/2019/09/05/redis5/)
-</br>
-## 6-[Redis String(字符串)](https://www.vousmevoyez.pro/2019/09/05/redis6/)
-</br>
-## 7-[Redis Hash(哈希表/字典)](https://www.vousmevoyez.pro/2019/09/05/redis7/)
-</br>
-## 8-[Redis List(列表)](https://www.vousmevoyez.pro/2019/09/05/redis8/)
-</br>
-## 9-[Redis Set(集合)](https://www.vousmevoyez.pro/2019/09/05/redis9/)
-</br>
-## 10-[Redis Sorted Set(有序集合)](https://www.vousmevoyez.pro/2019/09/05/redis10/)
-</br>
-## 11-[Redis 常用命令](https://www.vousmevoyez.pro/2019/09/05/redis11/)
-</br>
-## 12-[Redis 事务](https://www.vousmevoyez.pro/2019/09/05/redis12/)
-</br>
-## 13-[Redis 发布订阅](https://www.vousmevoyez.pro/2019/09/05/redis13/)
+<h2 id="1-Redis-简介"><a href="#1-Redis-简介" class="headerlink" title="1-Redis 简介"></a>1-<a href="https://liuxing1tec.github.io/2019/09/05/redis1/" target="_blank" rel="noopener">Redis 简介</a></h2></br>
+
+<h2 id="2-Redis-基础命令"><a href="#2-Redis-基础命令" class="headerlink" title="2-Redis 基础命令"></a>2-<a href="https://liuxing1tec.github.io/2019/09/05/redis2/" target="_blank" rel="noopener">Redis 基础命令</a></h2></br>
+
+<h2 id="3-Redis-配置"><a href="#3-Redis-配置" class="headerlink" title="3-Redis 配置"></a>3-<a href="https://liuxing1tec.github.io/2019/09/05/redis3/" target="_blank" rel="noopener">Redis 配置</a></h2></br>
+
+<h2 id="4-Redis-KEY键的操作"><a href="#4-Redis-KEY键的操作" class="headerlink" title="4-Redis KEY键的操作"></a>4-<a href="https://liuxing1tec.github.io/2019/09/05/redis4/" target="_blank" rel="noopener">Redis KEY键的操作</a></h2></br>
+
+<h2 id="5-Redis-数据类型"><a href="#5-Redis-数据类型" class="headerlink" title="5-Redis 数据类型"></a>5-<a href="https://liuxing1tec.github.io/2019/09/05/redis5/" target="_blank" rel="noopener">Redis 数据类型</a></h2></br>
+
+<h2 id="6-Redis-String-字符串"><a href="#6-Redis-String-字符串" class="headerlink" title="6-Redis String(字符串)"></a>6-<a href="https://liuxing1tec.github.io/2019/09/05/redis6/" target="_blank" rel="noopener">Redis String(字符串)</a></h2></br>
+
+<h2 id="7-Redis-Hash-哈希表-字典"><a href="#7-Redis-Hash-哈希表-字典" class="headerlink" title="7-Redis Hash(哈希表/字典)"></a>7-<a href="https://liuxing1tec.github.io/2019/09/05/redis7/" target="_blank" rel="noopener">Redis Hash(哈希表/字典)</a></h2></br>
+
+<h2 id="8-Redis-List-列表"><a href="#8-Redis-List-列表" class="headerlink" title="8-Redis List(列表)"></a>8-<a href="https://liuxing1tec.github.io/2019/09/05/redis8/" target="_blank" rel="noopener">Redis List(列表)</a></h2></br>
+
+<h2 id="9-Redis-Set-集合"><a href="#9-Redis-Set-集合" class="headerlink" title="9-Redis Set(集合)"></a>9-<a href="https://liuxing1tec.github.io/2019/09/05/redis9/" target="_blank" rel="noopener">Redis Set(集合)</a></h2></br>
+
+<h2 id="10-Redis-Sorted-Set-有序集合"><a href="#10-Redis-Sorted-Set-有序集合" class="headerlink" title="10-Redis Sorted Set(有序集合)"></a>10-<a href="https://liuxing1tec.github.io/2019/09/05/redis10/" target="_blank" rel="noopener">Redis Sorted Set(有序集合)</a></h2></br>
+
+<h2 id="11-Redis-常用命令"><a href="#11-Redis-常用命令" class="headerlink" title="11-Redis 常用命令"></a>11-<a href="https://liuxing1tec.github.io/2019/09/05/redis11/" target="_blank" rel="noopener">Redis 常用命令</a></h2></br>
+
+<h2 id="12-Redis-事务"><a href="#12-Redis-事务" class="headerlink" title="12-Redis 事务"></a>12-<a href="https://liuxing1tec.github.io/2019/09/05/redis12/" target="_blank" rel="noopener">Redis 事务</a></h2></br>
+
+<h2 id="13-Redis-发布订阅"><a href="#13-Redis-发布订阅" class="headerlink" title="13-Redis 发布订阅"></a>13-<a href="https://liuxing1tec.github.io/2019/09/05/redis13/" target="_blank" rel="noopener">Redis 发布订阅</a></h2>
       
     </div>
 
@@ -1031,6 +822,94 @@ redis Sorted Set 有序集合是 string 类型元素的集合，元素不允许�
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="vousmevoyez">
+      <meta itemprop="description" content="Swan L">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vousmevoyez">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/05/redis12/" class="post-title-link" itemprop="url">Redis 事务</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-20 18:52:15" itemprop="dateModified" datetime="2020-07-20T18:52:15+08:00">2020-07-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Redis-事务"><a href="#Redis-事务" class="headerlink" title="Redis 事务"></a>Redis 事务</h1></br>
+redis 事务可以一次执行多个命令。
+</br>
+常用命令：
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">multi       <span class="comment">//开起一个事务，标记一个事务块的开始，multi即multiple</span></span><br><span class="line"></span><br><span class="line">exec        <span class="comment">//执行事务块内的命令</span></span><br><span class="line"></span><br><span class="line">discard     <span class="comment">//取消事务</span></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">使用步骤：</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> 先使用 multi 命令标记事务开始</span><br><span class="line"><span class="number">2.</span> 将多个命令入队( <span class="built_in">queue</span> ，队列)</span><br><span class="line"><span class="number">3.</span> 使用 exec 命令执行事务</span><br><span class="line">&lt;!---more---&gt;</span><br><span class="line"></span><br><span class="line">&lt;/br&gt;</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line">```c</span><br><span class="line">multi                   <span class="comment">//标记事务开始</span></span><br><span class="line"><span class="built_in">set</span> name <span class="string">"zhangsan"</span>     <span class="comment">//依次输入多个命令。输入一条命令后会提示“QUEUED”，表示此条命令已入队</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">20</span> </span><br><span class="line"><span class="built_in">get</span> name </span><br><span class="line">exec                    <span class="comment">//执行事务，会依次执行事务块内的命令，依次显示执行结果。</span></span><br><span class="line"><span class="comment">//exec是执行事务，如果想取消事务，将exec换为discard即可。</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g6pmw8jc4pj30g60egq3t.jpg" alt=""></p>
+</br>
+</br>
+
+<p>单个 redis 命令的执行是原子性的，但 redis 并没有在事务上增加任何维持原子性的机制，所以 redis 事务的执行不是原子性的。</p>
+</br>
+
+<p>事务可以理解为一个打包的批量执行脚本，但批量指令并非原子化的操作，中间某条指令的失败不会导致前面已做指令的回滚，也不会造成后续的指令不做。</p>
+</br>
+
+<p>比如执行事务时，第一条执行成功，第二条执行失败，此时并不会回滚之前的操作（此处指第一条、第二条命令），而是继续执行后面的命令。但会显示第二条的结果是Fail。</p>
+</br>
+
+<p>即事务中任意命令执行失败，其余的命令依然被执行。</p>
+</br>
+
+<p>在事务执行过程中，其他客户端提交的命令请求不会插入到事务执行命令队列中。</p>
+<p>Redis2.6以后的版本，在服务器内置了Lua环境（Lua解释器），可以通过eval命令执行Lua脚本。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
   <nav class="pagination">
@@ -1100,22 +979,28 @@ redis Sorted Set 有序集合是 string 类型元素的集合，元素不允许�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
         <span class="site-state-item-count">22</span>
-        <span class="site-state-item-name">tags</span>
+        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
+  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
         <a href="https://github.com/liuxing1Tec" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;liuxing1Tec" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="mailto:vous1158@gmail.com" title="E-Mail → mailto:vous1158@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+        <a href="/vous1158@gmail.com" title="E-Mail → vous1158@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
         <a href="https://plus.google.com/116543534108813931573" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;116543534108813931573" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
@@ -1208,6 +1093,7 @@ redis Sorted Set 有序集合是 string 类型元素的集合，元素不允许�
   
 
   
+
 
 </body>
 </html>

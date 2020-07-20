@@ -17,17 +17,17 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Redis学习笔记  1-Redis 简介 ## 2-[Redis 基础命令](https:&#x2F;&#x2F;www.vousmevoyez.pro&#x2F;2019&#x2F;09&#x2F;05&#x2F;redis2&#x2F;)  ## 3-[Redis 配置](https:&#x2F;&#x2F;www.vousmevoyez.pro&#x2F;2019&#x2F;09&#x2F;05&#x2F;redis3&#x2F;)  ## 4-[Redis KEY键的操作](https:&#x2F;&#x2F;www.vousmevoyez.p">
+  <meta name="description" content="Redis学习笔记  1-Redis 简介  2-Redis 基础命令  3-Redis 配置  4-Redis KEY键的操作  5-Redis 数据类型  6-Redis String(字符串)  7-Redis Hash(哈希表&#x2F;字典)  8-Redis List(列表)  9-Redis Set(集合)  10-Redis Sorted Set(有序集合)  11-Redis 常用命令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis学习笔记">
 <meta property="og:url" content="http://yoursite.com/2019/09/06/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Vousmevoyez">
-<meta property="og:description" content="Redis学习笔记  1-Redis 简介 ## 2-[Redis 基础命令](https:&#x2F;&#x2F;www.vousmevoyez.pro&#x2F;2019&#x2F;09&#x2F;05&#x2F;redis2&#x2F;)  ## 3-[Redis 配置](https:&#x2F;&#x2F;www.vousmevoyez.pro&#x2F;2019&#x2F;09&#x2F;05&#x2F;redis3&#x2F;)  ## 4-[Redis KEY键的操作](https:&#x2F;&#x2F;www.vousmevoyez.p">
+<meta property="og:description" content="Redis学习笔记  1-Redis 简介  2-Redis 基础命令  3-Redis 配置  4-Redis KEY键的操作  5-Redis 数据类型  6-Redis String(字符串)  7-Redis Hash(哈希表&#x2F;字典)  8-Redis List(列表)  9-Redis Set(集合)  10-Redis Sorted Set(有序集合)  11-Redis 常用命令">
 <meta property="article:published_time" content="2019-09-05T16:00:00.000Z">
-<meta property="article:modified_time" content="2019-09-06T06:23:47.181Z">
+<meta property="article:modified_time" content="2020-07-20T10:35:13.762Z">
 <meta property="article:author" content="vousmevoyez">
 <meta property="article:tag" content="redis">
 <meta name="twitter:card" content="summary">
@@ -124,12 +124,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">22</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">31</span></a>
 
   </li>
   </ul>
@@ -184,10 +184,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-09-06 00:00:00 / Modified: 14:23:47" itemprop="dateCreated datePublished" datetime="2019-09-06T00:00:00+08:00">2019-09-06</time>
+              <time title="Created: 2019-09-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-06T00:00:00+08:00">2019-09-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-20 18:35:13" itemprop="dateModified" datetime="2020-07-20T18:35:13+08:00">2020-07-20</time>
+              </span>
 
           
 
@@ -202,45 +208,42 @@
       
         <h1 id="Redis学习笔记"><a href="#Redis学习笔记" class="headerlink" title="Redis学习笔记"></a>Redis学习笔记</h1></br>
 
-<h2 id="1-Redis-简介"><a href="#1-Redis-简介" class="headerlink" title="1-Redis 简介"></a>1-<a href="https://www.vousmevoyez.pro/2019/09/05/redis1/" target="_blank" rel="noopener">Redis 简介</a></h2></br>
-## 2-[Redis 基础命令](https://www.vousmevoyez.pro/2019/09/05/redis2/)
-</br>
-## 3-[Redis 配置](https://www.vousmevoyez.pro/2019/09/05/redis3/)
-</br>
-## 4-[Redis KEY键的操作](https://www.vousmevoyez.pro/2019/09/05/redis4/)
-</br>
-## 5-[Redis 数据类型](https://www.vousmevoyez.pro/2019/09/05/redis5/)
-</br>
-## 6-[Redis String(字符串)](https://www.vousmevoyez.pro/2019/09/05/redis6/)
-</br>
-## 7-[Redis Hash(哈希表/字典)](https://www.vousmevoyez.pro/2019/09/05/redis7/)
-</br>
-## 8-[Redis List(列表)](https://www.vousmevoyez.pro/2019/09/05/redis8/)
-</br>
-## 9-[Redis Set(集合)](https://www.vousmevoyez.pro/2019/09/05/redis9/)
-</br>
-## 10-[Redis Sorted Set(有序集合)](https://www.vousmevoyez.pro/2019/09/05/redis10/)
-</br>
-## 11-[Redis 常用命令](https://www.vousmevoyez.pro/2019/09/05/redis11/)
-</br>
-## 12-[Redis 事务](https://www.vousmevoyez.pro/2019/09/05/redis12/)
-</br>
-## 13-[Redis 发布订阅](https://www.vousmevoyez.pro/2019/09/05/redis13/)
+<h2 id="1-Redis-简介"><a href="#1-Redis-简介" class="headerlink" title="1-Redis 简介"></a>1-<a href="https://liuxing1tec.github.io/2019/09/05/redis1/" target="_blank" rel="noopener">Redis 简介</a></h2></br>
+
+<h2 id="2-Redis-基础命令"><a href="#2-Redis-基础命令" class="headerlink" title="2-Redis 基础命令"></a>2-<a href="https://liuxing1tec.github.io/2019/09/05/redis2/" target="_blank" rel="noopener">Redis 基础命令</a></h2></br>
+
+<h2 id="3-Redis-配置"><a href="#3-Redis-配置" class="headerlink" title="3-Redis 配置"></a>3-<a href="https://liuxing1tec.github.io/2019/09/05/redis3/" target="_blank" rel="noopener">Redis 配置</a></h2></br>
+
+<h2 id="4-Redis-KEY键的操作"><a href="#4-Redis-KEY键的操作" class="headerlink" title="4-Redis KEY键的操作"></a>4-<a href="https://liuxing1tec.github.io/2019/09/05/redis4/" target="_blank" rel="noopener">Redis KEY键的操作</a></h2></br>
+
+<h2 id="5-Redis-数据类型"><a href="#5-Redis-数据类型" class="headerlink" title="5-Redis 数据类型"></a>5-<a href="https://liuxing1tec.github.io/2019/09/05/redis5/" target="_blank" rel="noopener">Redis 数据类型</a></h2></br>
+
+<h2 id="6-Redis-String-字符串"><a href="#6-Redis-String-字符串" class="headerlink" title="6-Redis String(字符串)"></a>6-<a href="https://liuxing1tec.github.io/2019/09/05/redis6/" target="_blank" rel="noopener">Redis String(字符串)</a></h2></br>
+
+<h2 id="7-Redis-Hash-哈希表-字典"><a href="#7-Redis-Hash-哈希表-字典" class="headerlink" title="7-Redis Hash(哈希表/字典)"></a>7-<a href="https://liuxing1tec.github.io/2019/09/05/redis7/" target="_blank" rel="noopener">Redis Hash(哈希表/字典)</a></h2></br>
+
+<h2 id="8-Redis-List-列表"><a href="#8-Redis-List-列表" class="headerlink" title="8-Redis List(列表)"></a>8-<a href="https://liuxing1tec.github.io/2019/09/05/redis8/" target="_blank" rel="noopener">Redis List(列表)</a></h2></br>
+
+<h2 id="9-Redis-Set-集合"><a href="#9-Redis-Set-集合" class="headerlink" title="9-Redis Set(集合)"></a>9-<a href="https://liuxing1tec.github.io/2019/09/05/redis9/" target="_blank" rel="noopener">Redis Set(集合)</a></h2></br>
+
+<h2 id="10-Redis-Sorted-Set-有序集合"><a href="#10-Redis-Sorted-Set-有序集合" class="headerlink" title="10-Redis Sorted Set(有序集合)"></a>10-<a href="https://liuxing1tec.github.io/2019/09/05/redis10/" target="_blank" rel="noopener">Redis Sorted Set(有序集合)</a></h2></br>
+
+<h2 id="11-Redis-常用命令"><a href="#11-Redis-常用命令" class="headerlink" title="11-Redis 常用命令"></a>11-<a href="https://liuxing1tec.github.io/2019/09/05/redis11/" target="_blank" rel="noopener">Redis 常用命令</a></h2></br>
+
+<h2 id="12-Redis-事务"><a href="#12-Redis-事务" class="headerlink" title="12-Redis 事务"></a>12-<a href="https://liuxing1tec.github.io/2019/09/05/redis12/" target="_blank" rel="noopener">Redis 事务</a></h2></br>
+
+<h2 id="13-Redis-发布订阅"><a href="#13-Redis-发布订阅" class="headerlink" title="13-Redis 发布订阅"></a>13-<a href="https://liuxing1tec.github.io/2019/09/05/redis13/" target="_blank" rel="noopener">Redis 发布订阅</a></h2>
     </div>
 
     
     
     
         <div class="reward-container">
-  <div></div>
+  <div>Donate comment here.</div>
   <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
     Donate
   </button>
   <div id="qr" style="display: none;">
-      <div style="display: inline-block;">
-        <img src="/Donate%20comment%20here" alt="vousmevoyez reward_comment">
-        <p>reward_comment</p>
-      </div>
       
       <div style="display: inline-block;">
         <img src="/images/wechatpay.jpg" alt="vousmevoyez WeChat Pay">
@@ -286,6 +289,11 @@
 
           </div>
           
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80MTUyMy8xODA3MA=="></div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -332,7 +340,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis学习笔记"><span class="nav-number">1.</span> <span class="nav-text">Redis学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Redis-简介"><span class="nav-number">1.1.</span> <span class="nav-text">1-Redis 简介</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis学习笔记"><span class="nav-text">Redis学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Redis-简介"><span class="nav-text">1-Redis 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Redis-基础命令"><span class="nav-text">2-Redis 基础命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Redis-配置"><span class="nav-text">3-Redis 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Redis-KEY键的操作"><span class="nav-text">4-Redis KEY键的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Redis-数据类型"><span class="nav-text">5-Redis 数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Redis-String-字符串"><span class="nav-text">6-Redis String(字符串)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Redis-Hash-哈希表-字典"><span class="nav-text">7-Redis Hash(哈希表&#x2F;字典)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Redis-List-列表"><span class="nav-text">8-Redis List(列表)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-Redis-Set-集合"><span class="nav-text">9-Redis Set(集合)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-Redis-Sorted-Set-有序集合"><span class="nav-text">10-Redis Sorted Set(有序集合)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-Redis-常用命令"><span class="nav-text">11-Redis 常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-Redis-事务"><span class="nav-text">12-Redis 事务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-Redis-发布订阅"><span class="nav-text">13-Redis 发布订阅</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -346,22 +354,28 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
         <span class="site-state-item-count">22</span>
-        <span class="site-state-item-name">tags</span>
+        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
+  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
         <a href="https://github.com/liuxing1Tec" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;liuxing1Tec" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="mailto:vous1158@gmail.com" title="E-Mail → mailto:vous1158@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+        <a href="/vous1158@gmail.com" title="E-Mail → vous1158@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
         <a href="https://plus.google.com/116543534108813931573" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;116543534108813931573" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
@@ -454,6 +468,22 @@
   
 
   
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
 
 </body>
 </html>
