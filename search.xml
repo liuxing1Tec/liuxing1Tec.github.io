@@ -1258,8 +1258,8 @@
 <td>导出本地某个容器</td>
 </tr>
 <tr>
-<td>`cat docker/xxx.tar</td>
-<td>docker import - <EPOSITORY>:<TAG>`</td>
+<td><code>cat docker/xxx.tar | docker import - &lt;EPOSITORY&gt;:&lt;TAG&gt;</code></td>
+<td>导入容器快照</td>
 </tr>
 <tr>
 <td><code>docker import &lt;URL&gt; &lt;EPOSITORY&gt;</code></td>
