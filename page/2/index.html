@@ -270,167 +270,6 @@ redis 的 channel 是公共频道，谁都可以发布消息。
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="vousmevoyez">
-      <meta itemprop="description" content="Swan L">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vousmevoyez">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/05/redis4/" class="post-title-link" itemprop="url">Redis KEY键的操作</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-06 13:59:12" itemprop="dateModified" datetime="2019-09-06T13:59:12+08:00">2019-09-06</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Redis-KEY键的操作"><a href="#Redis-KEY键的操作" class="headerlink" title="Redis KEY键的操作"></a>Redis KEY键的操作</h1></br>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> key value       <span class="comment">//设置、修改值</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">get</span> key             <span class="comment">//如果key不存在，返回nil，表示空。</span></span><br><span class="line"></span><br><span class="line">type key            <span class="comment">//返回key对应的value的数据类型</span></span><br><span class="line"></span><br><span class="line">rename key newKey   <span class="comment">//重命名key，即修改键的名称。当key和newKey重名时，或者key不存在时，会提示错误。如果newKey已存在，会覆盖原来的值。</span></span><br><span class="line"></span><br><span class="line">renamenx key newKey <span class="comment">//多了nx。返回一个整数。如果newKey不存在，则执行重命名，返回1；如果newKey已存在，不执行重命名，返回0。就是说newKey不存在时才执行。</span></span><br><span class="line"></span><br><span class="line">randomkey           <span class="comment">//从当前数据库中随机返回一个key</span></span><br><span class="line"></span><br><span class="line">keys  pattern       <span class="comment">//返回所有满足pattern的key</span></span><br><span class="line"></span><br><span class="line">keys person*        <span class="comment">//示例：假设当前数据库中有3个key——person1，person2，person3，则该命令会返回所有以person开头的key，即person1、person2、person3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exists</span> key          <span class="comment">//检测key是否存在，存在返回1，不存在返回0</span></span><br><span class="line"></span><br><span class="line">dump key            <span class="comment">//序列化指定的key，返回序列化得到的二进制数据。</span></span><br><span class="line"></span><br><span class="line">del  key            <span class="comment">//删除指定的键值对。若key存在，则删除key，并返回1；若key不存在，直接返回0.</span></span><br><span class="line"></span><br><span class="line">expire key seconds  <span class="comment">//设置key的过期时间，以秒为单位</span></span><br><span class="line"></span><br><span class="line">expire age <span class="number">60</span>       <span class="comment">//示例：60s后age过期，会自动删除age。</span></span><br><span class="line"></span><br><span class="line">expireat key timestamp              <span class="comment">//设置key的过期时间。多了at。timestamp是时间戳，到了timestamp指定的时间，key过期，自动删除key。时间戳以秒为单位。</span></span><br><span class="line"></span><br><span class="line">pexpire  key  milliseconds          <span class="comment">//设置key的过期时间，以毫秒为单位。多了前缀p</span></span><br><span class="line"></span><br><span class="line">pexpireat key milliseconds-timestamp<span class="comment">//设置key的过期时间，时间戳，以毫秒为单位。多了前缀p、后缀at。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">move</span> key db         <span class="comment">//将键值对移到指定的数据库，相当于剪切。返回db——当前使用的数据库的index。</span></span><br><span class="line"></span><br><span class="line">select db           <span class="comment">//Redis默认使用数据库0，也可以用显式指定当前使用的数据库。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>      <span class="comment">//默认使用数据库0</span></span><br><span class="line"><span class="built_in">move</span> age <span class="number">1</span>      <span class="comment">//将age键值对移到数据库1中。返回1——表示数据库1</span></span><br><span class="line"><span class="built_in">exists</span> age      <span class="comment">//此时使用的仍是数据库0，返回0——表示当前数据库中不存在age</span></span><br><span class="line">select <span class="number">1</span>        <span class="comment">//选择（切换）到数据库1</span></span><br><span class="line"><span class="built_in">exists</span> age      <span class="comment">//返回1——表示存在age</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/09/05/redis4/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="vousmevoyez">
-      <meta itemprop="description" content="Swan L">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vousmevoyez">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/05/redis5/" class="post-title-link" itemprop="url">Redis 数据结构</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-06 14:01:58" itemprop="dateModified" datetime="2019-09-06T14:01:58+08:00">2019-09-06</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Redis-数据结构"><a href="#Redis-数据结构" class="headerlink" title="Redis 数据结构"></a>Redis 数据结构</h1></br>
-redis 支持五种数据类型： string（字符串），hash（哈希），list（列表），set（集合）及 zset ( sorted set :有序集合)。
-</br>
-## string 字符串
-</br>
-示例： `set name "zhangsan"`
-
-<p>key 、 value 都是 string 类型， key 、 value 引不引都行，习惯上 key 不加引号， value 随意。</p>
-<p>string 是 redis 的基础数据类型。<br></br></p>
-<h2 id="hash-哈希表-字典"><a href="#hash-哈希表-字典" class="headerlink" title="hash 哈希表/字典"></a>hash 哈希表/字典</h2></br>
-redis hash 是一个 string 类型的 field 和 value 的映射表，一个 hash 可储存多个键值对。
-
-<p>一个对象往往有多个属性（键值对形式）， hash 特别适合存储对象。</p>
-<p>redis 中一个 hash 可以存储 2<sup>32</sup> - 1个 键值对（40多亿）。<br></br><br>示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hmset zhangsan name &quot;zhangsan&quot; age 12 gender male score 90</span><br></pre></td></tr></table></figure>
-<p><code>hmset</code> : hm 即 hash multiple ，set 这里表示设置，不是集合。</p>
-<p><code>zhangsan</code> : 即这张 hash 表的名称。 redis 是 key-value 数据库， zhangsan 就是 key ，后面的一堆属性看做一个整体（value）。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/09/05/redis5/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -602,6 +441,232 @@ redis hash 是一个 string 类型的 field 和 value 的映射表，一个 hash
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="vousmevoyez">
+      <meta itemprop="description" content="Swan L">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vousmevoyez">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/05/redis4/" class="post-title-link" itemprop="url">Redis KEY键的操作</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-09-06 13:59:12" itemprop="dateModified" datetime="2019-09-06T13:59:12+08:00">2019-09-06</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Redis-KEY键的操作"><a href="#Redis-KEY键的操作" class="headerlink" title="Redis KEY键的操作"></a>Redis KEY键的操作</h1></br>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> key value       <span class="comment">//设置、修改值</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">get</span> key             <span class="comment">//如果key不存在，返回nil，表示空。</span></span><br><span class="line"></span><br><span class="line">type key            <span class="comment">//返回key对应的value的数据类型</span></span><br><span class="line"></span><br><span class="line">rename key newKey   <span class="comment">//重命名key，即修改键的名称。当key和newKey重名时，或者key不存在时，会提示错误。如果newKey已存在，会覆盖原来的值。</span></span><br><span class="line"></span><br><span class="line">renamenx key newKey <span class="comment">//多了nx。返回一个整数。如果newKey不存在，则执行重命名，返回1；如果newKey已存在，不执行重命名，返回0。就是说newKey不存在时才执行。</span></span><br><span class="line"></span><br><span class="line">randomkey           <span class="comment">//从当前数据库中随机返回一个key</span></span><br><span class="line"></span><br><span class="line">keys  pattern       <span class="comment">//返回所有满足pattern的key</span></span><br><span class="line"></span><br><span class="line">keys person*        <span class="comment">//示例：假设当前数据库中有3个key——person1，person2，person3，则该命令会返回所有以person开头的key，即person1、person2、person3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exists</span> key          <span class="comment">//检测key是否存在，存在返回1，不存在返回0</span></span><br><span class="line"></span><br><span class="line">dump key            <span class="comment">//序列化指定的key，返回序列化得到的二进制数据。</span></span><br><span class="line"></span><br><span class="line">del  key            <span class="comment">//删除指定的键值对。若key存在，则删除key，并返回1；若key不存在，直接返回0.</span></span><br><span class="line"></span><br><span class="line">expire key seconds  <span class="comment">//设置key的过期时间，以秒为单位</span></span><br><span class="line"></span><br><span class="line">expire age <span class="number">60</span>       <span class="comment">//示例：60s后age过期，会自动删除age。</span></span><br><span class="line"></span><br><span class="line">expireat key timestamp              <span class="comment">//设置key的过期时间。多了at。timestamp是时间戳，到了timestamp指定的时间，key过期，自动删除key。时间戳以秒为单位。</span></span><br><span class="line"></span><br><span class="line">pexpire  key  milliseconds          <span class="comment">//设置key的过期时间，以毫秒为单位。多了前缀p</span></span><br><span class="line"></span><br><span class="line">pexpireat key milliseconds-timestamp<span class="comment">//设置key的过期时间，时间戳，以毫秒为单位。多了前缀p、后缀at。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">move</span> key db         <span class="comment">//将键值对移到指定的数据库，相当于剪切。返回db——当前使用的数据库的index。</span></span><br><span class="line"></span><br><span class="line">select db           <span class="comment">//Redis默认使用数据库0，也可以用显式指定当前使用的数据库。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>      <span class="comment">//默认使用数据库0</span></span><br><span class="line"><span class="built_in">move</span> age <span class="number">1</span>      <span class="comment">//将age键值对移到数据库1中。返回1——表示数据库1</span></span><br><span class="line"><span class="built_in">exists</span> age      <span class="comment">//此时使用的仍是数据库0，返回0——表示当前数据库中不存在age</span></span><br><span class="line">select <span class="number">1</span>        <span class="comment">//选择（切换）到数据库1</span></span><br><span class="line"><span class="built_in">exists</span> age      <span class="comment">//返回1——表示存在age</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/05/redis4/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="vousmevoyez">
+      <meta itemprop="description" content="Swan L">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vousmevoyez">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/05/redis5/" class="post-title-link" itemprop="url">Redis 数据结构</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-09-06 14:01:58" itemprop="dateModified" datetime="2019-09-06T14:01:58+08:00">2019-09-06</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Redis-数据结构"><a href="#Redis-数据结构" class="headerlink" title="Redis 数据结构"></a>Redis 数据结构</h1></br>
+redis 支持五种数据类型： string（字符串），hash（哈希），list（列表），set（集合）及 zset ( sorted set :有序集合)。
+</br>
+## string 字符串
+</br>
+示例： `set name "zhangsan"`
+
+<p>key 、 value 都是 string 类型， key 、 value 引不引都行，习惯上 key 不加引号， value 随意。</p>
+<p>string 是 redis 的基础数据类型。<br></br></p>
+<h2 id="hash-哈希表-字典"><a href="#hash-哈希表-字典" class="headerlink" title="hash 哈希表/字典"></a>hash 哈希表/字典</h2></br>
+redis hash 是一个 string 类型的 field 和 value 的映射表，一个 hash 可储存多个键值对。
+
+<p>一个对象往往有多个属性（键值对形式）， hash 特别适合存储对象。</p>
+<p>redis 中一个 hash 可以存储 2<sup>32</sup> - 1个 键值对（40多亿）。<br></br><br>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hmset zhangsan name &quot;zhangsan&quot; age 12 gender male score 90</span><br></pre></td></tr></table></figure>
+<p><code>hmset</code> : hm 即 hash multiple ，set 这里表示设置，不是集合。</p>
+<p><code>zhangsan</code> : 即这张 hash 表的名称。 redis 是 key-value 数据库， zhangsan 就是 key ，后面的一堆属性看做一个整体（value）。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/05/redis5/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="vousmevoyez">
+      <meta itemprop="description" content="Swan L">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vousmevoyez">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/05/redis6/" class="post-title-link" itemprop="url">Redis String(字符串)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-09-06 14:02:33" itemprop="dateModified" datetime="2019-09-06T14:02:33+08:00">2019-09-06</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Redis-String-字符串"><a href="#Redis-String-字符串" class="headerlink" title="Redis String(字符串)"></a>Redis String(字符串)</h1></br>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">getset key newValue     <span class="comment">//给key设置value，并返回旧的value，如果没有旧的value，返回nil。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>  </span><br><span class="line">getset age <span class="number">20</span>           <span class="comment">//age 的值被设置为20，并返回旧的值10</span></span><br><span class="line"></span><br><span class="line">getrange key start <span class="built_in">end</span>  <span class="comment">//获取value的部分</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> content <span class="string">"hello world!"</span> </span><br><span class="line">getrange content <span class="number">0</span> <span class="number">4</span>    <span class="comment">//返回content对应value的[0,4]上的字符，"hello"，下标</span></span><br><span class="line">getrange content <span class="number">0</span> <span class="number">-1</span>   <span class="comment">//支持负数索引，-1表示最后一个字符</span></span><br><span class="line"></span><br><span class="line">mget key1 key2 ......   <span class="comment">//mget即multiple get，同时获取多个key的value，若某个key不存在，该key返回nil</span></span><br><span class="line"></span><br><span class="line">setex key timeout value <span class="comment">//setex即set expire，给key设置timeout、value，若key已存在，会覆盖原来的timeout、value</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">setex age <span class="number">60</span> <span class="number">10</span>         <span class="comment">//设置age 60s后过期，value为10</span></span><br><span class="line"></span><br><span class="line">setnx key value         <span class="comment">//在 key 不存在时，为 key 设置value，设置成功返回1；若key已存在，不执行（不会替换原来的value），返回0。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>              <span class="comment">//若age已存在，会则覆盖value</span></span><br><span class="line">setnx age <span class="number">20</span>            <span class="comment">//age不存在时才设置，age已存在就不设置（不会覆盖原来的value）</span></span><br><span class="line"></span><br><span class="line">mset key1 value1 key2 value2 ......     <span class="comment">//mset即multiple  set。同时设置多个键值对。因为是set，所以若某个key已存在，会覆盖。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例： </span></span><br><span class="line">mset name <span class="string">"lisi"</span> age <span class="number">20</span> </span><br><span class="line"></span><br><span class="line">msetnx key1 value1 key2 value2 ......   <span class="comment">//msetnx即multiple setnx，当key不存在时才设置该key，已存在就不设置该key</span></span><br><span class="line"></span><br><span class="line">append key content      <span class="comment">//若key已存在，则在value末尾追加content；若key不存在，则为其设置值，此时相当于set key value。返回操作过后，value（新）的长度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">append str <span class="string">"hello"</span>      <span class="comment">//之前str不存在，此句命令相当于set str "hello"</span></span><br><span class="line">append str <span class="string">" world!"</span>    <span class="comment">//之前str已存在，则在其末尾追加" world!"，现在str的值变为"hello world!"</span></span><br><span class="line"></span><br><span class="line">incr key                <span class="comment">//incr即increase，如果value是整数（可以是负整数），将value的值+1，并返回操作后的value。如果value不是整数，提示错误。如果key不存在，先将value初始化为0，再执行+1。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>              <span class="comment">//等价于set age "10"。</span></span><br><span class="line">incr age                <span class="comment">//value的值+1，变为11，并返回11。value是整数才会+1。</span></span><br><span class="line"><span class="built_in">get</span> age                 <span class="comment">//11</span></span><br><span class="line">incr price              <span class="comment">//之前price不存在，value会先初始化为0，再+1，返回1</span></span><br><span class="line"><span class="built_in">get</span> price               <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line">incrby key amount       <span class="comment">//同上，只不过是+amout，不是+1。原来的value要是整数，amount也要是整数，否则提示错误。若key不存在，先初始化value为0。支持负整数（即减）。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">20</span> </span><br><span class="line">incrby age <span class="number">5</span>            <span class="comment">//+5</span></span><br><span class="line"><span class="built_in">get</span> age                 <span class="comment">//25</span></span><br><span class="line"></span><br><span class="line">incrbyfloat key amount  <span class="comment">//同上，只不过原来的value可以是浮点数，增量amount也可以是浮点数。当然，整数也行。支持负数（减）。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> price <span class="number">2.3</span> </span><br><span class="line">incrbyfloat price <span class="number">1.5</span>     </span><br><span class="line"><span class="built_in">get</span> price               <span class="comment">//3.8</span></span><br><span class="line"></span><br><span class="line">decr key                <span class="comment">//同incr key只不过decr是减。decr即decrease。</span></span><br><span class="line"></span><br><span class="line">decrby key amount       <span class="comment">//同incrby  key  amount，只不过是减</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -749,71 +814,6 @@ redis 列表是简单的字符串列表，列表是有序的，列表中的元�
 
 <p>redis 的区间，都是闭区间，[ start ，end ] ，两边都包含。</p>
 
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="vousmevoyez">
-      <meta itemprop="description" content="Swan L">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vousmevoyez">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/05/redis6/" class="post-title-link" itemprop="url">Redis String(字符串)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-06 14:02:33" itemprop="dateModified" datetime="2019-09-06T14:02:33+08:00">2019-09-06</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Redis-String-字符串"><a href="#Redis-String-字符串" class="headerlink" title="Redis String(字符串)"></a>Redis String(字符串)</h1></br>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">getset key newValue     <span class="comment">//给key设置value，并返回旧的value，如果没有旧的value，返回nil。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>  </span><br><span class="line">getset age <span class="number">20</span>           <span class="comment">//age 的值被设置为20，并返回旧的值10</span></span><br><span class="line"></span><br><span class="line">getrange key start <span class="built_in">end</span>  <span class="comment">//获取value的部分</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> content <span class="string">"hello world!"</span> </span><br><span class="line">getrange content <span class="number">0</span> <span class="number">4</span>    <span class="comment">//返回content对应value的[0,4]上的字符，"hello"，下标</span></span><br><span class="line">getrange content <span class="number">0</span> <span class="number">-1</span>   <span class="comment">//支持负数索引，-1表示最后一个字符</span></span><br><span class="line"></span><br><span class="line">mget key1 key2 ......   <span class="comment">//mget即multiple get，同时获取多个key的value，若某个key不存在，该key返回nil</span></span><br><span class="line"></span><br><span class="line">setex key timeout value <span class="comment">//setex即set expire，给key设置timeout、value，若key已存在，会覆盖原来的timeout、value</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">setex age <span class="number">60</span> <span class="number">10</span>         <span class="comment">//设置age 60s后过期，value为10</span></span><br><span class="line"></span><br><span class="line">setnx key value         <span class="comment">//在 key 不存在时，为 key 设置value，设置成功返回1；若key已存在，不执行（不会替换原来的value），返回0。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>              <span class="comment">//若age已存在，会则覆盖value</span></span><br><span class="line">setnx age <span class="number">20</span>            <span class="comment">//age不存在时才设置，age已存在就不设置（不会覆盖原来的value）</span></span><br><span class="line"></span><br><span class="line">mset key1 value1 key2 value2 ......     <span class="comment">//mset即multiple  set。同时设置多个键值对。因为是set，所以若某个key已存在，会覆盖。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例： </span></span><br><span class="line">mset name <span class="string">"lisi"</span> age <span class="number">20</span> </span><br><span class="line"></span><br><span class="line">msetnx key1 value1 key2 value2 ......   <span class="comment">//msetnx即multiple setnx，当key不存在时才设置该key，已存在就不设置该key</span></span><br><span class="line"></span><br><span class="line">append key content      <span class="comment">//若key已存在，则在value末尾追加content；若key不存在，则为其设置值，此时相当于set key value。返回操作过后，value（新）的长度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">append str <span class="string">"hello"</span>      <span class="comment">//之前str不存在，此句命令相当于set str "hello"</span></span><br><span class="line">append str <span class="string">" world!"</span>    <span class="comment">//之前str已存在，则在其末尾追加" world!"，现在str的值变为"hello world!"</span></span><br><span class="line"></span><br><span class="line">incr key                <span class="comment">//incr即increase，如果value是整数（可以是负整数），将value的值+1，并返回操作后的value。如果value不是整数，提示错误。如果key不存在，先将value初始化为0，再执行+1。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>              <span class="comment">//等价于set age "10"。</span></span><br><span class="line">incr age                <span class="comment">//value的值+1，变为11，并返回11。value是整数才会+1。</span></span><br><span class="line"><span class="built_in">get</span> age                 <span class="comment">//11</span></span><br><span class="line">incr price              <span class="comment">//之前price不存在，value会先初始化为0，再+1，返回1</span></span><br><span class="line"><span class="built_in">get</span> price               <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line">incrby key amount       <span class="comment">//同上，只不过是+amout，不是+1。原来的value要是整数，amount也要是整数，否则提示错误。若key不存在，先初始化value为0。支持负整数（即减）。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">20</span> </span><br><span class="line">incrby age <span class="number">5</span>            <span class="comment">//+5</span></span><br><span class="line"><span class="built_in">get</span> age                 <span class="comment">//25</span></span><br><span class="line"></span><br><span class="line">incrbyfloat key amount  <span class="comment">//同上，只不过原来的value可以是浮点数，增量amount也可以是浮点数。当然，整数也行。支持负数（减）。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> price <span class="number">2.3</span> </span><br><span class="line">incrbyfloat price <span class="number">1.5</span>     </span><br><span class="line"><span class="built_in">get</span> price               <span class="comment">//3.8</span></span><br><span class="line"></span><br><span class="line">decr key                <span class="comment">//同incr key只不过decr是减。decr即decrease。</span></span><br><span class="line"></span><br><span class="line">decrby key amount       <span class="comment">//同incrby  key  amount，只不过是减</span></span><br></pre></td></tr></table></figure>
       
     </div>
 

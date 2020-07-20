@@ -164,186 +164,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2019.5——2019.10工作总结</title>
-    <url>/2019/10/18/5%E6%9C%886%E6%9C%88%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h1 id="工作总结"><a href="#工作总结" class="headerlink" title="工作总结"></a><center><strong>工作总结</strong></center></h1><h2 id="阶段一：基础知识回顾"><a href="#阶段一：基础知识回顾" class="headerlink" title="阶段一：基础知识回顾"></a>阶段一：基础知识回顾</h2><h3 id="gt-C语言基础语法回顾："><a href="#gt-C语言基础语法回顾：" class="headerlink" title="&gt; C语言基础语法回顾："></a>&gt; C语言基础语法回顾：</h3><blockquote>
-<p>变更代码习惯，转语言——“倒时差”</p>
-</blockquote>
-<h4 id="gt-相关留存资料："><a href="#gt-相关留存资料：" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4>
-
-	<div class="row">
-		<iframe src="https://drive.google.com/file/d/1644m_lW65hk8UBkXqBdFv61zy-y17bBq/preview" style="width:100%; height:550px"></iframe>
-	</div>
-
-
-
-
-<a id="more"></a>
-
-<h3 id="gt-计算机网络基础知识回顾："><a href="#gt-计算机网络基础知识回顾：" class="headerlink" title="&gt; 计算机网络基础知识回顾："></a>&gt; 计算机网络基础知识回顾：</h3><blockquote>
-<p>回顾计算机网络结构，重点回顾计算网络网络层传输层应用层的工作相关知识，并进行总结。</p>
-</blockquote>
-<h4 id="gt-相关留存资料：-1"><a href="#gt-相关留存资料：-1" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4>
-
-	<div class="row">
-		<iframe src="https://drive.google.com/file/d/1MMx2EWgg-tMt0YcJeQkaBbQkAXvVYVJT/preview" style="width:100%; height:550px"></iframe>
-	</div>
-
-
-
-
-<h3 id="gt-Unix环境高级编程："><a href="#gt-Unix环境高级编程：" class="headerlink" title="&gt; Unix环境高级编程："></a>&gt; Unix环境高级编程：</h3><blockquote>
-<p>学习网络编程，Linux环境下C语言编程，学习Socket编程相关知识。</p>
-</blockquote>
-<h4 id="gt-相关留存资料：-2"><a href="#gt-相关留存资料：-2" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4><blockquote>
-<p>Github Repository：    <a href="https://github.com/liuxing1Tec/C_Learning/tree/master/SOCKET%E7%BC%96%E7%A8%8B" target="_blank" rel="noopener"><strong>C_Learning/SOCKET编程</strong></a></p>
-</blockquote>
-<h2 id="阶段二：网络编程实战"><a href="#阶段二：网络编程实战" class="headerlink" title="阶段二：网络编程实战"></a>阶段二：网络编程实战</h2><h3 id="gt-网络聊天客户端的开发："><a href="#gt-网络聊天客户端的开发：" class="headerlink" title="&gt; 网络聊天客户端的开发："></a>&gt; 网络聊天客户端的开发：</h3><blockquote>
-<p>Socket编程实战。</p>
-</blockquote>
-<h4 id="gt-相关留存资料：-3"><a href="#gt-相关留存资料：-3" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4><blockquote>
-<p>Github Repository：    <a href="https://github.com/liuxing1Tec/Unix_chatroom" target="_blank" rel="noopener"><strong>Unix_chatroom</strong></a></p>
-</blockquote>
-<h3 id="gt-网络开发复盘："><a href="#gt-网络开发复盘：" class="headerlink" title="&gt; 网络开发复盘："></a>&gt; 网络开发复盘：</h3><blockquote>
-<p>开发流程总结。</p>
-</blockquote>
-<h4 id="gt-相关留存资料：-4"><a href="#gt-相关留存资料：-4" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4><blockquote>
-<p>客户端开发流程以源文件：    <a href="https://github.com/liuxing1Tec/C_Learning/blob/master/SOCKET%E7%BC%96%E7%A8%8B/select_echo/src/echocli.c" target="_blank" rel="noopener"><strong>SOCKET编程/select_echo/src/echocli.c</strong></a>，为例<br>服务器端开发流程以源文件：    <a href="https://github.com/liuxing1Tec/C_Learning/blob/master/SOCKET%E7%BC%96%E7%A8%8B/select_echo/src/echosrv.c" target="_blank" rel="noopener"><strong>SOCKET编程/select_echo/src/echosrv.c</strong></a>，为例</p>
-</blockquote>
-<h2 id="阶段三：补充性学习：查漏补缺"><a href="#阶段三：补充性学习：查漏补缺" class="headerlink" title="阶段三：补充性学习：查漏补缺"></a>阶段三：补充性学习：查漏补缺</h2><h3 id="gt-C语言深入学习："><a href="#gt-C语言深入学习：" class="headerlink" title="&gt; C语言深入学习："></a>&gt; C语言深入学习：</h3><blockquote>
-<p>C语言底层知识总结（堆栈、结构体、作用域、malloc()以及free()机制等）。</p>
-</blockquote>
-<h4 id="gt-相关留存资料：-5"><a href="#gt-相关留存资料：-5" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4>
-
-	<div class="row">
-		<iframe src="https://drive.google.com/file/d/1hC78fv6IeNWt6U2EEI7muiUL-xUUW58c/preview" style="width:100%; height:550px"></iframe>
-	</div>
-
-
-
-
-<h3 id="gt-项目开发流程深入学习："><a href="#gt-项目开发流程深入学习：" class="headerlink" title="&gt; 项目开发流程深入学习："></a>&gt; 项目开发流程深入学习：</h3><blockquote>
-<p>项目开发流程总结（C项目管理、GCC、GDB等）。</p>
-</blockquote>
-<h4 id="gt-相关留存资料：-6"><a href="#gt-相关留存资料：-6" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4>
-
-	<div class="row">
-		<iframe src="https://drive.google.com/file/d/1HWIYnT_FpXFvE0wjUFZTvritoOo9IJVY/preview" style="width:100%; height:550px"></iframe>
-	</div>
-
-
-
-
-<h3 id="gt-AC-AP网络知识学习："><a href="#gt-AC-AP网络知识学习：" class="headerlink" title="&gt; AC/AP网络知识学习："></a>&gt; AC/AP网络知识学习：</h3><blockquote>
-<p>AC/AP相关知识了解。</p>
-</blockquote>
-<h4 id="gt-相关留存资料：-7"><a href="#gt-相关留存资料：-7" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4>
-
-	<div class="row">
-		<iframe src="https://drive.google.com/file/d/1ClhF03htEg2MFs4S_tFv6znQeFdad3fA/preview" style="width:100%; height:550px"></iframe>
-	</div>
-
-
-
-
-
-<h2 id="阶段四：参与项目"><a href="#阶段四：参与项目" class="headerlink" title="阶段四：参与项目"></a>阶段四：参与项目</h2><p>Revision: 122883<br>Author: liuxingj<br>Date: 2019年9月11日 17:48:49<br>Message:<br>FIX|[RDM55769]【质量整改】【国家码】解除了室外类型下会导致radio1信道失踪的情况<br>FIX|[RDM55771]【质量整改】【国家码】修改配置文件，已成功匹配80M频宽下的信道列表<br>FIX|[yellowstone3.5]在channel判断条件中，新增若干室外AP的型号，新增并维护最新的AP型号列表与Vendor保持一致<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/INCLUDE/public/hwDrv.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/LIB/vendorCfg.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/CLI/cli_config_wireless_ap_profile.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/CLI/cli_show_running_config_wireless.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/CLI/cli_show_wireless_ap.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/CLI/cli_show_wireless_ap_profile.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/include/wdm_country_code.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/reg_domains.conf<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_profile_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm_country_code.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/ws_channel_power/channel_adjustment.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wsap_conf/wsap_conf.c</p>
-<p>Revision: 122712<br>Author: liuxingj<br>Date: 2019年9月4日 19:50:56<br>Message:<br>FIX|[RDM55466]【质量整改】【国家码】修改YS国家码，和华为信道标准进行全样比对，修改AC实际AP状态显示，修改radio关闭问题，增加AC后台状态显示对802.11ac的支持，增加部分国家对室内室外APhwtype不同造成的信道差异进行适应性匹配，修改80M频宽下信道的运算逻辑，增加80M频宽信道的正常显示<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/INCLUDE/wlan-public/common/wireless_defaultconfig.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/include/wdm_country_code.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/country_code.pl<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/reg_domains.conf<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_profile_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm_country_code.c</p>
-<p>Revision: 122139<br>Author: liuxingj<br>Date: 2019年8月9日 17:35:36<br>Message:<br>FIX|[RDM55275]【开局】air-match template 初始化 template 1修改默认值为5<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/INCLUDE/wlan-public/common/wireless_commdefs.h</p>
-<p>Revision: 122132<br>Author: liuxingj<br>Date: 2019年8月9日 16:48:33<br>Message:<br>FIX|[yellowstone3.5]AC上增加AP射频灯开关控制实现，实现与页面交互<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/include/ws_manageserver.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/ws_manage_server/ws_manageserver.c</p>
-<p>Revision: 122131<br>Author: liuxingj<br>Date: 2019年8月9日 16:48:17<br>Message:<br>FIX|[RDM53942]【开局】修改印尼国家ID国家码对应的信道和频宽<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm_country_code.c</p>
-<p>Revision: 123404<br>Author: liuxingj<br>Date: 2019年10月14日 15:34:01<br>Message:<br>FIX|[yellowstone3.5-cloud]还原NetworkIDGet接口命名<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/api/wdm_network_api.h</p>
-<p>Revision: 123403<br>Author: liuxingj<br>Date: 2019年10月14日 15:18:37<br>Message:<br>FIX|[yellowstone3.5-cloud]还原NetworkIDGet接口命名<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/application/cpcm/cpcm.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/application/cpim/captive_portal_config.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/application/cpim/cpim_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/cli/cli_show_running_config_cp.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/api/wdm_network_api.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm_network_api.c</p>
-<p>Revision: 123396<br>Author: liuxingj<br>Date: 2019年10月14日 13:50:52<br>Message:<br>FIX|[yellowstone3.5-cloud]新增cloud-mode调试命令行和任务代码文件<br>FIX|[yellowstone3.5-cloud]新增Network下UUID命令行和任务代码文件<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/application/cpcm/cpcm.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/application/cpim/captive_portal_config.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/application/cpim/cpim_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/cli/cli_show_running_config_cp.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/api/wdm_network_api.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/common/wireless_commdefs.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/common/wireless_defaultconfig.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/porting/usmdb_wdm_network_api.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/strlib_wireless_cli.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/CLI/cli_config_wireless_network.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/CLI/cli_debug_wireless_extend.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/CLI/cli_show_running_config_wireless.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/CLI/clicommands_wireless.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/CLI/strlib_wireless_cli.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/USMDB/usmdb_wdm_network.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/include/wdm.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_profile_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm_network_api.c</p>
-<p>Revision: 123060<br>Author: liuxingj<br>Date: 2019年9月24日 14:13:32<br>Message:<br>FIX|[yellowstone3.5-cloud]新增cloud-mode中ws_cloudmode.h文件<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/include/ws_cloudmode.h</p>
-<p>Revision: 122881<br>Author: liuxingj<br>Date: 2019年9月11日 15:06:28<br>Message:<br>FIX|[RDM55769]【质量整改】【国家码】解除了室外类型下会导致radio1信道失踪的情况<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_profile_api.c</p>
-<p>Revision: 122880<br>Author: liuxingj<br>Date: 2019年9月11日 15:04:44<br>Message:<br>FIX|[RDM55771]【质量整改】【国家码】修改配置文件，已成功匹配80M频宽下的信道列表<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/include/wdm_country_code.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/reg_domains.conf<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_country_code.c</p>
-<p>Revision: 122854<br>Author: liuxingj<br>Date: 2019年9月10日 17:02:33<br>Message:<br>FIX|[yellowstone3.5]在channel判断条件中，新增若干室外AP的型号，新增并维护最新的AP型号列表与Vendor保持一致<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/LIB/vendorCfg.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/CLI/cli_config_wireless_ap_profile.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/CLI/cli_show_running_config_wireless.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/CLI/cli_show_wireless_ap.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/CLI/cli_show_wireless_ap_profile.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/ws_channel_power/channel_adjustment.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wsap_conf/wsap_conf.c</p>
-<p>Revision: 122848<br>Author: liuxingj<br>Date: 2019年9月10日 15:46:44<br>Message:<br>FIX|[yellowstone3.5]在channel判断条件中，新增若干室外AP的型号，新增并维护最新的AP型号列表与Vendor保持一致<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/INCLUDE/public/hwDrv.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_profile_api.c</p>
-<p>Revision: 122707<br>Author: liuxingj<br>Date: 2019年9月4日 19:41:15<br>Message:<br>FIX|[RDM55466]【质量整改】【国家码】修改YS国家码，和华为信道标准进行全样比对，修改AC实际AP状态显示，修改radio关闭问题，增加AC后台状态显示对802.11ac的支持，增加部分国家对室内室外APhwtype不同造成的信道差异进行适应性匹配，修改80M频宽下信道的运算逻辑，增加80M频宽信道的正常显示<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/INCLUDE/wlan-public/common/wireless_defaultconfig.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/include/wdm_country_code.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/country_code.pl<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/reg_domains.conf<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_profile_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_country_code.c</p>
-<p>Revision: 122136<br>Author: liuxingj<br>Date: 2019年8月9日 17:08:52<br>Message:<br>FIX|[RDM55275]【开局】air-match template 初始化 template 1修改默认值为5<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/INCLUDE/wlan-public/common/wireless_commdefs.h</p>
-<p>Revision: 122061<br>Author: liuxingj<br>Date: 2019年8月7日 10:16:06<br>Message:<br>FIX|[yellowstone3.5]AC上增加AP射频灯开关控制实现，实现与页面交互<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/include/ws_manageserver.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/ws_manage_server/ws_manageserver.c</p>
-<p>Revision: 122050<br>Author: liuxingj<br>Date: 2019年8月6日 15:40:41<br>Message:<br>FIX|[RDM53942]【开局】修改印尼国家ID国家码对应的信道和频宽<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_country_code.c</p>
-]]></content>
-      <tags>
-        <tag>Job</tag>
-        <tag>Personal</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux下MySQL的ODBC配置</title>
-    <url>/2020/07/20/MySQL_ODBC%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>在<strong>安装</strong>配置之前，需要先大概了解一下 MyODBC 的架构，MyODBC 体系结构建立在 5 个组件上，如下图所示：<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggwm30f77xj30a20b3aah.jpg" alt=""></p>
-<a id="more"></a>
-
-<p><strong>Driver Manager</strong><br>负责管理应用程序和驱动程序间的通信，主要功能包括：解析 DSN (数据源名称，ODBC 的数据源名称在 odbc.ini 文件中配置)，加载和卸载驱动程序，处理 ODBC 调用，将其传递给驱动程序。</p>
-<p><strong>ODBC.INI</strong><br>odbc.ini 是 ODBC 配置文件，记录了连接到服务器所需的驱动信息和数据库信息。Driver Manager 将使用它来确定加载哪个驱动程序（使用数据源名 DSN ）。驱动程序将根据指定的DSN来读取连接参数。</p>
-<p><strong>Connector/ODBC(MyODBC驱动程序)</strong><br>实现 ODBC API 所提供的功能，它负责处理 ODBC 函数调用，将 SQL 请求提交给 MySQL 服务器，并将结果返回给应用程序。</p>
-<p>在 Linux 下配置 mysql ODBC 需要有以下步骤：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 安装 Driver Manager，本案例使用 unixODBC 来作为 Driver Manager。</span><br><span class="line">2. 安装 MySQL 驱动程序，本案例使用 Connector&#x2F;ODBC。</span><br><span class="line">3. 配置 ODBC.INI</span><br></pre></td></tr></table></figure>
-
-<h2 id="第一步：下载安装包"><a href="#第一步：下载安装包" class="headerlink" title="第一步：下载安装包"></a>第一步：下载安装包</h2><p>需要下载两个安装包 <code>unixODBC 2.3.0</code> 和 <code>mysql Connector/ODBC 3.51</code><br>unixODBC 源码包：<code>ftp://ftp.unixodbc.org/pub/unixODBC/unixODBC-2.3.0.tar.gz</code><br>mysql Connector/ODBC 源码包：<code>http://dev.mysql.com/downloads/connector/odbc/3.51.html%23downloads</code><br>选择</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">版本：5.1.11</span><br><span class="line">平台：Oracle&amp;Red Hat Linux6</span><br><span class="line">下载：mysql-connector-odbc-5.1.11-linux-el6-x86-64bit.tar.gz</span><br></pre></td></tr></table></figure>
-
-<h2 id="第二步：安装-unixODBC"><a href="#第二步：安装-unixODBC" class="headerlink" title="第二步：安装 unixODBC"></a>第二步：安装 unixODBC</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -zxvf unixODBC-2.3.4.tar.gz</span><br><span class="line"><span class="built_in">cd</span> unixODBC-2.3.4</span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/unixODBC-2.3.4 --includedir=/usr/include --libdir=/usr/<span class="built_in">local</span>/lib -bindir=/usr/bin --sysconfdir=/usr/<span class="built_in">local</span>/etc</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<p>安装完成后,可以在/usr/bin目录下有下面的文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-rwxr-xr-x 1 root root      75312 Nov 1 16:22 odbcinst</span><br><span class="line">-rwxr-xr-x 1 root root      10922 Nov 1 16:22 odbc_config</span><br><span class="line">-rwxr-xr-x 1 root root      37650 Nov 1 16:22 iusql</span><br><span class="line">-rwxr-xr-x 1 root root      44400 Nov 1 16:22 isql</span><br><span class="line">-rwxr-xr-x 1 root root      95903 Nov 1 16:22 dltest</span><br></pre></td></tr></table></figure>
-<p>在/usr/local/lib目录下面有这些文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-rwxr-xr-x 1 root root 422955 Nov 1 16:22 libodbcinst.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     20 Nov 1 16:22 libodbcinst.so.1 -&gt; libodbcinst.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     20 Nov 1 16:22 libodbcinst.so -&gt; libodbcinst.so.1.0.0</span><br><span class="line">-rwxr-xr-x 1 root root    981 Nov 1 16:22 libodbcinst.la</span><br><span class="line">-rwxr-xr-x 1 root root 169157 Nov 1 16:22 libodbc.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     16 Nov 1 16:22 libodbc.so.1 -&gt; libodbc.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     16 Nov 1 16:22 libodbc.so -&gt; libodbc.so.1.0.0</span><br><span class="line">-rwxr-xr-x 1 root root    957 Nov 1 16:22 libodbc.la</span><br><span class="line">-rwxr-xr-x 1 root root 489405 Nov 1 16:22 libodbccr.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     18 Nov 1 16:22 libodbccr.so.1 -&gt; libodbccr.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     18 Nov 1 16:22 libodbccr.so -&gt; libodbccr.so.1.0.0</span><br><span class="line">-rwxr-xr-x 1 root root    969 Nov 1 16:22 libodbccr.la</span><br></pre></td></tr></table></figure>
-
-<h2 id="第三步：安装-mysql-Connector-ODBC"><a href="#第三步：安装-mysql-Connector-ODBC" class="headerlink" title="第三步：安装 mysql Connector/ODBC"></a>第三步：安装 mysql Connector/ODBC</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -zxvf mysql-connector-odbc-5.1.11-linux-el6-x86-64bit.tar.gz</span><br><span class="line"><span class="built_in">cd</span> mysql-connector-odbc-5.1.11-linux-el6-x86-64bit/lib</span><br><span class="line">cp libmyodbc5.so /usr/<span class="built_in">local</span>/lib</span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line"><span class="built_in">cd</span> bin</span><br></pre></td></tr></table></figure>
-<p><strong>注册驱动</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./myodbc-installer -d -a -n <span class="string">"MySQL ODBC 5.1 Driver"</span> -t <span class="string">"DRIVER=/usr/local/lib/libmyodbc5.so;SETUP=/usr/local/lib/libmyodbc5.so"</span></span><br><span class="line"></span><br><span class="line">//odbc 5.3及以上是libmyodbc5a.so和libmyodbc5w.so。其中c5a是Ansi版，c5w是Unicode版</span><br></pre></td></tr></table></figure>
-<p>假如注册的时候报错找不到libodbc.so.2,但是之前确实装成功了unixodbc,可能是因为系统找不到/usr/local/lib库目录，需要添加系统搜索库目录路径：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vi /etc/ld.so.conf</span><br><span class="line"></span><br><span class="line">//将/usr/<span class="built_in">local</span>/lib直接添加在配置文件里</span><br><span class="line"></span><br><span class="line">ldconfig</span><br><span class="line"></span><br><span class="line">//重新缓存配置文件(为了加快程序执行时对共享库的定位速度，避免使用搜索路径查找共享库的低效率，所以是直接读取库列表文件/etc/ld.so.cache缓存文件并从中进行搜索的)</span><br></pre></td></tr></table></figure>
-
-<h2 id="第四步：配置-ODBC-INI"><a href="#第四步：配置-ODBC-INI" class="headerlink" title="第四步：配置 ODBC.INI"></a>第四步：配置 ODBC.INI</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">odbcinst -j</span><br><span class="line"></span><br><span class="line">unixODBC 2.3.1</span><br><span class="line">DRIVERS............: /etc/odbcinst.ini</span><br><span class="line">SYSTEM DATA SOURCES: /etc/odbc.ini</span><br><span class="line">FILE DATA SOURCES..: /etc/ODBCDataSources</span><br><span class="line">USER DATA SOURCES..: /root/.odbc.ini</span><br><span class="line">SQLULEN Size.......: 8</span><br><span class="line">SQLLEN Size........: 8</span><br><span class="line">SQLSETPOSIROW Size.: 8</span><br></pre></td></tr></table></figure>
-<p>编辑文件<code>/etc/odbc.ini</code>，把下面的内容加上去。不同版本<code>mysql</code>驱动的配置方法，有细微差异。此处使用的版本是<code>mysql Connector 3.51</code>。</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[mysqlDSN]</span></span><br><span class="line"><span class="attr">Driver</span>      = /usr/local/lib/libmyodbc5.so</span><br><span class="line"><span class="attr">Description</span> = MyODBC <span class="number">5</span> Driver DSN</span><br><span class="line"><span class="attr">SERVER</span>      = <span class="number">172.31</span>.<span class="number">108.133</span></span><br><span class="line"><span class="attr">PORT</span>        = <span class="number">3306</span></span><br><span class="line"><span class="attr">USER</span>        = root</span><br><span class="line"><span class="attr">Password</span>    = <span class="number">123456</span></span><br><span class="line"><span class="attr">Database</span>    = PM</span><br><span class="line"><span class="attr">OPTION</span>      = <span class="number">3</span></span><br><span class="line"><span class="attr">charset</span>     = UTF8</span><br></pre></td></tr></table></figure>
-
-<h2 id="第五步：设置环境变量"><a href="#第五步：设置环境变量" class="headerlink" title="第五步：设置环境变量"></a>第五步：设置环境变量</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> DBCINI=/usr/<span class="built_in">local</span>/etc/odbc.ini</span><br><span class="line"><span class="built_in">export</span> DBCSYSINI=/usr/<span class="built_in">local</span>/etc</span><br></pre></td></tr></table></figure>
-
-<h2 id="第六步：重启电脑"><a href="#第六步：重启电脑" class="headerlink" title="第六步：重启电脑"></a>第六步：重启电脑</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
-
-<h2 id="第七步：测试ODBC配置是否成功"><a href="#第七步：测试ODBC配置是否成功" class="headerlink" title="第七步：测试ODBC配置是否成功"></a>第七步：测试ODBC配置是否成功</h2><p>isql 是 unixODBC 带的一个 ODBC 客户端访问工具，使用<code>isql +数据源名</code>来访问目标数据库。如果 ODBC 配置正确，会显示下面的界面。在<code>SQL&gt;</code>提示符下输入 SQL 语句查询数据库。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">isql mysqlDSN</span><br><span class="line"></span><br><span class="line">+---------------------------------------+</span><br><span class="line">| Connected!                           |</span><br><span class="line">|                                      |</span><br><span class="line">| sql-statement                        |</span><br><span class="line">| <span class="built_in">help</span> [tablename]                     |</span><br><span class="line">| quit                                 |</span><br><span class="line">|                                      |</span><br><span class="line">+---------------------------------------+</span><br></pre></td></tr></table></figure>
-
-<h2 id="遇到的问题："><a href="#遇到的问题：" class="headerlink" title="遇到的问题："></a>遇到的问题：</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>在第三步安装 mysql connector/ODBC 中的注册驱动中，我总是会出现<code>./myodbc-installer: error while loading shared libraries: libodbc.so.2: cannot open shared object file: No such file or directory.</code>这种错误，后来发现错误有两点：</p>
-<ol>
-<li>我下载的是 mysql-connector-5.3.6 ，可能版本比较高，而我初次下载用的是unixODBC-2.3.0，版本较低，里面没有 libodbc.so.2 这个库文件（可以用<code>find / -name libodbc.so.2</code>来查）。后来下载了一个 unixODBC-2.3.4 就好了。</li>
-<li>改了版本之后，我发现还是有这个错误，在网上查了下，说是程序查找默认路径为 /lib 和 /usr/lib，而我的 libmyodbc5w.so 和 libmmyodbc5a.so 都在 /usr/local/lib 中，所以查不到，所以需要设置一下共享库路径，以下我贴一下网上查的内容：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat /etc/ld.so.conf</span><br><span class="line">include ld.so.conf.d/*.conf</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"/usr/local/lib"</span> &gt;&gt; /etc/ld.so.conf</span><br><span class="line">ldconfig</span><br></pre></td></tr></table></figure>
-
-<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>如果共享库文件安装到了其它”非 /lib 或 /usr/lib “ 目录下，但是又不想在 /etc/ld.so.conf 中加路径(或者是没有权限加路径)。那可以 export 一个全局变量 LD_LIBRARY_PATH ，然后运行程序的时候就会去这个目录中找共享库。</p>
-<p>LD_LIBRARY_PATH 的意思是告诉 loader 在哪些目录中可以找到共享库。</p>
-<p>可以设置多个搜索目录，这些目录之间用冒号分隔开。</p>
-<p>比如：</p>
-<p>安装了一个 mysql 到 /usr/local/mysql 目录下，其中有一大堆库文件在 /usr/local/mysql/lib 下面，则可以在 .bashrc 或 .bash_profile 或 shell 里加入以下语句即可：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/usr/<span class="built_in">local</span>/mysql/lib:<span class="variable">$LD_LIBRARY_PATH</span></span><br></pre></td></tr></table></figure>
-
-<p>一般来讲这只是一种临时的解决方案，在没有权限或临时需要的时候使用。</p>
-<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p>如果程序需要的库文件比系统目前存在的村文件版本低，可以做一个链接<br>比如：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">error while loading shared libraries: libncurses.so.4: cannot open shared</span><br><span class="line">object file: No such file or directory</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ls /usr/lib/libncu*</span><br><span class="line">/usr/lib/libncurses.a   /usr/lib/libncurses.so.5</span><br><span class="line">/usr/lib/libncurses.so  /usr/lib/libncurses.so.5.3</span><br></pre></td></tr></table></figure>
-<p>可见虽然没有 libncurses.so.4，但有 libncurses.so.5，是可以向下兼容的<br>建一个链接就好了</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ln -s  /usr/lib/libncurses.so.5.3  /usr/lib/libncurses.so.4</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><p>isql 连接数据库失败，重新注册驱动：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/usr/bin/myodbc-installer  -d -a -n <span class="string">"MySQL_UNICODE"</span>  -t <span class="string">"DRIVER=/usr/lib64/libmyodbc8w.so;SETUP=/usr/lib64/libmyodbc8w.so"</span></span><br><span class="line">/usr/bin/myodbc-installer  -d -a -n <span class="string">"MySQL_ANSI"</span>  -t <span class="string">"DRIVER=/usr/lib64/libmyodbc8a.so;SETUP=/usr/lib64/libmyodbc8a.so"</span></span><br></pre></td></tr></table></figure>
-<p>使用 rpm 命令查看 rpm 包的内容</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rpm -qpl xxx.rpm</span><br></pre></td></tr></table></figure>
-<p>可以看到<code>mysql-connector-odbc-8.0.20-1.el7.x86_64.rpm</code>的包内容</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">warning: mysql-connector-odbc-8.0.20-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY</span><br><span class="line">/usr/bin/myodbc-installer</span><br><span class="line">/usr/lib64/libmyodbc8a.so</span><br><span class="line">/usr/lib64/libmyodbc8w.so</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20/ChangeLog</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20/INFO_BIN</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20/INFO_SRC</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20/LICENSE.txt</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20/README.txt</span><br></pre></td></tr></table></figure>
-<p>可以知道 rpm 包 安装的时候各个基础件的安装位置。</p>
-]]></content>
-      <tags>
-        <tag>MySQL</tag>
-        <tag>ODBC</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MQTT协议</title>
     <url>/2019/07/12/MQTT%E5%8D%8F%E8%AE%AE/</url>
     <content><![CDATA[<h1 id="MQTT协议"><a href="#MQTT协议" class="headerlink" title="MQTT协议"></a>MQTT协议</h1><h2 id="MQTT协议的概念"><a href="#MQTT协议的概念" class="headerlink" title="MQTT协议的概念"></a>MQTT协议的概念</h2><blockquote>
@@ -532,6 +352,78 @@
 ]]></content>
       <tags>
         <tag>protocol</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2019.5——2019.10工作总结</title>
+    <url>/2019/10/18/5%E6%9C%886%E6%9C%88%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="工作总结"><a href="#工作总结" class="headerlink" title="工作总结"></a><center><strong>工作总结</strong></center></h1><h2 id="阶段一：基础知识回顾"><a href="#阶段一：基础知识回顾" class="headerlink" title="阶段一：基础知识回顾"></a>阶段一：基础知识回顾</h2><h3 id="gt-C语言基础语法回顾："><a href="#gt-C语言基础语法回顾：" class="headerlink" title="&gt; C语言基础语法回顾："></a>&gt; C语言基础语法回顾：</h3><blockquote>
+<p>变更代码习惯，转语言——“倒时差”</p>
+</blockquote>
+<h4 id="gt-相关留存资料："><a href="#gt-相关留存资料：" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4><div class="pdfobject-container" data-target="https://drive.google.com/file/d/1644m_lW65hk8UBkXqBdFv61zy-y17bBq/preview" data-height="500px"></div>
+
+<a id="more"></a>
+
+<h3 id="gt-计算机网络基础知识回顾："><a href="#gt-计算机网络基础知识回顾：" class="headerlink" title="&gt; 计算机网络基础知识回顾："></a>&gt; 计算机网络基础知识回顾：</h3><blockquote>
+<p>回顾计算机网络结构，重点回顾计算网络网络层传输层应用层的工作相关知识，并进行总结。</p>
+</blockquote>
+<h4 id="gt-相关留存资料：-1"><a href="#gt-相关留存资料：-1" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4><div class="pdfobject-container" data-target="https://drive.google.com/file/d/1MMx2EWgg-tMt0YcJeQkaBbQkAXvVYVJT/preview" data-height="500px"></div>
+
+<h3 id="gt-Unix环境高级编程："><a href="#gt-Unix环境高级编程：" class="headerlink" title="&gt; Unix环境高级编程："></a>&gt; Unix环境高级编程：</h3><blockquote>
+<p>学习网络编程，Linux环境下C语言编程，学习Socket编程相关知识。</p>
+</blockquote>
+<h4 id="gt-相关留存资料：-2"><a href="#gt-相关留存资料：-2" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4><blockquote>
+<p>Github Repository：    <a href="https://github.com/liuxing1Tec/C_Learning/tree/master/SOCKET%E7%BC%96%E7%A8%8B" target="_blank" rel="noopener"><strong>C_Learning/SOCKET编程</strong></a></p>
+</blockquote>
+<h2 id="阶段二：网络编程实战"><a href="#阶段二：网络编程实战" class="headerlink" title="阶段二：网络编程实战"></a>阶段二：网络编程实战</h2><h3 id="gt-网络聊天客户端的开发："><a href="#gt-网络聊天客户端的开发：" class="headerlink" title="&gt; 网络聊天客户端的开发："></a>&gt; 网络聊天客户端的开发：</h3><blockquote>
+<p>Socket编程实战。</p>
+</blockquote>
+<h4 id="gt-相关留存资料：-3"><a href="#gt-相关留存资料：-3" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4><blockquote>
+<p>Github Repository：    <a href="https://github.com/liuxing1Tec/Unix_chatroom" target="_blank" rel="noopener"><strong>Unix_chatroom</strong></a></p>
+</blockquote>
+<h3 id="gt-网络开发复盘："><a href="#gt-网络开发复盘：" class="headerlink" title="&gt; 网络开发复盘："></a>&gt; 网络开发复盘：</h3><blockquote>
+<p>开发流程总结。</p>
+</blockquote>
+<h4 id="gt-相关留存资料：-4"><a href="#gt-相关留存资料：-4" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4><blockquote>
+<p>客户端开发流程以源文件：    <a href="https://github.com/liuxing1Tec/C_Learning/blob/master/SOCKET%E7%BC%96%E7%A8%8B/select_echo/src/echocli.c" target="_blank" rel="noopener"><strong>SOCKET编程/select_echo/src/echocli.c</strong></a>，为例<br>服务器端开发流程以源文件：    <a href="https://github.com/liuxing1Tec/C_Learning/blob/master/SOCKET%E7%BC%96%E7%A8%8B/select_echo/src/echosrv.c" target="_blank" rel="noopener"><strong>SOCKET编程/select_echo/src/echosrv.c</strong></a>，为例</p>
+</blockquote>
+<h2 id="阶段三：补充性学习：查漏补缺"><a href="#阶段三：补充性学习：查漏补缺" class="headerlink" title="阶段三：补充性学习：查漏补缺"></a>阶段三：补充性学习：查漏补缺</h2><h3 id="gt-C语言深入学习："><a href="#gt-C语言深入学习：" class="headerlink" title="&gt; C语言深入学习："></a>&gt; C语言深入学习：</h3><blockquote>
+<p>C语言底层知识总结（堆栈、结构体、作用域、malloc()以及free()机制等）。</p>
+</blockquote>
+<h4 id="gt-相关留存资料：-5"><a href="#gt-相关留存资料：-5" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4><div class="pdfobject-container" data-target="https://drive.google.com/file/d/1hC78fv6IeNWt6U2EEI7muiUL-xUUW58c/preview" data-height="500px"></div>
+
+<h3 id="gt-项目开发流程深入学习："><a href="#gt-项目开发流程深入学习：" class="headerlink" title="&gt; 项目开发流程深入学习："></a>&gt; 项目开发流程深入学习：</h3><blockquote>
+<p>项目开发流程总结（C项目管理、GCC、GDB等）。</p>
+</blockquote>
+<h4 id="gt-相关留存资料：-6"><a href="#gt-相关留存资料：-6" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4><div class="pdfobject-container" data-target="https://drive.google.com/file/d/1HWIYnT_FpXFvE0wjUFZTvritoOo9IJVY/preview" data-height="500px"></div>
+
+<h3 id="gt-AC-AP网络知识学习："><a href="#gt-AC-AP网络知识学习：" class="headerlink" title="&gt; AC/AP网络知识学习："></a>&gt; AC/AP网络知识学习：</h3><blockquote>
+<p>AC/AP相关知识了解。</p>
+</blockquote>
+<h4 id="gt-相关留存资料：-7"><a href="#gt-相关留存资料：-7" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4><div class="pdfobject-container" data-target="https://drive.google.com/file/d/1ClhF03htEg2MFs4S_tFv6znQeFdad3fA/preview" data-height="500px"></div>
+
+
+<h2 id="阶段四：参与项目"><a href="#阶段四：参与项目" class="headerlink" title="阶段四：参与项目"></a>阶段四：参与项目</h2><p>Revision: 122883<br>Author: liuxingj<br>Date: 2019年9月11日 17:48:49<br>Message:<br>FIX|[RDM55769]【质量整改】【国家码】解除了室外类型下会导致radio1信道失踪的情况<br>FIX|[RDM55771]【质量整改】【国家码】修改配置文件，已成功匹配80M频宽下的信道列表<br>FIX|[yellowstone3.5]在channel判断条件中，新增若干室外AP的型号，新增并维护最新的AP型号列表与Vendor保持一致<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/INCLUDE/public/hwDrv.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/LIB/vendorCfg.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/CLI/cli_config_wireless_ap_profile.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/CLI/cli_show_running_config_wireless.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/CLI/cli_show_wireless_ap.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/CLI/cli_show_wireless_ap_profile.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/include/wdm_country_code.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/reg_domains.conf<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_profile_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm_country_code.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/ws_channel_power/channel_adjustment.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wsap_conf/wsap_conf.c</p>
+<p>Revision: 122712<br>Author: liuxingj<br>Date: 2019年9月4日 19:50:56<br>Message:<br>FIX|[RDM55466]【质量整改】【国家码】修改YS国家码，和华为信道标准进行全样比对，修改AC实际AP状态显示，修改radio关闭问题，增加AC后台状态显示对802.11ac的支持，增加部分国家对室内室外APhwtype不同造成的信道差异进行适应性匹配，修改80M频宽下信道的运算逻辑，增加80M频宽信道的正常显示<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/INCLUDE/wlan-public/common/wireless_defaultconfig.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/include/wdm_country_code.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/country_code.pl<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/reg_domains.conf<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_profile_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm_country_code.c</p>
+<p>Revision: 122139<br>Author: liuxingj<br>Date: 2019年8月9日 17:35:36<br>Message:<br>FIX|[RDM55275]【开局】air-match template 初始化 template 1修改默认值为5<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/INCLUDE/wlan-public/common/wireless_commdefs.h</p>
+<p>Revision: 122132<br>Author: liuxingj<br>Date: 2019年8月9日 16:48:33<br>Message:<br>FIX|[yellowstone3.5]AC上增加AP射频灯开关控制实现，实现与页面交互<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/include/ws_manageserver.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/ws_manage_server/ws_manageserver.c</p>
+<p>Revision: 122131<br>Author: liuxingj<br>Date: 2019年8月9日 16:48:17<br>Message:<br>FIX|[RDM53942]【开局】修改印尼国家ID国家码对应的信道和频宽<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm_country_code.c</p>
+<p>Revision: 123404<br>Author: liuxingj<br>Date: 2019年10月14日 15:34:01<br>Message:<br>FIX|[yellowstone3.5-cloud]还原NetworkIDGet接口命名<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/api/wdm_network_api.h</p>
+<p>Revision: 123403<br>Author: liuxingj<br>Date: 2019年10月14日 15:18:37<br>Message:<br>FIX|[yellowstone3.5-cloud]还原NetworkIDGet接口命名<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/application/cpcm/cpcm.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/application/cpim/captive_portal_config.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/application/cpim/cpim_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/cli/cli_show_running_config_cp.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/api/wdm_network_api.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm_network_api.c</p>
+<p>Revision: 123396<br>Author: liuxingj<br>Date: 2019年10月14日 13:50:52<br>Message:<br>FIX|[yellowstone3.5-cloud]新增cloud-mode调试命令行和任务代码文件<br>FIX|[yellowstone3.5-cloud]新增Network下UUID命令行和任务代码文件<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/application/cpcm/cpcm.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/application/cpim/captive_portal_config.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/application/cpim/cpim_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/cli/cli_show_running_config_cp.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/api/wdm_network_api.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/common/wireless_commdefs.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/common/wireless_defaultconfig.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/porting/usmdb_wdm_network_api.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/strlib_wireless_cli.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/CLI/cli_config_wireless_network.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/CLI/cli_debug_wireless_extend.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/CLI/cli_show_running_config_wireless.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/CLI/clicommands_wireless.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/CLI/strlib_wireless_cli.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/USMDB/usmdb_wdm_network.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/include/wdm.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_profile_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm_network_api.c</p>
+<p>Revision: 123060<br>Author: liuxingj<br>Date: 2019年9月24日 14:13:32<br>Message:<br>FIX|[yellowstone3.5-cloud]新增cloud-mode中ws_cloudmode.h文件<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/include/ws_cloudmode.h</p>
+<p>Revision: 122881<br>Author: liuxingj<br>Date: 2019年9月11日 15:06:28<br>Message:<br>FIX|[RDM55769]【质量整改】【国家码】解除了室外类型下会导致radio1信道失踪的情况<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_profile_api.c</p>
+<p>Revision: 122880<br>Author: liuxingj<br>Date: 2019年9月11日 15:04:44<br>Message:<br>FIX|[RDM55771]【质量整改】【国家码】修改配置文件，已成功匹配80M频宽下的信道列表<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/include/wdm_country_code.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/reg_domains.conf<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_country_code.c</p>
+<p>Revision: 122854<br>Author: liuxingj<br>Date: 2019年9月10日 17:02:33<br>Message:<br>FIX|[yellowstone3.5]在channel判断条件中，新增若干室外AP的型号，新增并维护最新的AP型号列表与Vendor保持一致<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/LIB/vendorCfg.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/CLI/cli_config_wireless_ap_profile.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/CLI/cli_show_running_config_wireless.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/CLI/cli_show_wireless_ap.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/CLI/cli_show_wireless_ap_profile.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/ws_channel_power/channel_adjustment.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wsap_conf/wsap_conf.c</p>
+<p>Revision: 122848<br>Author: liuxingj<br>Date: 2019年9月10日 15:46:44<br>Message:<br>FIX|[yellowstone3.5]在channel判断条件中，新增若干室外AP的型号，新增并维护最新的AP型号列表与Vendor保持一致<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/INCLUDE/public/hwDrv.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_profile_api.c</p>
+<p>Revision: 122707<br>Author: liuxingj<br>Date: 2019年9月4日 19:41:15<br>Message:<br>FIX|[RDM55466]【质量整改】【国家码】修改YS国家码，和华为信道标准进行全样比对，修改AC实际AP状态显示，修改radio关闭问题，增加AC后台状态显示对802.11ac的支持，增加部分国家对室内室外APhwtype不同造成的信道差异进行适应性匹配，修改80M频宽下信道的运算逻辑，增加80M频宽信道的正常显示<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/INCLUDE/wlan-public/common/wireless_defaultconfig.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/include/wdm_country_code.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/country_code.pl<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/reg_domains.conf<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_profile_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_country_code.c</p>
+<p>Revision: 122136<br>Author: liuxingj<br>Date: 2019年8月9日 17:08:52<br>Message:<br>FIX|[RDM55275]【开局】air-match template 初始化 template 1修改默认值为5<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/INCLUDE/wlan-public/common/wireless_commdefs.h</p>
+<p>Revision: 122061<br>Author: liuxingj<br>Date: 2019年8月7日 10:16:06<br>Message:<br>FIX|[yellowstone3.5]AC上增加AP射频灯开关控制实现，实现与页面交互<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/include/ws_manageserver.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/ws_manage_server/ws_manageserver.c</p>
+<p>Revision: 122050<br>Author: liuxingj<br>Date: 2019年8月6日 15:40:41<br>Message:<br>FIX|[RDM53942]【开局】修改印尼国家ID国家码对应的信道和频宽<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_country_code.c</p>
+]]></content>
+      <tags>
+        <tag>Job</tag>
+        <tag>Personal</tag>
       </tags>
   </entry>
   <entry>
@@ -786,6 +678,217 @@
 <h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3>]]></content>
       <tags>
         <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL基本规范</title>
+    <url>/2018/12/11/MySQL%E5%9F%BA%E6%9C%AC%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<h1 id="一、基础规范"><a href="#一、基础规范" class="headerlink" title="一、基础规范"></a>一、基础规范</h1><ol>
+<li><strong>使用 INNODB 存储引擎</strong></li>
+<li><strong>表字符集使用 UTF8,如遇到EMOJ等表情符号的存储需求，可申请使用UTF8MB4字符集</strong></li>
+<li><strong>所有表都需要添加注释</strong></li>
+<li>单表数据量建字符类型居多的表建议控制在3000W以内，整型居多的表建议控制在5000W以内</li>
+<li><strong>不在数据库中存储图⽚、文件等大数据</strong></li>
+<li>禁止在线上做数据库压力测试</li>
+<li>禁⽌从测试、开发环境直连数据库</li>
+</ol>
+<h1 id="二、命名规范"><a href="#二、命名规范" class="headerlink" title="二、命名规范"></a>二、命名规范</h1><ol>
+<li><strong>库名表名字段名必须有固定的命名长度，12个字符以内</strong></li>
+<li>库名、表名、字段名禁⽌止使⽤用MySQL保留字,比如订单表不要直接叫做order</li>
+<li><strong>临时库、表名必须以tmp为前缀，并以⽇日期为后缀</strong></li>
+<li><strong>备份库、表必须以bak为前缀，并以日期为后缀</strong></li>
+</ol>
+<a id="more"></a>
+
+<h1 id="三、库、表、字段开发设计规范"><a href="#三、库、表、字段开发设计规范" class="headerlink" title="三、库、表、字段开发设计规范"></a>三、库、表、字段开发设计规范</h1><ol>
+<li><strong>建表默认5字段，主键、创建时间、修改时间。id、create_time、update_time</strong></li>
+<li>禁⽌使用分区表</li>
+<li>拆分大字段和访问频率低的字段，分离冷热数据</li>
+<li><strong>按日期时间分表需符合例如table_201401、table_20140422格式</strong></li>
+<li>采用合适的分库分表策略</li>
+<li><strong>用 DECIMAL 代替 FLOAT 和 DOUBLE 存储精确浮点数</strong></li>
+<li>越简单越好：将字符转化为数字、使用 TINYINT 来代替 ENUM 类型</li>
+<li>若使用ENUM类型，不允许修改默认值，只允许顺序添加</li>
+<li><strong>所有字段均定义为 NOT NULL</strong></li>
+<li><strong>INT类型固定占用 4 字节存储</strong></li>
+<li><strong>使用 timestamp 存储时间</strong></li>
+<li><strong>使用 VARBINARY 存储大小写敏感的变长字符串</strong></li>
+<li><strong>禁止在数据库中存储明文密码，把密码加密后存储</strong></li>
+<li>用好数值类型字段</li>
+<li><strong>存储ip最好用 int 存储而非 char(15)</strong></li>
+<li><strong>避免使用 NULL 字段</strong>， NULL 字段很难查询优化，NULL字段的索引需要额外空间，NULL字段的复合索引无效</li>
+<li><strong>少用 text/blob ， varchar 的性能会比 text 高很多，实在避免不了blob，请拆表</strong></li>
+<li><strong>数据库中不允许存储大文件，或者照片，可以将大对象放到磁盘上，数据库中存储它的路径</strong></li>
+</ol>
+<h1 id="四、索引规范"><a href="#四、索引规范" class="headerlink" title="四、索引规范"></a>四、索引规范</h1><p>1、索引的数量要控制：</p>
+<ul>
+<li><strong>单张表中索引数量不超过5个</strong></li>
+<li>单个索引中的字段数不超过5个</li>
+<li>对字符串使⽤用前缀索引，前缀索引长度不超过8个字符</li>
+<li>建议优先考虑前缀索引，必要时可添加伪列并建立索引</li>
+</ul>
+<p>2、<strong>主键准则</strong></p>
+<ul>
+<li><strong>表必须有主键</strong></li>
+<li><strong>不使用更新频繁的列作为主键</strong></li>
+<li><strong>尽量不选择字符串列作为主键</strong></li>
+<li>不使用 UUID MD5 HASH 这些作为主键(数值太离散了)</li>
+<li><strong>默认使⽤非空的唯一键作为主键</strong></li>
+<li><strong>建议选择自增或发号器</strong></li>
+</ul>
+<p>3、<strong>重要的SQL必须被索引</strong></p>
+<ul>
+<li>比如：UPDATE 、 DELETE 语句的 WHERE 条件列,ORDER BY 、 GROUPBY 、 DISTINCT 的字段</li>
+</ul>
+<p>4、多表JOIN的字段注意以下</p>
+<ul>
+<li>区分度最大的字段放在前面</li>
+<li>核⼼SQL优先考虑覆盖索引</li>
+<li>避免冗余和重复索引</li>
+<li>索引要综合评估数据密度和分布以及考虑查询和更新比例</li>
+</ul>
+<p>5、<strong>索引禁忌</strong></p>
+<ul>
+<li><strong>不在低基数列上建立索引，例如“性别”</strong></li>
+<li><strong>不在索引列进行数学运算和函数运算</strong></li>
+</ul>
+<p>6、<strong>尽量不使用外键</strong></p>
+<ul>
+<li>外键用来保护参照完整性，可在业务端实现</li>
+<li>对父表和子表的操作会相互影响，降低可用性</li>
+</ul>
+<p>7、索引命名：</p>
+<ul>
+<li><strong>非唯一索引必须以idx字段1字段2命名，唯一所以必须以 uniq 字段 1 字段 2 命名，索引名称必须全部小写</strong></li>
+</ul>
+<p>8、<strong>新建的唯一索引必须不能和主键重复</strong></p>
+<p>9、<strong>索引字段的默认值不能为 NULL ，要改为其他的 default 或者空。 NULL 非常影响索引的查询效率</strong></p>
+<p>10、反复查看与表相关的SQL</p>
+<ul>
+<li>符合最左前缀的特点建立索引。多条字段重复的语句，要修改语句条件字段的顺序，为其建立一条联合索引，减少索引数量</li>
+</ul>
+<p>11、<strong>能使用唯一索引就要使用唯一索引，提高查询效率</strong></p>
+<p>12、研发要经常使用 explain ，如果发现索引选择性差，必须让他们学会使用hint</p>
+<p>13、合理创建联合索引，(a，b，c) 相当于 (a) 、(a，b) 、(a，b，c)</p>
+<p>14、不对过长的VARCHAR字段建立索引。建议优先考虑添加CRC32或MD5伪列，并对伪列建立索引，减少索引长度，提高效率。</p>
+<h1 id="五、SQL规范"><a href="#五、SQL规范" class="headerlink" title="五、SQL规范"></a>五、SQL规范</h1><ol>
+<li>使用prepared statement，可以提升性能并避免SQL注入。</li>
+<li>减少与数据库交互次数，尽量采用批量提交SQL语句（INSERT INTO table （column1、column2、column3） VALUES(),(),()），不宜过多看字符个数500-1000即可。</li>
+<li>SQL语句尽可能简单，大的SQL想办法拆成小的SQL语句(充分利用QUERYCACHE和充分利用多核CPU)</li>
+<li>事务要简单，整个事务的时间长度不要太长</li>
+<li>避免使用触发器、函数、存储过程</li>
+<li>降低业务耦合度，为sacle out 、 sharding 留有余地</li>
+<li><strong>避免在数据库中进⾏数学运算(MySQL不擅长数学运算和逻辑判断)</strong></li>
+<li><strong>不要用 SELECT * ，查询哪几个字段就SELECT这几个字段</strong></li>
+<li><strong>SQL中使用到OR的改写为用IN()(OR的效率没有IN的效率高)</strong></li>
+<li>用in代替or,里面数字的个数建议控制在 1000 以内</li>
+<li><strong>LIMIT分页注意效率。</strong></li>
+<li><strong>使用 UNION ALL 替代 UNION</strong></li>
+<li>避免使用大表的 JOIN</li>
+<li><strong>使用 GROUP BY 分组、自动排序</strong></li>
+<li><strong>对数据的更新要打散后批量更新，不要一次更新太多数据</strong></li>
+<li><strong>减少与数据库的交互次数</strong></li>
+<li>注意使用性能分析工具</li>
+<li>SQL explain / showprofile / mySQLsla，尽量避免extra列出现：Using File Sort、Using Temporary。</li>
+<li><strong>SQL语句要求所有研发，SQL关键字全部是大写，每个词只允许有一个空格</strong></li>
+<li><strong>SQL语句不可以出现隐式转换，比如 SELECT id FROM TABLE WHERE id=’1’</strong></li>
+<li>IN条件里面的数据数量要少，我记得应该是500个以内，要学会使用EXIST代替IN，EXIST在一些场景查询会比IN快</li>
+<li><strong>能不用 NOT IN 就不用 NOTIN ，坑太多了。。会把空和NULL给查出来</strong></li>
+<li><strong>在SQL语句中，禁止使用前缀是%的LIKE</strong></li>
+<li><strong>不使用负向查询，如 NOT IN / LIKE</strong></li>
+<li><strong>关于分页查询：程序里建议合理使用分页来提高效率LIMIT，OFFSET较大要配合子查询使用</strong></li>
+<li><strong>禁止在数据库中跑大查询</strong></li>
+<li>使⽤预编译语句，只传参数，比传递SQL语句更高效；一次解析，多次使用；降低SQL注入概率</li>
+<li><strong>禁止使 ORDER BY RAND()</strong></li>
+<li>禁⽌单条SQL语句同时更新多个表</li>
+<li><strong>禁止使用%前导查询，例如：like “%abc”，无法利用到索引。</strong></li>
+<li><strong>禁止使用负向查询，例如 not in、!=、not like、&lt;&gt;。</strong></li>
+</ol>
+<h1 id="六、常见类型建议"><a href="#六、常见类型建议" class="headerlink" title="六、常见类型建议"></a>六、常见类型建议</h1><ul>
+<li><strong>小米帐号(user_id/mi_id):bigint</strong></li>
+<li><strong>订单号(order_id):bigint</strong></li>
+<li><strong>钱相关(price/money):bigint(看需求按分或者厘做单位)</strong></li>
+<li>sku()</li>
+<li>商品id</li>
+<li>货品id</li>
+<li><strong>微信open_id</strong></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux下MySQL的ODBC配置</title>
+    <url>/2020/07/20/MySQL_ODBC%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>在<strong>安装</strong>配置之前，需要先大概了解一下 MyODBC 的架构，MyODBC 体系结构建立在 5 个组件上，如下图所示：<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggwm30f77xj30a20b3aah.jpg" alt=""></p>
+<a id="more"></a>
+
+<p><strong>Driver Manager</strong><br>负责管理应用程序和驱动程序间的通信，主要功能包括：解析 DSN (数据源名称，ODBC 的数据源名称在 odbc.ini 文件中配置)，加载和卸载驱动程序，处理 ODBC 调用，将其传递给驱动程序。</p>
+<p><strong>ODBC.INI</strong><br>odbc.ini 是 ODBC 配置文件，记录了连接到服务器所需的驱动信息和数据库信息。Driver Manager 将使用它来确定加载哪个驱动程序（使用数据源名 DSN ）。驱动程序将根据指定的DSN来读取连接参数。</p>
+<p><strong>Connector/ODBC(MyODBC驱动程序)</strong><br>实现 ODBC API 所提供的功能，它负责处理 ODBC 函数调用，将 SQL 请求提交给 MySQL 服务器，并将结果返回给应用程序。</p>
+<p>在 Linux 下配置 mysql ODBC 需要有以下步骤：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 安装 Driver Manager，本案例使用 unixODBC 来作为 Driver Manager。</span><br><span class="line">2. 安装 MySQL 驱动程序，本案例使用 Connector&#x2F;ODBC。</span><br><span class="line">3. 配置 ODBC.INI</span><br></pre></td></tr></table></figure>
+
+<h2 id="第一步：下载安装包"><a href="#第一步：下载安装包" class="headerlink" title="第一步：下载安装包"></a>第一步：下载安装包</h2><p>需要下载两个安装包 <code>unixODBC 2.3.0</code> 和 <code>mysql Connector/ODBC 3.51</code><br>unixODBC 源码包：<code>ftp://ftp.unixodbc.org/pub/unixODBC/unixODBC-2.3.0.tar.gz</code><br>mysql Connector/ODBC 源码包：<code>http://dev.mysql.com/downloads/connector/odbc/3.51.html%23downloads</code><br>选择</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">版本：5.1.11</span><br><span class="line">平台：Oracle&amp;Red Hat Linux6</span><br><span class="line">下载：mysql-connector-odbc-5.1.11-linux-el6-x86-64bit.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h2 id="第二步：安装-unixODBC"><a href="#第二步：安装-unixODBC" class="headerlink" title="第二步：安装 unixODBC"></a>第二步：安装 unixODBC</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -zxvf unixODBC-2.3.4.tar.gz</span><br><span class="line"><span class="built_in">cd</span> unixODBC-2.3.4</span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/unixODBC-2.3.4 --includedir=/usr/include --libdir=/usr/<span class="built_in">local</span>/lib -bindir=/usr/bin --sysconfdir=/usr/<span class="built_in">local</span>/etc</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<p>安装完成后,可以在/usr/bin目录下有下面的文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-rwxr-xr-x 1 root root      75312 Nov 1 16:22 odbcinst</span><br><span class="line">-rwxr-xr-x 1 root root      10922 Nov 1 16:22 odbc_config</span><br><span class="line">-rwxr-xr-x 1 root root      37650 Nov 1 16:22 iusql</span><br><span class="line">-rwxr-xr-x 1 root root      44400 Nov 1 16:22 isql</span><br><span class="line">-rwxr-xr-x 1 root root      95903 Nov 1 16:22 dltest</span><br></pre></td></tr></table></figure>
+<p>在/usr/local/lib目录下面有这些文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-rwxr-xr-x 1 root root 422955 Nov 1 16:22 libodbcinst.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     20 Nov 1 16:22 libodbcinst.so.1 -&gt; libodbcinst.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     20 Nov 1 16:22 libodbcinst.so -&gt; libodbcinst.so.1.0.0</span><br><span class="line">-rwxr-xr-x 1 root root    981 Nov 1 16:22 libodbcinst.la</span><br><span class="line">-rwxr-xr-x 1 root root 169157 Nov 1 16:22 libodbc.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     16 Nov 1 16:22 libodbc.so.1 -&gt; libodbc.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     16 Nov 1 16:22 libodbc.so -&gt; libodbc.so.1.0.0</span><br><span class="line">-rwxr-xr-x 1 root root    957 Nov 1 16:22 libodbc.la</span><br><span class="line">-rwxr-xr-x 1 root root 489405 Nov 1 16:22 libodbccr.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     18 Nov 1 16:22 libodbccr.so.1 -&gt; libodbccr.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     18 Nov 1 16:22 libodbccr.so -&gt; libodbccr.so.1.0.0</span><br><span class="line">-rwxr-xr-x 1 root root    969 Nov 1 16:22 libodbccr.la</span><br></pre></td></tr></table></figure>
+
+<h2 id="第三步：安装-mysql-Connector-ODBC"><a href="#第三步：安装-mysql-Connector-ODBC" class="headerlink" title="第三步：安装 mysql Connector/ODBC"></a>第三步：安装 mysql Connector/ODBC</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -zxvf mysql-connector-odbc-5.1.11-linux-el6-x86-64bit.tar.gz</span><br><span class="line"><span class="built_in">cd</span> mysql-connector-odbc-5.1.11-linux-el6-x86-64bit/lib</span><br><span class="line">cp libmyodbc5.so /usr/<span class="built_in">local</span>/lib</span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line"><span class="built_in">cd</span> bin</span><br></pre></td></tr></table></figure>
+<p><strong>注册驱动</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./myodbc-installer -d -a -n <span class="string">"MySQL ODBC 5.1 Driver"</span> -t <span class="string">"DRIVER=/usr/local/lib/libmyodbc5.so;SETUP=/usr/local/lib/libmyodbc5.so"</span></span><br><span class="line"></span><br><span class="line">//odbc 5.3及以上是libmyodbc5a.so和libmyodbc5w.so。其中c5a是Ansi版，c5w是Unicode版</span><br></pre></td></tr></table></figure>
+<p>假如注册的时候报错找不到libodbc.so.2,但是之前确实装成功了unixodbc,可能是因为系统找不到/usr/local/lib库目录，需要添加系统搜索库目录路径：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vi /etc/ld.so.conf</span><br><span class="line"></span><br><span class="line">//将/usr/<span class="built_in">local</span>/lib直接添加在配置文件里</span><br><span class="line"></span><br><span class="line">ldconfig</span><br><span class="line"></span><br><span class="line">//重新缓存配置文件(为了加快程序执行时对共享库的定位速度，避免使用搜索路径查找共享库的低效率，所以是直接读取库列表文件/etc/ld.so.cache缓存文件并从中进行搜索的)</span><br></pre></td></tr></table></figure>
+
+<h2 id="第四步：配置-ODBC-INI"><a href="#第四步：配置-ODBC-INI" class="headerlink" title="第四步：配置 ODBC.INI"></a>第四步：配置 ODBC.INI</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">odbcinst -j</span><br><span class="line"></span><br><span class="line">unixODBC 2.3.1</span><br><span class="line">DRIVERS............: /etc/odbcinst.ini</span><br><span class="line">SYSTEM DATA SOURCES: /etc/odbc.ini</span><br><span class="line">FILE DATA SOURCES..: /etc/ODBCDataSources</span><br><span class="line">USER DATA SOURCES..: /root/.odbc.ini</span><br><span class="line">SQLULEN Size.......: 8</span><br><span class="line">SQLLEN Size........: 8</span><br><span class="line">SQLSETPOSIROW Size.: 8</span><br></pre></td></tr></table></figure>
+<p>编辑文件<code>/etc/odbc.ini</code>，把下面的内容加上去。不同版本<code>mysql</code>驱动的配置方法，有细微差异。此处使用的版本是<code>mysql Connector 3.51</code>。</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[mysqlDSN]</span></span><br><span class="line"><span class="attr">Driver</span>      = /usr/local/lib/libmyodbc5.so</span><br><span class="line"><span class="attr">Description</span> = MyODBC <span class="number">5</span> Driver DSN</span><br><span class="line"><span class="attr">SERVER</span>      = <span class="number">172.31</span>.<span class="number">108.133</span></span><br><span class="line"><span class="attr">PORT</span>        = <span class="number">3306</span></span><br><span class="line"><span class="attr">USER</span>        = root</span><br><span class="line"><span class="attr">Password</span>    = <span class="number">123456</span></span><br><span class="line"><span class="attr">Database</span>    = PM</span><br><span class="line"><span class="attr">OPTION</span>      = <span class="number">3</span></span><br><span class="line"><span class="attr">charset</span>     = UTF8</span><br></pre></td></tr></table></figure>
+
+<h2 id="第五步：设置环境变量"><a href="#第五步：设置环境变量" class="headerlink" title="第五步：设置环境变量"></a>第五步：设置环境变量</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> DBCINI=/usr/<span class="built_in">local</span>/etc/odbc.ini</span><br><span class="line"><span class="built_in">export</span> DBCSYSINI=/usr/<span class="built_in">local</span>/etc</span><br></pre></td></tr></table></figure>
+
+<h2 id="第六步：重启电脑"><a href="#第六步：重启电脑" class="headerlink" title="第六步：重启电脑"></a>第六步：重启电脑</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+<h2 id="第七步：测试ODBC配置是否成功"><a href="#第七步：测试ODBC配置是否成功" class="headerlink" title="第七步：测试ODBC配置是否成功"></a>第七步：测试ODBC配置是否成功</h2><p>isql 是 unixODBC 带的一个 ODBC 客户端访问工具，使用<code>isql +数据源名</code>来访问目标数据库。如果 ODBC 配置正确，会显示下面的界面。在<code>SQL&gt;</code>提示符下输入 SQL 语句查询数据库。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">isql mysqlDSN</span><br><span class="line"></span><br><span class="line">+---------------------------------------+</span><br><span class="line">| Connected!                           |</span><br><span class="line">|                                      |</span><br><span class="line">| sql-statement                        |</span><br><span class="line">| <span class="built_in">help</span> [tablename]                     |</span><br><span class="line">| quit                                 |</span><br><span class="line">|                                      |</span><br><span class="line">+---------------------------------------+</span><br></pre></td></tr></table></figure>
+
+<h2 id="遇到的问题："><a href="#遇到的问题：" class="headerlink" title="遇到的问题："></a>遇到的问题：</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>在第三步安装 mysql connector/ODBC 中的注册驱动中，我总是会出现<code>./myodbc-installer: error while loading shared libraries: libodbc.so.2: cannot open shared object file: No such file or directory.</code>这种错误，后来发现错误有两点：</p>
+<ol>
+<li>我下载的是 mysql-connector-5.3.6 ，可能版本比较高，而我初次下载用的是unixODBC-2.3.0，版本较低，里面没有 libodbc.so.2 这个库文件（可以用<code>find / -name libodbc.so.2</code>来查）。后来下载了一个 unixODBC-2.3.4 就好了。</li>
+<li>改了版本之后，我发现还是有这个错误，在网上查了下，说是程序查找默认路径为 /lib 和 /usr/lib，而我的 libmyodbc5w.so 和 libmmyodbc5a.so 都在 /usr/local/lib 中，所以查不到，所以需要设置一下共享库路径，以下我贴一下网上查的内容：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat /etc/ld.so.conf</span><br><span class="line">include ld.so.conf.d/*.conf</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"/usr/local/lib"</span> &gt;&gt; /etc/ld.so.conf</span><br><span class="line">ldconfig</span><br></pre></td></tr></table></figure>
+
+<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>如果共享库文件安装到了其它”非 /lib 或 /usr/lib “ 目录下，但是又不想在 /etc/ld.so.conf 中加路径(或者是没有权限加路径)。那可以 export 一个全局变量 LD_LIBRARY_PATH ，然后运行程序的时候就会去这个目录中找共享库。</p>
+<p>LD_LIBRARY_PATH 的意思是告诉 loader 在哪些目录中可以找到共享库。</p>
+<p>可以设置多个搜索目录，这些目录之间用冒号分隔开。</p>
+<p>比如：</p>
+<p>安装了一个 mysql 到 /usr/local/mysql 目录下，其中有一大堆库文件在 /usr/local/mysql/lib 下面，则可以在 .bashrc 或 .bash_profile 或 shell 里加入以下语句即可：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/usr/<span class="built_in">local</span>/mysql/lib:<span class="variable">$LD_LIBRARY_PATH</span></span><br></pre></td></tr></table></figure>
+
+<p>一般来讲这只是一种临时的解决方案，在没有权限或临时需要的时候使用。</p>
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p>如果程序需要的库文件比系统目前存在的村文件版本低，可以做一个链接<br>比如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">error while loading shared libraries: libncurses.so.4: cannot open shared</span><br><span class="line">object file: No such file or directory</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ls /usr/lib/libncu*</span><br><span class="line">/usr/lib/libncurses.a   /usr/lib/libncurses.so.5</span><br><span class="line">/usr/lib/libncurses.so  /usr/lib/libncurses.so.5.3</span><br></pre></td></tr></table></figure>
+<p>可见虽然没有 libncurses.so.4，但有 libncurses.so.5，是可以向下兼容的<br>建一个链接就好了</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ln -s  /usr/lib/libncurses.so.5.3  /usr/lib/libncurses.so.4</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><p>isql 连接数据库失败，重新注册驱动：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/usr/bin/myodbc-installer  -d -a -n <span class="string">"MySQL_UNICODE"</span>  -t <span class="string">"DRIVER=/usr/lib64/libmyodbc8w.so;SETUP=/usr/lib64/libmyodbc8w.so"</span></span><br><span class="line">/usr/bin/myodbc-installer  -d -a -n <span class="string">"MySQL_ANSI"</span>  -t <span class="string">"DRIVER=/usr/lib64/libmyodbc8a.so;SETUP=/usr/lib64/libmyodbc8a.so"</span></span><br></pre></td></tr></table></figure>
+<p>使用 rpm 命令查看 rpm 包的内容</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rpm -qpl xxx.rpm</span><br></pre></td></tr></table></figure>
+<p>可以看到<code>mysql-connector-odbc-8.0.20-1.el7.x86_64.rpm</code>的包内容</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">warning: mysql-connector-odbc-8.0.20-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY</span><br><span class="line">/usr/bin/myodbc-installer</span><br><span class="line">/usr/lib64/libmyodbc8a.so</span><br><span class="line">/usr/lib64/libmyodbc8w.so</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20/ChangeLog</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20/INFO_BIN</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20/INFO_SRC</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20/LICENSE.txt</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20/README.txt</span><br></pre></td></tr></table></figure>
+<p>可以知道 rpm 包 安装的时候各个基础件的安装位置。</p>
+]]></content>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>ODBC</tag>
       </tags>
   </entry>
   <entry>
@@ -1046,257 +1149,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MySQL基本规范</title>
-    <url>/2018/12/11/MySQL%E5%9F%BA%E6%9C%AC%E8%A7%84%E8%8C%83/</url>
-    <content><![CDATA[<h1 id="一、基础规范"><a href="#一、基础规范" class="headerlink" title="一、基础规范"></a>一、基础规范</h1><ol>
-<li><strong>使用 INNODB 存储引擎</strong></li>
-<li><strong>表字符集使用 UTF8,如遇到EMOJ等表情符号的存储需求，可申请使用UTF8MB4字符集</strong></li>
-<li><strong>所有表都需要添加注释</strong></li>
-<li>单表数据量建字符类型居多的表建议控制在3000W以内，整型居多的表建议控制在5000W以内</li>
-<li><strong>不在数据库中存储图⽚、文件等大数据</strong></li>
-<li>禁止在线上做数据库压力测试</li>
-<li>禁⽌从测试、开发环境直连数据库</li>
-</ol>
-<h1 id="二、命名规范"><a href="#二、命名规范" class="headerlink" title="二、命名规范"></a>二、命名规范</h1><ol>
-<li><strong>库名表名字段名必须有固定的命名长度，12个字符以内</strong></li>
-<li>库名、表名、字段名禁⽌止使⽤用MySQL保留字,比如订单表不要直接叫做order</li>
-<li><strong>临时库、表名必须以tmp为前缀，并以⽇日期为后缀</strong></li>
-<li><strong>备份库、表必须以bak为前缀，并以日期为后缀</strong></li>
-</ol>
-<a id="more"></a>
-
-<h1 id="三、库、表、字段开发设计规范"><a href="#三、库、表、字段开发设计规范" class="headerlink" title="三、库、表、字段开发设计规范"></a>三、库、表、字段开发设计规范</h1><ol>
-<li><strong>建表默认5字段，主键、创建时间、修改时间。id、create_time、update_time</strong></li>
-<li>禁⽌使用分区表</li>
-<li>拆分大字段和访问频率低的字段，分离冷热数据</li>
-<li><strong>按日期时间分表需符合例如table_201401、table_20140422格式</strong></li>
-<li>采用合适的分库分表策略</li>
-<li><strong>用 DECIMAL 代替 FLOAT 和 DOUBLE 存储精确浮点数</strong></li>
-<li>越简单越好：将字符转化为数字、使用 TINYINT 来代替 ENUM 类型</li>
-<li>若使用ENUM类型，不允许修改默认值，只允许顺序添加</li>
-<li><strong>所有字段均定义为 NOT NULL</strong></li>
-<li><strong>INT类型固定占用 4 字节存储</strong></li>
-<li><strong>使用 timestamp 存储时间</strong></li>
-<li><strong>使用 VARBINARY 存储大小写敏感的变长字符串</strong></li>
-<li><strong>禁止在数据库中存储明文密码，把密码加密后存储</strong></li>
-<li>用好数值类型字段</li>
-<li><strong>存储ip最好用 int 存储而非 char(15)</strong></li>
-<li><strong>避免使用 NULL 字段</strong>， NULL 字段很难查询优化，NULL字段的索引需要额外空间，NULL字段的复合索引无效</li>
-<li><strong>少用 text/blob ， varchar 的性能会比 text 高很多，实在避免不了blob，请拆表</strong></li>
-<li><strong>数据库中不允许存储大文件，或者照片，可以将大对象放到磁盘上，数据库中存储它的路径</strong></li>
-</ol>
-<h1 id="四、索引规范"><a href="#四、索引规范" class="headerlink" title="四、索引规范"></a>四、索引规范</h1><p>1、索引的数量要控制：</p>
-<ul>
-<li><strong>单张表中索引数量不超过5个</strong></li>
-<li>单个索引中的字段数不超过5个</li>
-<li>对字符串使⽤用前缀索引，前缀索引长度不超过8个字符</li>
-<li>建议优先考虑前缀索引，必要时可添加伪列并建立索引</li>
-</ul>
-<p>2、<strong>主键准则</strong></p>
-<ul>
-<li><strong>表必须有主键</strong></li>
-<li><strong>不使用更新频繁的列作为主键</strong></li>
-<li><strong>尽量不选择字符串列作为主键</strong></li>
-<li>不使用 UUID MD5 HASH 这些作为主键(数值太离散了)</li>
-<li><strong>默认使⽤非空的唯一键作为主键</strong></li>
-<li><strong>建议选择自增或发号器</strong></li>
-</ul>
-<p>3、<strong>重要的SQL必须被索引</strong></p>
-<ul>
-<li>比如：UPDATE 、 DELETE 语句的 WHERE 条件列,ORDER BY 、 GROUPBY 、 DISTINCT 的字段</li>
-</ul>
-<p>4、多表JOIN的字段注意以下</p>
-<ul>
-<li>区分度最大的字段放在前面</li>
-<li>核⼼SQL优先考虑覆盖索引</li>
-<li>避免冗余和重复索引</li>
-<li>索引要综合评估数据密度和分布以及考虑查询和更新比例</li>
-</ul>
-<p>5、<strong>索引禁忌</strong></p>
-<ul>
-<li><strong>不在低基数列上建立索引，例如“性别”</strong></li>
-<li><strong>不在索引列进行数学运算和函数运算</strong></li>
-</ul>
-<p>6、<strong>尽量不使用外键</strong></p>
-<ul>
-<li>外键用来保护参照完整性，可在业务端实现</li>
-<li>对父表和子表的操作会相互影响，降低可用性</li>
-</ul>
-<p>7、索引命名：</p>
-<ul>
-<li><strong>非唯一索引必须以idx字段1字段2命名，唯一所以必须以 uniq 字段 1 字段 2 命名，索引名称必须全部小写</strong></li>
-</ul>
-<p>8、<strong>新建的唯一索引必须不能和主键重复</strong></p>
-<p>9、<strong>索引字段的默认值不能为 NULL ，要改为其他的 default 或者空。 NULL 非常影响索引的查询效率</strong></p>
-<p>10、反复查看与表相关的SQL</p>
-<ul>
-<li>符合最左前缀的特点建立索引。多条字段重复的语句，要修改语句条件字段的顺序，为其建立一条联合索引，减少索引数量</li>
-</ul>
-<p>11、<strong>能使用唯一索引就要使用唯一索引，提高查询效率</strong></p>
-<p>12、研发要经常使用 explain ，如果发现索引选择性差，必须让他们学会使用hint</p>
-<p>13、合理创建联合索引，(a，b，c) 相当于 (a) 、(a，b) 、(a，b，c)</p>
-<p>14、不对过长的VARCHAR字段建立索引。建议优先考虑添加CRC32或MD5伪列，并对伪列建立索引，减少索引长度，提高效率。</p>
-<h1 id="五、SQL规范"><a href="#五、SQL规范" class="headerlink" title="五、SQL规范"></a>五、SQL规范</h1><ol>
-<li>使用prepared statement，可以提升性能并避免SQL注入。</li>
-<li>减少与数据库交互次数，尽量采用批量提交SQL语句（INSERT INTO table （column1、column2、column3） VALUES(),(),()），不宜过多看字符个数500-1000即可。</li>
-<li>SQL语句尽可能简单，大的SQL想办法拆成小的SQL语句(充分利用QUERYCACHE和充分利用多核CPU)</li>
-<li>事务要简单，整个事务的时间长度不要太长</li>
-<li>避免使用触发器、函数、存储过程</li>
-<li>降低业务耦合度，为sacle out 、 sharding 留有余地</li>
-<li><strong>避免在数据库中进⾏数学运算(MySQL不擅长数学运算和逻辑判断)</strong></li>
-<li><strong>不要用 SELECT * ，查询哪几个字段就SELECT这几个字段</strong></li>
-<li><strong>SQL中使用到OR的改写为用IN()(OR的效率没有IN的效率高)</strong></li>
-<li>用in代替or,里面数字的个数建议控制在 1000 以内</li>
-<li><strong>LIMIT分页注意效率。</strong></li>
-<li><strong>使用 UNION ALL 替代 UNION</strong></li>
-<li>避免使用大表的 JOIN</li>
-<li><strong>使用 GROUP BY 分组、自动排序</strong></li>
-<li><strong>对数据的更新要打散后批量更新，不要一次更新太多数据</strong></li>
-<li><strong>减少与数据库的交互次数</strong></li>
-<li>注意使用性能分析工具</li>
-<li>SQL explain / showprofile / mySQLsla，尽量避免extra列出现：Using File Sort、Using Temporary。</li>
-<li><strong>SQL语句要求所有研发，SQL关键字全部是大写，每个词只允许有一个空格</strong></li>
-<li><strong>SQL语句不可以出现隐式转换，比如 SELECT id FROM TABLE WHERE id=’1’</strong></li>
-<li>IN条件里面的数据数量要少，我记得应该是500个以内，要学会使用EXIST代替IN，EXIST在一些场景查询会比IN快</li>
-<li><strong>能不用 NOT IN 就不用 NOTIN ，坑太多了。。会把空和NULL给查出来</strong></li>
-<li><strong>在SQL语句中，禁止使用前缀是%的LIKE</strong></li>
-<li><strong>不使用负向查询，如 NOT IN / LIKE</strong></li>
-<li><strong>关于分页查询：程序里建议合理使用分页来提高效率LIMIT，OFFSET较大要配合子查询使用</strong></li>
-<li><strong>禁止在数据库中跑大查询</strong></li>
-<li>使⽤预编译语句，只传参数，比传递SQL语句更高效；一次解析，多次使用；降低SQL注入概率</li>
-<li><strong>禁止使 ORDER BY RAND()</strong></li>
-<li>禁⽌单条SQL语句同时更新多个表</li>
-<li><strong>禁止使用%前导查询，例如：like “%abc”，无法利用到索引。</strong></li>
-<li><strong>禁止使用负向查询，例如 not in、!=、not like、&lt;&gt;。</strong></li>
-</ol>
-<h1 id="六、常见类型建议"><a href="#六、常见类型建议" class="headerlink" title="六、常见类型建议"></a>六、常见类型建议</h1><ul>
-<li><strong>小米帐号(user_id/mi_id):bigint</strong></li>
-<li><strong>订单号(order_id):bigint</strong></li>
-<li><strong>钱相关(price/money):bigint(看需求按分或者厘做单位)</strong></li>
-<li>sku()</li>
-<li>商品id</li>
-<li>货品id</li>
-<li><strong>微信open_id</strong></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Docker 基础知识</title>
-    <url>/2020/07/18/docker%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run ubuntu:15.10 /bin/<span class="built_in">echo</span> <span class="string">"Hello world"</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>参数含义：</strong></p>
-<ul>
-<li><code>docker</code>：Docker 的二进制执行文件。</li>
-<li><code>run</code>：与前面的 docker 组合来运行一个容器。</li>
-<li><code>ubuntu:15.10</code>：指定要运行的镜像，Docker 首先从本地主机上查找镜像是否存在，如果不存在，Docker 就会从镜像仓库 Docker Hub 下载公共镜像。</li>
-<li><code>/bin/echo &quot;Hello world&quot;</code>：在启动的容器里执行的命令</li>
-</ul>
-<a id="more"></a>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -i -t ubuntu:15.10 /bin/bash</span><br></pre></td></tr></table></figure>
-
-<p><strong>参数含义：</strong></p>
-<ul>
-<li><code>-t</code>：在新容器内指定一个伪终端或终端。</li>
-<li><code>-i</code>：允许你对容器内的标准输入 <code>stdin</code> 进行交互</li>
-<li>可以通过运行 <code>exit</code> 命令或者使用 <code>ctrl+D</code> 来退出容器，会导致容器停止</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -d -P training/webapp python app.py</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>-d</code>：让容器在后台运行。</li>
-<li><code>-P</code>：将容器内部使用的网络端口随机映射到我们使用的主机上。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker commit &lt;CONTAINER ID&gt; &lt;REPOSITORY&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>参数含义：</strong><br><code>-a</code>：提交的镜像作者;<br><code>-c</code>：使用Dockerfile指令来创建镜像;<br><code>-m</code>：提交时的说明文字;<br><code>-p</code>：在commit时，将容器暂停</p>
-<table>
-<thead>
-<tr>
-<th>commend</th>
-<th>result</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>docker ps</code></td>
-<td>查看正在运行的容器</td>
-</tr>
-<tr>
-<td><code>docker ps -a</code></td>
-<td>查看所有容器</td>
-</tr>
-<tr>
-<td><code>docker stop &lt;CONTAINER ID/REPOSITORY&gt;</code></td>
-<td>关闭容器</td>
-</tr>
-<tr>
-<td><code>docker logs &lt;CONTAINER ID/REPOSITORY&gt;</code></td>
-<td>查看容器内的标准输出</td>
-</tr>
-<tr>
-<td><code>docker pull &lt;IMAGE_NAME&gt;</code></td>
-<td>载入镜像</td>
-</tr>
-<tr>
-<td><code>docker restart &lt;CONTAINER ID&gt;</code></td>
-<td>重启停止的容器</td>
-</tr>
-<tr>
-<td><code>docker attach &lt;CONTAINER ID&gt;</code></td>
-<td>进入后台运行中的容器</td>
-</tr>
-<tr>
-<td><code>docker exec &lt;CONTAINER ID&gt;</code></td>
-<td>退出容器，不会导致容器的停止</td>
-</tr>
-<tr>
-<td><code>docker export &lt;CONTAINER ID&gt; &gt; xxx.tar</code></td>
-<td>导出本地某个容器</td>
-</tr>
-<tr>
-<td><code>cat docker/xxx.tar | docker import - &lt;EPOSITORY&gt;:&lt;TAG&gt;</code></td>
-<td>导入容器快照</td>
-</tr>
-<tr>
-<td><code>docker import &lt;URL&gt; &lt;EPOSITORY&gt;</code></td>
-<td>导入容器快照</td>
-</tr>
-<tr>
-<td><code>docker rm -f &lt;CONTAINER ID&gt;</code></td>
-<td>删除容器<code>-f</code>:强制删除;<code>-no-prune</code>:不要删除未带标签的父镜像</td>
-</tr>
-<tr>
-<td><code>docker container prune</code></td>
-<td>清理掉所有处于终止状态的容器</td>
-</tr>
-<tr>
-<td><code>docker rm $(docker container ls -aq)</code></td>
-<td>删除所有容器</td>
-</tr>
-<tr>
-<td><code>docker commit &lt;CONTAINER ID&gt; &lt;REPOSITORY&gt;</code></td>
-<td>把容器打包成镜像</td>
-</tr>
-<tr>
-<td><code>docker inspect &lt;REPOSITORY&gt;:&lt;CONTAINER ID&gt;</code></td>
-<td>查看镜像的详细信息</td>
-</tr>
-<tr>
-<td><code>docker rm $(docker container ls -f &quot;status=exited&quot; -q)</code></td>
-<td>同时删除多个符合筛选条件(状态为“exited”)的容器</td>
-</tr>
-</tbody></table>
-]]></content>
-      <tags>
-        <tag>C++</tag>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>cmake学习笔记(一)</title>
     <url>/2019/05/24/cmake1/</url>
     <content><![CDATA[<blockquote>
@@ -1473,68 +1325,6 @@
       </tags>
   </entry>
   <entry>
-    <title>git学习笔记</title>
-    <url>/2019/05/27/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">'XXX'</span></span><br><span class="line">git config --global user.email <span class="string">'XXX'</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="创建本地库"><a href="#创建本地库" class="headerlink" title="创建本地库"></a>创建本地库</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkidir learngit     //自定义文件夹</span><br><span class="line"><span class="built_in">cd</span> learngit</span><br><span class="line">touch test.md       //创建test.md文件</span><br><span class="line"><span class="built_in">pwd</span>                 //显示当前目录</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-<h1 id="常用CRT"><a href="#常用CRT" class="headerlink" title="常用CRT"></a>常用CRT</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init                    //初始化代码仓库</span><br><span class="line">git add learngit.txt        //把所有要提交的文件修改放到暂存区</span><br><span class="line">git commit -m <span class="string">'add a file'</span>  //把暂存区的所有内容提交到当前分支</span><br><span class="line">git status                  //查看工作区状态</span><br><span class="line">git diff                    //查看文件修改内容</span><br><span class="line">git <span class="built_in">log</span>                     //查看提交历史</span><br><span class="line">git <span class="built_in">log</span> --pretty=oneline    //单行显示</span><br><span class="line">git reset --hard HEAD^      //回退到上一个版本，其中（HEAD^^(上上版本),HEAD~100(往上100个版本)）</span><br><span class="line">commit id                   //(版本号) 可回到指定版本</span><br><span class="line">git reflog                  //查看历史命令</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>其中说明<br>工作区（Working Directory）<br>版本库（Repository） #.git<br>stage(index) 暂存区<br>master Git自动创建的分支<br>HEAD 指针</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git diff HEAD -- &lt;file&gt;     //查看工作区和版本库里最新版本的区别</span><br><span class="line">git checkout -- &lt;file&gt;      //用版本库的版本替换工作区的版本，无论是工作区的修改还是删除，都可以<span class="string">'一键还原'</span></span><br><span class="line">git reset HEAD &lt;file&gt;       //把暂存区的修改撤销掉，重新放回工作区。</span><br><span class="line">git rm &lt;file&gt;               //删除文件，若文件已提交到版本库，不用担心误删，但是只能恢复文件到最新版本</span><br></pre></td></tr></table></figure>
-
-<h1 id="创建SSH-Key，建立本地Git仓库和GitHub仓库之间的传输的秘钥"><a href="#创建SSH-Key，建立本地Git仓库和GitHub仓库之间的传输的秘钥" class="headerlink" title="创建SSH Key，建立本地Git仓库和GitHub仓库之间的传输的秘钥"></a>创建SSH Key，建立本地Git仓库和GitHub仓库之间的传输的秘钥</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//创建SSH Key</span><br><span class="line">ssh-keygen -t rsa -C <span class="string">'your_email'</span></span><br><span class="line">//关联本地仓库，远程库的名字为origin   </span><br><span class="line">git remote add origin git@github.com:username/repostery.git </span><br><span class="line">//第一次把当前分支master推送到远程</span><br><span class="line">//-u参数不但推送，而且将本地的分支和远程的分支关联起来</span><br><span class="line">git push -u origin master</span><br><span class="line">//把当前分支master推送到远程</span><br><span class="line">git push origin master</span><br><span class="line">//从远程库克隆一个到本地库</span><br><span class="line">git <span class="built_in">clone</span> git@github.com:username/repostery.git</span><br></pre></td></tr></table></figure>
-
-<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout -b dev         //创建并切换分支</span><br><span class="line"><span class="comment">#相当于git branch dev 和git checkout dev </span></span><br><span class="line">git branch                  //查看当前分支，当前分支前有个*号</span><br><span class="line">git branch &lt;name&gt;           //创建分支</span><br><span class="line">git checkout &lt;name&gt;         //切换分支</span><br><span class="line">git merge &lt;name&gt;            //合并某个分支到当前分支</span><br><span class="line">git branch -d &lt;name&gt;        //删除分支</span><br><span class="line">git <span class="built_in">log</span> --graph             //查看分支合并图</span><br><span class="line">/* 禁用Fast forward合并dev分支*/</span><br><span class="line">git merge --no-ff -m <span class="string">'message'</span> dev</span><br><span class="line">git stash                   //隐藏当前工作现场，等恢复后继续工作</span><br><span class="line">git stash list              //查看stash记录</span><br><span class="line">git stash apply             //仅恢复现场，不删除stash内容</span><br><span class="line">git stash drop              //删除stash内容</span><br><span class="line">git stash pop               //恢复现场的同时删除stash内容</span><br><span class="line">git branch -D &lt;name&gt;        //强行删除某个未合并的分支</span><br><span class="line"><span class="comment">#开发新feature最好新建一个分支</span></span><br><span class="line">git remote                  //查看远程仓库</span><br><span class="line">git remote -v               //查看远程库详细信息</span><br><span class="line">git pull                    //抓取远程提交</span><br><span class="line">/* 在本地创建和远程分支对应的分支*/</span><br><span class="line">git checkout -b branch-name origin/branch-name</span><br><span class="line">/* 建立本地分支和远程分支的关联*/</span><br><span class="line">git branch --<span class="built_in">set</span>-upstream branch-name origin/branch-name</span><br></pre></td></tr></table></figure>
-<h1 id="其他—标签"><a href="#其他—标签" class="headerlink" title="其他—标签"></a>其他—标签</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag v1.0                    //给当前分支最新的commit打标签</span><br><span class="line">/* -a指定标签名，-m指定说明文字*/</span><br><span class="line">git tag -a v0.1 -m <span class="string">'version 0.1 released'</span> 3628164</span><br><span class="line">git tag -s &lt;tagname&gt; -m <span class="string">'blabla'</span>//可以用PGP签名标签</span><br><span class="line">git tag                         //查看所有标签</span><br><span class="line">git show v1.0                   //查看标签信息</span><br><span class="line">git tag -d v0.1                 //删除标签</span><br><span class="line">git push origin &lt;tagname&gt;       //推送某个标签到远程</span><br><span class="line">git push origin --tags          //推送所有尚未推送的本地标签</span><br></pre></td></tr></table></figure>
-<h1 id="其他—出错解决方案"><a href="#其他—出错解决方案" class="headerlink" title="其他—出错解决方案"></a>其他—出错解决方案</h1><h2 id="1-git报错：’fatal-remote-origin-already-exists’怎么解决？"><a href="#1-git报错：’fatal-remote-origin-already-exists’怎么解决？" class="headerlink" title="1. git报错：’fatal:remote origin already exists’怎么解决？"></a>1. git报错：’fatal:remote origin already exists’怎么解决？</h2><p>只要两步：</p>
-<p>1、先删除</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote rm origin</span><br></pre></td></tr></table></figure>
-<p>2、再次执行添加就可以了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote add origin XXX</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-如何删除GIT远程仓库项目的所有内容，重新提交所有内容"><a href="#2-如何删除GIT远程仓库项目的所有内容，重新提交所有内容" class="headerlink" title="2. 如何删除GIT远程仓库项目的所有内容，重新提交所有内容"></a>2. 如何删除GIT远程仓库项目的所有内容，重新提交所有内容</h2><blockquote>
-<p>如果我们上传了一个项目到 <strong>git</strong> 并已经 <strong>commit</strong> 和 <strong>push</strong> 了所有内容，但是忘记搞 <strong>gitignore</strong> 文件，导致一些不想加入版本控制的文件，如IDE配置文件，编译文件，部署文件等，现在不知道怎么办了？<br>试一试如下命令：<br>首先配置好你的 <strong>.gitignore</strong> 文件，然后</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git rm -r --cache .</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"gitignore working"</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="3-git取消本地修改"><a href="#3-git取消本地修改" class="headerlink" title="3. git取消本地修改"></a>3. git取消本地修改</h2><blockquote>
-<p>如果在修改时发现修改错误，而要放弃本地修改时</p>
-</blockquote>
-<h3 id="1-gt-当未使用-git-add-缓存代码时。"><a href="#1-gt-当未使用-git-add-缓存代码时。" class="headerlink" title="1-&gt;当未使用 git add 缓存代码时。"></a>1-&gt;当未使用 <strong>git add</strong> 缓存代码时。</h3><p>可以使用</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout -- filepathname //比如: git checkout -- readme.md</span><br></pre></td></tr></table></figure>
-<p>不要忘记中间的 “–” ，不写就成了新增分支了！！<br>放弃所有的文件修改可以使用 </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout .</span><br></pre></td></tr></table></figure>
-<p>此命令用来放弃掉所有还没有加入到缓存区（就是 <strong>git add</strong> 命令）的修改：内容修改与整个文件删除。但是此命令不会删除掉刚新建的文件。因为刚新建的文件还没已有加入到 <strong>git</strong> 的管理系统中。所以对于 <strong>git</strong> 是未知的。自己手动删除就好了。</p>
-<h3 id="2-gt-已经使用了-git-add-缓存了代码"><a href="#2-gt-已经使用了-git-add-缓存了代码" class="headerlink" title="2-&gt;已经使用了 git add 缓存了代码"></a>2-&gt;已经使用了 <strong>git add</strong> 缓存了代码</h3><p>可以使用  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset HEAD filepathname //比如: git reset HEAD readme.md</span><br></pre></td></tr></table></figure>
-<p>来放弃指定文件的缓存，放弃所有的缓存可以使用</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset HEAD .</span><br></pre></td></tr></table></figure>
-<p>此命令用来清除 <strong>git</strong> 对于文件修改的缓存。相当于撤销 <strong>git add</strong> 命令所在的工作。在使用本命令后，本地的修改并不会消失，而是回到了1的状态。继续用1中的操作，就可以放弃本地的修改。</p>
-<h3 id="3-gt-已经用-git-commit-提交了代码。"><a href="#3-gt-已经用-git-commit-提交了代码。" class="headerlink" title="3-&gt;已经用 git commit 提交了代码。"></a>3-&gt;已经用 <strong>git commit</strong> 提交了代码。</h3><p>可以使用</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
-<p>来回退到上一次commit的状态。此命令可以用来回退到任意版本：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset --hard  commitid</span><br></pre></td></tr></table></figure>
-<p>你可以使用 <strong>git log</strong> 命令来查看git的提交历史。<strong>git log</strong> 的输出如下,之一这里可以看到第一行就是 <strong>commitid</strong>：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">commit cf0d692e982d8e372a07aaa6901c395eec73e356 (HEAD -&gt; master)</span><br><span class="line">Author: toyflivver &lt;2440659688@qq.com&gt;</span><br><span class="line">Date: Thu Sep 28 14:07:14 2017 +0800</span><br><span class="line">多余的空行</span><br><span class="line">commit 14aa4d7ad4ac6fba59b4b8261d32e478e8cc99ff</span><br><span class="line">Author: toyflivver &lt;2440659688@qq.com&gt;</span><br><span class="line">Date: Thu Sep 28 14:06:44 2017 +0800</span><br><span class="line">正常的代码</span><br><span class="line">commit da3a95c84b6a92934ee30b6728e258bcda75f276</span><br><span class="line">Author: toyflivver &lt;2440659688@qq.com&gt;</span><br><span class="line">Date: Thu Sep 28 13:58:12 2017 +0800</span><br><span class="line">qbf</span><br><span class="line">commit 267466352079296520320991a75321485224d6c6</span><br><span class="line">Author: toyflivver &lt;2440659688@qq.com&gt;</span><br><span class="line">Date: Thu Sep 28 13:40:09 2017 +0800</span><br><span class="line">qbf</span><br></pre></td></tr></table></figure>
-<p>可以看出现在的状态在 <strong>commitid</strong> 为 cf0d692e982d8e372a07aaa6901c395eec73e356 的提交上（有 HEAD -&gt; master 标记）。</p>
-<h2 id="4-删除文件夹下的-所有-svn或者-git文件夹信息"><a href="#4-删除文件夹下的-所有-svn或者-git文件夹信息" class="headerlink" title="4. 删除文件夹下的 所有.svn或者.git文件夹信息"></a>4. 删除文件夹下的 所有.svn或者.git文件夹信息</h2><p>两步：</p>
-<ol>
-<li><p>cd到该文件夹</p>
-</li>
-<li><p>删除管理文件</p>
-</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//删除文件夹下的所有 .svn 文件</span><br><span class="line">find . -name <span class="string">".svn"</span> | xargs rm -Rf</span><br><span class="line">//删除文件夹下的所有 .git 文件</span><br><span class="line">find . -name <span class="string">".git"</span> | xargs rm -Rf</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>tools</tag>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>cJson学习笔记</title>
     <url>/2019/08/02/cJson/</url>
     <content><![CDATA[<h1 id="cJSON的使用方法"><a href="#cJSON的使用方法" class="headerlink" title="cJSON的使用方法"></a>cJSON的使用方法</h1><h2 id="一-JSON格式简述"><a href="#一-JSON格式简述" class="headerlink" title="一.JSON格式简述"></a>一.JSON格式简述</h2><blockquote>
@@ -1624,6 +1414,119 @@
       </tags>
   </entry>
   <entry>
+    <title>Docker 基础知识</title>
+    <url>/2020/07/18/docker%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run ubuntu:15.10 /bin/<span class="built_in">echo</span> <span class="string">"Hello world"</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>参数含义：</strong></p>
+<ul>
+<li><code>docker</code>：Docker 的二进制执行文件。</li>
+<li><code>run</code>：与前面的 docker 组合来运行一个容器。</li>
+<li><code>ubuntu:15.10</code>：指定要运行的镜像，Docker 首先从本地主机上查找镜像是否存在，如果不存在，Docker 就会从镜像仓库 Docker Hub 下载公共镜像。</li>
+<li><code>/bin/echo &quot;Hello world&quot;</code>：在启动的容器里执行的命令</li>
+</ul>
+<a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -i -t ubuntu:15.10 /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数含义：</strong></p>
+<ul>
+<li><code>-t</code>：在新容器内指定一个伪终端或终端。</li>
+<li><code>-i</code>：允许你对容器内的标准输入 <code>stdin</code> 进行交互</li>
+<li>可以通过运行 <code>exit</code> 命令或者使用 <code>ctrl+D</code> 来退出容器，会导致容器停止</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -d -P training/webapp python app.py</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-d</code>：让容器在后台运行。</li>
+<li><code>-P</code>：将容器内部使用的网络端口随机映射到我们使用的主机上。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker commit &lt;CONTAINER ID&gt; &lt;REPOSITORY&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数含义：</strong><br><code>-a</code>：提交的镜像作者;<br><code>-c</code>：使用Dockerfile指令来创建镜像;<br><code>-m</code>：提交时的说明文字;<br><code>-p</code>：在commit时，将容器暂停</p>
+<table>
+<thead>
+<tr>
+<th>commend</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>docker ps</code></td>
+<td>查看正在运行的容器</td>
+</tr>
+<tr>
+<td><code>docker ps -a</code></td>
+<td>查看所有容器</td>
+</tr>
+<tr>
+<td><code>docker stop &lt;CONTAINER ID/REPOSITORY&gt;</code></td>
+<td>关闭容器</td>
+</tr>
+<tr>
+<td><code>docker logs &lt;CONTAINER ID/REPOSITORY&gt;</code></td>
+<td>查看容器内的标准输出</td>
+</tr>
+<tr>
+<td><code>docker pull &lt;IMAGE_NAME&gt;</code></td>
+<td>载入镜像</td>
+</tr>
+<tr>
+<td><code>docker restart &lt;CONTAINER ID&gt;</code></td>
+<td>重启停止的容器</td>
+</tr>
+<tr>
+<td><code>docker attach &lt;CONTAINER ID&gt;</code></td>
+<td>进入后台运行中的容器</td>
+</tr>
+<tr>
+<td><code>docker exec &lt;CONTAINER ID&gt;</code></td>
+<td>退出容器，不会导致容器的停止</td>
+</tr>
+<tr>
+<td><code>docker export &lt;CONTAINER ID&gt; &gt; xxx.tar</code></td>
+<td>导出本地某个容器</td>
+</tr>
+<tr>
+<td><code>cat docker/xxx.tar | docker import - &lt;EPOSITORY&gt;:&lt;TAG&gt;</code></td>
+<td>导入容器快照</td>
+</tr>
+<tr>
+<td><code>docker import &lt;URL&gt; &lt;EPOSITORY&gt;</code></td>
+<td>导入容器快照</td>
+</tr>
+<tr>
+<td><code>docker rm -f &lt;CONTAINER ID&gt;</code></td>
+<td>删除容器<code>-f</code>:强制删除;<code>-no-prune</code>:不要删除未带标签的父镜像</td>
+</tr>
+<tr>
+<td><code>docker container prune</code></td>
+<td>清理掉所有处于终止状态的容器</td>
+</tr>
+<tr>
+<td><code>docker rm $(docker container ls -aq)</code></td>
+<td>删除所有容器</td>
+</tr>
+<tr>
+<td><code>docker commit &lt;CONTAINER ID&gt; &lt;REPOSITORY&gt;</code></td>
+<td>把容器打包成镜像</td>
+</tr>
+<tr>
+<td><code>docker inspect &lt;REPOSITORY&gt;:&lt;CONTAINER ID&gt;</code></td>
+<td>查看镜像的详细信息</td>
+</tr>
+<tr>
+<td><code>docker rm $(docker container ls -f &quot;status=exited&quot; -q)</code></td>
+<td>同时删除多个符合筛选条件(状态为“exited”)的容器</td>
+</tr>
+</tbody></table>
+]]></content>
+      <tags>
+        <tag>C++</tag>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Interview advice</title>
     <url>/2018/12/07/interview/</url>
     <content><![CDATA[<h1 id="如果你是一个Golang面试官，你会问哪些问题"><a href="#如果你是一个Golang面试官，你会问哪些问题" class="headerlink" title="如果你是一个Golang面试官，你会问哪些问题?"></a>如果你是一个Golang面试官，你会问哪些问题?</h1><ul>
@@ -1645,6 +1548,342 @@
 ]]></content>
       <tags>
         <tag>tap</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Redis 简介</title>
+    <url>/2019/09/05/redis1/</url>
+    <content><![CDATA[<h1 id="Redis-简介"><a href="#Redis-简介" class="headerlink" title="Redis 简介"></a>Redis 简介</h1><p>redis 是一个开源的使用 ANSI C 语言编写、基于内存亦可持久化的日志型、Key-Value 数据库，并提供了对多种编程语言的支持。<br></br><br>redis 的外围由一个键、值映射的字典构成，Redis 五种数据类型：string ，hash ，list ，set 及 zset (sorted set) ，所以Redis 也被称为数据结构服务器。<br></br><br>redis 是一个 key-value 存储系统。支持存储的 value 类型包括 string (字符串)、list (链表)、set (集合)、zset (sorted set –有序集合)和 hash（哈希）。这些数据类型都支持 push/pop 、 add/remove 及取交集并集和差集等操作，且 Redis 支持各种不同方式的排序。为了保证效率，数据都是缓存在内存中。 redis 会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，并且在此基础上实现了 master-slave (主从)同步。<br></br><br>redis 支持主从同步。数据可以从主服务器向任意数量的从服务器上同步，从服务器可以是关联其他从服务器的主服务器。这使得 Redis 可执行单层树复制。存盘可以有意无意的对数据进行写操作。由于完全实现了发布/订阅机制，使得从数据库在任何地方同步树时，可订阅一个频道并接收主服务器完整的消息发布记录。</p>
+<a id="more"></a>
+</br>
+</br>
+## Redis的特点
+- redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。
+- redis 是完全在内存中保存数据的数据库，使用磁盘只是为了持久化。
+- redis 不仅仅支持简单的 key-value 类型的数据，同时还提供 list ，set ，zset ，hash 等数据结构的存储。
+- redis 支持数据的备份，即 master-slave 模式的数据备份。
+</br>
+</br>
+
+<h2 id="Redis-优势"><a href="#Redis-优势" class="headerlink" title="Redis 优势"></a>Redis 优势</h2><ul>
+<li><code>性能极高</code> —— redis 是一个高性能的 key-value 数据库，读的速度能达到110000次/s,写的速度能达到81000次/s。</li>
+<li><code>丰富的数据类型</code> —— Redis 支持 string ， hash ，list ，set 及 zset (sorted set) 等数据类型。</li>
+<li><code>原子性</code> —— redis 的所有操作都是原子性的，要么成功执行要么失败完全不执行。单个操作是原子性的。多个操作也支持事务，即原子性，通过 MULTI 和 EXEC 指令包起来。</li>
+<li><code>丰富的特性</code> —— redis 支持 publish / subscribe , 通知, key 过期等特性。</li>
+</ul>
+</br>
+</br>
+>redis 使用了两种文件格式：
+
+<ul>
+<li><code>全量数据格式</code>：把内存中的数据写入磁盘，便于下次读取文件进行加载</li>
+<li><code>增量请求文件</code>：把内存中的数据序列化为操作请求，用于读取文件进行replay得到数据，序列化的操作包括 SET 、 RPUSH 、 SADD 、 ZADD 。</li>
+</ul>
+</br>
+</br>
+
+<blockquote>
+<p>redis 的存储分为内存存储、磁盘存储和 log 文件三部分，配置文件中有三个参数对其进行配置。</p>
+</blockquote>
+<ul>
+<li><p><code>save seconds updates</code>：save配置，指出在多长时间内，有多少次更新操作，就将数据同步到数据文件。</p>
+</li>
+<li><p><code>appendonly yes/no</code>：appendonly配置，指出是否在每次更新操作后进行日志记录，如果不开启，可能会在断电时导致一段时间内的数据丢失。因为redis本身同步数据文件是按上面的save条件来同步的，所以有的数据会在一段时间内只存在于内存中。</p>
+</li>
+<li><p><code>appendfsync no/always/everysec</code>：appendfsync 配置，no 表示等操作系统进行数据缓存同步到磁盘，always 表示每次更新操作后手动调用 fsync() 将数据写到磁盘， everysec 表示每秒同步一次。</p>
+</br>
+</br>
+
+</li>
+</ul>
+<p>redis 运行在内存中但可持久化到磁盘，在对不同数据集进行高速读写时需要权衡内存，因为数据量不能大于硬件内存。内存数据库的一个优点是，相比在磁盘上相同的复杂的数据结构，在内存中操作起来非常简单，可以做很多内部复杂性很强的事情。<br></br><br><a href="https://www.vousmevoyez.pro/2019/09/05/redis2/" target="_blank" rel="noopener">下一篇：redis 基础命令</a></p>
+]]></content>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Redis Sorted Set(有序集合)</title>
+    <url>/2019/09/05/redis10/</url>
+    <content><![CDATA[<h1 id="Redis-Sorted-Set-有序集合"><a href="#Redis-Sorted-Set-有序集合" class="headerlink" title="Redis Sorted Set(有序集合)"></a>Redis Sorted Set(有序集合)</h1></br>
+redis Sorted Set 有序集合是 string 类型元素的集合，元素不允许重复。
+</br>
+有序集合中的每个元素都会关联一个数值型的分数。redis 正是通过分数来为集合中的成员进行从小到大的排序。
+</br>
+有序集合的成员是唯一的（不可重复）,但分数(score)可以重复。
+</br>
+</br>
+<a id="more"></a>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">zadd key score1 value1 score2 value2 ...    <span class="comment">//往有序集合中添加一个或多个元素。score是数值型，支持整数、浮点数，支持负数。z代表sorted set。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例： </span></span><br><span class="line">zadd students <span class="number">1</span> zhangsan <span class="number">2</span> lisi <span class="number">3</span> wangwu    <span class="comment">//返回此次添加的元素个数。score只是附加信息，真正的元素还是value1，value2，......</span></span><br><span class="line"><span class="comment">//说明：hash、list、set、sorted set，在Reids2.4之前的版本中，1次只支持添加一个元素，不支持1次添加多个元素。</span></span><br><span class="line"></span><br><span class="line">zcard key                                   <span class="comment">//返回元素个数</span></span><br><span class="line"></span><br><span class="line">zcount key minScore maxScore                <span class="comment">//返回分数值在[minScore，maxScore]上的元素个数</span></span><br><span class="line"></span><br><span class="line">zlexcount key minValue maxValue             <span class="comment">//返回元素值在[minValue，maxValue]上的元素个数。</span></span><br><span class="line"><span class="comment">//不能直接用元素值，有3种写法：</span></span><br><span class="line"><span class="comment">//[value   表示包含此元素</span></span><br><span class="line"><span class="comment">//(value  表示不包含此元素</span></span><br><span class="line"><span class="comment">//- 表示第一个元素（包含），+ 表示最后一个元素（包含）</span></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">zadd set1 <span class="number">1</span> a <span class="number">2</span> b <span class="number">3</span> c <span class="number">4</span> d</span><br><span class="line">zlexcount set1 - +          <span class="comment">//返回总元素个数，4</span></span><br><span class="line">zlexcount set1 [a [b        <span class="comment">//2 。即[a,b]上元素个数</span></span><br><span class="line"><span class="function">zlexcount <span class="title">set1</span> <span class="params">(a [b        <span class="comment">//1。(a,b]</span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="comment">//不能缺省 [  或  (</span></span></span></span><br><span class="line"><span class="function"><span class="params"> </span></span></span><br><span class="line"><span class="function"><span class="params">zrange key minIndex maxIndex [withscores]   <span class="comment">//返回索引在[minIndex，maxIndex]上的所有元素。</span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="comment">//索引从0开始，支持负数，-1表示倒数第一个元素，-2表示倒数第二个元素。</span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="comment">//withscores是可选参数，带上则还会显示分数，不带则只显示元素值。</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">zrangebyscore key minScore maxScore [withscores]    <span class="comment">//返回score在[minScore，maxScore]上的所有元素值。</span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="comment">//默认使用 [ ，闭区间。也可以显示指定为 [ 或 ( 。</span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="comment">//withscores可选，带上时会显示元素的score，不带上时不显示score。</span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="comment">//示例： </span></span></span></span><br><span class="line"><span class="function"><span class="params">zrangebyscore set1 [<span class="number">1</span> (<span class="number">2</span>                    <span class="comment">//获取score在[1,2)上的所有元素</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">zrank key elementValue                      <span class="comment">//返回该元素值的索引。默认按score进行升序排列。索引从0开始。</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="comment">//以上3个命令都是按score升序排列的。下面的3个命令：</span></span></span></span><br><span class="line"><span class="function"><span class="params">zrevrange</span></span></span><br><span class="line"><span class="function"><span class="params">zrevrangebyscore</span></span></span><br><span class="line"><span class="function"><span class="params">zrevrank</span></span></span><br><span class="line"><span class="function"><span class="params"><span class="comment">//前缀加不是z，而是zrev。和之前的3个命令一一对应，用法完全相同，只不过是按score降序排列计算的。</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">zscore key elementValue                     <span class="comment">//返回该元素值对应的score值</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">zincrby key increment elementValue          <span class="comment">//increment是增量，将指定元素的score增加increment。increment支持负数，即减。</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">zrem key value1 value2 ...                  <span class="comment">//移除一个或多个元素</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">zremrangebyrank key startIndex endIndex     <span class="comment">//移除下标在[startIndex，endIndex]上的所有元素。zremrangebyrank即z  remove  range  by  rank</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">zremrangebyscore key minScore maxScore      <span class="comment">//移除score在[minScore，maxScore]上的所有元素</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">zremrangebylex key value1 value2            <span class="comment">//移除这2个元素值之间的所有元素。</span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="comment">//不能直接写元素值，可以用 - + 表示，或者在元素值前面加[  (</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">zscan key <span class="built_in">cursor</span> [match pattern] [count num]<span class="comment">//迭代</span></span></span></span><br></pre></td></tr></table></figure>
+</br>
+</br>
+sorted set 也提供了计算交集、并集的命令，此处不再一一介绍。]]></content>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git学习笔记</title>
+    <url>/2019/05/27/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">'XXX'</span></span><br><span class="line">git config --global user.email <span class="string">'XXX'</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="创建本地库"><a href="#创建本地库" class="headerlink" title="创建本地库"></a>创建本地库</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkidir learngit     //自定义文件夹</span><br><span class="line"><span class="built_in">cd</span> learngit</span><br><span class="line">touch test.md       //创建test.md文件</span><br><span class="line"><span class="built_in">pwd</span>                 //显示当前目录</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+<h1 id="常用CRT"><a href="#常用CRT" class="headerlink" title="常用CRT"></a>常用CRT</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init                    //初始化代码仓库</span><br><span class="line">git add learngit.txt        //把所有要提交的文件修改放到暂存区</span><br><span class="line">git commit -m <span class="string">'add a file'</span>  //把暂存区的所有内容提交到当前分支</span><br><span class="line">git status                  //查看工作区状态</span><br><span class="line">git diff                    //查看文件修改内容</span><br><span class="line">git <span class="built_in">log</span>                     //查看提交历史</span><br><span class="line">git <span class="built_in">log</span> --pretty=oneline    //单行显示</span><br><span class="line">git reset --hard HEAD^      //回退到上一个版本，其中（HEAD^^(上上版本),HEAD~100(往上100个版本)）</span><br><span class="line">commit id                   //(版本号) 可回到指定版本</span><br><span class="line">git reflog                  //查看历史命令</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>其中说明<br>工作区（Working Directory）<br>版本库（Repository） #.git<br>stage(index) 暂存区<br>master Git自动创建的分支<br>HEAD 指针</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git diff HEAD -- &lt;file&gt;     //查看工作区和版本库里最新版本的区别</span><br><span class="line">git checkout -- &lt;file&gt;      //用版本库的版本替换工作区的版本，无论是工作区的修改还是删除，都可以<span class="string">'一键还原'</span></span><br><span class="line">git reset HEAD &lt;file&gt;       //把暂存区的修改撤销掉，重新放回工作区。</span><br><span class="line">git rm &lt;file&gt;               //删除文件，若文件已提交到版本库，不用担心误删，但是只能恢复文件到最新版本</span><br></pre></td></tr></table></figure>
+
+<h1 id="创建SSH-Key，建立本地Git仓库和GitHub仓库之间的传输的秘钥"><a href="#创建SSH-Key，建立本地Git仓库和GitHub仓库之间的传输的秘钥" class="headerlink" title="创建SSH Key，建立本地Git仓库和GitHub仓库之间的传输的秘钥"></a>创建SSH Key，建立本地Git仓库和GitHub仓库之间的传输的秘钥</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//创建SSH Key</span><br><span class="line">ssh-keygen -t rsa -C <span class="string">'your_email'</span></span><br><span class="line">//关联本地仓库，远程库的名字为origin   </span><br><span class="line">git remote add origin git@github.com:username/repostery.git </span><br><span class="line">//第一次把当前分支master推送到远程</span><br><span class="line">//-u参数不但推送，而且将本地的分支和远程的分支关联起来</span><br><span class="line">git push -u origin master</span><br><span class="line">//把当前分支master推送到远程</span><br><span class="line">git push origin master</span><br><span class="line">//从远程库克隆一个到本地库</span><br><span class="line">git <span class="built_in">clone</span> git@github.com:username/repostery.git</span><br></pre></td></tr></table></figure>
+
+<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout -b dev         //创建并切换分支</span><br><span class="line"><span class="comment">#相当于git branch dev 和git checkout dev </span></span><br><span class="line">git branch                  //查看当前分支，当前分支前有个*号</span><br><span class="line">git branch &lt;name&gt;           //创建分支</span><br><span class="line">git checkout &lt;name&gt;         //切换分支</span><br><span class="line">git merge &lt;name&gt;            //合并某个分支到当前分支</span><br><span class="line">git branch -d &lt;name&gt;        //删除分支</span><br><span class="line">git <span class="built_in">log</span> --graph             //查看分支合并图</span><br><span class="line">/* 禁用Fast forward合并dev分支*/</span><br><span class="line">git merge --no-ff -m <span class="string">'message'</span> dev</span><br><span class="line">git stash                   //隐藏当前工作现场，等恢复后继续工作</span><br><span class="line">git stash list              //查看stash记录</span><br><span class="line">git stash apply             //仅恢复现场，不删除stash内容</span><br><span class="line">git stash drop              //删除stash内容</span><br><span class="line">git stash pop               //恢复现场的同时删除stash内容</span><br><span class="line">git branch -D &lt;name&gt;        //强行删除某个未合并的分支</span><br><span class="line"><span class="comment">#开发新feature最好新建一个分支</span></span><br><span class="line">git remote                  //查看远程仓库</span><br><span class="line">git remote -v               //查看远程库详细信息</span><br><span class="line">git pull                    //抓取远程提交</span><br><span class="line">/* 在本地创建和远程分支对应的分支*/</span><br><span class="line">git checkout -b branch-name origin/branch-name</span><br><span class="line">/* 建立本地分支和远程分支的关联*/</span><br><span class="line">git branch --<span class="built_in">set</span>-upstream branch-name origin/branch-name</span><br></pre></td></tr></table></figure>
+<h1 id="其他—标签"><a href="#其他—标签" class="headerlink" title="其他—标签"></a>其他—标签</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag v1.0                    //给当前分支最新的commit打标签</span><br><span class="line">/* -a指定标签名，-m指定说明文字*/</span><br><span class="line">git tag -a v0.1 -m <span class="string">'version 0.1 released'</span> 3628164</span><br><span class="line">git tag -s &lt;tagname&gt; -m <span class="string">'blabla'</span>//可以用PGP签名标签</span><br><span class="line">git tag                         //查看所有标签</span><br><span class="line">git show v1.0                   //查看标签信息</span><br><span class="line">git tag -d v0.1                 //删除标签</span><br><span class="line">git push origin &lt;tagname&gt;       //推送某个标签到远程</span><br><span class="line">git push origin --tags          //推送所有尚未推送的本地标签</span><br></pre></td></tr></table></figure>
+<h1 id="其他—出错解决方案"><a href="#其他—出错解决方案" class="headerlink" title="其他—出错解决方案"></a>其他—出错解决方案</h1><h2 id="1-git报错：’fatal-remote-origin-already-exists’怎么解决？"><a href="#1-git报错：’fatal-remote-origin-already-exists’怎么解决？" class="headerlink" title="1. git报错：’fatal:remote origin already exists’怎么解决？"></a>1. git报错：’fatal:remote origin already exists’怎么解决？</h2><p>只要两步：</p>
+<p>1、先删除</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote rm origin</span><br></pre></td></tr></table></figure>
+<p>2、再次执行添加就可以了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote add origin XXX</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-如何删除GIT远程仓库项目的所有内容，重新提交所有内容"><a href="#2-如何删除GIT远程仓库项目的所有内容，重新提交所有内容" class="headerlink" title="2. 如何删除GIT远程仓库项目的所有内容，重新提交所有内容"></a>2. 如何删除GIT远程仓库项目的所有内容，重新提交所有内容</h2><blockquote>
+<p>如果我们上传了一个项目到 <strong>git</strong> 并已经 <strong>commit</strong> 和 <strong>push</strong> 了所有内容，但是忘记搞 <strong>gitignore</strong> 文件，导致一些不想加入版本控制的文件，如IDE配置文件，编译文件，部署文件等，现在不知道怎么办了？<br>试一试如下命令：<br>首先配置好你的 <strong>.gitignore</strong> 文件，然后</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git rm -r --cache .</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"gitignore working"</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-git取消本地修改"><a href="#3-git取消本地修改" class="headerlink" title="3. git取消本地修改"></a>3. git取消本地修改</h2><blockquote>
+<p>如果在修改时发现修改错误，而要放弃本地修改时</p>
+</blockquote>
+<h3 id="1-gt-当未使用-git-add-缓存代码时。"><a href="#1-gt-当未使用-git-add-缓存代码时。" class="headerlink" title="1-&gt;当未使用 git add 缓存代码时。"></a>1-&gt;当未使用 <strong>git add</strong> 缓存代码时。</h3><p>可以使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout -- filepathname //比如: git checkout -- readme.md</span><br></pre></td></tr></table></figure>
+<p>不要忘记中间的 “–” ，不写就成了新增分支了！！<br>放弃所有的文件修改可以使用 </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout .</span><br></pre></td></tr></table></figure>
+<p>此命令用来放弃掉所有还没有加入到缓存区（就是 <strong>git add</strong> 命令）的修改：内容修改与整个文件删除。但是此命令不会删除掉刚新建的文件。因为刚新建的文件还没已有加入到 <strong>git</strong> 的管理系统中。所以对于 <strong>git</strong> 是未知的。自己手动删除就好了。</p>
+<h3 id="2-gt-已经使用了-git-add-缓存了代码"><a href="#2-gt-已经使用了-git-add-缓存了代码" class="headerlink" title="2-&gt;已经使用了 git add 缓存了代码"></a>2-&gt;已经使用了 <strong>git add</strong> 缓存了代码</h3><p>可以使用  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset HEAD filepathname //比如: git reset HEAD readme.md</span><br></pre></td></tr></table></figure>
+<p>来放弃指定文件的缓存，放弃所有的缓存可以使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset HEAD .</span><br></pre></td></tr></table></figure>
+<p>此命令用来清除 <strong>git</strong> 对于文件修改的缓存。相当于撤销 <strong>git add</strong> 命令所在的工作。在使用本命令后，本地的修改并不会消失，而是回到了1的状态。继续用1中的操作，就可以放弃本地的修改。</p>
+<h3 id="3-gt-已经用-git-commit-提交了代码。"><a href="#3-gt-已经用-git-commit-提交了代码。" class="headerlink" title="3-&gt;已经用 git commit 提交了代码。"></a>3-&gt;已经用 <strong>git commit</strong> 提交了代码。</h3><p>可以使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
+<p>来回退到上一次commit的状态。此命令可以用来回退到任意版本：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset --hard  commitid</span><br></pre></td></tr></table></figure>
+<p>你可以使用 <strong>git log</strong> 命令来查看git的提交历史。<strong>git log</strong> 的输出如下,之一这里可以看到第一行就是 <strong>commitid</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">commit cf0d692e982d8e372a07aaa6901c395eec73e356 (HEAD -&gt; master)</span><br><span class="line">Author: toyflivver &lt;2440659688@qq.com&gt;</span><br><span class="line">Date: Thu Sep 28 14:07:14 2017 +0800</span><br><span class="line">多余的空行</span><br><span class="line">commit 14aa4d7ad4ac6fba59b4b8261d32e478e8cc99ff</span><br><span class="line">Author: toyflivver &lt;2440659688@qq.com&gt;</span><br><span class="line">Date: Thu Sep 28 14:06:44 2017 +0800</span><br><span class="line">正常的代码</span><br><span class="line">commit da3a95c84b6a92934ee30b6728e258bcda75f276</span><br><span class="line">Author: toyflivver &lt;2440659688@qq.com&gt;</span><br><span class="line">Date: Thu Sep 28 13:58:12 2017 +0800</span><br><span class="line">qbf</span><br><span class="line">commit 267466352079296520320991a75321485224d6c6</span><br><span class="line">Author: toyflivver &lt;2440659688@qq.com&gt;</span><br><span class="line">Date: Thu Sep 28 13:40:09 2017 +0800</span><br><span class="line">qbf</span><br></pre></td></tr></table></figure>
+<p>可以看出现在的状态在 <strong>commitid</strong> 为 cf0d692e982d8e372a07aaa6901c395eec73e356 的提交上（有 HEAD -&gt; master 标记）。</p>
+<h2 id="4-删除文件夹下的-所有-svn或者-git文件夹信息"><a href="#4-删除文件夹下的-所有-svn或者-git文件夹信息" class="headerlink" title="4. 删除文件夹下的 所有.svn或者.git文件夹信息"></a>4. 删除文件夹下的 所有.svn或者.git文件夹信息</h2><p>两步：</p>
+<ol>
+<li><p>cd到该文件夹</p>
+</li>
+<li><p>删除管理文件</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">//删除文件夹下的所有 .svn 文件</span><br><span class="line">find . -name <span class="string">".svn"</span> | xargs rm -Rf</span><br><span class="line">//删除文件夹下的所有 .git 文件</span><br><span class="line">find . -name <span class="string">".git"</span> | xargs rm -Rf</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>tools</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Redis 常用命令</title>
+    <url>/2019/09/05/redis11/</url>
+    <content><![CDATA[<h1 id="Redis-常用命令"><a href="#Redis-常用命令" class="headerlink" title="Redis 常用命令"></a>Redis 常用命令</h1></br>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">auth password       <span class="comment">//验证密码</span></span><br><span class="line"></span><br><span class="line">echo message        <span class="comment">//打印文本</span></span><br><span class="line"></span><br><span class="line">ping                <span class="comment">//测试连接，ping一下Redis服务器，如果连接正常（已连接到Redis服务器）返回PONG。</span></span><br><span class="line"></span><br><span class="line">select dbIndex      <span class="comment">//选择当前使用的数据库，默认使用数据库0，下标，从0开始。</span></span><br><span class="line"></span><br><span class="line">quit                <span class="comment">//关闭当前连接，并退到上一级命令行</span></span><br><span class="line"></span><br><span class="line">time                <span class="comment">//获取服务器上的当前时间。</span></span><br><span class="line"><span class="comment">//有2个返回值，第一个是当前时间的时间戳（s），第二个是当前这一秒已经逝去的微秒数。</span></span><br><span class="line"><span class="comment">//1秒=10^3毫秒=10^6微秒。</span></span><br><span class="line"><span class="comment">//两者组合可显示微秒级的时间。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">config</span> <span class="built_in">set</span> param value  <span class="comment">//设置配置参数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">config</span> <span class="built_in">get</span> param    <span class="comment">//获取配置参数的值</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">config</span> rewrite      <span class="comment">//将本次连接中，这条命令之前，对配置的设置都同步到redis.conf文件中。</span></span><br><span class="line"><span class="comment">//默认对配置的设置、修改只在本次连接期间有效，并不会同步修改redis.conf文件。断开本次连接，会清除本次连接的配置设置，下次连接时，使用的是redis.conf文件中配置。</span></span><br><span class="line"><span class="comment">//比如：</span></span><br><span class="line"><span class="comment">//配置文件中的密码是abc，连接到redis服务器后</span></span><br><span class="line"><span class="built_in">config</span> <span class="built_in">set</span> requirepass <span class="number">123</span>  <span class="comment">//修改密码为123</span></span><br><span class="line"><span class="comment">//这次连接中，密码不再是abc，而是123。但这个修改并不会同步到redis.conf文件中，redis.conf文件中的密码仍是abc。下次连接时，使用密码123会提示密码错误，需要使用abc。</span></span><br><span class="line"><span class="comment">//有2种方式同步到redis.conf文件中：</span></span><br><span class="line"><span class="comment">//1. 直接在redis.conf文件中修改</span></span><br><span class="line"><span class="comment">//2. 连接到redis服务器后，在命令行修改，然后使用 config rewrite 命令同步到redis.conf中。</span></span><br><span class="line"> </span><br><span class="line">dbsize              <span class="comment">//返回当前数据库中，key的数量</span></span><br><span class="line"></span><br><span class="line">flushdb             <span class="comment">//清除当前数据库中所有的key，即清空当前数据库。flushdb即flush  db。</span></span><br><span class="line"></span><br><span class="line">flushall            <span class="comment">//清除所有数据库中的key，即清空所有数据库。flushall即flush  all。</span></span><br><span class="line"></span><br><span class="line">save                <span class="comment">//将redis数据库中的所有数据同步到.rdb文件中。redis数据库中的数据是常驻内存的，save命令将内存中的redis数据库数据同步写到数据库文件.rdb中。</span></span><br><span class="line"></span><br><span class="line">bgsave              <span class="comment">//同上，只不过bgsave是在后台异步保存。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">.rdb 文件是 redis 的数据库文件，rdb即 redis db。启动 redis 服务的时候，会从 .rdb 文件加载所有的数据库数据到内存。就是说数据库数据有 2 份，一份常驻内存，一份是持久化的磁盘文件。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">.rdb 文件也被称为 redis 数据库的备份文件。可以将一个 .rdb 文件放在redis安装目录下，作为这个  redis 服务器的数据库数据。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">client <span class="built_in">list</span>             <span class="comment">//列出所有的连接</span></span><br><span class="line"></span><br><span class="line">client kill ip:port     <span class="comment">//关闭某个连接。</span></span><br><span class="line"><span class="comment">//6379只是redis服务器、客户端程序通信使用的端口号。建立一个redis数据库连接，会单独使用一个端口号，一个redis客户端可以建立多个数据库连接，一个连接对应一个端口号，并不是使用6379。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">shutdown</span> [save/nosave]  <span class="comment">//关闭redis服务器。会自动关闭与所有的redis客户端连接、以及与这些客户端建立的数据库连接，并同步数据集到rdb文件中。</span></span><br><span class="line"><span class="comment">//shutdown命令可带一个可选参数：是否将数据集同步到rdb文件中。save——同步，nosave——不同步。</span></span><br><span class="line"></span><br><span class="line">client kill ip:port     <span class="comment">//是关闭某个数据库连接，quit是关闭redis客户端（会自动关闭这个客户端建立的所有数据库连接），shutdown save是关闭redis服务器（会自动关闭这个redis服务器的所有数据库连接）。</span></span><br><span class="line"></span><br><span class="line">slaveof ip port         <span class="comment">//原本默认本身是主服务器，此句命令会将当前redis服务器作为某个服务器的从服务器。</span></span><br><span class="line"><span class="comment">//示例： </span></span><br><span class="line">slaveof <span class="number">127.23</span><span class="number">.23</span><span class="number">.35</span> <span class="number">6379</span>   <span class="comment">//把当前服务器作为127.23.23.35这台服务器的从服务器。</span></span><br><span class="line"><span class="comment">//变成从服务器后，会丢弃原来数据库的数据集，从主服务器复制、同步数据到从服务器。</span></span><br><span class="line"><span class="comment">//slave，意为奴隶、从属。</span></span><br><span class="line"></span><br><span class="line">sync                        <span class="comment">//从主服务器复制、同步数据集</span></span><br><span class="line"></span><br><span class="line">slave no one                </span><br><span class="line"><span class="comment">//这句命令是关闭这个从服务器的从主服务器复制数据的功能，使这个从服务器变成一个主服务器。使用的仍是作为从服务器时的数据集。</span></span><br><span class="line"><span class="comment">//当主服务器出问题、或者需要做其他用途的时候，可以把一台从服务器作为主服务器，再把其它的从服务器作为这个主服务器的从属，这样就不会影响服务器的运转。</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Redis 事务</title>
+    <url>/2019/09/05/redis12/</url>
+    <content><![CDATA[<h1 id="Redis-事务"><a href="#Redis-事务" class="headerlink" title="Redis 事务"></a>Redis 事务</h1><p>redis 事务可以一次执行多个命令。</p>
+</br>
+
+<p>常用命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">multi       //开起一个事务，标记一个事务块的开始，multi即multiple</span><br><span class="line"></span><br><span class="line"><span class="built_in">exec</span>        //执行事务块内的命令</span><br><span class="line"></span><br><span class="line">discard     //取消事务</span><br></pre></td></tr></table></figure>
+
+<p>使用步骤：</p>
+<ol>
+<li>先使用 multi 命令标记事务开始</li>
+<li>将多个命令入队( queue ，队列)</li>
+<li>使用 exec 命令执行事务</li>
+</ol>
+<a id="more"></a>
+
+<p>示例：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">multi                   //标记事务开始</span><br><span class="line"><span class="built_in">set</span> name <span class="string">"zhangsan"</span>     //依次输入多个命令。输入一条命令后会提示“QUEUED”，表示此条命令已入队</span><br><span class="line"><span class="built_in">set</span> age 20 </span><br><span class="line">get name </span><br><span class="line"><span class="built_in">exec</span>                    //执行事务，会依次执行事务块内的命令，依次显示执行结果。</span><br><span class="line">//<span class="built_in">exec</span>是执行事务，如果想取消事务，将<span class="built_in">exec</span>换为discard即可。</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g6pmw8jc4pj30g60egq3t.jpg" alt=""></p>
+</br>
+</br>
+
+<p>单个 redis 命令的执行是原子性的，但 redis 并没有在事务上增加任何维持原子性的机制，所以 redis 事务的执行不是原子性的。</p>
+</br>
+
+<p>事务可以理解为一个打包的批量执行脚本，但批量指令并非原子化的操作，中间某条指令的失败不会导致前面已做指令的回滚，也不会造成后续的指令不做。</p>
+</br>
+
+<p>比如执行事务时，第一条执行成功，第二条执行失败，此时并不会回滚之前的操作（此处指第一条、第二条命令），而是继续执行后面的命令。但会显示第二条的结果是Fail。</p>
+</br>
+
+<p>即事务中任意命令执行失败，其余的命令依然被执行。</p>
+</br>
+
+<p>在事务执行过程中，其他客户端提交的命令请求不会插入到事务执行命令队列中。</p>
+<p>Redis2.6以后的版本，在服务器内置了Lua环境（Lua解释器），可以通过eval命令执行Lua脚本。</p>
+]]></content>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Redis 发布订阅</title>
+    <url>/2019/09/05/redis13/</url>
+    <content><![CDATA[<h1 id="Redis-发布订阅"><a href="#Redis-发布订阅" class="headerlink" title="Redis 发布订阅"></a>Redis 发布订阅</h1></br>
+redis 发布订阅 (pub/sub) 是一种消息通信模式：发送者 (pub) 发送消息，订阅者 (sub) 接收消息。
+pub 即 publish ，推送。
+sub 即 subscribe ，订阅。
+</br>
+订阅者订阅某个 channel（频道），发布者将消息发布到 redis 服务器， redis 服务器将消息推送给这个频道的订阅者。
+channel 管道、通道、频道。
+</br>
+![订阅发布](https://tva1.sinaimg.cn/large/006y8mN6gy1g6pqnr02aoj30kt08z0tw.jpg)
+</br>
+redis 的 channel 是公共频道，谁都可以发布消息。
+就像微信群、QQ群，谁都可以发送消息，群成员（订阅者）都会收到消息。
+<a id="more"></a>
+</br>
+redis 的消息是在线即时消息，类似于广播，只有在线的订阅者（连接到 redis  服务器的订阅者），才会收到消息。
+若当时不在线，并不会收到消息。后面登陆了（连接到服务器），服务器也不会推送之前（这个客户端未收到）的消息。服务器只推送一遍。
+</br>
+</br>
+
+<hr>
+<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><p><strong>1.</strong> 启动一个客户端，连接到服务器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">redis-cli -a password</span><br></pre></td></tr></table></figure>
+</br>
+**2.** 订阅频道
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">subscribe channel1 channel2 ... <span class="comment">//可订阅一个或多个频道</span></span><br></pre></td></tr></table></figure>
+<p>会显示订阅的频道的信息，一个频道显示 3 个条目:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;subscribe&quot;                 &#x2F;&#x2F;固定的值，表示这是一个订阅频道</span><br><span class="line">订阅的频道名</span><br><span class="line">一个int型的数，表示这个频道是当前客户端订阅的第几个频道</span><br></pre></td></tr></table></figure>
+<p>订阅之后，当前命令提示符会阻塞，只能接收 redis 服务器推送的消息，不能再执行命令。所以我们再启动一个客户端推送消息。<br></br><br><strong>3.</strong> 在另一个 redis 客户端推送消息</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">publish channel message         <span class="comment">//channel指定要推送消息到哪个频道，message是要推送的消息</span></span><br></pre></td></tr></table></figure>
+<p>返回当前接收到消息的订阅者的数量。1表示只有一个订阅者收到了这条消息。</p>
+<p>我们看到另一个客户端已接收到消息。一条消息显示3个项：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">“message”                   &#x2F;&#x2F;固定值，表示这是一条消息</span><br><span class="line">这条消息来自哪个订阅频道</span><br><span class="line">消息内容</span><br></pre></td></tr></table></figure>
+</br>
+</br>
+redis 的订阅是临时订阅，只在本次连接期间有效。断开连接后，会清除这个客户端的订阅信息，即取消所有订阅的频道。
+</br>
+谁都可以是发布者，谁都可以发送消息。可以向任何频道发送消息。
+</br>
+</br>
+## 相关命令
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">subscribe channel1 channel2 ...     <span class="comment">//订阅一个或多个频道</span></span><br><span class="line"></span><br><span class="line">unsubscribe channel1 channel2 ...   <span class="comment">//退订一个或多个频道。多了un</span></span><br><span class="line"></span><br><span class="line">psubscribe pattern1 pattern2 ...    <span class="comment">//多了一个p，即pattern，订阅该模式匹配的所有频道，可以有多个匹配模式。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">psubscribe tv       <span class="comment">//订阅频道tv</span></span><br><span class="line">psubscribe *<span class="built_in">home</span>    <span class="comment">//订阅所有以home结尾的频道</span></span><br><span class="line">psubscribe china*   <span class="comment">//订阅所有以china开头的频道</span></span><br><span class="line"></span><br><span class="line">punsubscribe pattern1 pattern2 ...  <span class="comment">//退订符合匹配的所有频道，可指定多个匹配模式，满足pattern1或者满足pattern2.....,，注意是或。</span></span><br><span class="line"></span><br><span class="line">publish channel message             <span class="comment">//推送消息到某个频道</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Redis 基础命令</title>
+    <url>/2019/09/05/redis2/</url>
+    <content><![CDATA[<h1 id="Redis-基础命令"><a href="#Redis-基础命令" class="headerlink" title="Redis 基础命令"></a>Redis 基础命令</h1></br>
+## 服务器端命令
+
+<ul>
+<li><p>启动服务： <code>redis-server --service-start</code></p>
+</li>
+<li><p>关闭服务： <code>redis-server --service-stop</code></p>
+</li>
+<li><p>使用redis.conf配置开启服务： <code>redis-server /path/to/redis.conf</code></p>
+</li>
+</ul>
+</br>
+## 客户端命令
+### 1、连接服务器：
+`redis-cli -h 127.0.0.1 -p 6379 -a abcd`
+
+<p>参数说明：</p>
+<ul>
+<li><p>redis-cli    即redis-cli.exe，我们通常缺省后缀.exe</p>
+</li>
+<li><p>-h    即host，服务器的IP地址</p>
+</li>
+<li><p>-p    即port，服务器的端口</p>
+</li>
+<li><p>-a    即auth，Redis服务器的密码</p>
+<a id="more"></a>
+
+</li>
+</ul>
+<p>如果连接远程的Redis服务器，必须指定服务器的IP地址。参数都可缺省，缺省时默认 -h 为 127.0.0.1 ，-p 为 6379 。<br></br><br>连接本地的Redis服务器： <code>redis-cli -a yourPassword</code></p>
+<p>连接远程的Redis服务器： <code>redis-cli -h serverIP -a yourPassword</code><br></br><br>也可以之后再输入密码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">redis-cli</span><br><span class="line"></span><br><span class="line">auth yourPassword</span><br></pre></td></tr></table></figure>
+</br>
+### 2、密码操作
+- 设置/修改密码： `config set requirepass newPassword`，修改密码后需要重新输入密码验证。Reids默认的数据类型是String，比如设置密码为123，会自动作为字符串“123”。
+
+<ul>
+<li>查看密码： <code>config get requirepass</code></li>
+</ul>
+</br>
+也可以通过修改配置文件来实现：
+</br>
+![requirepass](https://tva1.sinaimg.cn/large/006y8mN6gy1g6opk9rkstj30u00uxwtl.jpg)
+</br>
+推荐使用修改配置文件的方式。
+</br>
+因为本次连接期间，对配置文件的修改（包括密码），只在本次连接期间有效，并不会同步到 redis.conf 中。
+
+<p>断开连接后，下次连接时，使用的仍是配置文件中的参数（包括密码），之前命令行修改的配置参数失效。<br></br><br>redis 命令的关键字不区分大小写，比如以下2句命令等效：</p>
+<pre><code>set name &quot;张三&quot; 
+SET name &quot;张三&quot; </code></pre></br>
+## 查看帮助
+
+<ul>
+<li><p>查看服务器端帮助： <code>redis-server --help</code></p>
+</li>
+<li><p>查看客户端帮助： <code>redis-cli --help</code></p>
+</li>
+</ul>
+<blockquote>
+<p>这2个命令不能在redis命令行中使用。</p>
+</blockquote>
+<ul>
+<li>查看某个命令的说明： <code>help command</code> 。</li>
+</ul>
+<blockquote>
+<p>该命令要在redis命令行下使用。</p>
+</blockquote>
+<p><a href="https://www.vousmevoyez.pro/2019/09/05/redis1/" target="_blank" rel="noopener">上一篇：redis 简介</a><br><a href="https://www.vousmevoyez.pro/2019/09/05/redis3/" target="_blank" rel="noopener">下一篇：redis 配置</a></p>
+]]></content>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Redis 配置</title>
+    <url>/2019/09/05/redis3/</url>
+    <content><![CDATA[<h1 id="Redis-配置"><a href="#Redis-配置" class="headerlink" title="Redis 配置"></a>Redis 配置</h1><h2 id="redis-conf-中的部分参数说明"><a href="#redis-conf-中的部分参数说明" class="headerlink" title="redis.conf 中的部分参数说明"></a>redis.conf 中的部分参数说明</h2><blockquote>
+<p>redis.conf 配置的是 redis 服务器。</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">bind <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>      <span class="comment">//设置redis服务器的ip地址</span></span><br><span class="line"></span><br><span class="line">port <span class="number">6379</span>           <span class="comment">//指定端口号</span></span><br><span class="line"></span><br><span class="line">timeout <span class="number">300</span>         <span class="comment">//当客户端闲置多长时间后关闭连接，如果指定为 0，表示关闭该功能。默认为0，需要修改。</span></span><br><span class="line"></span><br><span class="line">loglevel notice     <span class="comment">//指定日志记录级别，redis 总共支持四个级别：debug、verbose、notice、warning，默认为 notice</span></span><br><span class="line"></span><br><span class="line">logfile <span class="built_in">stdout</span>      <span class="comment">//日志记录方式，需要修改为标准输出。默认为空串""。</span></span><br><span class="line"></span><br><span class="line">databases <span class="number">16</span>        <span class="comment">//设置数据库的数量</span></span><br><span class="line"></span><br><span class="line">save <span class="number">900</span> <span class="number">1</span>          <span class="comment">//指定在多长时间内，有多少次更新操作，就将数据同步到数据文件，可以多个条件配合使用，默认是3个。900s=15minutes</span></span><br><span class="line"></span><br><span class="line">save <span class="number">300</span> <span class="number">10</span>         <span class="comment">//300s=5minutes</span></span><br><span class="line"></span><br><span class="line">save <span class="number">60</span> <span class="number">10000</span>       <span class="comment">//60s=1minute</span></span><br><span class="line"></span><br><span class="line">rdbcompression yes  <span class="comment">//指定存储至本地数据库时是否压缩数据，默认为 yes，redis 采用 LZF 压缩，如果为了节省 CPU 时间，可以关闭该选项，但会导致数据库文件变的巨大</span></span><br><span class="line"></span><br><span class="line">dbfilename dump.rdb <span class="comment">//指定本地数据库文件名，默认值为 dump.rdb</span></span><br><span class="line"></span><br><span class="line">dir ./              <span class="comment">//指定本地数据库存放目录</span></span><br><span class="line"></span><br><span class="line">requirepass foobared<span class="comment">//设置 redis 连接密码，如果配置了连接密码，客户端在连接 redis 时需要提供密码，默认关闭</span></span><br><span class="line"></span><br><span class="line">maxclients <span class="number">128</span>      <span class="comment">//设置同一时间最大客户端连接数，默认是注释了的</span></span><br><span class="line"></span><br><span class="line">maxmemory <span class="number">536870912</span> <span class="comment">//指定 redis 最大内存限制，512M。默认是注释了的，默认单位字节。</span></span><br><span class="line"></span><br><span class="line">appendonly yes      <span class="comment">//指定是否在每次更新操作后进行日志记录，redis 在默认情况下是异步的把数据写入磁盘，如果不开启，可能会在断电时导致一段时间内的数据丢失。因为 redis 本身同步数据文件是按上面 save 条件来同步的，所以有的数据会在一段时间内只存在于内存中。默认为 no</span></span><br><span class="line"></span><br><span class="line">appendfilename <span class="string">"appendonly.aof"</span> <span class="comment">//指定日志文件名，默认为 appendonly.aof</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//指定日志更新条件，有3个值：always、everysec、no，默认使用everysec（其余2条是注释了的）</span></span><br><span class="line"><span class="meta"># appendfsync always<span class="comment">//表示每次更新操作后手动调用 fsync() 将数据写到磁盘（慢，安全）</span></span></span><br><span class="line">appendfsync everysec<span class="comment">//表示每秒同步一次（折中，默认值）</span></span><br><span class="line"><span class="meta"># appendfsync no    <span class="comment">//表示等操作系统进行数据缓存同步到磁盘（快）</span></span></span><br><span class="line"></span><br><span class="line">activerehashing yes <span class="comment">//指定是否激活重置哈希，默认为yes</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<p>redis 在启动时会把数据加载到内存中，达到最大内存后，redis 会先尝试清除已到期或即将到期的 Key，当此方法处理 后，仍然到达最大内存设置，将无法再进行写入操作，但仍然可以进行读取操作。redis 新的 vm 机制，会把 Key 存放内存，Value 会存放在 swap 区。</p>
+<h2 id="命令行设置配置参数"><a href="#命令行设置配置参数" class="headerlink" title="命令行设置配置参数"></a>命令行设置配置参数</h2><p>设置配置参数： <code>CONFIG SET key value</code><br>查看配置参数： <code>CONFIG GET key</code><br>示例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CONFIG SET timeout 300 &#x2F;&#x2F;设置timeout为300s</span><br><span class="line"></span><br><span class="line">CONFIG GET timeout     &#x2F;&#x2F;查看timeout的配置值</span><br><span class="line"></span><br><span class="line">CONFIG GET *           &#x2F;&#x2F;查看所有的配置参数</span><br></pre></td></tr></table></figure>
+
+
+</br>
+[上一篇：redis 简介](https://www.vousmevoyez.pro/2019/09/05/redis2/)
+[下一篇：redis 配置](https://www.vousmevoyez.pro/2019/09/05/redis4/)]]></content>
+      <tags>
+        <tag>redis</tag>
       </tags>
   </entry>
   <entry>
@@ -1895,182 +2134,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Redis Sorted Set(有序集合)</title>
-    <url>/2019/09/05/redis10/</url>
-    <content><![CDATA[<h1 id="Redis-Sorted-Set-有序集合"><a href="#Redis-Sorted-Set-有序集合" class="headerlink" title="Redis Sorted Set(有序集合)"></a>Redis Sorted Set(有序集合)</h1></br>
-redis Sorted Set 有序集合是 string 类型元素的集合，元素不允许重复。
-</br>
-有序集合中的每个元素都会关联一个数值型的分数。redis 正是通过分数来为集合中的成员进行从小到大的排序。
-</br>
-有序集合的成员是唯一的（不可重复）,但分数(score)可以重复。
-</br>
-</br>
-<a id="more"></a>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">zadd key score1 value1 score2 value2 ...    <span class="comment">//往有序集合中添加一个或多个元素。score是数值型，支持整数、浮点数，支持负数。z代表sorted set。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例： </span></span><br><span class="line">zadd students <span class="number">1</span> zhangsan <span class="number">2</span> lisi <span class="number">3</span> wangwu    <span class="comment">//返回此次添加的元素个数。score只是附加信息，真正的元素还是value1，value2，......</span></span><br><span class="line"><span class="comment">//说明：hash、list、set、sorted set，在Reids2.4之前的版本中，1次只支持添加一个元素，不支持1次添加多个元素。</span></span><br><span class="line"></span><br><span class="line">zcard key                                   <span class="comment">//返回元素个数</span></span><br><span class="line"></span><br><span class="line">zcount key minScore maxScore                <span class="comment">//返回分数值在[minScore，maxScore]上的元素个数</span></span><br><span class="line"></span><br><span class="line">zlexcount key minValue maxValue             <span class="comment">//返回元素值在[minValue，maxValue]上的元素个数。</span></span><br><span class="line"><span class="comment">//不能直接用元素值，有3种写法：</span></span><br><span class="line"><span class="comment">//[value   表示包含此元素</span></span><br><span class="line"><span class="comment">//(value  表示不包含此元素</span></span><br><span class="line"><span class="comment">//- 表示第一个元素（包含），+ 表示最后一个元素（包含）</span></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">zadd set1 <span class="number">1</span> a <span class="number">2</span> b <span class="number">3</span> c <span class="number">4</span> d</span><br><span class="line">zlexcount set1 - +          <span class="comment">//返回总元素个数，4</span></span><br><span class="line">zlexcount set1 [a [b        <span class="comment">//2 。即[a,b]上元素个数</span></span><br><span class="line"><span class="function">zlexcount <span class="title">set1</span> <span class="params">(a [b        <span class="comment">//1。(a,b]</span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="comment">//不能缺省 [  或  (</span></span></span></span><br><span class="line"><span class="function"><span class="params"> </span></span></span><br><span class="line"><span class="function"><span class="params">zrange key minIndex maxIndex [withscores]   <span class="comment">//返回索引在[minIndex，maxIndex]上的所有元素。</span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="comment">//索引从0开始，支持负数，-1表示倒数第一个元素，-2表示倒数第二个元素。</span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="comment">//withscores是可选参数，带上则还会显示分数，不带则只显示元素值。</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">zrangebyscore key minScore maxScore [withscores]    <span class="comment">//返回score在[minScore，maxScore]上的所有元素值。</span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="comment">//默认使用 [ ，闭区间。也可以显示指定为 [ 或 ( 。</span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="comment">//withscores可选，带上时会显示元素的score，不带上时不显示score。</span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="comment">//示例： </span></span></span></span><br><span class="line"><span class="function"><span class="params">zrangebyscore set1 [<span class="number">1</span> (<span class="number">2</span>                    <span class="comment">//获取score在[1,2)上的所有元素</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">zrank key elementValue                      <span class="comment">//返回该元素值的索引。默认按score进行升序排列。索引从0开始。</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="comment">//以上3个命令都是按score升序排列的。下面的3个命令：</span></span></span></span><br><span class="line"><span class="function"><span class="params">zrevrange</span></span></span><br><span class="line"><span class="function"><span class="params">zrevrangebyscore</span></span></span><br><span class="line"><span class="function"><span class="params">zrevrank</span></span></span><br><span class="line"><span class="function"><span class="params"><span class="comment">//前缀加不是z，而是zrev。和之前的3个命令一一对应，用法完全相同，只不过是按score降序排列计算的。</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">zscore key elementValue                     <span class="comment">//返回该元素值对应的score值</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">zincrby key increment elementValue          <span class="comment">//increment是增量，将指定元素的score增加increment。increment支持负数，即减。</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">zrem key value1 value2 ...                  <span class="comment">//移除一个或多个元素</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">zremrangebyrank key startIndex endIndex     <span class="comment">//移除下标在[startIndex，endIndex]上的所有元素。zremrangebyrank即z  remove  range  by  rank</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">zremrangebyscore key minScore maxScore      <span class="comment">//移除score在[minScore，maxScore]上的所有元素</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">zremrangebylex key value1 value2            <span class="comment">//移除这2个元素值之间的所有元素。</span></span></span></span><br><span class="line"><span class="function"><span class="params"><span class="comment">//不能直接写元素值，可以用 - + 表示，或者在元素值前面加[  (</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">zscan key <span class="built_in">cursor</span> [match pattern] [count num]<span class="comment">//迭代</span></span></span></span><br></pre></td></tr></table></figure>
-</br>
-</br>
-sorted set 也提供了计算交集、并集的命令，此处不再一一介绍。]]></content>
-      <tags>
-        <tag>redis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Redis 常用命令</title>
-    <url>/2019/09/05/redis11/</url>
-    <content><![CDATA[<h1 id="Redis-常用命令"><a href="#Redis-常用命令" class="headerlink" title="Redis 常用命令"></a>Redis 常用命令</h1></br>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">auth password       <span class="comment">//验证密码</span></span><br><span class="line"></span><br><span class="line">echo message        <span class="comment">//打印文本</span></span><br><span class="line"></span><br><span class="line">ping                <span class="comment">//测试连接，ping一下Redis服务器，如果连接正常（已连接到Redis服务器）返回PONG。</span></span><br><span class="line"></span><br><span class="line">select dbIndex      <span class="comment">//选择当前使用的数据库，默认使用数据库0，下标，从0开始。</span></span><br><span class="line"></span><br><span class="line">quit                <span class="comment">//关闭当前连接，并退到上一级命令行</span></span><br><span class="line"></span><br><span class="line">time                <span class="comment">//获取服务器上的当前时间。</span></span><br><span class="line"><span class="comment">//有2个返回值，第一个是当前时间的时间戳（s），第二个是当前这一秒已经逝去的微秒数。</span></span><br><span class="line"><span class="comment">//1秒=10^3毫秒=10^6微秒。</span></span><br><span class="line"><span class="comment">//两者组合可显示微秒级的时间。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">config</span> <span class="built_in">set</span> param value  <span class="comment">//设置配置参数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">config</span> <span class="built_in">get</span> param    <span class="comment">//获取配置参数的值</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">config</span> rewrite      <span class="comment">//将本次连接中，这条命令之前，对配置的设置都同步到redis.conf文件中。</span></span><br><span class="line"><span class="comment">//默认对配置的设置、修改只在本次连接期间有效，并不会同步修改redis.conf文件。断开本次连接，会清除本次连接的配置设置，下次连接时，使用的是redis.conf文件中配置。</span></span><br><span class="line"><span class="comment">//比如：</span></span><br><span class="line"><span class="comment">//配置文件中的密码是abc，连接到redis服务器后</span></span><br><span class="line"><span class="built_in">config</span> <span class="built_in">set</span> requirepass <span class="number">123</span>  <span class="comment">//修改密码为123</span></span><br><span class="line"><span class="comment">//这次连接中，密码不再是abc，而是123。但这个修改并不会同步到redis.conf文件中，redis.conf文件中的密码仍是abc。下次连接时，使用密码123会提示密码错误，需要使用abc。</span></span><br><span class="line"><span class="comment">//有2种方式同步到redis.conf文件中：</span></span><br><span class="line"><span class="comment">//1. 直接在redis.conf文件中修改</span></span><br><span class="line"><span class="comment">//2. 连接到redis服务器后，在命令行修改，然后使用 config rewrite 命令同步到redis.conf中。</span></span><br><span class="line"> </span><br><span class="line">dbsize              <span class="comment">//返回当前数据库中，key的数量</span></span><br><span class="line"></span><br><span class="line">flushdb             <span class="comment">//清除当前数据库中所有的key，即清空当前数据库。flushdb即flush  db。</span></span><br><span class="line"></span><br><span class="line">flushall            <span class="comment">//清除所有数据库中的key，即清空所有数据库。flushall即flush  all。</span></span><br><span class="line"></span><br><span class="line">save                <span class="comment">//将redis数据库中的所有数据同步到.rdb文件中。redis数据库中的数据是常驻内存的，save命令将内存中的redis数据库数据同步写到数据库文件.rdb中。</span></span><br><span class="line"></span><br><span class="line">bgsave              <span class="comment">//同上，只不过bgsave是在后台异步保存。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">.rdb 文件是 redis 的数据库文件，rdb即 redis db。启动 redis 服务的时候，会从 .rdb 文件加载所有的数据库数据到内存。就是说数据库数据有 2 份，一份常驻内存，一份是持久化的磁盘文件。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">.rdb 文件也被称为 redis 数据库的备份文件。可以将一个 .rdb 文件放在redis安装目录下，作为这个  redis 服务器的数据库数据。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">client <span class="built_in">list</span>             <span class="comment">//列出所有的连接</span></span><br><span class="line"></span><br><span class="line">client kill ip:port     <span class="comment">//关闭某个连接。</span></span><br><span class="line"><span class="comment">//6379只是redis服务器、客户端程序通信使用的端口号。建立一个redis数据库连接，会单独使用一个端口号，一个redis客户端可以建立多个数据库连接，一个连接对应一个端口号，并不是使用6379。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">shutdown</span> [save/nosave]  <span class="comment">//关闭redis服务器。会自动关闭与所有的redis客户端连接、以及与这些客户端建立的数据库连接，并同步数据集到rdb文件中。</span></span><br><span class="line"><span class="comment">//shutdown命令可带一个可选参数：是否将数据集同步到rdb文件中。save——同步，nosave——不同步。</span></span><br><span class="line"></span><br><span class="line">client kill ip:port     <span class="comment">//是关闭某个数据库连接，quit是关闭redis客户端（会自动关闭这个客户端建立的所有数据库连接），shutdown save是关闭redis服务器（会自动关闭这个redis服务器的所有数据库连接）。</span></span><br><span class="line"></span><br><span class="line">slaveof ip port         <span class="comment">//原本默认本身是主服务器，此句命令会将当前redis服务器作为某个服务器的从服务器。</span></span><br><span class="line"><span class="comment">//示例： </span></span><br><span class="line">slaveof <span class="number">127.23</span><span class="number">.23</span><span class="number">.35</span> <span class="number">6379</span>   <span class="comment">//把当前服务器作为127.23.23.35这台服务器的从服务器。</span></span><br><span class="line"><span class="comment">//变成从服务器后，会丢弃原来数据库的数据集，从主服务器复制、同步数据到从服务器。</span></span><br><span class="line"><span class="comment">//slave，意为奴隶、从属。</span></span><br><span class="line"></span><br><span class="line">sync                        <span class="comment">//从主服务器复制、同步数据集</span></span><br><span class="line"></span><br><span class="line">slave no one                </span><br><span class="line"><span class="comment">//这句命令是关闭这个从服务器的从主服务器复制数据的功能，使这个从服务器变成一个主服务器。使用的仍是作为从服务器时的数据集。</span></span><br><span class="line"><span class="comment">//当主服务器出问题、或者需要做其他用途的时候，可以把一台从服务器作为主服务器，再把其它的从服务器作为这个主服务器的从属，这样就不会影响服务器的运转。</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>redis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Redis 简介</title>
-    <url>/2019/09/05/redis1/</url>
-    <content><![CDATA[<h1 id="Redis-简介"><a href="#Redis-简介" class="headerlink" title="Redis 简介"></a>Redis 简介</h1><p>redis 是一个开源的使用 ANSI C 语言编写、基于内存亦可持久化的日志型、Key-Value 数据库，并提供了对多种编程语言的支持。<br></br><br>redis 的外围由一个键、值映射的字典构成，Redis 五种数据类型：string ，hash ，list ，set 及 zset (sorted set) ，所以Redis 也被称为数据结构服务器。<br></br><br>redis 是一个 key-value 存储系统。支持存储的 value 类型包括 string (字符串)、list (链表)、set (集合)、zset (sorted set –有序集合)和 hash（哈希）。这些数据类型都支持 push/pop 、 add/remove 及取交集并集和差集等操作，且 Redis 支持各种不同方式的排序。为了保证效率，数据都是缓存在内存中。 redis 会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，并且在此基础上实现了 master-slave (主从)同步。<br></br><br>redis 支持主从同步。数据可以从主服务器向任意数量的从服务器上同步，从服务器可以是关联其他从服务器的主服务器。这使得 Redis 可执行单层树复制。存盘可以有意无意的对数据进行写操作。由于完全实现了发布/订阅机制，使得从数据库在任何地方同步树时，可订阅一个频道并接收主服务器完整的消息发布记录。</p>
-<a id="more"></a>
-</br>
-</br>
-## Redis的特点
-- redis 支持数据的持久化，可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。
-- redis 是完全在内存中保存数据的数据库，使用磁盘只是为了持久化。
-- redis 不仅仅支持简单的 key-value 类型的数据，同时还提供 list ，set ，zset ，hash 等数据结构的存储。
-- redis 支持数据的备份，即 master-slave 模式的数据备份。
-</br>
-</br>
-
-<h2 id="Redis-优势"><a href="#Redis-优势" class="headerlink" title="Redis 优势"></a>Redis 优势</h2><ul>
-<li><code>性能极高</code> —— redis 是一个高性能的 key-value 数据库，读的速度能达到110000次/s,写的速度能达到81000次/s。</li>
-<li><code>丰富的数据类型</code> —— Redis 支持 string ， hash ，list ，set 及 zset (sorted set) 等数据类型。</li>
-<li><code>原子性</code> —— redis 的所有操作都是原子性的，要么成功执行要么失败完全不执行。单个操作是原子性的。多个操作也支持事务，即原子性，通过 MULTI 和 EXEC 指令包起来。</li>
-<li><code>丰富的特性</code> —— redis 支持 publish / subscribe , 通知, key 过期等特性。</li>
-</ul>
-</br>
-</br>
->redis 使用了两种文件格式：
-
-<ul>
-<li><code>全量数据格式</code>：把内存中的数据写入磁盘，便于下次读取文件进行加载</li>
-<li><code>增量请求文件</code>：把内存中的数据序列化为操作请求，用于读取文件进行replay得到数据，序列化的操作包括 SET 、 RPUSH 、 SADD 、 ZADD 。</li>
-</ul>
-</br>
-</br>
-
-<blockquote>
-<p>redis 的存储分为内存存储、磁盘存储和 log 文件三部分，配置文件中有三个参数对其进行配置。</p>
-</blockquote>
-<ul>
-<li><p><code>save seconds updates</code>：save配置，指出在多长时间内，有多少次更新操作，就将数据同步到数据文件。</p>
-</li>
-<li><p><code>appendonly yes/no</code>：appendonly配置，指出是否在每次更新操作后进行日志记录，如果不开启，可能会在断电时导致一段时间内的数据丢失。因为redis本身同步数据文件是按上面的save条件来同步的，所以有的数据会在一段时间内只存在于内存中。</p>
-</li>
-<li><p><code>appendfsync no/always/everysec</code>：appendfsync 配置，no 表示等操作系统进行数据缓存同步到磁盘，always 表示每次更新操作后手动调用 fsync() 将数据写到磁盘， everysec 表示每秒同步一次。</p>
-</br>
-</br>
-
-</li>
-</ul>
-<p>redis 运行在内存中但可持久化到磁盘，在对不同数据集进行高速读写时需要权衡内存，因为数据量不能大于硬件内存。内存数据库的一个优点是，相比在磁盘上相同的复杂的数据结构，在内存中操作起来非常简单，可以做很多内部复杂性很强的事情。<br></br><br><a href="https://www.vousmevoyez.pro/2019/09/05/redis2/" target="_blank" rel="noopener">下一篇：redis 基础命令</a></p>
-]]></content>
-      <tags>
-        <tag>redis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Redis 事务</title>
-    <url>/2019/09/05/redis12/</url>
-    <content><![CDATA[<h1 id="Redis-事务"><a href="#Redis-事务" class="headerlink" title="Redis 事务"></a>Redis 事务</h1><p>redis 事务可以一次执行多个命令。</p>
-</br>
-
-<p>常用命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">multi       //开起一个事务，标记一个事务块的开始，multi即multiple</span><br><span class="line"></span><br><span class="line"><span class="built_in">exec</span>        //执行事务块内的命令</span><br><span class="line"></span><br><span class="line">discard     //取消事务</span><br></pre></td></tr></table></figure>
-
-<p>使用步骤：</p>
-<ol>
-<li>先使用 multi 命令标记事务开始</li>
-<li>将多个命令入队( queue ，队列)</li>
-<li>使用 exec 命令执行事务</li>
-</ol>
-<a id="more"></a>
-
-<p>示例：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">multi                   //标记事务开始</span><br><span class="line"><span class="built_in">set</span> name <span class="string">"zhangsan"</span>     //依次输入多个命令。输入一条命令后会提示“QUEUED”，表示此条命令已入队</span><br><span class="line"><span class="built_in">set</span> age 20 </span><br><span class="line">get name </span><br><span class="line"><span class="built_in">exec</span>                    //执行事务，会依次执行事务块内的命令，依次显示执行结果。</span><br><span class="line">//<span class="built_in">exec</span>是执行事务，如果想取消事务，将<span class="built_in">exec</span>换为discard即可。</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g6pmw8jc4pj30g60egq3t.jpg" alt=""></p>
-</br>
-</br>
-
-<p>单个 redis 命令的执行是原子性的，但 redis 并没有在事务上增加任何维持原子性的机制，所以 redis 事务的执行不是原子性的。</p>
-</br>
-
-<p>事务可以理解为一个打包的批量执行脚本，但批量指令并非原子化的操作，中间某条指令的失败不会导致前面已做指令的回滚，也不会造成后续的指令不做。</p>
-</br>
-
-<p>比如执行事务时，第一条执行成功，第二条执行失败，此时并不会回滚之前的操作（此处指第一条、第二条命令），而是继续执行后面的命令。但会显示第二条的结果是Fail。</p>
-</br>
-
-<p>即事务中任意命令执行失败，其余的命令依然被执行。</p>
-</br>
-
-<p>在事务执行过程中，其他客户端提交的命令请求不会插入到事务执行命令队列中。</p>
-<p>Redis2.6以后的版本，在服务器内置了Lua环境（Lua解释器），可以通过eval命令执行Lua脚本。</p>
-]]></content>
-      <tags>
-        <tag>redis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Redis 发布订阅</title>
-    <url>/2019/09/05/redis13/</url>
-    <content><![CDATA[<h1 id="Redis-发布订阅"><a href="#Redis-发布订阅" class="headerlink" title="Redis 发布订阅"></a>Redis 发布订阅</h1></br>
-redis 发布订阅 (pub/sub) 是一种消息通信模式：发送者 (pub) 发送消息，订阅者 (sub) 接收消息。
-pub 即 publish ，推送。
-sub 即 subscribe ，订阅。
-</br>
-订阅者订阅某个 channel（频道），发布者将消息发布到 redis 服务器， redis 服务器将消息推送给这个频道的订阅者。
-channel 管道、通道、频道。
-</br>
-![订阅发布](https://tva1.sinaimg.cn/large/006y8mN6gy1g6pqnr02aoj30kt08z0tw.jpg)
-</br>
-redis 的 channel 是公共频道，谁都可以发布消息。
-就像微信群、QQ群，谁都可以发送消息，群成员（订阅者）都会收到消息。
-<a id="more"></a>
-</br>
-redis 的消息是在线即时消息，类似于广播，只有在线的订阅者（连接到 redis  服务器的订阅者），才会收到消息。
-若当时不在线，并不会收到消息。后面登陆了（连接到服务器），服务器也不会推送之前（这个客户端未收到）的消息。服务器只推送一遍。
-</br>
-</br>
-
-<hr>
-<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><p><strong>1.</strong> 启动一个客户端，连接到服务器</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">redis-cli -a password</span><br></pre></td></tr></table></figure>
-</br>
-**2.** 订阅频道
-
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">subscribe channel1 channel2 ... <span class="comment">//可订阅一个或多个频道</span></span><br></pre></td></tr></table></figure>
-<p>会显示订阅的频道的信息，一个频道显示 3 个条目:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;subscribe&quot;                 &#x2F;&#x2F;固定的值，表示这是一个订阅频道</span><br><span class="line">订阅的频道名</span><br><span class="line">一个int型的数，表示这个频道是当前客户端订阅的第几个频道</span><br></pre></td></tr></table></figure>
-<p>订阅之后，当前命令提示符会阻塞，只能接收 redis 服务器推送的消息，不能再执行命令。所以我们再启动一个客户端推送消息。<br></br><br><strong>3.</strong> 在另一个 redis 客户端推送消息</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">publish channel message         <span class="comment">//channel指定要推送消息到哪个频道，message是要推送的消息</span></span><br></pre></td></tr></table></figure>
-<p>返回当前接收到消息的订阅者的数量。1表示只有一个订阅者收到了这条消息。</p>
-<p>我们看到另一个客户端已接收到消息。一条消息显示3个项：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">“message”                   &#x2F;&#x2F;固定值，表示这是一条消息</span><br><span class="line">这条消息来自哪个订阅频道</span><br><span class="line">消息内容</span><br></pre></td></tr></table></figure>
-</br>
-</br>
-redis 的订阅是临时订阅，只在本次连接期间有效。断开连接后，会清除这个客户端的订阅信息，即取消所有订阅的频道。
-</br>
-谁都可以是发布者，谁都可以发送消息。可以向任何频道发送消息。
-</br>
-</br>
-## 相关命令
-
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">subscribe channel1 channel2 ...     <span class="comment">//订阅一个或多个频道</span></span><br><span class="line"></span><br><span class="line">unsubscribe channel1 channel2 ...   <span class="comment">//退订一个或多个频道。多了un</span></span><br><span class="line"></span><br><span class="line">psubscribe pattern1 pattern2 ...    <span class="comment">//多了一个p，即pattern，订阅该模式匹配的所有频道，可以有多个匹配模式。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">psubscribe tv       <span class="comment">//订阅频道tv</span></span><br><span class="line">psubscribe *<span class="built_in">home</span>    <span class="comment">//订阅所有以home结尾的频道</span></span><br><span class="line">psubscribe china*   <span class="comment">//订阅所有以china开头的频道</span></span><br><span class="line"></span><br><span class="line">punsubscribe pattern1 pattern2 ...  <span class="comment">//退订符合匹配的所有频道，可指定多个匹配模式，满足pattern1或者满足pattern2.....,，注意是或。</span></span><br><span class="line"></span><br><span class="line">publish channel message             <span class="comment">//推送消息到某个频道</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>redis</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Redis KEY键的操作</title>
     <url>/2019/09/05/redis4/</url>
     <content><![CDATA[<h1 id="Redis-KEY键的操作"><a href="#Redis-KEY键的操作" class="headerlink" title="Redis KEY键的操作"></a>Redis KEY键的操作</h1></br>
@@ -2143,99 +2206,10 @@ redis 有序集合和集合一样也是 string 类型元素的集合,且不允�
       </tags>
   </entry>
   <entry>
-    <title>Redis 基础命令</title>
-    <url>/2019/09/05/redis2/</url>
-    <content><![CDATA[<h1 id="Redis-基础命令"><a href="#Redis-基础命令" class="headerlink" title="Redis 基础命令"></a>Redis 基础命令</h1></br>
-## 服务器端命令
-
-<ul>
-<li><p>启动服务： <code>redis-server --service-start</code></p>
-</li>
-<li><p>关闭服务： <code>redis-server --service-stop</code></p>
-</li>
-<li><p>使用redis.conf配置开启服务： <code>redis-server /path/to/redis.conf</code></p>
-</li>
-</ul>
-</br>
-## 客户端命令
-### 1、连接服务器：
-`redis-cli -h 127.0.0.1 -p 6379 -a abcd`
-
-<p>参数说明：</p>
-<ul>
-<li><p>redis-cli    即redis-cli.exe，我们通常缺省后缀.exe</p>
-</li>
-<li><p>-h    即host，服务器的IP地址</p>
-</li>
-<li><p>-p    即port，服务器的端口</p>
-</li>
-<li><p>-a    即auth，Redis服务器的密码</p>
-<a id="more"></a>
-
-</li>
-</ul>
-<p>如果连接远程的Redis服务器，必须指定服务器的IP地址。参数都可缺省，缺省时默认 -h 为 127.0.0.1 ，-p 为 6379 。<br></br><br>连接本地的Redis服务器： <code>redis-cli -a yourPassword</code></p>
-<p>连接远程的Redis服务器： <code>redis-cli -h serverIP -a yourPassword</code><br></br><br>也可以之后再输入密码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">redis-cli</span><br><span class="line"></span><br><span class="line">auth yourPassword</span><br></pre></td></tr></table></figure>
-</br>
-### 2、密码操作
-- 设置/修改密码： `config set requirepass newPassword`，修改密码后需要重新输入密码验证。Reids默认的数据类型是String，比如设置密码为123，会自动作为字符串“123”。
-
-<ul>
-<li>查看密码： <code>config get requirepass</code></li>
-</ul>
-</br>
-也可以通过修改配置文件来实现：
-</br>
-![requirepass](https://tva1.sinaimg.cn/large/006y8mN6gy1g6opk9rkstj30u00uxwtl.jpg)
-</br>
-推荐使用修改配置文件的方式。
-</br>
-因为本次连接期间，对配置文件的修改（包括密码），只在本次连接期间有效，并不会同步到 redis.conf 中。
-
-<p>断开连接后，下次连接时，使用的仍是配置文件中的参数（包括密码），之前命令行修改的配置参数失效。<br></br><br>redis 命令的关键字不区分大小写，比如以下2句命令等效：</p>
-<pre><code>set name &quot;张三&quot; 
-SET name &quot;张三&quot; </code></pre></br>
-## 查看帮助
-
-<ul>
-<li><p>查看服务器端帮助： <code>redis-server --help</code></p>
-</li>
-<li><p>查看客户端帮助： <code>redis-cli --help</code></p>
-</li>
-</ul>
-<blockquote>
-<p>这2个命令不能在redis命令行中使用。</p>
-</blockquote>
-<ul>
-<li>查看某个命令的说明： <code>help command</code> 。</li>
-</ul>
-<blockquote>
-<p>该命令要在redis命令行下使用。</p>
-</blockquote>
-<p><a href="https://www.vousmevoyez.pro/2019/09/05/redis1/" target="_blank" rel="noopener">上一篇：redis 简介</a><br><a href="https://www.vousmevoyez.pro/2019/09/05/redis3/" target="_blank" rel="noopener">下一篇：redis 配置</a></p>
-]]></content>
-      <tags>
-        <tag>redis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Redis 配置</title>
-    <url>/2019/09/05/redis3/</url>
-    <content><![CDATA[<h1 id="Redis-配置"><a href="#Redis-配置" class="headerlink" title="Redis 配置"></a>Redis 配置</h1><h2 id="redis-conf-中的部分参数说明"><a href="#redis-conf-中的部分参数说明" class="headerlink" title="redis.conf 中的部分参数说明"></a>redis.conf 中的部分参数说明</h2><blockquote>
-<p>redis.conf 配置的是 redis 服务器。</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">bind <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>      <span class="comment">//设置redis服务器的ip地址</span></span><br><span class="line"></span><br><span class="line">port <span class="number">6379</span>           <span class="comment">//指定端口号</span></span><br><span class="line"></span><br><span class="line">timeout <span class="number">300</span>         <span class="comment">//当客户端闲置多长时间后关闭连接，如果指定为 0，表示关闭该功能。默认为0，需要修改。</span></span><br><span class="line"></span><br><span class="line">loglevel notice     <span class="comment">//指定日志记录级别，redis 总共支持四个级别：debug、verbose、notice、warning，默认为 notice</span></span><br><span class="line"></span><br><span class="line">logfile <span class="built_in">stdout</span>      <span class="comment">//日志记录方式，需要修改为标准输出。默认为空串""。</span></span><br><span class="line"></span><br><span class="line">databases <span class="number">16</span>        <span class="comment">//设置数据库的数量</span></span><br><span class="line"></span><br><span class="line">save <span class="number">900</span> <span class="number">1</span>          <span class="comment">//指定在多长时间内，有多少次更新操作，就将数据同步到数据文件，可以多个条件配合使用，默认是3个。900s=15minutes</span></span><br><span class="line"></span><br><span class="line">save <span class="number">300</span> <span class="number">10</span>         <span class="comment">//300s=5minutes</span></span><br><span class="line"></span><br><span class="line">save <span class="number">60</span> <span class="number">10000</span>       <span class="comment">//60s=1minute</span></span><br><span class="line"></span><br><span class="line">rdbcompression yes  <span class="comment">//指定存储至本地数据库时是否压缩数据，默认为 yes，redis 采用 LZF 压缩，如果为了节省 CPU 时间，可以关闭该选项，但会导致数据库文件变的巨大</span></span><br><span class="line"></span><br><span class="line">dbfilename dump.rdb <span class="comment">//指定本地数据库文件名，默认值为 dump.rdb</span></span><br><span class="line"></span><br><span class="line">dir ./              <span class="comment">//指定本地数据库存放目录</span></span><br><span class="line"></span><br><span class="line">requirepass foobared<span class="comment">//设置 redis 连接密码，如果配置了连接密码，客户端在连接 redis 时需要提供密码，默认关闭</span></span><br><span class="line"></span><br><span class="line">maxclients <span class="number">128</span>      <span class="comment">//设置同一时间最大客户端连接数，默认是注释了的</span></span><br><span class="line"></span><br><span class="line">maxmemory <span class="number">536870912</span> <span class="comment">//指定 redis 最大内存限制，512M。默认是注释了的，默认单位字节。</span></span><br><span class="line"></span><br><span class="line">appendonly yes      <span class="comment">//指定是否在每次更新操作后进行日志记录，redis 在默认情况下是异步的把数据写入磁盘，如果不开启，可能会在断电时导致一段时间内的数据丢失。因为 redis 本身同步数据文件是按上面 save 条件来同步的，所以有的数据会在一段时间内只存在于内存中。默认为 no</span></span><br><span class="line"></span><br><span class="line">appendfilename <span class="string">"appendonly.aof"</span> <span class="comment">//指定日志文件名，默认为 appendonly.aof</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//指定日志更新条件，有3个值：always、everysec、no，默认使用everysec（其余2条是注释了的）</span></span><br><span class="line"><span class="meta"># appendfsync always<span class="comment">//表示每次更新操作后手动调用 fsync() 将数据写到磁盘（慢，安全）</span></span></span><br><span class="line">appendfsync everysec<span class="comment">//表示每秒同步一次（折中，默认值）</span></span><br><span class="line"><span class="meta"># appendfsync no    <span class="comment">//表示等操作系统进行数据缓存同步到磁盘（快）</span></span></span><br><span class="line"></span><br><span class="line">activerehashing yes <span class="comment">//指定是否激活重置哈希，默认为yes</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-
-<p>redis 在启动时会把数据加载到内存中，达到最大内存后，redis 会先尝试清除已到期或即将到期的 Key，当此方法处理 后，仍然到达最大内存设置，将无法再进行写入操作，但仍然可以进行读取操作。redis 新的 vm 机制，会把 Key 存放内存，Value 会存放在 swap 区。</p>
-<h2 id="命令行设置配置参数"><a href="#命令行设置配置参数" class="headerlink" title="命令行设置配置参数"></a>命令行设置配置参数</h2><p>设置配置参数： <code>CONFIG SET key value</code><br>查看配置参数： <code>CONFIG GET key</code><br>示例：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CONFIG SET timeout 300 &#x2F;&#x2F;设置timeout为300s</span><br><span class="line"></span><br><span class="line">CONFIG GET timeout     &#x2F;&#x2F;查看timeout的配置值</span><br><span class="line"></span><br><span class="line">CONFIG GET *           &#x2F;&#x2F;查看所有的配置参数</span><br></pre></td></tr></table></figure>
-
-
-</br>
-[上一篇：redis 简介](https://www.vousmevoyez.pro/2019/09/05/redis2/)
-[下一篇：redis 配置](https://www.vousmevoyez.pro/2019/09/05/redis4/)]]></content>
+    <title>Redis String(字符串)</title>
+    <url>/2019/09/05/redis6/</url>
+    <content><![CDATA[<h1 id="Redis-String-字符串"><a href="#Redis-String-字符串" class="headerlink" title="Redis String(字符串)"></a>Redis String(字符串)</h1></br>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">getset key newValue     <span class="comment">//给key设置value，并返回旧的value，如果没有旧的value，返回nil。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>  </span><br><span class="line">getset age <span class="number">20</span>           <span class="comment">//age 的值被设置为20，并返回旧的值10</span></span><br><span class="line"></span><br><span class="line">getrange key start <span class="built_in">end</span>  <span class="comment">//获取value的部分</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> content <span class="string">"hello world!"</span> </span><br><span class="line">getrange content <span class="number">0</span> <span class="number">4</span>    <span class="comment">//返回content对应value的[0,4]上的字符，"hello"，下标</span></span><br><span class="line">getrange content <span class="number">0</span> <span class="number">-1</span>   <span class="comment">//支持负数索引，-1表示最后一个字符</span></span><br><span class="line"></span><br><span class="line">mget key1 key2 ......   <span class="comment">//mget即multiple get，同时获取多个key的value，若某个key不存在，该key返回nil</span></span><br><span class="line"></span><br><span class="line">setex key timeout value <span class="comment">//setex即set expire，给key设置timeout、value，若key已存在，会覆盖原来的timeout、value</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">setex age <span class="number">60</span> <span class="number">10</span>         <span class="comment">//设置age 60s后过期，value为10</span></span><br><span class="line"></span><br><span class="line">setnx key value         <span class="comment">//在 key 不存在时，为 key 设置value，设置成功返回1；若key已存在，不执行（不会替换原来的value），返回0。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>              <span class="comment">//若age已存在，会则覆盖value</span></span><br><span class="line">setnx age <span class="number">20</span>            <span class="comment">//age不存在时才设置，age已存在就不设置（不会覆盖原来的value）</span></span><br><span class="line"></span><br><span class="line">mset key1 value1 key2 value2 ......     <span class="comment">//mset即multiple  set。同时设置多个键值对。因为是set，所以若某个key已存在，会覆盖。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例： </span></span><br><span class="line">mset name <span class="string">"lisi"</span> age <span class="number">20</span> </span><br><span class="line"></span><br><span class="line">msetnx key1 value1 key2 value2 ......   <span class="comment">//msetnx即multiple setnx，当key不存在时才设置该key，已存在就不设置该key</span></span><br><span class="line"></span><br><span class="line">append key content      <span class="comment">//若key已存在，则在value末尾追加content；若key不存在，则为其设置值，此时相当于set key value。返回操作过后，value（新）的长度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">append str <span class="string">"hello"</span>      <span class="comment">//之前str不存在，此句命令相当于set str "hello"</span></span><br><span class="line">append str <span class="string">" world!"</span>    <span class="comment">//之前str已存在，则在其末尾追加" world!"，现在str的值变为"hello world!"</span></span><br><span class="line"></span><br><span class="line">incr key                <span class="comment">//incr即increase，如果value是整数（可以是负整数），将value的值+1，并返回操作后的value。如果value不是整数，提示错误。如果key不存在，先将value初始化为0，再执行+1。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>              <span class="comment">//等价于set age "10"。</span></span><br><span class="line">incr age                <span class="comment">//value的值+1，变为11，并返回11。value是整数才会+1。</span></span><br><span class="line"><span class="built_in">get</span> age                 <span class="comment">//11</span></span><br><span class="line">incr price              <span class="comment">//之前price不存在，value会先初始化为0，再+1，返回1</span></span><br><span class="line"><span class="built_in">get</span> price               <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line">incrby key amount       <span class="comment">//同上，只不过是+amout，不是+1。原来的value要是整数，amount也要是整数，否则提示错误。若key不存在，先初始化value为0。支持负整数（即减）。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">20</span> </span><br><span class="line">incrby age <span class="number">5</span>            <span class="comment">//+5</span></span><br><span class="line"><span class="built_in">get</span> age                 <span class="comment">//25</span></span><br><span class="line"></span><br><span class="line">incrbyfloat key amount  <span class="comment">//同上，只不过原来的value可以是浮点数，增量amount也可以是浮点数。当然，整数也行。支持负数（减）。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> price <span class="number">2.3</span> </span><br><span class="line">incrbyfloat price <span class="number">1.5</span>     </span><br><span class="line"><span class="built_in">get</span> price               <span class="comment">//3.8</span></span><br><span class="line"></span><br><span class="line">decr key                <span class="comment">//同incr key只不过decr是减。decr即decrease。</span></span><br><span class="line"></span><br><span class="line">decrby key amount       <span class="comment">//同incrby  key  amount，只不过是减</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>redis</tag>
       </tags>
@@ -2289,15 +2263,6 @@ redis 列表是简单的字符串列表，列表是有序的，列表中的元�
 
 <p>redis 的区间，都是闭区间，[ start ，end ] ，两边都包含。</p>
 ]]></content>
-      <tags>
-        <tag>redis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Redis String(字符串)</title>
-    <url>/2019/09/05/redis6/</url>
-    <content><![CDATA[<h1 id="Redis-String-字符串"><a href="#Redis-String-字符串" class="headerlink" title="Redis String(字符串)"></a>Redis String(字符串)</h1></br>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">getset key newValue     <span class="comment">//给key设置value，并返回旧的value，如果没有旧的value，返回nil。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>  </span><br><span class="line">getset age <span class="number">20</span>           <span class="comment">//age 的值被设置为20，并返回旧的值10</span></span><br><span class="line"></span><br><span class="line">getrange key start <span class="built_in">end</span>  <span class="comment">//获取value的部分</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> content <span class="string">"hello world!"</span> </span><br><span class="line">getrange content <span class="number">0</span> <span class="number">4</span>    <span class="comment">//返回content对应value的[0,4]上的字符，"hello"，下标</span></span><br><span class="line">getrange content <span class="number">0</span> <span class="number">-1</span>   <span class="comment">//支持负数索引，-1表示最后一个字符</span></span><br><span class="line"></span><br><span class="line">mget key1 key2 ......   <span class="comment">//mget即multiple get，同时获取多个key的value，若某个key不存在，该key返回nil</span></span><br><span class="line"></span><br><span class="line">setex key timeout value <span class="comment">//setex即set expire，给key设置timeout、value，若key已存在，会覆盖原来的timeout、value</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">setex age <span class="number">60</span> <span class="number">10</span>         <span class="comment">//设置age 60s后过期，value为10</span></span><br><span class="line"></span><br><span class="line">setnx key value         <span class="comment">//在 key 不存在时，为 key 设置value，设置成功返回1；若key已存在，不执行（不会替换原来的value），返回0。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>              <span class="comment">//若age已存在，会则覆盖value</span></span><br><span class="line">setnx age <span class="number">20</span>            <span class="comment">//age不存在时才设置，age已存在就不设置（不会覆盖原来的value）</span></span><br><span class="line"></span><br><span class="line">mset key1 value1 key2 value2 ......     <span class="comment">//mset即multiple  set。同时设置多个键值对。因为是set，所以若某个key已存在，会覆盖。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例： </span></span><br><span class="line">mset name <span class="string">"lisi"</span> age <span class="number">20</span> </span><br><span class="line"></span><br><span class="line">msetnx key1 value1 key2 value2 ......   <span class="comment">//msetnx即multiple setnx，当key不存在时才设置该key，已存在就不设置该key</span></span><br><span class="line"></span><br><span class="line">append key content      <span class="comment">//若key已存在，则在value末尾追加content；若key不存在，则为其设置值，此时相当于set key value。返回操作过后，value（新）的长度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">append str <span class="string">"hello"</span>      <span class="comment">//之前str不存在，此句命令相当于set str "hello"</span></span><br><span class="line">append str <span class="string">" world!"</span>    <span class="comment">//之前str已存在，则在其末尾追加" world!"，现在str的值变为"hello world!"</span></span><br><span class="line"></span><br><span class="line">incr key                <span class="comment">//incr即increase，如果value是整数（可以是负整数），将value的值+1，并返回操作后的value。如果value不是整数，提示错误。如果key不存在，先将value初始化为0，再执行+1。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>              <span class="comment">//等价于set age "10"。</span></span><br><span class="line">incr age                <span class="comment">//value的值+1，变为11，并返回11。value是整数才会+1。</span></span><br><span class="line"><span class="built_in">get</span> age                 <span class="comment">//11</span></span><br><span class="line">incr price              <span class="comment">//之前price不存在，value会先初始化为0，再+1，返回1</span></span><br><span class="line"><span class="built_in">get</span> price               <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line">incrby key amount       <span class="comment">//同上，只不过是+amout，不是+1。原来的value要是整数，amount也要是整数，否则提示错误。若key不存在，先初始化value为0。支持负整数（即减）。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">20</span> </span><br><span class="line">incrby age <span class="number">5</span>            <span class="comment">//+5</span></span><br><span class="line"><span class="built_in">get</span> age                 <span class="comment">//25</span></span><br><span class="line"></span><br><span class="line">incrbyfloat key amount  <span class="comment">//同上，只不过原来的value可以是浮点数，增量amount也可以是浮点数。当然，整数也行。支持负数（减）。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> price <span class="number">2.3</span> </span><br><span class="line">incrbyfloat price <span class="number">1.5</span>     </span><br><span class="line"><span class="built_in">get</span> price               <span class="comment">//3.8</span></span><br><span class="line"></span><br><span class="line">decr key                <span class="comment">//同incr key只不过decr是减。decr即decrease。</span></span><br><span class="line"></span><br><span class="line">decrby key amount       <span class="comment">//同incrby  key  amount，只不过是减</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>redis</tag>
       </tags>
