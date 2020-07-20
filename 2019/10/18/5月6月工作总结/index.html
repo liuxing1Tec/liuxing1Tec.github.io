@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="工作总结阶段一：基础知识回顾&gt; C语言基础语法回顾： 变更代码习惯，转语言——“倒时差”  &gt; 相关留存资料：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.5——2019.10工作总结">
+<meta property="og:url" content="http://yoursite.com/2019/10/18/5%E6%9C%886%E6%9C%88%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Vousmevoyez">
+<meta property="og:description" content="工作总结阶段一：基础知识回顾&gt; C语言基础语法回顾： 变更代码习惯，转语言——“倒时差”  &gt; 相关留存资料：">
+<meta property="article:published_time" content="2019-10-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-10-18T01:58:46.907Z">
+<meta property="article:author" content="vousmevoyez">
+<meta property="article:tag" content="Job">
+<meta property="article:tag" content="Personal">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2019/10/18/5%E6%9C%886%E6%9C%88%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>2019.5——2019.10工作总结 | Vousmevoyez</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Vousmevoyez</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/liuxing1Tec" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/18/5%E6%9C%886%E6%9C%88%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="vousmevoyez">
+      <meta itemprop="description" content="Swan L">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vousmevoyez">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2019.5——2019.10工作总结
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-10-18 00:00:00 / Modified: 09:58:46" itemprop="dateCreated datePublished" datetime="2019-10-18T00:00:00+08:00">2019-10-18</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="工作总结"><a href="#工作总结" class="headerlink" title="工作总结"></a><center><strong>工作总结</strong></center></h1><h2 id="阶段一：基础知识回顾"><a href="#阶段一：基础知识回顾" class="headerlink" title="阶段一：基础知识回顾"></a>阶段一：基础知识回顾</h2><h3 id="gt-C语言基础语法回顾："><a href="#gt-C语言基础语法回顾：" class="headerlink" title="&gt; C语言基础语法回顾："></a>&gt; C语言基础语法回顾：</h3><blockquote>
+<p>变更代码习惯，转语言——“倒时差”</p>
+</blockquote>
+<h4 id="gt-相关留存资料："><a href="#gt-相关留存资料：" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4>
+
+	<div class="row">
+		<iframe src="https://drive.google.com/file/d/1644m_lW65hk8UBkXqBdFv61zy-y17bBq/preview" style="width:100%; height:550px"></iframe>
+	</div>
+
+
+
+
+<a id="more"></a>
+
+<h3 id="gt-计算机网络基础知识回顾："><a href="#gt-计算机网络基础知识回顾：" class="headerlink" title="&gt; 计算机网络基础知识回顾："></a>&gt; 计算机网络基础知识回顾：</h3><blockquote>
+<p>回顾计算机网络结构，重点回顾计算网络网络层传输层应用层的工作相关知识，并进行总结。</p>
+</blockquote>
+<h4 id="gt-相关留存资料：-1"><a href="#gt-相关留存资料：-1" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4>
+
+	<div class="row">
+		<iframe src="https://drive.google.com/file/d/1MMx2EWgg-tMt0YcJeQkaBbQkAXvVYVJT/preview" style="width:100%; height:550px"></iframe>
+	</div>
+
+
+
+
+<h3 id="gt-Unix环境高级编程："><a href="#gt-Unix环境高级编程：" class="headerlink" title="&gt; Unix环境高级编程："></a>&gt; Unix环境高级编程：</h3><blockquote>
+<p>学习网络编程，Linux环境下C语言编程，学习Socket编程相关知识。</p>
+</blockquote>
+<h4 id="gt-相关留存资料：-2"><a href="#gt-相关留存资料：-2" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4><blockquote>
+<p>Github Repository：    <a href="https://github.com/liuxing1Tec/C_Learning/tree/master/SOCKET%E7%BC%96%E7%A8%8B" target="_blank" rel="noopener"><strong>C_Learning/SOCKET编程</strong></a></p>
+</blockquote>
+<h2 id="阶段二：网络编程实战"><a href="#阶段二：网络编程实战" class="headerlink" title="阶段二：网络编程实战"></a>阶段二：网络编程实战</h2><h3 id="gt-网络聊天客户端的开发："><a href="#gt-网络聊天客户端的开发：" class="headerlink" title="&gt; 网络聊天客户端的开发："></a>&gt; 网络聊天客户端的开发：</h3><blockquote>
+<p>Socket编程实战。</p>
+</blockquote>
+<h4 id="gt-相关留存资料：-3"><a href="#gt-相关留存资料：-3" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4><blockquote>
+<p>Github Repository：    <a href="https://github.com/liuxing1Tec/Unix_chatroom" target="_blank" rel="noopener"><strong>Unix_chatroom</strong></a></p>
+</blockquote>
+<h3 id="gt-网络开发复盘："><a href="#gt-网络开发复盘：" class="headerlink" title="&gt; 网络开发复盘："></a>&gt; 网络开发复盘：</h3><blockquote>
+<p>开发流程总结。</p>
+</blockquote>
+<h4 id="gt-相关留存资料：-4"><a href="#gt-相关留存资料：-4" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4><blockquote>
+<p>客户端开发流程以源文件：    <a href="https://github.com/liuxing1Tec/C_Learning/blob/master/SOCKET%E7%BC%96%E7%A8%8B/select_echo/src/echocli.c" target="_blank" rel="noopener"><strong>SOCKET编程/select_echo/src/echocli.c</strong></a>，为例<br>服务器端开发流程以源文件：    <a href="https://github.com/liuxing1Tec/C_Learning/blob/master/SOCKET%E7%BC%96%E7%A8%8B/select_echo/src/echosrv.c" target="_blank" rel="noopener"><strong>SOCKET编程/select_echo/src/echosrv.c</strong></a>，为例</p>
+</blockquote>
+<h2 id="阶段三：补充性学习：查漏补缺"><a href="#阶段三：补充性学习：查漏补缺" class="headerlink" title="阶段三：补充性学习：查漏补缺"></a>阶段三：补充性学习：查漏补缺</h2><h3 id="gt-C语言深入学习："><a href="#gt-C语言深入学习：" class="headerlink" title="&gt; C语言深入学习："></a>&gt; C语言深入学习：</h3><blockquote>
+<p>C语言底层知识总结（堆栈、结构体、作用域、malloc()以及free()机制等）。</p>
+</blockquote>
+<h4 id="gt-相关留存资料：-5"><a href="#gt-相关留存资料：-5" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4>
+
+	<div class="row">
+		<iframe src="https://drive.google.com/file/d/1hC78fv6IeNWt6U2EEI7muiUL-xUUW58c/preview" style="width:100%; height:550px"></iframe>
+	</div>
+
+
+
+
+<h3 id="gt-项目开发流程深入学习："><a href="#gt-项目开发流程深入学习：" class="headerlink" title="&gt; 项目开发流程深入学习："></a>&gt; 项目开发流程深入学习：</h3><blockquote>
+<p>项目开发流程总结（C项目管理、GCC、GDB等）。</p>
+</blockquote>
+<h4 id="gt-相关留存资料：-6"><a href="#gt-相关留存资料：-6" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4>
+
+	<div class="row">
+		<iframe src="https://drive.google.com/file/d/1HWIYnT_FpXFvE0wjUFZTvritoOo9IJVY/preview" style="width:100%; height:550px"></iframe>
+	</div>
+
+
+
+
+<h3 id="gt-AC-AP网络知识学习："><a href="#gt-AC-AP网络知识学习：" class="headerlink" title="&gt; AC/AP网络知识学习："></a>&gt; AC/AP网络知识学习：</h3><blockquote>
+<p>AC/AP相关知识了解。</p>
+</blockquote>
+<h4 id="gt-相关留存资料：-7"><a href="#gt-相关留存资料：-7" class="headerlink" title="&gt; 相关留存资料："></a>&gt; 相关留存资料：</h4>
+
+	<div class="row">
+		<iframe src="https://drive.google.com/file/d/1ClhF03htEg2MFs4S_tFv6znQeFdad3fA/preview" style="width:100%; height:550px"></iframe>
+	</div>
+
+
+
+
+
+<h2 id="阶段四：参与项目"><a href="#阶段四：参与项目" class="headerlink" title="阶段四：参与项目"></a>阶段四：参与项目</h2><p>Revision: 122883<br>Author: liuxingj<br>Date: 2019年9月11日 17:48:49<br>Message:<br>FIX|[RDM55769]【质量整改】【国家码】解除了室外类型下会导致radio1信道失踪的情况<br>FIX|[RDM55771]【质量整改】【国家码】修改配置文件，已成功匹配80M频宽下的信道列表<br>FIX|[yellowstone3.5]在channel判断条件中，新增若干室外AP的型号，新增并维护最新的AP型号列表与Vendor保持一致<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/INCLUDE/public/hwDrv.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/LIB/vendorCfg.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/CLI/cli_config_wireless_ap_profile.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/CLI/cli_show_running_config_wireless.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/CLI/cli_show_wireless_ap.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/CLI/cli_show_wireless_ap_profile.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/include/wdm_country_code.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/reg_domains.conf<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_profile_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm_country_code.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/ws_channel_power/channel_adjustment.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wsap_conf/wsap_conf.c</p>
+<p>Revision: 122712<br>Author: liuxingj<br>Date: 2019年9月4日 19:50:56<br>Message:<br>FIX|[RDM55466]【质量整改】【国家码】修改YS国家码，和华为信道标准进行全样比对，修改AC实际AP状态显示，修改radio关闭问题，增加AC后台状态显示对802.11ac的支持，增加部分国家对室内室外APhwtype不同造成的信道差异进行适应性匹配，修改80M频宽下信道的运算逻辑，增加80M频宽信道的正常显示<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/INCLUDE/wlan-public/common/wireless_defaultconfig.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/include/wdm_country_code.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/country_code.pl<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/reg_domains.conf<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_profile_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm_country_code.c</p>
+<p>Revision: 122139<br>Author: liuxingj<br>Date: 2019年8月9日 17:35:36<br>Message:<br>FIX|[RDM55275]【开局】air-match template 初始化 template 1修改默认值为5<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/INCLUDE/wlan-public/common/wireless_commdefs.h</p>
+<p>Revision: 122132<br>Author: liuxingj<br>Date: 2019年8月9日 16:48:33<br>Message:<br>FIX|[yellowstone3.5]AC上增加AP射频灯开关控制实现，实现与页面交互<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/include/ws_manageserver.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/ws_manage_server/ws_manageserver.c</p>
+<p>Revision: 122131<br>Author: liuxingj<br>Date: 2019年8月9日 16:48:17<br>Message:<br>FIX|[RDM53942]【开局】修改印尼国家ID国家码对应的信道和频宽<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_R2/Platform/WIRELESS/WIRELESS/wdm/wdm_country_code.c</p>
+<p>Revision: 123404<br>Author: liuxingj<br>Date: 2019年10月14日 15:34:01<br>Message:<br>FIX|[yellowstone3.5-cloud]还原NetworkIDGet接口命名<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/api/wdm_network_api.h</p>
+<p>Revision: 123403<br>Author: liuxingj<br>Date: 2019年10月14日 15:18:37<br>Message:<br>FIX|[yellowstone3.5-cloud]还原NetworkIDGet接口命名<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/application/cpcm/cpcm.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/application/cpim/captive_portal_config.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/application/cpim/cpim_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/cli/cli_show_running_config_cp.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/api/wdm_network_api.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm_network_api.c</p>
+<p>Revision: 123396<br>Author: liuxingj<br>Date: 2019年10月14日 13:50:52<br>Message:<br>FIX|[yellowstone3.5-cloud]新增cloud-mode调试命令行和任务代码文件<br>FIX|[yellowstone3.5-cloud]新增Network下UUID命令行和任务代码文件<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/application/cpcm/cpcm.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/application/cpim/captive_portal_config.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/application/cpim/cpim_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/ACCESS/Captive_Portal/cli/cli_show_running_config_cp.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/api/wdm_network_api.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/common/wireless_commdefs.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/common/wireless_defaultconfig.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/porting/usmdb_wdm_network_api.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/INCLUDE/wlan-public/strlib_wireless_cli.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/CLI/cli_config_wireless_network.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/CLI/cli_debug_wireless_extend.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/CLI/cli_show_running_config_wireless.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/CLI/clicommands_wireless.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/CLI/strlib_wireless_cli.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/USMDB/usmdb_wdm_network.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/include/wdm.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_profile_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/wdm/wdm_network_api.c</p>
+<p>Revision: 123060<br>Author: liuxingj<br>Date: 2019年9月24日 14:13:32<br>Message:<br>FIX|[yellowstone3.5-cloud]新增cloud-mode中ws_cloudmode.h文件<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_yellowstone3.5_cloud/Platform/WIRELESS/WIRELESS/include/ws_cloudmode.h</p>
+<p>Revision: 122881<br>Author: liuxingj<br>Date: 2019年9月11日 15:06:28<br>Message:<br>FIX|[RDM55769]【质量整改】【国家码】解除了室外类型下会导致radio1信道失踪的情况<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_profile_api.c</p>
+<p>Revision: 122880<br>Author: liuxingj<br>Date: 2019年9月11日 15:04:44<br>Message:<br>FIX|[RDM55771]【质量整改】【国家码】修改配置文件，已成功匹配80M频宽下的信道列表<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/include/wdm_country_code.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/reg_domains.conf<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_country_code.c</p>
+<p>Revision: 122854<br>Author: liuxingj<br>Date: 2019年9月10日 17:02:33<br>Message:<br>FIX|[yellowstone3.5]在channel判断条件中，新增若干室外AP的型号，新增并维护最新的AP型号列表与Vendor保持一致<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/LIB/vendorCfg.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/CLI/cli_config_wireless_ap_profile.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/CLI/cli_show_running_config_wireless.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/CLI/cli_show_wireless_ap.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/CLI/cli_show_wireless_ap_profile.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/ws_channel_power/channel_adjustment.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wsap_conf/wsap_conf.c</p>
+<p>Revision: 122848<br>Author: liuxingj<br>Date: 2019年9月10日 15:46:44<br>Message:<br>FIX|[yellowstone3.5]在channel判断条件中，新增若干室外AP的型号，新增并维护最新的AP型号列表与Vendor保持一致<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/INCLUDE/public/hwDrv.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_profile_api.c</p>
+<p>Revision: 122707<br>Author: liuxingj<br>Date: 2019年9月4日 19:41:15<br>Message:<br>FIX|[RDM55466]【质量整改】【国家码】修改YS国家码，和华为信道标准进行全样比对，修改AC实际AP状态显示，修改radio关闭问题，增加AC后台状态显示对802.11ac的支持，增加部分国家对室内室外APhwtype不同造成的信道差异进行适应性匹配，修改80M频宽下信道的运算逻辑，增加80M频宽信道的正常显示<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/INCLUDE/wlan-public/common/wireless_defaultconfig.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/include/wdm_country_code.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/country_code.pl<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/reg_domains.conf<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_ap_profile_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_api.c<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_country_code.c</p>
+<p>Revision: 122136<br>Author: liuxingj<br>Date: 2019年8月9日 17:08:52<br>Message:<br>FIX|[RDM55275]【开局】air-match template 初始化 template 1修改默认值为5<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/INCLUDE/wlan-public/common/wireless_commdefs.h</p>
+<p>Revision: 122061<br>Author: liuxingj<br>Date: 2019年8月7日 10:16:06<br>Message:<br>FIX|[yellowstone3.5]AC上增加AP射频灯开关控制实现，实现与页面交互<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/include/ws_manageserver.h<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/ws_manage_server/ws_manageserver.c</p>
+<p>Revision: 122050<br>Author: liuxingj<br>Date: 2019年8月6日 15:40:41<br>Message:<br>FIX|[RDM53942]【开局】修改印尼国家ID国家码对应的信道和频宽<br>Modified : /Branches/Ivy/Code_Ivy7.5_Bigstone_CS6510_DCAC_yellowstone/Platform/WIRELESS/WIRELESS/wdm/wdm_country_code.c</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      <div style="display: inline-block;">
+        <img src="/Donate%20comment%20here" alt="vousmevoyez reward_comment">
+        <p>reward_comment</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="vousmevoyez WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="vousmevoyez Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Job/" rel="tag"># Job</a>
+              <a href="/tags/Personal/" rel="tag"># Personal</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/09/06/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="Redis学习笔记">
+      <i class="fa fa-chevron-left"></i> Redis学习笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/05/10/myself/" rel="next" title="Getbusyliving 的经历汇报">
+      Getbusyliving 的经历汇报 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#工作总结"><span class="nav-number">1.</span> <span class="nav-text">工作总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#阶段一：基础知识回顾"><span class="nav-number">1.1.</span> <span class="nav-text">阶段一：基础知识回顾</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gt-C语言基础语法回顾："><span class="nav-number">1.1.1.</span> <span class="nav-text">&gt; C语言基础语法回顾：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gt-相关留存资料："><span class="nav-number">1.1.1.1.</span> <span class="nav-text">&gt; 相关留存资料：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gt-计算机网络基础知识回顾："><span class="nav-number">1.1.2.</span> <span class="nav-text">&gt; 计算机网络基础知识回顾：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gt-相关留存资料：-1"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">&gt; 相关留存资料：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gt-Unix环境高级编程："><span class="nav-number">1.1.3.</span> <span class="nav-text">&gt; Unix环境高级编程：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gt-相关留存资料：-2"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">&gt; 相关留存资料：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阶段二：网络编程实战"><span class="nav-number">1.2.</span> <span class="nav-text">阶段二：网络编程实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gt-网络聊天客户端的开发："><span class="nav-number">1.2.1.</span> <span class="nav-text">&gt; 网络聊天客户端的开发：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gt-相关留存资料：-3"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">&gt; 相关留存资料：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gt-网络开发复盘："><span class="nav-number">1.2.2.</span> <span class="nav-text">&gt; 网络开发复盘：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gt-相关留存资料：-4"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">&gt; 相关留存资料：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阶段三：补充性学习：查漏补缺"><span class="nav-number">1.3.</span> <span class="nav-text">阶段三：补充性学习：查漏补缺</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gt-C语言深入学习："><span class="nav-number">1.3.1.</span> <span class="nav-text">&gt; C语言深入学习：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gt-相关留存资料：-5"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">&gt; 相关留存资料：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gt-项目开发流程深入学习："><span class="nav-number">1.3.2.</span> <span class="nav-text">&gt; 项目开发流程深入学习：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gt-相关留存资料：-6"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">&gt; 相关留存资料：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gt-AC-AP网络知识学习："><span class="nav-number">1.3.3.</span> <span class="nav-text">&gt; AC&#x2F;AP网络知识学习：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gt-相关留存资料：-7"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">&gt; 相关留存资料：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阶段四：参与项目"><span class="nav-number">1.4.</span> <span class="nav-text">阶段四：参与项目</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">vousmevoyez</p>
+  <div class="site-description" itemprop="description">Swan L</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/liuxing1Tec" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;liuxing1Tec" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:vous1158@gmail.com" title="E-Mail → mailto:vous1158@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/116543534108813931573" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;116543534108813931573" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/LIUVOUS" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;LIUVOUS" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/vousmevoyezliu" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;vousmevoyezliu" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">vousmevoyez</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

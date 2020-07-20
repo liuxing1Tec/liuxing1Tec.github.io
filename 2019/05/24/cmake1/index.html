@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="最大的Qt4程序群(KDE4)采用cmake作为构建系统 Qt4的python绑定(pyside)采用了cmake作为构建系统 开源的图像处理库 opencv 采用cmake 作为构建系统 …  看来不学习一下cmake是不行了，一点一点来吧，找个最简单的C程序，慢慢复杂化，试试看：    example description    例子1 单个源文件 main.c   例子2 &#x3D;&#x3D;&amp;gt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cmake学习笔记(一)">
+<meta property="og:url" content="http://yoursite.com/2019/05/24/cmake1/index.html">
+<meta property="og:site_name" content="Vousmevoyez">
+<meta property="og:description" content="最大的Qt4程序群(KDE4)采用cmake作为构建系统 Qt4的python绑定(pyside)采用了cmake作为构建系统 开源的图像处理库 opencv 采用cmake 作为构建系统 …  看来不学习一下cmake是不行了，一点一点来吧，找个最简单的C程序，慢慢复杂化，试试看：    example description    例子1 单个源文件 main.c   例子2 &#x3D;&#x3D;&amp;gt">
+<meta property="article:published_time" content="2019-05-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-05-27T08:03:06.970Z">
+<meta property="article:author" content="vousmevoyez">
+<meta property="article:tag" content="cmake">
+<meta property="article:tag" content="tools">
+<meta property="article:tag" content="C">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2019/05/24/cmake1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>cmake学习笔记(一) | Vousmevoyez</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Vousmevoyez</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/liuxing1Tec" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/cmake1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="vousmevoyez">
+      <meta itemprop="description" content="Swan L">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vousmevoyez">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          cmake学习笔记(一)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-05-24 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-24T00:00:00+08:00">2019-05-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-05-27 16:03:06" itemprop="dateModified" datetime="2019-05-27T16:03:06+08:00">2019-05-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+</blockquote>
+<ul>
+<li>最大的Qt4程序群(KDE4)采用cmake作为构建系统</li>
+<li>Qt4的python绑定(pyside)采用了cmake作为构建系统</li>
+<li>开源的图像处理库 opencv 采用cmake 作为构建系统</li>
+<li>…</li>
+</ul>
+<p>看来不学习一下cmake是不行了，一点一点来吧，找个最简单的C程序，慢慢复杂化，试试看：</p>
+<table>
+<thead>
+<tr>
+<th align="center">example</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">例子1</td>
+<td align="left">单个源文件 main.c</td>
+</tr>
+<tr>
+<td align="center">例子2</td>
+<td align="left">==&gt;分解成多个 main.c hello.h hello.c</td>
+</tr>
+<tr>
+<td align="center">例子3</td>
+<td align="left">==&gt;先生成一个静态库，链接该库</td>
+</tr>
+<tr>
+<td align="center">例子4</td>
+<td align="left">==&gt;将源文件放置到不同的目录</td>
+</tr>
+<tr>
+<td align="center">例子5</td>
+<td align="left">==&gt;控制生成的程序和库所在的目录</td>
+</tr>
+<tr>
+<td align="center">例子6</td>
+<td align="left">==&gt;使用动态库而不是静态库</td>
+</tr>
+</tbody></table>
+<a id="more"></a>
+<h1 id="例子一"><a href="#例子一" class="headerlink" title="例子一"></a>例子一</h1><p>一个经典的C程序，如何用cmake来进行构建程序呢？</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Hello World!/n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编写一个 CMakeList.txt 文件(可看做cmake的工程文件)：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">project(HELLO)</span><br><span class="line"><span class="built_in">set</span>(SRC_LIST main.c)</span><br><span class="line">add_executable(hello $&#123;SRC_LIST&#125;)</span><br></pre></td></tr></table></figure>
+<p>然后，建立一个任意目录（比如本目录下创建一个build子目录），在该build目录下调用cmake</p>
+<blockquote>
+<p>注意：为了简单起见，我们从一开始就采用cmake的 out-of-source 方式来构建（即生成中间产物与源代码分离），并始终坚持这种方法，这也就是此处为什么单独创建一个目录，然后在该目录下执行 cmake 的原因</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cmake .. -G<span class="string">"NMake Makefiles"</span></span><br><span class="line">nmake</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cmake .. -G<span class="string">"MinGW Makefiles"</span></span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+<p>即可生成可执行程序 hello(.exe)</p>
+<p>目录结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+</span><br><span class="line">| </span><br><span class="line">+--- main.c</span><br><span class="line">+--- CMakeList.txt</span><br><span class="line">|</span><br><span class="line">&#x2F;--+ build&#x2F;</span><br><span class="line">   |</span><br><span class="line">   +--- hello.exe</span><br></pre></td></tr></table></figure>
+
+<p>cmake 真的不太好用哈，使用cmake的过程，本身也就是一个编程的过程，只有多练才行。</p>
+<p>我们先看看：前面提到的这些都是什么呢？</p>
+<h2 id="CMakeList-txt"><a href="#CMakeList-txt" class="headerlink" title="CMakeList.txt"></a>CMakeList.txt</h2><p>第一行<strong>project</strong>不是强制性的，但最好始终都加上。这一行会引入两个变量</p>
+<ul>
+<li>HELLO_BINARY_DIR 和 HELLO_SOURCE_DIR</li>
+</ul>
+<p>同时，cmake自动定义了两个等价的变量</p>
+<ul>
+<li>PROJECT_BINARY_DIR 和 PROJECT_SOURCE_DIR</li>
+</ul>
+<p>因为是out-of-source方式构建，所以我们要时刻区分这两个变量对应的目录<br>可以通过<strong>message</strong>来输出变量的值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">message(<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>set</strong> 命令用来设置变量<br><strong>add_exectuable</strong> 告诉工程生成一个可执行文件。<br><strong>add_library</strong> 则告诉生成一个库文件。</p>
+<ul>
+<li>注意：CMakeList.txt 文件中，命令名字是不区分大小写的，而参数和变量是大小写相关的。</li>
+</ul>
+<h2 id="cmake命令"><a href="#cmake命令" class="headerlink" title="cmake命令"></a>cmake命令</h2><p>cmake 命令后跟一个路径(..)，用来指出 CMakeList.txt 所在的位置。</p>
+<p>由于系统中可能有多套构建环境，我们可以通过-G来制定生成哪种工程文件，通过 cmake -h 可得到详细信息。</p>
+<p>要显示执行构建过程中详细的信息(比如为了得到更详细的出错信息)，可以在CMakeList.txt内加入：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET( CMAKE_VERBOSE_MAKEFILE on )</span><br></pre></td></tr></table></figure>
+<p>或者执行make时</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ make VERBOSE=1</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">export</span> VERBOSE=1</span><br><span class="line">$ make</span><br></pre></td></tr></table></figure>
+
+<h1 id="例子二"><a href="#例子二" class="headerlink" title="例子二"></a>例子二</h1><p>一个源文件的例子一似乎没什么意思，拆成3个文件再试试看：</p>
+<ul>
+<li>hello.h 头文件</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> DBZHANG_HELLO_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DBZHANG_HELLO_</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">hello</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* name)</span></span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">//DBZHANG_HELLO_</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>hello.c</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"hello.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">hello</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> * name)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span> (<span class="string">"Hello %s!/n"</span>, name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>main.c</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"hello.h"</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    hello(<span class="string">"World"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后准备好CMakeList.txt 文件</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">project(HELLO)</span><br><span class="line"><span class="built_in">set</span>(SRC_LIST main.c hello.c)</span><br><span class="line">add_executable(hello $&#123;SRC_LIST&#125;)</span><br></pre></td></tr></table></figure>
+<p>执行cmake的过程同上，目录结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">+</span><br><span class="line">| </span><br><span class="line">+--- main.c</span><br><span class="line">+--- hello.h</span><br><span class="line">+--- hello.c</span><br><span class="line">+--- CMakeList.txt</span><br><span class="line">|</span><br><span class="line">&#x2F;--+ build&#x2F;</span><br><span class="line">   |</span><br><span class="line">   +--- hello.exe</span><br></pre></td></tr></table></figure>
+
+<p>例子很简单，没什么可说的。</p>
+<h1 id="例子三"><a href="#例子三" class="headerlink" title="例子三"></a>例子三</h1><p>接前面的例子，我们将 hello.c 生成一个库，然后再使用会怎么样？<br>改写一下前面的CMakeList.txt文件试试：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">project(HELLO)</span><br><span class="line"><span class="built_in">set</span>(LIB_SRC hello.c)</span><br><span class="line"><span class="built_in">set</span>(APP_SRC main.c)</span><br><span class="line">add_library(libhello $&#123;LIB_SRC&#125;)</span><br><span class="line">add_executable(hello $&#123;APP_SRC&#125;)</span><br><span class="line">target_link_libraries(hello libhello)</span><br></pre></td></tr></table></figure>
+<p>和前面相比，我们添加了一个新的目标 libhello，并将其链接进hello程序<br>然后想前面一样，运行cmake，得到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">+</span><br><span class="line">| </span><br><span class="line">+--- main.c</span><br><span class="line">+--- hello.h</span><br><span class="line">+--- hello.c</span><br><span class="line">+--- CMakeList.txt</span><br><span class="line">|</span><br><span class="line">&#x2F;--+ build&#x2F;</span><br><span class="line">   |</span><br><span class="line">   +--- hello.exe</span><br><span class="line">   +--- libhello.lib</span><br></pre></td></tr></table></figure>
+
+<p>里面有一点不爽，对不？</p>
+<ul>
+<li>因为我的可执行程序(add_executable)占据了 hello 这个名字，所以 add_library 就不能使用这个名字了</li>
+<li>然后，我们去了个libhello 的名字，这将导致生成的库为 libhello.lib(或 liblibhello.a)，很不爽</li>
+<li>想生成 hello.lib(或libhello.a) 怎么办?</li>
+</ul>
+<p>添加一行</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set_target_properties(libhello PROPERTIES OUTPUT_NAME <span class="string">"hello"</span>)</span><br></pre></td></tr></table></figure>
+<p>就可以了</p>
+<h1 id="例子四"><a href="#例子四" class="headerlink" title="例子四"></a>例子四</h1><p>在前面，我们成功地使用了库，可是源代码放在同一个路径下，还是不太正规，怎么办呢？分开放呗<br>我们期待是这样一种结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">+</span><br><span class="line">|</span><br><span class="line">+--- CMakeList.txt</span><br><span class="line">+--+ src&#x2F;</span><br><span class="line">|  |</span><br><span class="line">|  +--- main.c</span><br><span class="line">|  &#x2F;--- CMakeList.txt</span><br><span class="line">|</span><br><span class="line">+--+ libhello&#x2F;</span><br><span class="line">|  |</span><br><span class="line">|  +--- hello.h</span><br><span class="line">|  +--- hello.c</span><br><span class="line">|  &#x2F;--- CMakeList.txt</span><br><span class="line">|</span><br><span class="line">&#x2F;--+ build&#x2F;</span><br></pre></td></tr></table></figure>
+<p>哇，现在需要3个CMakeList.txt 文件了，每个源文件目录都需要一个，还好,每一个都不是太复杂</p>
+<ul>
+<li><p>顶层的CMakeList.txt 文件</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">project(HELLO)</span><br><span class="line">add_subdirectory(src)</span><br><span class="line">add_subdirectory(libhello)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>src 中的 CMakeList.txt 文件</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">include_directories($&#123;PROJECT_SOURCE_DIR&#125;/libhello)</span><br><span class="line"><span class="built_in">set</span>(APP_SRC main.c)</span><br><span class="line">add_executable(hello $&#123;APP_SRC&#125;)</span><br><span class="line">target_link_libraries(hello libhello)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>libhello 中的 CMakeList.txt 文件</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>(LIB_SRC hello.c)</span><br><span class="line">add_library(libhello $&#123;LIB_SRC&#125;)</span><br><span class="line">set_target_properties(libhello PROPERTIES OUTPUT_NAME <span class="string">"hello"</span>)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>恩，和前面一样，建立一个build目录，在其内运行cmake，然后可以得到</p>
+<ul>
+<li>build/src/hello.exe</li>
+<li>build/libhello/hello.lib</li>
+</ul>
+<p>回头看看，这次多了点什么，顶层的 CMakeList.txt 文件中使用 add_subdirectory 告诉cmake去子目录寻找新的CMakeList.txt 子文件<br>在 src 的 CMakeList.txt 文件中，新增加了include_directories，用来指明头文件所在的路径。</p>
+<h1 id="例子五"><a href="#例子五" class="headerlink" title="例子五"></a>例子五</h1><p>前面还是有一点不爽：如果想让可执行文件在 bin 目录，库文件在 lib 目录怎么办？</p>
+<p>就像下面显示的一样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">+ build&#x2F;</span><br><span class="line">|</span><br><span class="line">+--+ bin&#x2F;</span><br><span class="line">|  |</span><br><span class="line">|  &#x2F;--- hello.exe</span><br><span class="line">|</span><br><span class="line">&#x2F;--+ lib&#x2F;</span><br><span class="line">   |</span><br><span class="line">   &#x2F;--- hello.lib</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>一种办法：修改顶级的 CMakeList.txt 文件</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">project(HELLO)</span><br><span class="line">add_subdirectory(src bin)</span><br><span class="line">add_subdirectory(libhello lib)</span><br></pre></td></tr></table></figure>
+<p>不是build中的目录默认和源代码中结构一样么，我们可以指定其对应的目录在build中的名字。<br>这样一来：build/src 就成了 build/bin 了，可是除了 hello.exe，中间产物也进来了。还不是我们最想要的。<br>另一种方法：不修改顶级的文件，修改其他两个文件</p>
+<ul>
+<li>src/CMakeList.txt 文件</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">include_directories($&#123;PROJECT_SOURCE_DIR&#125;/libhello)</span><br><span class="line">#link_directories($&#123;PROJECT_BINARY_DIR&#125;/lib)</span><br><span class="line"><span class="built_in">set</span>(APP_SRC main.c)</span><br><span class="line"><span class="built_in">set</span>(EXECUTABLE_OUTPUT_PATH $&#123;PROJECT_BINARY_DIR&#125;/bin)</span><br><span class="line">add_executable(hello $&#123;APP_SRC&#125;)</span><br><span class="line">target_link_libraries(hello libhello)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>libhello/CMakeList.txt 文件</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>(LIB_SRC hello.c)</span><br><span class="line">add_library(libhello $&#123;LIB_SRC&#125;)</span><br><span class="line"><span class="built_in">set</span>(LIBRARY_OUTPUT_PATH $&#123;PROJECT_BINARY_DIR&#125;/lib)</span><br><span class="line">set_target_properties(libhello PROPERTIES OUTPUT_NAME <span class="string">"hello"</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="例子六"><a href="#例子六" class="headerlink" title="例子六"></a>例子六</h1><p>在例子三至五中，我们始终用的静态库，那么用动态库应该更酷一点吧。 试着写一下<br>如果不考虑windows下，这个例子应该是很简单的，只需要在上个例子的 libhello/CMakeList.txt 文件中的add_library命令中加入一个SHARED参数：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add_library(libhello SHARED $&#123;LIB_SRC&#125;)</span><br></pre></td></tr></table></figure>
+<p>可是，我们既然用cmake了，还是兼顾不同的平台吧，于是，事情有点复杂：</p>
+<ul>
+<li>修改 hello.h 文件</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> DBZHANG_HELLO_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DBZHANG_HELLO_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> defined _WIN32</span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">if</span> LIBHELLO_BUILD</span></span><br><span class="line">        <span class="meta">#<span class="meta-keyword">define</span> LIBHELLO_API __declspec(dllexport)</span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">        <span class="meta">#<span class="meta-keyword">define</span> LIBHELLO_API __declspec(dllimport)</span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> LIBHELLO_API</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="function">LIBHELLO_API <span class="keyword">void</span> <span class="title">hello</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* name)</span></span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">//DBZHANG_HELLO_</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改 libhello/CMakeList.txt 文件</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>(LIB_SRC hello.c)</span><br><span class="line">add_definitions(<span class="string">"-DLIBHELLO_BUILD"</span>)</span><br><span class="line">add_library(libhello SHARED $&#123;LIB_SRC&#125;)</span><br><span class="line"><span class="built_in">set</span>(LIBRARY_OUTPUT_PATH $&#123;PROJECT_BINARY_DIR&#125;/lib)</span><br><span class="line">set_target_properties(libhello PROPERTIES OUTPUT_NAME <span class="string">"hello"</span>)</span><br></pre></td></tr></table></figure>
+<p>恩，剩下来的工作就和原来一样了。</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      <div style="display: inline-block;">
+        <img src="/Donate%20comment%20here" alt="vousmevoyez reward_comment">
+        <p>reward_comment</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="vousmevoyez WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="vousmevoyez Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/cmake/" rel="tag"># cmake</a>
+              <a href="/tags/tools/" rel="tag"># tools</a>
+              <a href="/tags/C/" rel="tag"># C</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/04/08/LeetCode_Problems/" rel="prev" title="LeetCode精选算法题目合集">
+      <i class="fa fa-chevron-left"></i> LeetCode精选算法题目合集
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/05/27/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="git学习笔记">
+      git学习笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#例子一"><span class="nav-number">1.</span> <span class="nav-text">例子一</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CMakeList-txt"><span class="nav-number">1.1.</span> <span class="nav-text">CMakeList.txt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cmake命令"><span class="nav-number">1.2.</span> <span class="nav-text">cmake命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#例子二"><span class="nav-number">2.</span> <span class="nav-text">例子二</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#例子三"><span class="nav-number">3.</span> <span class="nav-text">例子三</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#例子四"><span class="nav-number">4.</span> <span class="nav-text">例子四</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#例子五"><span class="nav-number">5.</span> <span class="nav-text">例子五</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#例子六"><span class="nav-number">6.</span> <span class="nav-text">例子六</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">vousmevoyez</p>
+  <div class="site-description" itemprop="description">Swan L</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/liuxing1Tec" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;liuxing1Tec" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:vous1158@gmail.com" title="E-Mail → mailto:vous1158@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/116543534108813931573" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;116543534108813931573" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/LIUVOUS" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;LIUVOUS" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/vousmevoyezliu" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;vousmevoyezliu" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">vousmevoyez</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

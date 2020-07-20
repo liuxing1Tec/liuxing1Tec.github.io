@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="xm_ip_service原结构项目需求通过IP地址（目前仅支持IPV4），进行IP地址相关地理信息的查询，查询过程分为，国内信息查询与国际信息查询两个查询方式。 接口定义接口内容 123456789101112131415161718192021222324252627struct AAA &amp;#123;    1: string ip,    2: string geo_ip_country_c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一次重构项目">
+<meta property="og:url" content="http://yoursite.com/2019/01/21/xm_ip_service/index.html">
+<meta property="og:site_name" content="Vousmevoyez">
+<meta property="og:description" content="xm_ip_service原结构项目需求通过IP地址（目前仅支持IPV4），进行IP地址相关地理信息的查询，查询过程分为，国内信息查询与国际信息查询两个查询方式。 接口定义接口内容 123456789101112131415161718192021222324252627struct AAA &amp;#123;    1: string ip,    2: string geo_ip_country_c">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fze1gt1peoj30tp0gg42n.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fzgnmbjb8uj30hm06r0tg.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fzgnkb78kfj30u60bntby.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fzgnklbpfqj30u60didjg.jpg">
+<meta property="article:published_time" content="2019-01-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-04-08T09:31:25.590Z">
+<meta property="article:author" content="vousmevoyez">
+<meta property="article:tag" content="Projects">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fze1gt1peoj30tp0gg42n.jpg">
+
+<link rel="canonical" href="http://yoursite.com/2019/01/21/xm_ip_service/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>一次重构项目 | Vousmevoyez</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Vousmevoyez</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/liuxing1Tec" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/21/xm_ip_service/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="vousmevoyez">
+      <meta itemprop="description" content="Swan L">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vousmevoyez">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          一次重构项目
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-01-21 00:00:00" itemprop="dateCreated datePublished" datetime="2019-01-21T00:00:00+08:00">2019-01-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-04-08 17:31:25" itemprop="dateModified" datetime="2019-04-08T17:31:25+08:00">2019-04-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="xm-ip-service原结构"><a href="#xm-ip-service原结构" class="headerlink" title="xm_ip_service原结构"></a>xm_ip_service原结构</h1><h2 id="项目需求"><a href="#项目需求" class="headerlink" title="项目需求"></a>项目需求</h2><p>通过IP地址（目前仅支持IPV4），进行IP地址相关地理信息的查询，查询过程分为，国内信息查询与国际信息查询两个查询方式。</p>
+<h2 id="接口定义"><a href="#接口定义" class="headerlink" title="接口定义"></a>接口定义</h2><p>接口内容</p>
+<figure class="highlight thrift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">AAA</span> </span>&#123;</span><br><span class="line">    <span class="number">1</span>: <span class="built_in">string</span> ip,</span><br><span class="line">    <span class="number">2</span>: <span class="built_in">string</span> geo_ip_country_code,</span><br><span class="line">    <span class="number">3</span>: <span class="built_in">string</span> geo_ip_country_name,</span><br><span class="line">    <span class="number">4</span>: <span class="built_in">string</span> geo_ip_city_code,</span><br><span class="line">    <span class="number">5</span>: <span class="built_in">string</span> geo_ip_city_name,</span><br><span class="line">    <span class="number">6</span>: <span class="built_in">i32</span> error_no,</span><br><span class="line">    <span class="number">7</span>: <span class="built_in">string</span> geo_ip_province_code,</span><br><span class="line">    <span class="number">8</span>: <span class="built_in">string</span> geo_ip_province_name,</span><br><span class="line">    <span class="number">9</span>: <span class="built_in">string</span> geo_ip_carrier,</span><br><span class="line">    <span class="number">10</span>: <span class="built_in">string</span> error_msg,</span><br><span class="line">    <span class="number">11</span>: <span class="built_in">i64</span> geo_ip_start_ip,</span><br><span class="line">    <span class="number">12</span>: <span class="built_in">i64</span> geo_ip_end_ip</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">BBB</span> </span>&#123;</span><br><span class="line">    <span class="number">1</span>: list&lt;<span class="keyword">string</span>&gt; ipList,</span><br><span class="line">    <span class="number">2</span>: <span class="built_in">string</span> lang <span class="comment">// en or zh-CN</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">service</span> <span class="title">IP_Geo_Service</span> </span>&#123;</span><br><span class="line">   list&lt;GeoInfo&gt; queryGeoInfoByIP(<span class="number">1</span>:list&lt;<span class="keyword">string</span>&gt; ipList);</span><br><span class="line"></span><br><span class="line">   list&lt;GeoInfo&gt; queryGeoInfo(<span class="number">1</span>:GeoRequest req);</span><br><span class="line"></span><br><span class="line">   list&lt;GeoInfo&gt; queryI18nGeoInfoByIP(<span class="number">1</span>:list&lt;<span class="keyword">string</span>&gt; ipList);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h2 id="业务逻辑说明"><a href="#业务逻辑说明" class="headerlink" title="业务逻辑说明"></a>业务逻辑说明</h2><h3 id="hook-go"><a href="#hook-go" class="headerlink" title="hook.go"></a>hook.go</h3><p><strong>描述：</strong></p>
+<blockquote>
+<p>定义并初始化了IP相关地理信息的原始数据结构体，并从文件当中读取所需地理信息数据，给其赋值，该结构体作为IP地理信息参照表，亦或查询表。</p>
+</blockquote>
+<p><strong>流程：</strong></p>
+<blockquote>
+<p>在加载配置文件之后，服务正式运行之前，通过New函数初始化该地理信息结构体；<br>然后，通过Open函数，读取配置里的路径信息，将该路径下文件里的地理信息通过信息的处理，依次读取到GeoModel的中文地理信息（cnGeos）和英文地理信息（enGeos）两个切片中，此时的GeoModel就成为了存储有完整IP相关地理信息的一张参照表；<br>GeoI18nModel类似，不过后者用作存储国际化的全球IP地理信息，没有中英文的区分，而是利用了命名为Names的Map基本结构扩展了所有所需的语言包，所以无需特意进行语言的区分，查询时打上语言标识即可。</p>
+</blockquote>
+<h3 id="IPservice-go"><a href="#IPservice-go" class="headerlink" title="IPservice.go"></a>IPservice.go</h3><blockquote>
+<p>定义新建控制器。</p>
+</blockquote>
+<h3 id="main-go"><a href="#main-go" class="headerlink" title="main.go"></a>main.go</h3><p><strong>描述：</strong></p>
+<blockquote>
+<p>定义并初始化了控制器及其进程，以及hook函数的定义以及运行。</p>
+</blockquote>
+<h3 id="Handler"><a href="#Handler" class="headerlink" title="Handler"></a>Handler</h3><p><strong>描述：</strong></p>
+<table>
+<thead>
+<tr>
+<th>IP_Service_Handler</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>queryGeoInfo_Handler</td>
+<td>通过发来的请求里包含的IP地址，参照GeoModel查询对应的地理信息；  如果查询不到或地理位置不在中国，则交给GeoI18nModel来继续查询对比相关的地理信息。  进行合适的日志处理之后，打包返回相关地理信息以及错误信息。</td>
+</tr>
+<tr>
+<td>queryGeoInfoByIP_Handler</td>
+<td>与上面不同的是，输入当中直接为IP_list，并没有相关的中英文标识，语言统一预设为中文识别， 当查询到地理信息不是中国的时候，则交给GeoI18nModel来继续查询对比相关的地理信息。</td>
+</tr>
+<tr>
+<td>queryI18nGeoInfoByIP_Handler</td>
+<td>与第二条相同，输入也直接为IP_list，不同的是，查询语言预设为英文。 并且是国际IP地理信息的查询服务，所以并不区分是否在“中国”国内。</td>
+</tr>
+</tbody></table>
+<p><strong>流程：</strong><br>见Model里的业务逻辑描述。</p>
+<h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><h4 id="geo-model"><a href="#geo-model" class="headerlink" title="geo_model"></a>geo_model</h4><blockquote>
+<p>定义了Geo和GeoModel结构体。及其New函数。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Geo定义了一个地区的IP区间</span></span><br><span class="line"><span class="keyword">type</span> Geo <span class="keyword">struct</span> &#123;</span><br><span class="line"> startIp      <span class="keyword">uint32</span></span><br><span class="line"> endIp        <span class="keyword">uint32</span></span><br><span class="line"> countryName  <span class="keyword">string</span></span><br><span class="line"> provinceName <span class="keyword">string</span></span><br><span class="line"> cityName     <span class="keyword">string</span></span><br><span class="line"> districtName <span class="keyword">string</span></span><br><span class="line"> carrierName  <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//GeoModel定义了中英文地理信息的数据整体信息，包括了数据路径以及所有中英文地理信息完整的数据切片</span></span><br><span class="line"><span class="keyword">type</span> GeoModel <span class="keyword">struct</span> &#123;</span><br><span class="line"> enDataPath <span class="keyword">string</span></span><br><span class="line"> cnDataPath <span class="keyword">string</span></span><br><span class="line"> cnGeos []*Geo</span><br><span class="line"> enGeos []*Geo</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>open函数用来从文件中读取IP地理信息到geoModel结构体。该函数在hook.go中调用，用来初始化参照表GeoModel。</li>
+<li>charToLong和charTolittle函数用来将IP地址转化为整数(ipValue)，好进行区间比较，以便找到IP的归属地。</li>
+<li>search函数和compare函数结合起来，找到ipValue的对应区间，用来查找IP的归属地。</li>
+<li>GetInfoByIP函数则整合以上代码，进行查表，将一个IP地址信息，和其语言标识，来查询对应的地理信息表单，返回一个地理信息和相关错误信息。</li>
+</ul>
+<h4 id="geoi18n-model"><a href="#geoi18n-model" class="headerlink" title="geoi18n_model"></a>geoi18n_model</h4><blockquote>
+<p>定义了Geo和GeoModel结构体。及其New函数。</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//GeoI18nModel定义了国际IP地理信息数据包，包括了数据路劲以及所有的IP地理信息数据</span></span><br><span class="line"><span class="keyword">type</span> GeoI18nModel <span class="keyword">struct</span> &#123;</span><br><span class="line"> dataPath <span class="keyword">string</span></span><br><span class="line"> Data     *geoip2.Reader</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>open函数用来从文件中读取IP地理信息到GeoI18nModel结构体。该函数在hook.go中调用，用来初始化参照表GeoI18nModel。</li>
+<li>GetI18nInfoByIP函数，进行查表操作，查询国际IP地理信息表单，将一个IP地址信息进行解析，然后查询IP地址的所属城市信息，然后依次赋值给需要返回的单个地理信息，最好返回该地理信息和相关错误信息。</li>
+</ul>
+<h1 id="重构项目"><a href="#重构项目" class="headerlink" title="重构项目"></a>重构项目</h1><blockquote>
+<p>对这个项目进行重构,数据存储层迁移到 PG, 功能上支持 ipv6</p>
+</blockquote>
+<h2 id="数据存储层迁移到PG"><a href="#数据存储层迁移到PG" class="headerlink" title="数据存储层迁移到PG"></a>数据存储层迁移到PG</h2><h3 id="PGSQL数据存储设计方案"><a href="#PGSQL数据存储设计方案" class="headerlink" title="PGSQL数据存储设计方案"></a>PGSQL数据存储设计方案</h3><p>此处数据存储层指的地理位置信息的参照表，原本是以<code>data</code>形式存储在代码包文件当中的，如下。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fze1gt1peoj30tp0gg42n.jpg" alt="data_en"></p>
+<p>需要将该文件存储到PG中，以查表的方式来查询IP_geoInfo。</p>
+<p>所以需要设计两张表来分别存储这两个文件。命名分别以ip_service_cn/en命名。<br>设计结果如下：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fzgnmbjb8uj30hm06r0tg.jpg" alt=""></p>
+<p>其中注意</p>
+<ul>
+<li>PG设置自增语句：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nextval('ip_service_cn_id_seq'::regclass)</span><br><span class="line">nextval('ip_service_en_id_seq'::regclass)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>PG插入多个数据的语句</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> public.ip_service ( start_ip , end_ip , country_name , province_name , city_name , district_name , carrier_name) <span class="keyword">VALUES</span> (<span class="number">16777216</span>,<span class="number">16777471</span>,<span class="string">'澳大利亚'</span>,<span class="string">''</span>,<span class="string">''</span>,<span class="string">''</span>,<span class="string">''</span>),(<span class="number">16777472</span>,<span class="number">16778239</span>,<span class="string">'中国'</span>,<span class="string">'福建'</span>,<span class="string">''</span>,<span class="string">''</span>,<span class="string">'电信'</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>PG恢复自增字段序号为1的语句</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">TRUNCATE</span> <span class="keyword">TABLE</span> ip_service_en;</span><br><span class="line"><span class="keyword">TRUNCATE</span> <span class="keyword">TABLE</span> ip_service_cn;</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">SEQUENCE</span> ip_service_cn_id_seq RESTART <span class="keyword">WITH</span> <span class="number">1</span>;</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">SEQUENCE</span> ip_service_en_id_seq RESTART <span class="keyword">WITH</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fzgnkb78kfj30u60bntby.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fzgnklbpfqj30u60didjg.jpg" alt=""></p>
+<p>因为查询IP_GEOINFO时，最主要是通过比对ip所处的区间，来得知，查询的IP属于哪一个地址范围，且，start_ip，end_ip有明显的连续性，所以可以由此建立索引。建表语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">"public"</span>.<span class="string">"ip_service_en"</span>(</span><br><span class="line">  <span class="string">"id"</span> <span class="built_in">serial8</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> PRIMARY <span class="keyword">KEY</span>,</span><br><span class="line">  <span class="string">"create_time"</span> timestamptz(<span class="number">6</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">now</span>(),</span><br><span class="line">  <span class="string">"update_time"</span> timestamptz(<span class="number">6</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">now</span>(),</span><br><span class="line">  <span class="string">"start_ip"</span> <span class="built_in">int8</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="number">0</span>,</span><br><span class="line">	<span class="string">"end_ip"</span> <span class="built_in">int8</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="number">0</span>,</span><br><span class="line">  <span class="string">"country_name"</span> <span class="built_in">varchar</span>(<span class="number">100</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span>,</span><br><span class="line">	<span class="string">"province_name"</span> <span class="built_in">varchar</span>(<span class="number">100</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span>,</span><br><span class="line">	<span class="string">"city_name"</span> <span class="built_in">varchar</span>(<span class="number">100</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span>,</span><br><span class="line">	<span class="string">"district_name"</span> <span class="built_in">varchar</span>(<span class="number">100</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span>,</span><br><span class="line">	<span class="string">"carrier_name"</span> <span class="built_in">varchar</span>(<span class="number">100</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span></span><br><span class="line">);</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> <span class="string">"idx_iprange_en"</span> <span class="keyword">ON</span> <span class="string">"public"</span>.<span class="string">"ip_service_en"</span> (start_ip,end_ip);</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">"public"</span>.<span class="string">"ip_service_cn"</span>(</span><br><span class="line">  <span class="string">"id"</span> <span class="built_in">serial8</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> PRIMARY <span class="keyword">KEY</span>,</span><br><span class="line">  <span class="string">"create_time"</span> timestamptz(<span class="number">6</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">now</span>(),</span><br><span class="line">  <span class="string">"update_time"</span> timestamptz(<span class="number">6</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">now</span>(),</span><br><span class="line">  <span class="string">"start_ip"</span> <span class="built_in">int8</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="number">0</span>,</span><br><span class="line">	<span class="string">"end_ip"</span> <span class="built_in">int8</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="number">0</span>,</span><br><span class="line">  <span class="string">"country_name"</span> <span class="built_in">varchar</span>(<span class="number">100</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span>,</span><br><span class="line">	<span class="string">"province_name"</span> <span class="built_in">varchar</span>(<span class="number">100</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span>,</span><br><span class="line">	<span class="string">"city_name"</span> <span class="built_in">varchar</span>(<span class="number">100</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span>,</span><br><span class="line">	<span class="string">"district_name"</span> <span class="built_in">varchar</span>(<span class="number">100</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span>,</span><br><span class="line">	<span class="string">"carrier_name"</span> <span class="built_in">varchar</span>(<span class="number">100</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span></span><br><span class="line">);</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> <span class="string">"idx_iprange_cn"</span> <span class="keyword">ON</span> <span class="string">"public"</span>.<span class="string">"ip_service_cn"</span> (start_ip,end_ip);</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据迁移"><a href="#数据迁移" class="headerlink" title="数据迁移"></a>数据迁移</h3><blockquote>
+<p>因为涉及到的数据量有近五百万条IP地址段，所以需要考虑插入的效率问题。于是结合了两个方案：</p>
+</blockquote>
+<ul>
+<li>开Go程同时往中英文IP表单中插数据</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> wg sync.WaitGroup</span><br><span class="line">wg.Add(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">go</span> NewInsert(p, <span class="string">"en"</span>, &amp;wg)</span><br><span class="line">wg.Add(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">go</span> NewInsert(p, <span class="string">"cn"</span>, &amp;wg)</span><br><span class="line">wg.Wait()</span><br><span class="line">Db.Close()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>结合sql语句，1000条数据提交一次。（见上文PG插入多个数据的语句格式）</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewInsert</span><span class="params">(p *GeoModel, tableName <span class="keyword">string</span>, wg *sync.WaitGroup)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> data, sql, sqlHead, sqlData, oneData <span class="keyword">string</span></span><br><span class="line">	sqlHead = <span class="string">"INSERT INTO public.ip_service_%s ( start_ip , end_ip , country_name , province_name , city_name , district_name , carrier_name)"</span></span><br><span class="line">	sqlData = <span class="string">"(%v,%v,'%v','%v','%v','%v','%v')"</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> tableName == <span class="string">"en"</span> &#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> k, vousmevoyez := <span class="keyword">range</span> p.enGeos &#123;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> vousmevoyez.StartIP != <span class="number">0</span> &amp;&amp; vousmevoyez.EndIP != <span class="number">0</span> &#123;</span><br><span class="line"></span><br><span class="line">				oneData = fmt.Sprintf(sqlData, v.StartIP, v.EndIP, v.CountryName, v.ProvinceName, v.CityName, v.DistrictName, v.CarrierName)</span><br><span class="line"></span><br><span class="line">				<span class="keyword">if</span> k%<span class="number">1000</span> != <span class="number">0</span> &amp;&amp; k &lt; <span class="built_in">len</span>(p.cnGeos) &#123;</span><br><span class="line">					data += oneData</span><br><span class="line">					data += <span class="string">","</span></span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					data += oneData</span><br><span class="line">					sql = sqlHead + <span class="string">" VALUES "</span> + data</span><br><span class="line">					fmt.Println(tableName + <span class="string">"***********:**********"</span> + strconv.Itoa(k))</span><br><span class="line">					_, err := Db.Exec(sql)</span><br><span class="line">					<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">						fmt.Println(sql, err)</span><br><span class="line">						TableHandler(<span class="number">0</span>)</span><br><span class="line">						<span class="keyword">return</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> k%<span class="number">1000</span> == <span class="number">0</span> &#123;</span><br><span class="line">				data = <span class="string">""</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	<span class="comment">//···略</span></span><br><span class="line">  &#125;</span><br><span class="line">	wg.Done()</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其间碰到的一个坑：在英文IP地理信息中，名称中有的时候有单引号如<code>Yi&#39;an City</code>这个时候放在sql语句中就会报错，这个时候，如果想要在数据库中正确插入单引号，就要把一个单引号变成两个。所以，增加了一个排查单引号的功能，例子如下：</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(tokens) &gt;= <span class="number">3</span> &#123;</span><br><span class="line">		geo.CountryName = tokens[<span class="number">2</span>]</span><br><span class="line">		<span class="keyword">if</span> strings.Contains(geo.CountryName, <span class="string">"'"</span>) &#123;</span><br><span class="line">			geo.CountryName = strings.Replace(geo.CountryName, <span class="string">"'"</span>, <span class="string">"''"</span>, <span class="number">-1</span>)</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="内部代码修改"><a href="#内部代码修改" class="headerlink" title="内部代码修改"></a>内部代码修改</h3><p>后续只需要将源代码中关于geoModel的结构体做一次重新的适配，搜索的入口做一个重定向就行了，这里不做赘述。</p>
+<h2 id="如何支持IPV6"><a href="#如何支持IPV6" class="headerlink" title="如何支持IPV6"></a>如何支持IPV6</h2><p>由于Leader说了，I18N的重构暂时不需要管IPV6的模块，所以就不动，并且，现阶段只需要做出一个能用的IPV6地址查询即可，于是，我首先要下载数据源，然后做地理查询前，同样要先将数据源转移到PG，然后再以类似的逻辑做地理查询，问题的难点在于，数据如何处理，和如何转移数据，以及数据库如何设计等等。</p>
+<h3 id="地理数据集的处理"><a href="#地理数据集的处理" class="headerlink" title="地理数据集的处理"></a>地理数据集的处理</h3><p>IPV6地理信息数据集的<a href="https://www.cnblogs.com/kjcy8/p/5787723.html" target="_blank" rel="noopener">特性</a><br><a href=""></a></p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      <div style="display: inline-block;">
+        <img src="/Donate%20comment%20here" alt="vousmevoyez reward_comment">
+        <p>reward_comment</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="vousmevoyez WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="vousmevoyez Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Projects/" rel="tag"># Projects</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/11/Koala/" rel="prev" title="Koala结构的入门">
+      <i class="fa fa-chevron-left"></i> Koala结构的入门
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/03/01/wx_robot/" rel="next" title="微信机器人业务报警项目的实现">
+      微信机器人业务报警项目的实现 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#xm-ip-service原结构"><span class="nav-number">1.</span> <span class="nav-text">xm_ip_service原结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目需求"><span class="nav-number">1.1.</span> <span class="nav-text">项目需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口定义"><span class="nav-number">1.2.</span> <span class="nav-text">接口定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#业务逻辑说明"><span class="nav-number">1.3.</span> <span class="nav-text">业务逻辑说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hook-go"><span class="nav-number">1.3.1.</span> <span class="nav-text">hook.go</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IPservice-go"><span class="nav-number">1.3.2.</span> <span class="nav-text">IPservice.go</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#main-go"><span class="nav-number">1.3.3.</span> <span class="nav-text">main.go</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Handler"><span class="nav-number">1.3.4.</span> <span class="nav-text">Handler</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model"><span class="nav-number">1.3.5.</span> <span class="nav-text">Model</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#geo-model"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">geo_model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#geoi18n-model"><span class="nav-number">1.3.5.2.</span> <span class="nav-text">geoi18n_model</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重构项目"><span class="nav-number">2.</span> <span class="nav-text">重构项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据存储层迁移到PG"><span class="nav-number">2.1.</span> <span class="nav-text">数据存储层迁移到PG</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PGSQL数据存储设计方案"><span class="nav-number">2.1.1.</span> <span class="nav-text">PGSQL数据存储设计方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据迁移"><span class="nav-number">2.1.2.</span> <span class="nav-text">数据迁移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内部代码修改"><span class="nav-number">2.1.3.</span> <span class="nav-text">内部代码修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何支持IPV6"><span class="nav-number">2.2.</span> <span class="nav-text">如何支持IPV6</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#地理数据集的处理"><span class="nav-number">2.2.1.</span> <span class="nav-text">地理数据集的处理</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">vousmevoyez</p>
+  <div class="site-description" itemprop="description">Swan L</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/liuxing1Tec" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;liuxing1Tec" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:vous1158@gmail.com" title="E-Mail → mailto:vous1158@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/116543534108813931573" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;116543534108813931573" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/LIUVOUS" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;LIUVOUS" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/vousmevoyezliu" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;vousmevoyezliu" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">vousmevoyez</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

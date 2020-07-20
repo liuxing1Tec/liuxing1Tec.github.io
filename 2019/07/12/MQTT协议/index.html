@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="MQTT协议MQTT协议的概念 MQTT协议，全称 Message Queue Telemetry Transport消息队列遥测传输协议 ，是一种基于发布&#x2F;订阅的轻量级通讯协议适用于条件较差的网络环境，如：网络延迟高、带宽低、通信讯号不稳定等情况。  MQTT协议的特点 构建于TCP&#x2F;IP协议之上  TCP&#x2F;IP参考模型可分为四层：应用层、传输层、网络层、链路层。TCP、UDP协议均属于传输层，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MQTT协议">
+<meta property="og:url" content="http://yoursite.com/2019/07/12/MQTT%E5%8D%8F%E8%AE%AE/index.html">
+<meta property="og:site_name" content="Vousmevoyez">
+<meta property="og:description" content="MQTT协议MQTT协议的概念 MQTT协议，全称 Message Queue Telemetry Transport消息队列遥测传输协议 ，是一种基于发布&#x2F;订阅的轻量级通讯协议适用于条件较差的网络环境，如：网络延迟高、带宽低、通信讯号不稳定等情况。  MQTT协议的特点 构建于TCP&#x2F;IP协议之上  TCP&#x2F;IP参考模型可分为四层：应用层、传输层、网络层、链路层。TCP、UDP协议均属于传输层，">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNc79gy1g4x7jsup5wj30se13m0vy.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79gy1g4x7qw0kdfj31ht0u0avb.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79gy1g4x7rqvccfj31hk0u0hbz.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79gy1g4x7sfyqb9j31fw0u0x07.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79gy1g4x7st93sjj31lx0u0tq9.jpg">
+<meta property="article:published_time" content="2019-07-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-08-02T09:56:17.488Z">
+<meta property="article:author" content="vousmevoyez">
+<meta property="article:tag" content="protocol">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/006tNc79gy1g4x7jsup5wj30se13m0vy.jpg">
+
+<link rel="canonical" href="http://yoursite.com/2019/07/12/MQTT%E5%8D%8F%E8%AE%AE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>MQTT协议 | Vousmevoyez</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Vousmevoyez</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/liuxing1Tec" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/12/MQTT%E5%8D%8F%E8%AE%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="vousmevoyez">
+      <meta itemprop="description" content="Swan L">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vousmevoyez">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MQTT协议
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-07-12 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-12T00:00:00+08:00">2019-07-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-02 17:56:17" itemprop="dateModified" datetime="2019-08-02T17:56:17+08:00">2019-08-02</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="MQTT协议"><a href="#MQTT协议" class="headerlink" title="MQTT协议"></a>MQTT协议</h1><h2 id="MQTT协议的概念"><a href="#MQTT协议的概念" class="headerlink" title="MQTT协议的概念"></a>MQTT协议的概念</h2><blockquote>
+<p>MQTT协议，全称 <em>Message Queue Telemetry Transport消息队列遥测传输协议</em> ，是一种基于发布/订阅的轻量级通讯协议<br>适用于条件较差的网络环境，如：网络延迟高、带宽低、通信讯号不稳定等情况。</p>
+</blockquote>
+<h2 id="MQTT协议的特点"><a href="#MQTT协议的特点" class="headerlink" title="MQTT协议的特点"></a>MQTT协议的特点</h2><ul>
+<li><p>构建于TCP/IP协议之上</p>
+<blockquote>
+<p>TCP/IP参考模型可分为四层：应用层、传输层、网络层、链路层。TCP、UDP协议均属于传输层，MQTT运行与TCP之上，属于应用层协议，只要支持TCP/IP协议栈的地方都可应用MQTT。</p>
+</blockquote>
+<a id="more"></a></li>
+<li><p>基于C-S架构的消息发布/订阅</p>
+<blockquote>
+<p>提供一对多的消息发布，作为客户端之间的中间介质，解除应用程序的耦合。</p>
+</blockquote>
+</li>
+<li><p>对负载内容屏蔽的消息传输</p>
+</li>
+<li><p>使用TCP连接进行数据推送</p>
+</li>
+<li><p>三种消息发布QoS</p>
+<blockquote>
+<ul>
+<li>QoS 0：至多一次。服务器只推送1次，至于客户端是否收到，收到的消息是否正确，数据是否有所丢失，都不管。</li>
+<li>QoS 1：至少一次。客户端收到服务器的推送后要回复一个PUBACK告诉服务器已收到，否则服务器会认为Client未收到推送，隔一段时间后重新发送，直到对方回复PUBACK。</li>
+<li>QoS 2：只发一次。保证数据包到达目的地，且不会出现重复。服务器发送数据包，客户端接收后回复PUBREC（收到发布消息）报文，服务器存储PUBREC中的报文标识符，发送PUBREL（释放发布消息）。</li>
+</ul>
+</blockquote>
+<p> <img src="http://ww4.sinaimg.cn/large/006tNc79gy1g4x7jsup5wj30se13m0vy.jpg" alt=""></p>
+</li>
+</ul>
+<h2 id="MQTT协议规范"><a href="#MQTT协议规范" class="headerlink" title="MQTT协议规范"></a>MQTT协议规范</h2><h3 id="消息类型"><a href="#消息类型" class="headerlink" title="消息类型"></a>消息类型</h3><p><strong>表1</strong> 报文类型值</p>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">值</th>
+<th align="left">流向</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">CONNECT</td>
+<td align="left">1</td>
+<td align="left">C -&gt; S</td>
+<td align="left">客户端连接请求</td>
+</tr>
+<tr>
+<td align="left">CONNACK</td>
+<td align="left">2</td>
+<td align="left">S -&gt; C</td>
+<td align="left">服务端确认连接</td>
+</tr>
+<tr>
+<td align="left">PUBLISH</td>
+<td align="left">3</td>
+<td align="left">C &lt;-&gt; S</td>
+<td align="left">发布消息</td>
+</tr>
+<tr>
+<td align="left">PUBACK</td>
+<td align="left">4</td>
+<td align="left">C &lt;-&gt; S</td>
+<td align="left">QoS1消息确认</td>
+</tr>
+<tr>
+<td align="left">PUBREC</td>
+<td align="left">5</td>
+<td align="left">C &lt;-&gt; S</td>
+<td align="left">QoS2收到消息（保证传输step1）</td>
+</tr>
+<tr>
+<td align="left">PUBREL</td>
+<td align="left">6</td>
+<td align="left">C &lt;-&gt; S</td>
+<td align="left">QoS2释放消息（保证传输step2）</td>
+</tr>
+<tr>
+<td align="left">PUBCOMP</td>
+<td align="left">7</td>
+<td align="left">C &lt;-&gt; S</td>
+<td align="left">QoS2完成消息（保证传输step3）</td>
+</tr>
+<tr>
+<td align="left">SUBSCRIBE</td>
+<td align="left">8</td>
+<td align="left">C -&gt; S</td>
+<td align="left">订阅消息</td>
+</tr>
+<tr>
+<td align="left">SUBACK</td>
+<td align="left">9</td>
+<td align="left">S -&gt; C</td>
+<td align="left">订阅确认</td>
+</tr>
+<tr>
+<td align="left">UNSUBSCRIBE</td>
+<td align="left">10</td>
+<td align="left">C -&gt; S</td>
+<td align="left">取消订阅</td>
+</tr>
+<tr>
+<td align="left">UNSUBACK</td>
+<td align="left">11</td>
+<td align="left">S -&gt; C</td>
+<td align="left">取消订阅确认</td>
+</tr>
+<tr>
+<td align="left">PINGREQ</td>
+<td align="left">12</td>
+<td align="left">C -&gt; S</td>
+<td align="left">连接保活请求</td>
+</tr>
+<tr>
+<td align="left">PINGRESP</td>
+<td align="left">13</td>
+<td align="left">S -&gt; C</td>
+<td align="left">保活回应</td>
+</tr>
+<tr>
+<td align="left">DISCONNECT</td>
+<td align="left">14</td>
+<td align="left">C -&gt; S</td>
+<td align="left">断开连接</td>
+</tr>
+</tbody></table>
+<p><strong>注：</strong>值为0和15表示保留</p>
+<h3 id="MQTT控制报文"><a href="#MQTT控制报文" class="headerlink" title="MQTT控制报文"></a>MQTT控制报文</h3><p>MQ控制报文由三部分组成：固定报头+可变报头+有效载荷</p>
+<p><strong>表2：</strong>报文格式</p>
+<table>
+<thead>
+<tr>
+<th>↓</th>
+<th>↓</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>固定报头</td>
+<td>所有控制报文都包含</td>
+</tr>
+<tr>
+<td>可变报头</td>
+<td>部分报文包含</td>
+</tr>
+<tr>
+<td>有效载荷</td>
+<td>部分报文包含</td>
+</tr>
+</tbody></table>
+<h4 id="固定报头"><a href="#固定报头" class="headerlink" title="固定报头"></a>固定报头</h4><p><strong>表3：</strong> 固定报头格式</p>
+<table>
+    <tr>
+        <td>Bit</td> 
+        <td>7</td>
+        <td>6</td> 
+        <td>5</td>
+        <td>4</td>
+        <td>3</td>
+        <td>2</td>
+        <td>1</td>
+        <td>0</td>
+   </tr>
+    <tr>
+        <td>Byte 1</td>
+        <td colspan="4">MQTT控制报文类型</td>
+        <td colspan="4">控制报文类型的标志位</td>
+    </tr>
+    <tr>
+        <td>Byte 2</td>
+        <td colspan="8" align="center">剩余长度</td>
+    </tr>
+</table>
+
+<p><strong>注：</strong>固定报头Byte1的高四位是表1中消息类型的值，以二进制数表示。低四位是报文类型的标志位。</p>
+<h4 id="可变报头"><a href="#可变报头" class="headerlink" title="可变报头"></a>可变报头</h4><p>可变报头在固定报头和负载之间。可变报头的报文标识符字段存在于在多个类型的报文里。</p>
+<blockquote>
+<p>很多控制报文的可变报头部分包含一个两字节的报文标识符字段。这些报文是QoS &gt; 0时的PUBLISH，PUBACK，PUBREC，PUBREL，PUBCOMP，SUBSCRIBE, SUBACK，UNSUBSCRIBE，UNSUBACK。SUBSCRIBE，UNSUBSCRIBE和PUBLISH（QoS大于0）控制报文必须包含一个非零的16位报文标识符。客户端每次发送一个新的这些类型的报文时都必须分配一个当前未使用的报文标识符。如果一个客户端要重发这个特殊的控制报文，在随后重发那个报文时，它必须使用相同的标识符。当客户端处理完这个报文对应的确认后，这个报文标识符就释放可重用。发送一个QoS 0的PUBLISH报文时，相同的条件也适用于服务端。</p>
+</blockquote>
+<p>即uuid，标识会话，当标识符一致时表示在同一会话中。</p>
+<h4 id="有效载荷"><a href="#有效载荷" class="headerlink" title="有效载荷"></a>有效载荷</h4><p>-&gt;Body.</p>
+<h1 id="Wireshark抓包"><a href="#Wireshark抓包" class="headerlink" title="Wireshark抓包"></a>Wireshark抓包</h1><p><img src="http://ww1.sinaimg.cn/large/006tNc79gy1g4x7qw0kdfj31ht0u0avb.jpg" alt=""><br>从报文可看到，Client与MQ Server首先做三次TCP握手连接，建立连接成功后，Client给MQ服务器发送connect登录请求，服务器回应一个ACK表示登录成功。协议消息中可看出，登录请求报文的QoS=0，即只推送一次消息。</p>
+<p><img src="http://ww3.sinaimg.cn/large/006tNc79gy1g4x7rqvccfj31hk0u0hbz.jpg" alt=""><br>客户端向MQ服务器发布消息，发送publish报文，可从报文信息中看到，QoS=1，即至少发送1次，服务器收到后回复Publish Ack确认报文，否则一段时间后发布方没收到确认将进行重传。另外，报文中可看出MQTT固定报文头0x32 = 00110010,3表示消息类型为Publish（表1能查到）。此处Publish报文发布新Portal消息，AC程序主动发送的无感知报文。</p>
+<hr>
+<p><img src="http://ww3.sinaimg.cn/large/006tNc79gy1g4x7sfyqb9j31fw0u0x07.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/006tNc79gy1g4x7st93sjj31lx0u0tq9.jpg" alt=""></p>
+<p>订阅请求报文Subscribe Request。上图1报文为客户端向MQ服务器请求订阅YS保活Topic消息。图2为二级AC上线后的订阅请求，可看到MQTT报文有效载荷包含二级AC的MAC地址。收到消息后对端回复Subscribe Ack，QoS=1。</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      <div style="display: inline-block;">
+        <img src="/Donate%20comment%20here" alt="vousmevoyez reward_comment">
+        <p>reward_comment</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="vousmevoyez WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="vousmevoyez Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/protocol/" rel="tag"># protocol</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/05/27/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="git学习笔记">
+      <i class="fa fa-chevron-left"></i> git学习笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/08/02/cJson/" rel="next" title="cJson学习笔记">
+      cJson学习笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MQTT协议"><span class="nav-number">1.</span> <span class="nav-text">MQTT协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MQTT协议的概念"><span class="nav-number">1.1.</span> <span class="nav-text">MQTT协议的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MQTT协议的特点"><span class="nav-number">1.2.</span> <span class="nav-text">MQTT协议的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MQTT协议规范"><span class="nav-number">1.3.</span> <span class="nav-text">MQTT协议规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#消息类型"><span class="nav-number">1.3.1.</span> <span class="nav-text">消息类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MQTT控制报文"><span class="nav-number">1.3.2.</span> <span class="nav-text">MQTT控制报文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#固定报头"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">固定报头</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可变报头"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">可变报头</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有效载荷"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">有效载荷</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Wireshark抓包"><span class="nav-number">2.</span> <span class="nav-text">Wireshark抓包</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">vousmevoyez</p>
+  <div class="site-description" itemprop="description">Swan L</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/liuxing1Tec" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;liuxing1Tec" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:vous1158@gmail.com" title="E-Mail → mailto:vous1158@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/116543534108813931573" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;116543534108813931573" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/LIUVOUS" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;LIUVOUS" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/vousmevoyezliu" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;vousmevoyezliu" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">vousmevoyez</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
