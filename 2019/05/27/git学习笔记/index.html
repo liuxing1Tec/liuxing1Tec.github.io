@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="Vousmevoyez">
 <meta property="og:description" content="安装git12git config --global user.name &#39;XXX&#39;git config --global user.email &#39;XXX&#39;  创建本地库1234mkidir learngit     &#x2F;&#x2F;自定义文件夹cd learngittouch test.md       &#x2F;&#x2F;创建test.md文件pwd                 &#x2F;&#x2F;显示当前目录">
 <meta property="article:published_time" content="2019-05-26T16:00:00.000Z">
-<meta property="article:modified_time" content="2019-06-04T10:37:26.470Z">
+<meta property="article:modified_time" content="2020-07-24T03:33:14.134Z">
 <meta property="article:author" content="vousmevoyez">
 <meta property="article:tag" content="tools">
 <meta property="article:tag" content="git">
@@ -126,12 +126,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">22</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">23</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">31</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">32</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -220,7 +220,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-06-04 18:37:26" itemprop="dateModified" datetime="2019-06-04T18:37:26+08:00">2019-06-04</time>
+                <time title="Modified: 2020-07-24 11:33:14" itemprop="dateModified" datetime="2020-07-24T11:33:14+08:00">2020-07-24</time>
               </span>
 
           
@@ -295,6 +295,8 @@
 </li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//删除文件夹下的所有 .svn 文件</span><br><span class="line">find . -name <span class="string">".svn"</span> | xargs rm -Rf</span><br><span class="line">//删除文件夹下的所有 .git 文件</span><br><span class="line">find . -name <span class="string">".git"</span> | xargs rm -Rf</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-git-clone-反复需要输入用户名密码"><a href="#5-git-clone-反复需要输入用户名密码" class="headerlink" title="5. git clone 反复需要输入用户名密码"></a>5. git clone 反复需要输入用户名密码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper store</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -403,7 +405,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装git"><span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建本地库"><span class="nav-text">创建本地库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用CRT"><span class="nav-text">常用CRT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建SSH-Key，建立本地Git仓库和GitHub仓库之间的传输的秘钥"><span class="nav-text">创建SSH Key，建立本地Git仓库和GitHub仓库之间的传输的秘钥</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分支"><span class="nav-text">分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他—标签"><span class="nav-text">其他—标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他—出错解决方案"><span class="nav-text">其他—出错解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-git报错：’fatal-remote-origin-already-exists’怎么解决？"><span class="nav-text">1. git报错：’fatal:remote origin already exists’怎么解决？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-如何删除GIT远程仓库项目的所有内容，重新提交所有内容"><span class="nav-text">2. 如何删除GIT远程仓库项目的所有内容，重新提交所有内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-git取消本地修改"><span class="nav-text">3. git取消本地修改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-gt-当未使用-git-add-缓存代码时。"><span class="nav-text">1-&gt;当未使用 git add 缓存代码时。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-gt-已经使用了-git-add-缓存了代码"><span class="nav-text">2-&gt;已经使用了 git add 缓存了代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-gt-已经用-git-commit-提交了代码。"><span class="nav-text">3-&gt;已经用 git commit 提交了代码。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-删除文件夹下的-所有-svn或者-git文件夹信息"><span class="nav-text">4. 删除文件夹下的 所有.svn或者.git文件夹信息</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装git"><span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建本地库"><span class="nav-text">创建本地库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用CRT"><span class="nav-text">常用CRT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建SSH-Key，建立本地Git仓库和GitHub仓库之间的传输的秘钥"><span class="nav-text">创建SSH Key，建立本地Git仓库和GitHub仓库之间的传输的秘钥</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分支"><span class="nav-text">分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他—标签"><span class="nav-text">其他—标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他—出错解决方案"><span class="nav-text">其他—出错解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-git报错：’fatal-remote-origin-already-exists’怎么解决？"><span class="nav-text">1. git报错：’fatal:remote origin already exists’怎么解决？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-如何删除GIT远程仓库项目的所有内容，重新提交所有内容"><span class="nav-text">2. 如何删除GIT远程仓库项目的所有内容，重新提交所有内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-git取消本地修改"><span class="nav-text">3. git取消本地修改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-gt-当未使用-git-add-缓存代码时。"><span class="nav-text">1-&gt;当未使用 git add 缓存代码时。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-gt-已经使用了-git-add-缓存了代码"><span class="nav-text">2-&gt;已经使用了 git add 缓存了代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-gt-已经用-git-commit-提交了代码。"><span class="nav-text">3-&gt;已经用 git commit 提交了代码。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-删除文件夹下的-所有-svn或者-git文件夹信息"><span class="nav-text">4. 删除文件夹下的 所有.svn或者.git文件夹信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-git-clone-反复需要输入用户名密码"><span class="nav-text">5. git clone 反复需要输入用户名密码</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -417,14 +419,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

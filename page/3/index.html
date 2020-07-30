@@ -123,12 +123,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">22</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">23</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">31</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">32</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -180,6 +180,77 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="vousmevoyez">
+      <meta itemprop="description" content="Swan L">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vousmevoyez">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/05/redis9/" class="post-title-link" itemprop="url">Redis Set(集合)</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-09-06 14:05:20" itemprop="dateModified" datetime="2019-09-06T14:05:20+08:00">2019-09-06</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Redis-Set-集合"><a href="#Redis-Set-集合" class="headerlink" title="Redis Set(集合)"></a>Redis Set(集合)</h1></br>
+redis 的 Set 是 String 类型的无序集合，元素不允许重复。
+
+<p>redis 中集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是 O(1)。</p>
+<p>集合中最大的元素数为 2<sup>32</sup> - 1 (40多亿)。<br></br></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">sadd key value1 value2 ...  <span class="comment">//向集合中添加一个或多个元素。sadd即set add，key是集合的名称。返回此次添加的元素个数。</span></span><br><span class="line"></span><br><span class="line">scard key                   <span class="comment">//返回集合的元素个数</span></span><br><span class="line"></span><br><span class="line">smembers key                <span class="comment">//返回集合中所有的元素</span></span><br><span class="line"></span><br><span class="line">sismember key elementValue  <span class="comment">//判断该集合中是否有elementValue这个元素。有返回1，没有或者key不存在则返回0.</span></span><br><span class="line"></span><br><span class="line">spop key                    <span class="comment">//随机移除并返回集合中的一个元素</span></span><br><span class="line"></span><br><span class="line">srandmember key             <span class="comment">//随机返回集合中的一个元素，并不移除该元素。srandmember即set random  member.</span></span><br><span class="line"><span class="comment">//可带一个可选参数：</span></span><br><span class="line">srandmember key count       <span class="comment">//count是一个整数，指定返回的元素个数。</span></span><br><span class="line"><span class="comment">//count&gt;0：随机返回count个元素，这些元素互不相同。随机确定一个返回的元素后，再从剩余的元素中随机。</span></span><br><span class="line"><span class="comment">//count&lt;0：随机返回count的绝对值个元素，这些元素可能相同。每次都是从整个集合中随机一个。</span></span><br><span class="line"><span class="comment">//count的绝对值大于等于集合的元素个数时，返回集合中所有的元素。</span></span><br><span class="line"></span><br><span class="line">srem key value1 value2 ...  <span class="comment">//移除集合中的一个或多个元素，若集合中没有该元素，会忽略该元素。</span></span><br><span class="line"></span><br><span class="line">smove sourceKey destKey elementValue        <span class="comment">//将元素从一个集合移动到另一个集合。（剪切）</span></span><br><span class="line"></span><br><span class="line">sscan key <span class="built_in">cursor</span> match pattern count num    <span class="comment">//迭代集合中的元素。cursor指定对每元素的操作。</span></span><br><span class="line"><span class="comment">//2个可选参数：</span></span><br><span class="line"><span class="comment">//match pattern     指定配置模式，只迭代符合pattern的元素</span></span><br><span class="line"><span class="comment">//count num         指定要迭代的元素个数</span></span><br><span class="line"></span><br><span class="line">sinter key1 key2 ...        <span class="comment">//返回这些集合的交集</span></span><br><span class="line"></span><br><span class="line">sinterstore destKey key1 key2 ...           <span class="comment">//多了store，求key1、key2.....这些集合的交集，并将交集中的元素存储在destKey集合中，返回交集中的元素个数</span></span><br><span class="line"><span class="comment">//相同用法的还有：</span></span><br><span class="line"><span class="comment">//sunion    并集</span></span><br><span class="line"><span class="comment">//sdiff     差集</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -369,7 +440,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-06-04 18:37:26" itemprop="dateModified" datetime="2019-06-04T18:37:26+08:00">2019-06-04</time>
+                <time title="Modified: 2020-07-24 11:33:14" itemprop="dateModified" datetime="2020-07-24T11:33:14+08:00">2020-07-24</time>
               </span>
 
           
@@ -902,97 +973,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/moment/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="vousmevoyez">
-      <meta itemprop="description" content="Swan L">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vousmevoyez">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/12/11/moment/" class="post-title-link" itemprop="url">Moments Project 朋友圈设计</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-12-11 00:00:00" itemprop="dateCreated datePublished" datetime="2018-12-11T00:00:00+08:00">2018-12-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-05-07 14:15:04" itemprop="dateModified" datetime="2019-05-07T14:15:04+08:00">2019-05-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="需求↓"><a href="#需求↓" class="headerlink" title="需求↓"></a>需求↓</h1><p>做一个看板任务(照着微信朋友圈来,不过所有用户全部看成朋友即可)</p>
-<ol>
-<li>用户可以登录,可以保持登录状态</li>
-<li>用户可以发布一个想法,包含一段文字,0-4张图片(保存图片链接即可)</li>
-<li>用户可以查看大家发布的说说,按时间顺序从新展示,需分页,一页20个</li>
-<li>用户可以评论想法,也可以删除自己的评论</li>
-<li>用户可以点赞/取消点赞想法</li>
-<li>消息通知,点赞回复要通知所有和说说相关的人</li>
-</ol>
-<blockquote>
-<p>不做界面,规划好接口,数据库,且完成即可<br>数据库尽可能满足 一对一  一对多  多对多 关系,不要求字段冗余<br>使用HTTP协议,框架自选(iris,beego等都行)<br>进度:</p>
-</blockquote>
-<ol>
-<li>设计好数据库</li>
-<li>规划好接口</li>
-<li>做好登录认证</li>
-<li>完成接口</li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/12/11/moment/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1062,14 +1042,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
