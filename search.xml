@@ -447,7 +447,7 @@
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">CurlCXX <span class="title">curl</span><span class="params">(url, <span class="number">1</span>)</span></span>; <span class="comment">//1s timeout</span></span><br><span class="line">curl.post(body);</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>注意学会<code>curl</code>发包的用法，并且<code>post</code>时，一定要注意里面的数据，单个字段内不能出现容易导致解析错误的<code>&#39;&amp;&#39;</code>字符，若不得不包含<code>&#39;&amp;&#39;</code>字符，则要用转义字符<code>&#39;\&amp;&#39;</code>包起来，否则会导致参数错误。</li>
+<li>注意学会<code>curl</code>发包的用法，并且<code>post</code>时，<code>body</code>当中要注意<code>fastcgi</code>框架当中约定了<code>post</code>数据格式为<code>x-www-form-urlencoded/form-data</code>，因此一定要注意<code>body</code>里面的数据，单个字段内不能出现容易导致解析错误的<code>&#39;&amp;&#39;</code>字符，若不得不包含<code>&#39;&amp;&#39;</code>字符，则要用转义字符<code>&#39;\&amp;&#39;</code>包起来，否则会导致参数错误。</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> CallRecord *app;</span><br><span class="line">app = app_ptr();</span><br><span class="line"><span class="keyword">const_cast</span>&lt;CallRecord *&gt;(app)-&gt;reload_cache();</span><br></pre></td></tr></table></figure>
 

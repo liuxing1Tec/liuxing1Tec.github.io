@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggzlybd8hrj30dz07nmxf.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gh7tnrx8bmj30jp0c2tai.jpg">
 <meta property="article:published_time" content="2020-07-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-07-30T09:43:13.976Z">
+<meta property="article:modified_time" content="2020-07-30T10:00:17.154Z">
 <meta property="article:author" content="vousmevoyez">
 <meta property="article:tag" content="progress">
 <meta name="twitter:card" content="summary">
@@ -223,7 +223,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-07-30 00:00:00 / Modified: 17:43:13" itemprop="dateCreated datePublished" datetime="2020-07-30T00:00:00+08:00">2020-07-30</time>
+              <time title="Created: 2020-07-30 00:00:00 / Modified: 18:00:17" itemprop="dateCreated datePublished" datetime="2020-07-30T00:00:00+08:00">2020-07-30</time>
             </span>
 
           
@@ -545,7 +545,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">CurlCXX <span class="title">curl</span><span class="params">(url, <span class="number">1</span>)</span></span>; <span class="comment">//1s timeout</span></span><br><span class="line">curl.post(body);</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>注意学会<code>curl</code>发包的用法，并且<code>post</code>时，一定要注意里面的数据，单个字段内不能出现容易导致解析错误的<code>&#39;&amp;&#39;</code>字符，若不得不包含<code>&#39;&amp;&#39;</code>字符，则要用转义字符<code>&#39;\&amp;&#39;</code>包起来，否则会导致参数错误。</li>
+<li>注意学会<code>curl</code>发包的用法，并且<code>post</code>时，<code>body</code>当中要注意<code>fastcgi</code>框架当中约定了<code>post</code>数据格式为<code>x-www-form-urlencoded/form-data</code>，因此一定要注意<code>body</code>里面的数据，单个字段内不能出现容易导致解析错误的<code>&#39;&amp;&#39;</code>字符，若不得不包含<code>&#39;&amp;&#39;</code>字符，则要用转义字符<code>&#39;\&amp;&#39;</code>包起来，否则会导致参数错误。</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> CallRecord *app;</span><br><span class="line">app = app_ptr();</span><br><span class="line"><span class="keyword">const_cast</span>&lt;CallRecord *&gt;(app)-&gt;reload_cache();</span><br></pre></td></tr></table></figure>
 
