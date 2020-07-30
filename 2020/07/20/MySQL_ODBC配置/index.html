@@ -28,7 +28,7 @@
 <meta property="og:description" content="在安装配置之前，需要先大概了解一下 MyODBC 的架构，MyODBC 体系结构建立在 5 个组件上，如下图所示：">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggwm30f77xj30a20b3aah.jpg">
 <meta property="article:published_time" content="2020-07-19T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-07-20T10:52:32.000Z">
+<meta property="article:modified_time" content="2020-07-30T10:37:03.180Z">
 <meta property="article:author" content="vousmevoyez">
 <meta property="article:tag" content="MySQL">
 <meta property="article:tag" content="ODBC">
@@ -214,10 +214,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-07-20 00:00:00 / Modified: 18:52:32" itemprop="dateCreated datePublished" datetime="2020-07-20T00:00:00+08:00">2020-07-20</time>
+              <time title="Created: 2020-07-20 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-20T00:00:00+08:00">2020-07-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-07-30 18:37:03" itemprop="dateModified" datetime="2020-07-30T18:37:03+08:00">2020-07-30</time>
+              </span>
 
           
             <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
@@ -241,7 +247,7 @@
 <a id="more"></a>
 
 <p><strong>Driver Manager</strong><br>负责管理应用程序和驱动程序间的通信，主要功能包括：解析 DSN (数据源名称，ODBC 的数据源名称在 odbc.ini 文件中配置)，加载和卸载驱动程序，处理 ODBC 调用，将其传递给驱动程序。</p>
-<p><strong>ODBC.INI</strong><br>odbc.ini 是 ODBC 配置文件，记录了连接到服务器所需的驱动信息和数据库信息。Driver Manager 将使用它来确定加载哪个驱动程序（使用数据源名 DSN ）。驱动程序将根据指定的DSN来读取连接参数。</p>
+<p><strong>ODBC.INI</strong><br>odbc.ini 是 ODBC 配置文件，记录了连接到服务器所需的驱动信息和数据库信息xxxxxx。Driver Manager 将使用它来确定加载哪个驱动程序（使用数据源名 DSN ）。驱动程序将根据指定的DSN来读取连接参数。</p>
 <p><strong>Connector/ODBC(MyODBC驱动程序)</strong><br>实现 ODBC API 所提供的功能，它负责处理 ODBC 函数调用，将 SQL 请求提交给 MySQL 服务器，并将结果返回给应用程序。</p>
 <p>在 Linux 下配置 mysql ODBC 需要有以下步骤：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 安装 Driver Manager，本案例使用 unixODBC 来作为 Driver Manager。</span><br><span class="line">2. 安装 MySQL 驱动程序，本案例使用 Connector&#x2F;ODBC。</span><br><span class="line">3. 配置 ODBC.INI</span><br></pre></td></tr></table></figure>
