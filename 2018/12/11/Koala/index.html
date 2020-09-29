@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -26,6 +26,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/12/11/Koala/index.html">
 <meta property="og:site_name" content="Vousmevoyez">
 <meta property="og:description" content="koala框架的使用编写IDL在业务项目目录下创建helloworld目录，进入该目录，然后创建编辑hello.thrift，该文件用来生成基本框架。输入以下内容： 1234567struct Result &amp;#123;      &#x2F;&#x2F;定义了一个Result结构体，为接口返回的结构体数据    1: string response,&amp;#125;service HelloServ">
+<meta property="og:locale">
 <meta property="article:published_time" content="2018-12-10T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-03-05T03:05:17.000Z">
 <meta property="article:author" content="vousmevoyez">
@@ -131,7 +132,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">32</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">33</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -397,7 +398,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#koala框架的使用"><span class="nav-text">koala框架的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编写IDL"><span class="nav-text">编写IDL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成框架代码"><span class="nav-text">生成框架代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译执行"><span class="nav-text">编译执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动构建"><span class="nav-text">自动构建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#了解框架代码结构"><span class="nav-text">了解框架代码结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现HelloWorld接口"><span class="nav-text">实现HelloWorld接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置组名和服务名"><span class="nav-text">配置组名和服务名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动服务HelloService"><span class="nav-text">启动服务HelloService</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调用和测试"><span class="nav-text">调用和测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成SDK"><span class="nav-text">生成SDK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写测试代码"><span class="nav-text">编写测试代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过IP调用"><span class="nav-text">通过IP调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过服务名调用"><span class="nav-text">通过服务名调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行测试程序"><span class="nav-text">运行测试程序</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#koala%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">koala框架的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E5%86%99IDL"><span class="nav-text">编写IDL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E6%A1%86%E6%9E%B6%E4%BB%A3%E7%A0%81"><span class="nav-text">生成框架代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E6%89%A7%E8%A1%8C"><span class="nav-text">编译执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA"><span class="nav-text">自动构建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%86%E8%A7%A3%E6%A1%86%E6%9E%B6%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84"><span class="nav-text">了解框架代码结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0HelloWorld%E6%8E%A5%E5%8F%A3"><span class="nav-text">实现HelloWorld接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%BB%84%E5%90%8D%E5%92%8C%E6%9C%8D%E5%8A%A1%E5%90%8D"><span class="nav-text">配置组名和服务名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1HelloService"><span class="nav-text">启动服务HelloService</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E5%92%8C%E6%B5%8B%E8%AF%95"><span class="nav-text">调用和测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90SDK"><span class="nav-text">生成SDK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="nav-text">编写测试代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87IP%E8%B0%83%E7%94%A8"><span class="nav-text">通过IP调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E6%9C%8D%E5%8A%A1%E5%90%8D%E8%B0%83%E7%94%A8"><span class="nav-text">通过服务名调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95%E7%A8%8B%E5%BA%8F"><span class="nav-text">运行测试程序</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -411,7 +412,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -26,6 +26,7 @@
 <meta property="og:url" content="http://yoursite.com/2019/09/05/OpenSSL/index.html">
 <meta property="og:site_name" content="Vousmevoyez">
 <meta property="og:description" content="OpenSSL API什么是 SSL？SSL 是一个缩写，代表的是 Secure Sockets Layer（安全套接层）。它是支持在Internet 上进行安全通信的标准，并且将数据密码术集成到了协议之中。数据在离开您的计算机之前就已经被加密，然后只有 到达它预定的目标后才被解密。证书和密码学算法支持了这一切的运转，使用 OpenSSL，您将有机会切身体会它们。 理论上，如果加密的数据在到达目标">
+<meta property="og:locale">
 <meta property="article:published_time" content="2019-09-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-09-05T06:23:48.000Z">
 <meta property="article:author" content="vousmevoyez">
@@ -130,7 +131,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">32</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">33</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -446,7 +447,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenSSL-API"><span class="nav-text">OpenSSL API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-SSL？"><span class="nav-text">什么是 SSL？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-OpenSSL？"><span class="nav-text">什么是 OpenSSL？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#您需要什么"><span class="nav-text">您需要什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头文件和初始化"><span class="nav-text">头文件和初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立非安全连接"><span class="nav-text">建立非安全连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开连接"><span class="nav-text">打开连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与服务器进行通信"><span class="nav-text">与服务器进行通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭连接"><span class="nav-text">关闭连接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立安全连接"><span class="nav-text">建立安全连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为安全连接进行设置"><span class="nav-text">为安全连接进行设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加载可信任证书库"><span class="nav-text">加载可信任证书库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建连接"><span class="nav-text">创建连接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误检测"><span class="nav-text">错误检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始做吧"><span class="nav-text">开始做吧</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenSSL-API"><span class="nav-text">OpenSSL API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-SSL%EF%BC%9F"><span class="nav-text">什么是 SSL？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-OpenSSL%EF%BC%9F"><span class="nav-text">什么是 OpenSSL？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%82%A8%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88"><span class="nav-text">您需要什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%B4%E6%96%87%E4%BB%B6%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">头文件和初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E9%9D%9E%E5%AE%89%E5%85%A8%E8%BF%9E%E6%8E%A5"><span class="nav-text">建立非安全连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E8%BF%9E%E6%8E%A5"><span class="nav-text">打开连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E9%80%9A%E4%BF%A1"><span class="nav-text">与服务器进行通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5"><span class="nav-text">关闭连接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E5%AE%89%E5%85%A8%E8%BF%9E%E6%8E%A5"><span class="nav-text">建立安全连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E5%AE%89%E5%85%A8%E8%BF%9E%E6%8E%A5%E8%BF%9B%E8%A1%8C%E8%AE%BE%E7%BD%AE"><span class="nav-text">为安全连接进行设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E5%8F%AF%E4%BF%A1%E4%BB%BB%E8%AF%81%E4%B9%A6%E5%BA%93"><span class="nav-text">加载可信任证书库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%BF%9E%E6%8E%A5"><span class="nav-text">创建连接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E6%A3%80%E6%B5%8B"><span class="nav-text">错误检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E5%81%9A%E5%90%A7"><span class="nav-text">开始做吧</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -460,7 +461,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

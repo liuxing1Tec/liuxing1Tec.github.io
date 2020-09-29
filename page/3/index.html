@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -26,6 +26,7 @@
 <meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="Vousmevoyez">
 <meta property="og:description" content="Swan L">
+<meta property="og:locale">
 <meta property="article:author" content="vousmevoyez">
 <meta property="article:tag" content="vousmevoyez">
 <meta name="twitter:card" content="summary">
@@ -128,7 +129,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">32</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">33</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -180,6 +181,82 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="vousmevoyez">
+      <meta itemprop="description" content="Swan L">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vousmevoyez">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/05/redis8/" class="post-title-link" itemprop="url">Redis List(列表)</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-09-06 14:04:52" itemprop="dateModified" datetime="2019-09-06T14:04:52+08:00">2019-09-06</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Redis-List-列表"><a href="#Redis-List-列表" class="headerlink" title="Redis List(列表)"></a>Redis List(列表)</h1></br>
+redis 列表是简单的字符串列表，列表是有序的，列表中的元素可以重复。
+
+<p>可以添加一个元素到列表的头部（左边）或者尾部（右边）</p>
+<p>一个列表最多可以包含 2<sup>32</sup> - 1 个元素 (40多亿)。<br></br></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">lpush key value1 value2 ......  <span class="comment">//往列表的头部（左边）推入一个或多个元素，lpush的l表示left。key是列表名称，把列表中的所有元素作为一个整体（value）。若key不存在，会自动创建。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">lpush students <span class="string">"zhangsan"</span> <span class="string">"lisi"</span> <span class="string">"wangwu"</span>   <span class="comment">//返回操作后列表中的总元素个数</span></span><br><span class="line"><span class="comment">//先在列表头部添加“zhangsan”，再在列表头部添加“lisi”，接着在列表头部添加“wangwu”，最后列表的前三个元素依次是"wangwu"、“lisi”、“zhangsan”。</span></span><br><span class="line"></span><br><span class="line">lpushx key value1 value2 ...... <span class="comment">//同上，只是key不存在时，不执行操作（不会自动创建）。要key已存在且key时list类型时才会添加元素。</span></span><br><span class="line"></span><br><span class="line">lpop key                        <span class="comment">//弹出列表的第一个元素，会从列表中移除并返回该元素。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//l表示left，列表的头部。</span></span><br><span class="line"></span><br><span class="line">rpush key value1 value2 ......  <span class="comment">//在列表尾部推入1个或多个元素。</span></span><br><span class="line"></span><br><span class="line">rpushx key value1 value2 ...... <span class="comment">//尾部，key已存在时才会推入。</span></span><br><span class="line"></span><br><span class="line">rpop                            <span class="comment">//弹出列表的最后一个元素</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//r表示right，列表的尾部。</span></span><br><span class="line"><span class="comment">//上面的l、r命令是一一对应的。</span></span><br><span class="line"></span><br><span class="line">rpoplpush sourceKey destKey     <span class="comment">//弹出sourceKey的最后一个元素，并在destKey的头部推入元素，即剪切。返回该元素。rpoplpush即对sourceKey执行rpop，对destKey执行lpush。</span></span><br><span class="line"></span><br><span class="line">blpop key1 key2 ... timeout     <span class="comment">//弹出一个或多个的列表的第一个元素，如果列表为空会阻塞列表直到等待超时或发现可弹出元素为止。blpop即bind  lpop。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例： </span></span><br><span class="line">blpop students <span class="number">60</span>               <span class="comment">//60s</span></span><br><span class="line"></span><br><span class="line">brpop key1 key2 ...... timeout</span><br><span class="line"></span><br><span class="line">brpoplpush sourceKey destKey timeout</span><br><span class="line"></span><br><span class="line">llen key                        <span class="comment">//返回列表中的元素个数</span></span><br><span class="line"></span><br><span class="line">lset key index value            <span class="comment">//给指定索引处的元素设置值（即修改元素值）</span></span><br><span class="line"></span><br><span class="line">lindex key index                <span class="comment">//根据index索引元素，返回指定位置上的元素</span></span><br><span class="line"></span><br><span class="line">lrange key start <span class="built_in">end</span>            <span class="comment">//返回[start，end]区间上的所有元素。start、end是索引，比如0  -1  就是返回所有元素。</span></span><br><span class="line"></span><br><span class="line">ltrim key start <span class="built_in">end</span>             <span class="comment">//修剪列表，只保留[start，end]区间上的元素，其余元素会被删除。</span></span><br><span class="line"></span><br><span class="line">linsert key before/after value1 value2  <span class="comment">//在元素value1之前/之后插入元素value2。value2是要插入的元素。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例： </span></span><br><span class="line">linsert student before <span class="string">"lisi"</span> <span class="string">"zhangsan"</span><span class="comment">//在lisi的前面插入zhangsan</span></span><br><span class="line"><span class="comment">//插入成功，返回操作后列表的总长度；若value1不存在，返回-1；若key不存在或key是一个空的list，则返回0.</span></span><br><span class="line"></span><br><span class="line">lrem key count value            <span class="comment">//移除列表中值为value的所有元素。lrem即list remove。count是一个整数，表示要删除的个数、搜索方向。</span></span><br><span class="line"><span class="comment">//count&gt;0：从表头向表尾搜索，移除count个值为value的元素</span></span><br><span class="line"><span class="comment">//count&lt;0：从表尾向表头搜索，移除count的绝对值个值为value的元素</span></span><br><span class="line"><span class="comment">//count=0：移除表中所有的值为value的元素。要遍历列表，从哪边开始结果、速度都是一样的。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例： </span></span><br><span class="line">lrem scores <span class="number">0</span> <span class="number">90</span>                <span class="comment">//移除列表中所有的90</span></span><br></pre></td></tr></table></figure>
+</br>
+以上几个命令中，l 表示 list 。 index 从 0 开始，支持负数索引，index 要是已存在的
+
+<p>redis 的区间，都是闭区间，[ start ，end ] ，两边都包含。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -903,76 +980,6 @@ redis 的 Set 是 String 类型的无序集合，元素不允许重复。
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/Redis%E6%95%99%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="vousmevoyez">
-      <meta itemprop="description" content="Swan L">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vousmevoyez">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/12/11/Redis%E6%95%99%E7%A8%8B/" class="post-title-link" itemprop="url">Redis 教程</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2018-12-11 00:00:00 / Modified: 18:15:24" itemprop="dateCreated datePublished" datetime="2018-12-11T00:00:00+08:00">2018-12-11</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Redis-教程"><a href="#Redis-教程" class="headerlink" title="Redis 教程"></a><a href="http://www.runoob.com/redis/redis-tutorial.html" target="_blank" rel="noopener">Redis 教程</a></h1><p>Redis是一个开源的使用ANSI C语言编写、遵守BSD协议、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库，并提供多种语言的API。</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy2x4m6m1mj30ki0d8di9.jpg" alt=""></p>
-<p>Redis是一个字典结构的存储服务器，而实际上一个Redis实例提供了多个用来存储数据的字典，客户端可以指定将数据存储在哪个字典中。这与我们熟知的在一个关系数据库实例中可以创建多个数据库类似，所以可以将其中的每个字典都理解成一个独立的数据库。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/12/11/Redis%E6%95%99%E7%A8%8B/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1042,7 +1049,7 @@ redis 的 Set 是 String 类型的无序集合，元素不允许重复。
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

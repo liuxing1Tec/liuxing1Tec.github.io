@@ -473,6 +473,237 @@
       </tags>
   </entry>
   <entry>
+    <title>MySQL知识储备</title>
+    <url>/2020/07/20/MySQL%E7%9F%A5%E8%AF%86%E5%82%A8%E5%A4%87/</url>
+    <content><![CDATA[<div align='center' ><font size='70'>MySQL知识储备</font></div>
+
+<hr>
+<p>[TOC]</p>
+<hr>
+<h1 id="SQL-SELECT-DISTINCT-语句"><a href="#SQL-SELECT-DISTINCT-语句" class="headerlink" title="SQL SELECT DISTINCT 语句"></a>SQL SELECT DISTINCT 语句</h1><p>在表中，一个列可能会包含多个重复值，有时您也许希望仅仅列出不同（distinct）的值。DISTINCT 关键词用于返回唯一不同的值。</p>
+<p><strong>SQL SELECT DISTINCT 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> column_name,column_name</span><br><span class="line"><span class="keyword">FROM</span> table_name;</span><br></pre></td></tr></table></figure>
+
+<!---more--->
+
+<h1 id="SQL-UPDATE-语句"><a href="#SQL-UPDATE-语句" class="headerlink" title="SQL UPDATE 语句"></a>SQL UPDATE 语句</h1><p>UPDATE 语句用于更新表中已存在的记录。</p>
+<p><strong>SQL UPDATE 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> table_name</span><br><span class="line"><span class="keyword">SET</span> column1=value1,column2=value2,...</span><br><span class="line"><span class="keyword">WHERE</span> some_column=some_value;</span><br></pre></td></tr></table></figure>
+
+<p><strong>请注意</strong> : SQL UPDATE 语句中的 WHERE 子句！WHERE 子句规定哪条记录或者哪些记录需要更新。如果您省略了 WHERE 子句，所有的记录都将被更新！</p>
+<h1 id="SQL-DELETE-语句"><a href="#SQL-DELETE-语句" class="headerlink" title="SQL DELETE 语句"></a>SQL DELETE 语句</h1><p>DELETE 语句用于删除表中的行(记录)。</p>
+<p><strong>SQL DELETE 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> some_column=some_value;</span><br></pre></td></tr></table></figure>
+
+<p><strong>请注意</strong> : SQL DELETE 语句中的 WHERE 子句！WHERE 子句规定哪条记录或者哪些记录需要删除。如果您省略了 WHERE 子句，所有的记录都将被删除！</p>
+<h1 id="SQL-REGEXP-语句"><a href="#SQL-REGEXP-语句" class="headerlink" title="SQL REGEXP 语句"></a>SQL REGEXP 语句</h1><p>作为一个更为复杂的示例，正则表达式 <code>B[an]*s</code> 匹配下述字符串中的任何一个：<code>Bananas，Baaaaas，Bs</code>，以及以 B 开始，以 s 结束、并在其中包含任意数目 a 或 n 字符的任何其他字符串。</p>
+<p>以下是可用于随 REGEXP 操作符的表的模式。</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ghb5zvmhrhj30ff08r754.jpg"></p>
+<p>应用示例，查找用户表中 Email 格式错误的用户记录：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">users</span></span><br><span class="line"><span class="keyword">WHERE</span> email <span class="keyword">NOT</span> REGEXP <span class="string">&#x27;^[A-Z0-9._%-]+@[A-Z0-9.-]+.[A-Z]&#123;2,4&#125;$&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>MySQL 数据库中正则表达式的语法，主要包括各种符号的含义。</p>
+<p><strong>^ 字符</strong></p>
+<p>匹配字符串的开始位置，如 <code>^a</code> 表示以字母 a 开头的字符串。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">mysql&gt; SELECT &#x27;xxxyyy&#x27; REGEXP &#x27;^xx&#x27;;</span><br><span class="line"> </span><br><span class="line">+<span class="comment">-----------------------+</span></span><br><span class="line">| &#x27;xxxyyy&#x27; REGEXP &#x27;^xx&#x27; |</span><br><span class="line">+<span class="comment">-----------------------+</span></span><br><span class="line">|           1 |</span><br><span class="line">+<span class="comment">-----------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+
+<p>查询 xxxyyy 字符串中是否以 xx 开头，结果值为 1，表示值为 true，满足条件。</p>
+<p><strong>$ 字符</strong></p>
+<p>匹配字符串的结束位置，如 <code>X$</code> 表示以字母 X 结尾的字符串。</p>
+<p><strong>. 字符</strong></p>
+<p>这个字符就是英文下的点，它匹配任何一个字符，包括回车、换行等。</p>
+<p><strong>* 字符</strong></p>
+<p>星号匹配 0 个或多个字符，在它之前必须有内容。如：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">mysql&gt; SELECT &#x27;xxxyyy&#x27; REGEXP &#x27;x*&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>这个 SQL 语句，正则匹配为 true。</p>
+<p><strong>+ 字符</strong></p>
+<p>加号匹配 1 个或多个字符，在它之前也必须有内容。加号跟星号的用法类似，只是星号允许出现 0 次，加号则必须至少出现一次。</p>
+<p><strong>? 字符</strong></p>
+<p>问号匹配 0 次或 1 次。</p>
+<p><strong>实例:</strong><br>查询找到所有的名字以 st 开头：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">mysql&gt; SELECT name FROM person_tbl WHERE name REGEXP &#x27;^st&#x27;;</span><br><span class="line">//查询找到所有的名字以 ok 结尾：</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT name FROM person_tbl WHERE name REGEXP &#x27;ok$&#x27;;</span><br><span class="line">//查询找到所有的名字包函 mar 的字符串：</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT name FROM person_tbl WHERE name REGEXP &#x27;mar&#x27;;</span><br><span class="line">//查询找到所有名称以元音开始和 ok 结束的：</span><br><span class="line">mysql&gt; SELECT name FROM person_tbl WHERE name REGEXP &#x27;^[aeiou]|ok$&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>一个正则表达式中的可以使用以下保留字。</p>
+<p><strong>^</strong><br>所匹配的字符串以后面的字符串开头：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">mysql&gt; SELECT &quot;fonfo&quot; REGEXP &quot;^fo$&quot;; -&gt; 0（表示不匹配） </span><br><span class="line">mysql&gt; SELECT &quot;fofo&quot; REGEXP &quot;^fo&quot;; -&gt; 1（表示匹配）</span><br></pre></td></tr></table></figure>
+
+<p><strong>$</strong><br>所匹配的字符串以前面的字符串结尾：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">mysql&gt; SELECT &quot;fono&quot; REGEXP &quot;^fono$&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;fono&quot; REGEXP &quot;^fo$&quot;; -&gt; 0（表示不匹配） </span><br></pre></td></tr></table></figure>
+
+<p><strong>.</strong><br>匹配任何字符（包括新行）：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">mysql&gt; SELECT &quot;fofo&quot; REGEXP &quot;^f.*&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;fonfo&quot; REGEXP &quot;^f.*&quot;; -&gt; 1（表示匹配）</span><br></pre></td></tr></table></figure>
+
+<p>*<em>a**</em><br>匹配任意多个 a（包括空串)：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">mysql&gt; SELECT &quot;Ban&quot; REGEXP &quot;^Ba*n&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;Baaan&quot; REGEXP &quot;^Ba*n&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;Bn&quot; REGEXP &quot;^Ba*n&quot;; -&gt; 1（表示匹配）</span><br></pre></td></tr></table></figure>
+
+<p><strong>a+</strong><br>匹配任意多个 a（不包括空串)：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">mysql&gt; SELECT &quot;Ban&quot; REGEXP &quot;^Ba+n&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;Bn&quot; REGEXP &quot;^Ba+n&quot;; -&gt; 0（表示不匹配）</span><br></pre></td></tr></table></figure>
+
+<p><strong>a?</strong><br>匹配一个或零个 a：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">mysql&gt; SELECT &quot;Bn&quot; REGEXP &quot;^Ba?n&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;Ban&quot; REGEXP &quot;^Ba?n&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;Baan&quot; REGEXP &quot;^Ba?n&quot;; -&gt; 0（表示不匹配）</span><br></pre></td></tr></table></figure>
+
+<p><strong>de|abc</strong><br>匹配 de 或 abc：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">mysql&gt; SELECT &quot;pi&quot; REGEXP &quot;pi|apa&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;axe&quot; REGEXP &quot;pi|apa&quot;; -&gt; 0（表示不匹配） </span><br><span class="line">mysql&gt; SELECT &quot;apa&quot; REGEXP &quot;pi|apa&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;apa&quot; REGEXP &quot;^(pi|apa)$&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;pi&quot; REGEXP &quot;^(pi|apa)$&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;pix&quot; REGEXP &quot;^(pi|apa)$&quot;; -&gt; 0（表示不匹配）</span><br></pre></td></tr></table></figure>
+
+<p>*<em>(abc)**</em><br>匹配任意多个abc（包括空串)：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">mysql&gt; SELECT &quot;pi&quot; REGEXP &quot;^(pi)*$&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;pip&quot; REGEXP &quot;^(pi)*$&quot;; -&gt; 0（表示不匹配） </span><br><span class="line">mysql&gt; SELECT &quot;pipi&quot; REGEXP &quot;^(pi)*$&quot;; -&gt; 1（表示匹配）</span><br></pre></td></tr></table></figure>
+
+<p><strong>{1}</strong><br><strong>{2,3}</strong><br>这是一个更全面的方法，它可以实现前面好几种保留字的功能。<br>*<em>a**</em> 可以写成 <code>a&#123;0,&#125;</code>。<br><strong>a+</strong> 可以写成 <code>a&#123;1,&#125;</code>。<br><strong>a?</strong> 可以写成 <code>a&#123;0,1&#125;</code>。</p>
+<p>在 {} 内只有一个整型参数 i，表示字符只能出现 i 次；在 {} 内有一个整型参数 i，后面跟一个 ,，表示字符可以出现 i 次或 i 次以上；在 {} 内只有一个整型参数 i，后面跟一个 ,，再跟一个整型参数 j, 表示字符只能出现 i 次以上，j 次以下（包括 i 次和 j 次）。其中的整型参数必须大于等于 0，小于等于 RE_DUP_MAX（默认是 255）。 如果有两个参数，第二个必须大于等于第一个。</p>
+<p><strong>[a-dX]</strong> 匹配 <code>“a”、“b”、“c”、“d”</code> 或 <code>“X”</code>。<br>**[^a-dX]** 匹配除 <code>“a”、“b”、“c”、“d”、“X”</code> 以外的任何字符。</p>
+<p><strong>“[”、“]”</strong>必须成对使用：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">mysql&gt; SELECT &quot;aXbc&quot; REGEXP &quot;[a-dXYZ]&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;aXbc&quot; REGEXP &quot;^[a-dXYZ]$&quot;; -&gt; 0（表示不匹配） </span><br><span class="line">mysql&gt; SELECT &quot;aXbc&quot; REGEXP &quot;^[a-dXYZ]+$&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;aXbc&quot; REGEXP &quot;^[^a-dXYZ]+$&quot;; -&gt; 0（表示不匹配） </span><br><span class="line">mysql&gt; SELECT &quot;gheis&quot; REGEXP &quot;^[^a-dXYZ]+$&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;gheisa&quot; REGEXP &quot;^[^a-dXYZ]+$&quot;; -&gt; 0（表示不匹配）</span><br></pre></td></tr></table></figure>
+
+<h1 id="SQL-IN-操作符"><a href="#SQL-IN-操作符" class="headerlink" title="SQL IN 操作符"></a>SQL IN 操作符</h1><p>IN 操作符允许您在 WHERE 子句中规定多个值。</p>
+<p><strong>SQL IN 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> column_name <span class="keyword">IN</span> (value1,value2,...);</span><br></pre></td></tr></table></figure>
+
+<h1 id="SQL-BETWEEN-操作符"><a href="#SQL-BETWEEN-操作符" class="headerlink" title="SQL BETWEEN 操作符"></a>SQL BETWEEN 操作符</h1><p>BETWEEN 操作符选取介于两个值之间的数据范围内的值。这些值可以是数值、文本或者日期。</p>
+<p><strong>SQL BETWEEN 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> column_name <span class="keyword">BETWEEN</span> value1 <span class="keyword">AND</span> value2;</span><br></pre></td></tr></table></figure>
+
+<h1 id="SQL-别名"><a href="#SQL-别名" class="headerlink" title="SQL 别名"></a>SQL 别名</h1><p>通过使用 SQL，可以为表名称或列名称指定别名。基本上，创建别名是为了让列名称的可读性更强。</p>
+<p><strong>列的 SQL 别名语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name <span class="keyword">AS</span> alias_name</span><br><span class="line"><span class="keyword">FROM</span> table_name;</span><br></pre></td></tr></table></figure>
+<p><strong>表的 SQL 别名语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name <span class="keyword">AS</span> alias_name;</span><br></pre></td></tr></table></figure>
+
+<h1 id="SQL-JOIN"><a href="#SQL-JOIN" class="headerlink" title="SQL JOIN"></a>SQL JOIN</h1><p>SQL JOIN 子句用于把来自两个或多个表的行结合起来，基于这些表之间的共同字段。</p>
+<p><code>INNER JOIN</code>：如果表中有至少一个匹配，则返回行<br><code>LEFT JOIN</code>：即使右表中没有匹配，也从左表返回所有的行<br><code>RIGHT JOIN</code>：即使左表中没有匹配，也从右表返回所有的行<br><code>FULL JOIN</code>：只要其中一个表中存在匹配，则返回行</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ghb9w54nksj30qu0l40wf.jpg"></p>
+<h2 id="SQL-INNER-JOIN-关键字"><a href="#SQL-INNER-JOIN-关键字" class="headerlink" title="SQL INNER JOIN 关键字"></a>SQL INNER JOIN 关键字</h2><p>INNER JOIN 关键字在表中存在至少一个匹配时返回行。</p>
+<p><strong>SQL INNER JOIN 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+<p>或：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ghba0un8qgj305k041dfs.jpg"></p>
+<p><strong>注释</strong>：INNER JOIN 与 JOIN 是相同的。</p>
+<h2 id="SQL-LEFT-JOIN-关键字"><a href="#SQL-LEFT-JOIN-关键字" class="headerlink" title="SQL LEFT JOIN 关键字"></a>SQL LEFT JOIN 关键字</h2><p>LEFT JOIN 关键字从左表（table1）返回所有的行，即使右表（table2）中没有匹配。如果右表中没有匹配，则结果为 NULL。</p>
+<p><strong>SQL LEFT JOIN 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+<p>或：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ghbafmyirgj305k041aa0.jpg"></p>
+<p><strong>注释</strong>：在某些数据库中，LEFT JOIN 称为 LEFT OUTER JOIN。<br><strong>注释</strong>：LEFT JOIN 关键字从左表（Websites）返回所有的行，即使右表（access_log）中没有匹配。</p>
+<h2 id="SQL-RIGHT-JOIN-关键字"><a href="#SQL-RIGHT-JOIN-关键字" class="headerlink" title="SQL RIGHT JOIN 关键字"></a>SQL RIGHT JOIN 关键字</h2><p>RIGHT JOIN 关键字从右表（table2）返回所有的行，即使左表（table1）中没有匹配。如果左表中没有匹配，则结果为 NULL。</p>
+<p><strong>SQL RIGHT JOIN 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+<p>或：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ghbagmz2yhj305k041dfs.jpg"></p>
+<p><strong>注释</strong>：在某些数据库中，RIGHT JOIN 称为 RIGHT OUTER JOIN。<br><strong>注释</strong>：RIGHT JOIN 关键字从右表（Websites）返回所有的行，即使左表（access_log）中没有匹配。</p>
+<h2 id="SQL-FULL-OUTER-JOIN-关键字"><a href="#SQL-FULL-OUTER-JOIN-关键字" class="headerlink" title="SQL FULL OUTER JOIN 关键字"></a>SQL FULL OUTER JOIN 关键字</h2><p>FULL OUTER JOIN 关键字只要左表（table1）和右表（table2）其中一个表中存在匹配，则返回行。</p>
+<p>FULL OUTER JOIN 关键字结合了 LEFT JOIN 和 RIGHT JOIN 的结果。</p>
+<p><strong>SQL FULL OUTER JOIN 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">FULL</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ghbahzrrmtj305k0413yh.jpg"></p>
+<p><strong>注释</strong>：FULL OUTER JOIN 关键字返回左表（Websites）和右表（access_log）中所有的行。如果 “Websites” 表中的行在 “access_log” 中没有匹配或者 “access_log” 表中的行在 “Websites” 表中没有匹配，也会列出这些行。<br><strong>注释</strong>：MySQL中不支持 FULL OUTER JOIN</p>
+<h1 id="SQL-UNION-操作符"><a href="#SQL-UNION-操作符" class="headerlink" title="SQL UNION 操作符"></a>SQL UNION 操作符</h1><p>UNION 操作符用于合并两个或多个 SELECT 语句的结果集。</p>
+<p>请注意，UNION 内部的每个 SELECT 语句必须拥有相同数量的列。列也必须拥有相似的数据类型。同时，每个 SELECT 语句中的列的顺序必须相同。</p>
+<p><strong>SQL UNION 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s) <span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> column_name(s) <span class="keyword">FROM</span> table2;</span><br></pre></td></tr></table></figure>
+<p><strong>注释</strong>：默认地，UNION 操作符选取不同的值。如果允许重复的值，请使用 UNION ALL。</p>
+<p><strong>SQL UNION ALL 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s) <span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"><span class="keyword">SELECT</span> column_name(s) <span class="keyword">FROM</span> table2;</span><br></pre></td></tr></table></figure>
+<p><strong>注释</strong>：UNION 结果集中的列名总是等于 UNION 中第一个 SELECT 语句中的列名。</p>
+<h1 id="SQL-INSERT-INTO-SELECT-语句"><a href="#SQL-INSERT-INTO-SELECT-语句" class="headerlink" title="SQL INSERT INTO SELECT 语句"></a>SQL INSERT INTO SELECT 语句</h1><p>通过 SQL，您可以从一个表复制信息到另一个表。<br>INSERT INTO SELECT 语句从一个表复制数据，然后把数据插入到一个已存在的表中。目标表中任何已存在的行都不会受影响。</p>
+<p><strong>SQL INSERT INTO SELECT 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">//我们可以从一个表中复制所有的列插入到另一个已存在的表中：</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table2</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table1;</span><br><span class="line"></span><br><span class="line">//或者我们可以只复制希望的列插入到另一个已存在的表中：</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table2</span><br><span class="line">(column_name(s))</span><br><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1;</span><br></pre></td></tr></table></figure>
+
+<h1 id="MySQL-复制表-MySQL的SELECT-INTO-FROM-语句"><a href="#MySQL-复制表-MySQL的SELECT-INTO-FROM-语句" class="headerlink" title="MySQL 复制表(MySQL的SELECT INTO FROM 语句)"></a>MySQL 复制表(MySQL的SELECT INTO FROM 语句)</h1><p><strong>复制表结构及其数据：</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name_new <span class="keyword">AS</span> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table_name_old</span><br></pre></td></tr></table></figure>
+
+<p><strong>只复制表结构：</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name_new <span class="keyword">AS</span> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table_name_old <span class="keyword">WHERE</span> <span class="number">1</span>=<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>或者：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name_new <span class="keyword">LIKE</span> table_name_old</span><br></pre></td></tr></table></figure>
+
+<p><strong>只复制表数据：</strong></p>
+<ul>
+<li>如果两个表结构一样：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table_name_new <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table_name_old</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果两个表结构不一样：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table_name_new(column1,column2...) <span class="keyword">SELECT</span> column1,column2... <span class="keyword">FROM</span> table_name_old</span><br></pre></td></tr></table></figure>
+
+<p><strong>SELECT INTO FROM 和 INSERT INTO SELECT 的区别：</strong></p>
+<p>主要区别：SELECT INTO FROM 要求目标表不存在，因为在插入时会自动创建；INSERT INTO SELECT FROM 要求目标表存在。</p>
+<p><strong>SELECT INTO FROM</strong> ：将查询出来的数据整理到一张新表中保存，表结构与查询结构一致。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *（查询出来的结果） <span class="keyword">INTO</span> newtable（新的表名）<span class="keyword">FROM</span> <span class="keyword">WHERE</span> （后续条件）</span><br></pre></td></tr></table></figure>
+
+<p>即，查询出来结果—&gt;复制一张同结构的空表—&gt;将数据拷贝进去。</p>
+<p><strong>INSERT INTO SELECT</strong> ：为已经存在的表批量添加新数据。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span>  (准备好的表) <span class="keyword">SELECT</span> *（或者取用自己想要的结构）<span class="keyword">FROM</span> 表名 <span class="keyword">WHERE</span> 各种条件</span><br></pre></td></tr></table></figure>
+<p>即，指定一张想要插入数据的表格—&gt;对数据进行加工筛选—&gt;填入一张准备好的表格。</p>
+<h1 id="SQL-约束（Constraints）"><a href="#SQL-约束（Constraints）" class="headerlink" title="SQL 约束（Constraints）"></a>SQL 约束（Constraints）</h1><p>SQL 约束用于规定表中的数据规则。如果存在违反约束的数据行为，行为会被约束终止。</p>
+<p>约束可以在创建表时规定（通过 CREATE TABLE 语句），或者在表创建之后规定（通过 ALTER TABLE 语句）。</p>
+<p><strong>SQL CREATE TABLE + CONSTRAINT 语法</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line">(</span><br><span class="line">column_name1 data_type(<span class="keyword">size</span>) constraint_name,</span><br><span class="line">column_name2 data_type(<span class="keyword">size</span>) constraint_name,</span><br><span class="line">column_name3 data_type(<span class="keyword">size</span>) constraint_name,</span><br><span class="line">....</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>在 SQL 中，我们有如下约束：</p>
+<ul>
+<li><code>NOT NULL</code> - 指示某列不能存储 NULL 值。</li>
+<li><code>UNIQUE</code> - 保证某列的每行必须有唯一的值。</li>
+<li><code>PRIMARY KEY</code> - (<code>NOT NULL</code> 和 <code>UNIQUE</code> 的结合)。确保某列（或两个列多个列的结合）有唯一标识，有助于更容易更快速地找到表中的一个特定的记录。</li>
+<li><code>FOREIGN KEY</code> - 保证一个表中的数据匹配另一个表中的值的参照完整性。</li>
+<li><code>CHECK</code> - 保证列中的值符合指定的条件。</li>
+<li><code>DEFAULT</code> - 规定没有给列赋值时的默认值。</li>
+</ul>
+<h1 id="SQL-ALTER-TABLE-语句"><a href="#SQL-ALTER-TABLE-语句" class="headerlink" title="SQL ALTER TABLE 语句"></a>SQL ALTER TABLE 语句</h1><p>ALTER TABLE 语句用于在已有的表中添加、删除或修改列。</p>
+<p><strong>SQL ALTER TABLE 语法：</strong></p>
+<p>如需在表中添加列，请使用下面的语法:</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">ADD</span> column_name datatype</span><br></pre></td></tr></table></figure>
+
+<p>如需删除表中的列，请使用下面的语法（请注意，某些数据库系统不允许这种在数据库表中删除列的方式）：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">COLUMN</span> column_name</span><br></pre></td></tr></table></figure>
+
+<p>要改变表中列的数据类型，请使用下面的语法：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">MODIFY</span> <span class="keyword">COLUMN</span> column_name datatype</span><br></pre></td></tr></table></figure>
+
+<h1 id="SQL-AUTO-INCREMENT-字段"><a href="#SQL-AUTO-INCREMENT-字段" class="headerlink" title="SQL AUTO INCREMENT 字段"></a>SQL AUTO INCREMENT 字段</h1><p>AUTO-INCREMENT 会在新记录插入表中时生成一个唯一的数字。</p>
+<p><strong>AUTO INCREMENT 字段</strong><br>我们通常希望在每次插入新记录时，自动地创建主键字段的值。</p>
+<h1 id="SQL-CREATE-VIEW-语句"><a href="#SQL-CREATE-VIEW-语句" class="headerlink" title="SQL CREATE VIEW 语句"></a>SQL CREATE VIEW 语句</h1><p>在 SQL 中，视图是基于 SQL 语句的结果集的可视化的表。</p>
+<p>视图包含行和列，就像一个真实的表。视图中的字段就是来自一个或多个数据库中的真实的表中的字段。</p>
+<p>您可以向视图添加 SQL 函数、WHERE 以及 JOIN 语句，也可以呈现数据，就像这些数据来自于某个单一的表一样。</p>
+<p><strong>SQL CREATE VIEW 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> view_name <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> condition</span><br></pre></td></tr></table></figure>
+<p><strong>注释：</strong>视图总是显示最新的数据！每当用户查询视图时，数据库引擎通过使用视图的 SQL 语句重建数据。</p>
+<h1 id="SQL-撤销视图"><a href="#SQL-撤销视图" class="headerlink" title="SQL 撤销视图"></a>SQL 撤销视图</h1><p>您可以通过 DROP VIEW 命令来删除视图。</p>
+<p><strong>SQL DROP VIEW 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> view_name</span><br></pre></td></tr></table></figure>
+
+<h1 id="MySQL中修改表名，表属性名等操作"><a href="#MySQL中修改表名，表属性名等操作" class="headerlink" title="MySQL中修改表名，表属性名等操作"></a>MySQL中修改表名，表属性名等操作</h1><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">CHANGE</span> 原列名 新列名  类型； <span class="comment">--修改表的列属性名</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">MODIFY</span> 列名 类型 ；  <span class="comment">--修改表的类类型</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">DROP</span> 列名；  <span class="comment">--删除表的某一列</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">ADD</span>  列名 类型；<span class="comment">--添加某一列</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">RENAME</span> 新表名； <span class="comment">--修改表名</span></span><br></pre></td></tr></table></figure>
+
+
+<h1 id="其他的问题"><a href="#其他的问题" class="headerlink" title="其他的问题"></a>其他的问题</h1><h2 id="mysql清空表数据后如何让自增ID仍从1开始"><a href="#mysql清空表数据后如何让自增ID仍从1开始" class="headerlink" title="mysql清空表数据后如何让自增ID仍从1开始?"></a>mysql清空表数据后如何让自增ID仍从1开始?</h2><blockquote>
+<p>也就是说如何重排 auto_increment</p>
+</blockquote>
+<p><strong>两种方法：</strong></p>
+<p><strong>1、</strong>清空表时使用<code>truncate</code>命令，而不用<code>delete</code>命令</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">TRUNCATE</span> <span class="keyword">TABLE</span> table_name ;</span><br></pre></td></tr></table></figure>
+<p>使用<code>truncate</code>命令的好处：</p>
+<blockquote>
+<p>1）、速度快<br>2）、可以对自增 ID 进行重排，使自增 ID 仍从1开始计算</p>
+</blockquote>
+<p><strong>2、</strong>清空表数据后，使用alter修改表</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name AUTO_INCREMENT = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>ODBC</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Docker 基础知识</title>
     <url>/2020/07/18/docker%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
     <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run ubuntu:15.10 /bin/<span class="built_in">echo</span> <span class="string">"Hello world"</span></span><br></pre></td></tr></table></figure>
