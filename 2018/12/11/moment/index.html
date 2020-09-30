@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.2.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/sleep.gif">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/sleep.gif">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/sleep.gif">
+  <link rel="mask-icon" href="/images/sleep.gif" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="需求↓做一个看板任务(照着微信朋友圈来,不过所有用户全部看成朋友即可)  用户可以登录,可以保持登录状态 用户可以发布一个想法,包含一段文字,0-4张图片(保存图片链接即可) 用户可以查看大家发布的说说,按时间顺序从新展示,需分页,一页20个 用户可以评论想法,也可以删除自己的评论 用户可以点赞&#x2F;取消点赞想法 消息通知,点赞回复要通知所有和说说相关的人   不做界面,规划好接口,数据库,且完成即可">
@@ -36,8 +36,8 @@
 <meta property="article:tag" content="Projects">
 <meta property="article:tag" content="MySQL">
 <meta property="article:tag" content="Redis">
-<meta property="article:tag" content="Beego">
 <meta property="article:tag" content="Go">
+<meta property="article:tag" content="Beego">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fy2x4kvuemj30m108ydhk.jpg">
 
@@ -142,11 +142,6 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">33</span></a>
 
   </li>
-        <li class="menu-item menu-item-schedule">
-
-    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
-
-  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -184,7 +179,12 @@
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
   <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
   <a href="https://github.com/liuxing1Tec" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
@@ -237,26 +237,33 @@
               </span>
 
           
-            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span><br>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/12/11/moment/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/12/11/moment/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span></span>
+              <span>13k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>NaN:aN</span>
+              <span>12 分钟</span>
             </span>
 
         </div>
@@ -288,7 +295,7 @@
 </ol>
 <a id="more"></a>
 
-<h1 id="数据库实现"><a href="#数据库实现" class="headerlink" title="数据库实现"></a>数据库实现</h1><p><a href="https://jingyan.baidu.com/article/624e745961c6a134e9ba5a40.html" target="_blank" rel="noopener">数据库E-R图怎么画？</a></p>
+<h1 id="数据库实现"><a href="#数据库实现" class="headerlink" title="数据库实现"></a>数据库实现</h1><p><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/624e745961c6a134e9ba5a40.html">数据库E-R图怎么画？</a></p>
 <blockquote>
 <p>实体，属性，关系；实体就是一个个对象，比如猫；属性就是实体所有的某个属性，比如猫的性别；关系就是实体和实体之间或者实体内部之间的关系。<br>在ER图中，<strong>矩形代表实体，椭圆代表属性，菱形代表关系</strong>，各个形状之间用线段连接。  </p>
 </blockquote>
@@ -326,7 +333,7 @@
 <p><strong>微信朋友圈设计架构</strong></p>
 <p>微信朋友圈的数据有四个核心的表：</p>
 <ol>
-<li>发布表，发布表记录了来自所有用户的所有<a href="http://www.woshipm.com/marketing/1023818.html" target="_blank" rel="noopener">Feed</a>，比如一个用户发布了几张图片，每张图片的URL，图片在<a href="https://www.cnblogs.com/tinywan/p/6067126.html" target="_blank" rel="noopener">CDN</a>里的URL，它有哪些元属性，谁可以看，谁不可以看等等。</li>
+<li>发布表，发布表记录了来自所有用户的所有<a target="_blank" rel="noopener" href="http://www.woshipm.com/marketing/1023818.html">Feed</a>，比如一个用户发布了几张图片，每张图片的URL，图片在<a target="_blank" rel="noopener" href="https://www.cnblogs.com/tinywan/p/6067126.html">CDN</a>里的URL，它有哪些元属性，谁可以看，谁不可以看等等。</li>
 <li>相册，相册是每个用户独立的，记录了该用户所发布的所有内容，包括了与图片相关的文字，和无配图文字。</li>
 <li>评论， 评论就是针对某个具体发布的朋友评论和点赞操作。</li>
 <li>时间线，所谓“刷朋友圈”，就是刷时间线，就是一个用户所有的朋友的发布内容。</li>
@@ -345,11 +352,11 @@
 </blockquote>
 <p>参考文献：</p>
 <ol>
-<li><a href="https://blog.csdn.net/u011035407/article/details/78592787" target="_blank" rel="noopener">朋友圈的设计及实现</a></li>
-<li><a href="https://blog.csdn.net/u012244016/article/details/70664959" target="_blank" rel="noopener">微信与朋友圈后台架构</a></li>
-<li><a href="https://www.zhihu.com/question/21909660" target="_blank" rel="noopener">微信朋友圈数据库模式如何设计的？</a></li>
-<li><a href="https://www.2cto.com/kf/201603/496529.html" target="_blank" rel="noopener">微信与朋友圈后台架构的讲解</a></li>
-<li><a href="https://blog.csdn.net/sinat_27564919/article/details/70946319" target="_blank" rel="noopener">控制朋友圈好友状态可见性的数据表设计</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u011035407/article/details/78592787">朋友圈的设计及实现</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012244016/article/details/70664959">微信与朋友圈后台架构</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/21909660">微信朋友圈数据库模式如何设计的？</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.2cto.com/kf/201603/496529.html">微信与朋友圈后台架构的讲解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_27564919/article/details/70946319">控制朋友圈好友状态可见性的数据表设计</a></li>
 </ol>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy2x4kvuemj30m108ydhk.jpg" alt="idea"></p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy2x4lt2r6j30m70jjwjr.jpg" alt="er"></p>
@@ -394,7 +401,7 @@
 <li>每一次的通知都可以直接通过上一次通知进行维护更新。第一步，找到对应的publish_id中notice_id的最大的一项，找出对应的from_id，即找出了，本朋友圈上一次的通知，是从from_id，通知到了此用户的所有to_id。即所有最新的相关用户群，则更新的Notice为，from_id=当前usr_id，to_id=上一次的from_id+上一次的所有的to_id。</li>
 <li><em>初次生成的通知会被立刻调用，所以也可以直接在生成的时候，直接推送。</em> （*）</li>
 </ul>
-<h2 id="MySQL设计规范"><a href="#MySQL设计规范" class="headerlink" title="MySQL设计规范"></a><a href="/2018/12/11/MySQL基本规范/">MySQL设计规范</a></h2><blockquote>
+<h2 id="MySQL设计规范"><a href="#MySQL设计规范" class="headerlink" title="MySQL设计规范"></a><a href="/2018/12/11/MySQL%E5%9F%BA%E6%9C%AC%E8%A7%84%E8%8C%83/">MySQL设计规范</a></h2><blockquote>
 <p>详情，点击标题跳转页面↑</p>
 </blockquote>
 <hr>
@@ -409,59 +416,59 @@
 <p>①假如当前是在进行非登录登出操作，需要验证后，为当前Session_id，续期30分钟<br>②假如是登录操作，需要为当前用户创建一个session_id,存到redis中，并发送给客户端</p>
 <hr>
 <h2 id="登录接口"><a href="#登录接口" class="headerlink" title="登录接口"></a>登录接口</h2><h3 id="Login"><a href="#Login" class="headerlink" title="Login"></a>Login</h3><p><strong>路由</strong>：”/admin/login”<br>用户登录输入用户名密码，以Json格式发送至客户端，若存在Session，且和服务器内Session_id相符，则直接验证通过</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//UsrInfo 用户评价时提交的表单</span></span><br><span class="line"><span class="keyword">type</span> UsrInfo <span class="keyword">struct</span> &#123;</span><br><span class="line">	UsrName  <span class="keyword">string</span> <span class="string">`form:"usr_name"`</span></span><br><span class="line">	Password <span class="keyword">string</span> <span class="string">`form:"password"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//UsrInfo 用户评价时提交的表单</span></span><br><span class="line"><span class="keyword">type</span> UsrInfo <span class="keyword">struct</span> &#123;</span><br><span class="line">	UsrName  <span class="keyword">string</span> <span class="string">`form:&quot;usr_name&quot;`</span></span><br><span class="line">	Password <span class="keyword">string</span> <span class="string">`form:&quot;password&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>输入</strong>：Body包含用户名密码的Json格式文档，或其他包含Session_id的Json格式文档<br>通过解析Json，解析出用户名，密码，和Session_id：<br>①假如Session_id非空，且在Redis中存在，则更新Redis，直接进入下一步；<br>②假如Session_id非空，但在Redis中不存在，则登录超时，要求重新登录，进入登录界面<br>③假如Session_id为空，则进入登录界面，解析客户端发送过来的用户名密码，若用户名密码匹配，则登录成功，并生成一个Session记录，保存在Redis，同时将Session_id作为输出发送给客户端。否则直接返回“用户名或密码错误”，要求重新登录</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//LoginResult 传递登录结果</span></span><br><span class="line"><span class="keyword">type</span> LoginResult <span class="keyword">struct</span> &#123;</span><br><span class="line">	Result    <span class="keyword">bool</span>   <span class="string">`json:"result"`</span></span><br><span class="line">	UsrID     <span class="keyword">int</span>    <span class="string">`json:"usr_id"`</span></span><br><span class="line">	SessionID <span class="keyword">string</span> <span class="string">`json:"session_id"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//LoginResult 传递登录结果</span></span><br><span class="line"><span class="keyword">type</span> LoginResult <span class="keyword">struct</span> &#123;</span><br><span class="line">	Result    <span class="keyword">bool</span>   <span class="string">`json:&quot;result&quot;`</span></span><br><span class="line">	UsrID     <span class="keyword">int</span>    <span class="string">`json:&quot;usr_id&quot;`</span></span><br><span class="line">	SessionID <span class="keyword">string</span> <span class="string">`json:&quot;session_id&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>输出</strong>：验证结果（true/false）+ session_id + usr_id(给客户端保存)</p>
 <h3 id="Logout"><a href="#Logout" class="headerlink" title="Logout"></a>Logout</h3><p><strong>路由</strong>：”/admin/login”<br>用户退出登录的时候，需要清除掉当前用户的Session_id。然后跳转到登录页面。</p>
 <p><strong>输入</strong>：session_id</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//LogoutFeedback 退出登录反馈信息</span></span><br><span class="line"><span class="keyword">type</span> LogoutFeedback <span class="keyword">struct</span> &#123;</span><br><span class="line">	Result <span class="keyword">bool</span>   <span class="string">`json:"result"`</span></span><br><span class="line">	Info   <span class="keyword">string</span> <span class="string">`json:"info"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//LogoutFeedback 退出登录反馈信息</span></span><br><span class="line"><span class="keyword">type</span> LogoutFeedback <span class="keyword">struct</span> &#123;</span><br><span class="line">	Result <span class="keyword">bool</span>   <span class="string">`json:&quot;result&quot;`</span></span><br><span class="line">	Info   <span class="keyword">string</span> <span class="string">`json:&quot;info&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>输出</strong>：返回到登录界面</p>
 <hr>
 <h2 id="朋友圈接口"><a href="#朋友圈接口" class="headerlink" title="朋友圈接口"></a>朋友圈接口</h2><h3 id="PostMoment-发布朋友圈"><a href="#PostMoment-发布朋友圈" class="headerlink" title="PostMoment(发布朋友圈)"></a>PostMoment(发布朋友圈)</h3><blockquote>
 <p>分析：客户端发布朋友圈，通过表单发送给后台，返回一个publish_id,和发布结果；发布朋友圈时，所需要的信息是，用户名，文字信息，和图片，由此构建表单结构体</p>
 </blockquote>
 <p><strong>路由</strong>：”/feed/post”</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//PushMoment is 发送朋友圈时提交的表单</span></span><br><span class="line"><span class="keyword">type</span> PushMoment <span class="keyword">struct</span> &#123;</span><br><span class="line">	UserName <span class="keyword">string</span>   <span class="string">`form:"usr_name"`</span></span><br><span class="line">	Caption  <span class="keyword">string</span>   <span class="string">`form:"caption"`</span></span><br><span class="line">	PicList  []<span class="keyword">string</span> <span class="string">`form:"pic_list"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//PushMoment is 发送朋友圈时提交的表单</span></span><br><span class="line"><span class="keyword">type</span> PushMoment <span class="keyword">struct</span> &#123;</span><br><span class="line">	UserName <span class="keyword">string</span>   <span class="string">`form:&quot;usr_name&quot;`</span></span><br><span class="line">	Caption  <span class="keyword">string</span>   <span class="string">`form:&quot;caption&quot;`</span></span><br><span class="line">	PicList  []<span class="keyword">string</span> <span class="string">`form:&quot;pic_list&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>输入</strong>：朋友圈所需信息的表单。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//PostResult 发布朋友圈后的反馈结果</span></span><br><span class="line"><span class="keyword">type</span> PostResult <span class="keyword">struct</span> &#123;</span><br><span class="line">	Result    <span class="keyword">bool</span>  <span class="string">`json:"result"`</span></span><br><span class="line">	PublishID <span class="keyword">int64</span> <span class="string">`json:"publish_id"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//PostResult 发布朋友圈后的反馈结果</span></span><br><span class="line"><span class="keyword">type</span> PostResult <span class="keyword">struct</span> &#123;</span><br><span class="line">	Result    <span class="keyword">bool</span>  <span class="string">`json:&quot;result&quot;`</span></span><br><span class="line">	PublishID <span class="keyword">int64</span> <span class="string">`json:&quot;publish_id&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>输出</strong>：true or false 若为true 还需要返回一个当前创建成功后，数据库中publish表的publish_id,方便后期加评价和删除朋友圈。</p>
 <h3 id="ReadMoment-刷朋友圈"><a href="#ReadMoment-刷朋友圈" class="headerlink" title="ReadMoment(刷朋友圈)"></a>ReadMoment(刷朋友圈)</h3><blockquote>
 <p>分析：由于本需求中，所有人都为朋友，所以所有人的展示结果只跟发送展示请求的时间有关（当做一个锚点），读取朋友圈时，不要读取最新的朋友圈信息，即只刷取，锚点以前，请求时的当前数据库数据。如若不然，会导致分页重复，刷新朋友圈为动态操作（和刷朋友圈区分开，刷朋友圈是静态操作）。最新的朋友圈和评论产生时，只轮询读取到通知，而不拉取最新的朋友圈信息。当用户主动刷新的时候，再读取最新的信息。</p>
 </blockquote>
 <p><strong>路由</strong>：”/feed/circle”<br>用户登录成功跳转至朋友圈界面，查询当前publish列表，记录此时最新的publish（即为Publish_id最大值），记录为publishAnchor，通过锚点进行分页展示。<br>通过publish_id排列，查找20个最新的朋友圈，将所有的数据打包发送出去。</p>
 <p><strong>输入</strong>：publish_index（数据类型int，读取朋友圈信息时publish_id的开始处）</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//MomentFeed 朋友圈数据流</span></span><br><span class="line"><span class="keyword">type</span> MomentFeed <span class="keyword">struct</span> &#123;</span><br><span class="line">	Moments   []models.OneMoment <span class="string">`json:"Moments"`</span></span><br><span class="line">	PublishID <span class="keyword">int</span>                <span class="string">`json:"publish_id"`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//OneMoment is 单个朋友圈的Json格式</span></span><br><span class="line"><span class="keyword">type</span> OneMoment <span class="keyword">struct</span> &#123;</span><br><span class="line">	PublishID  <span class="keyword">int</span>         <span class="string">`json:"publish_id"`</span></span><br><span class="line">	UserName   <span class="keyword">string</span>      <span class="string">`json:"usr_name"`</span></span><br><span class="line">	Caption    <span class="keyword">string</span>      <span class="string">`json:"caption"`</span></span><br><span class="line">	PicList    []<span class="keyword">string</span>    <span class="string">`json:"pic_list"`</span></span><br><span class="line">	CreateTime <span class="keyword">string</span>      <span class="string">`json:"create_time"`</span></span><br><span class="line">	LikeList   []<span class="keyword">string</span>    <span class="string">`json:"like_list"`</span></span><br><span class="line">	Comments   CommentList <span class="string">`json:"comments"`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//OneComment is 单个评论传输时的Json格式</span></span><br><span class="line"><span class="keyword">type</span> OneComment <span class="keyword">struct</span> &#123;</span><br><span class="line">	CommentID      <span class="keyword">int</span>    <span class="string">`json:"comment_id"`</span></span><br><span class="line">	UsrName        <span class="keyword">string</span> <span class="string">`json:"usr_name"`</span></span><br><span class="line">	CommentCaption <span class="keyword">string</span> <span class="string">`json:"comment_caption"`</span></span><br><span class="line">	CreateTime     <span class="keyword">string</span> <span class="string">`json:"create_time"`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//CommentList is 评论列表，Json格式</span></span><br><span class="line"><span class="keyword">type</span> CommentList []OneComment</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//MomentFeed 朋友圈数据流</span></span><br><span class="line"><span class="keyword">type</span> MomentFeed <span class="keyword">struct</span> &#123;</span><br><span class="line">	Moments   []models.OneMoment <span class="string">`json:&quot;Moments&quot;`</span></span><br><span class="line">	PublishID <span class="keyword">int</span>                <span class="string">`json:&quot;publish_id&quot;`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//OneMoment is 单个朋友圈的Json格式</span></span><br><span class="line"><span class="keyword">type</span> OneMoment <span class="keyword">struct</span> &#123;</span><br><span class="line">	PublishID  <span class="keyword">int</span>         <span class="string">`json:&quot;publish_id&quot;`</span></span><br><span class="line">	UserName   <span class="keyword">string</span>      <span class="string">`json:&quot;usr_name&quot;`</span></span><br><span class="line">	Caption    <span class="keyword">string</span>      <span class="string">`json:&quot;caption&quot;`</span></span><br><span class="line">	PicList    []<span class="keyword">string</span>    <span class="string">`json:&quot;pic_list&quot;`</span></span><br><span class="line">	CreateTime <span class="keyword">string</span>      <span class="string">`json:&quot;create_time&quot;`</span></span><br><span class="line">	LikeList   []<span class="keyword">string</span>    <span class="string">`json:&quot;like_list&quot;`</span></span><br><span class="line">	Comments   CommentList <span class="string">`json:&quot;comments&quot;`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//OneComment is 单个评论传输时的Json格式</span></span><br><span class="line"><span class="keyword">type</span> OneComment <span class="keyword">struct</span> &#123;</span><br><span class="line">	CommentID      <span class="keyword">int</span>    <span class="string">`json:&quot;comment_id&quot;`</span></span><br><span class="line">	UsrName        <span class="keyword">string</span> <span class="string">`json:&quot;usr_name&quot;`</span></span><br><span class="line">	CommentCaption <span class="keyword">string</span> <span class="string">`json:&quot;comment_caption&quot;`</span></span><br><span class="line">	CreateTime     <span class="keyword">string</span> <span class="string">`json:&quot;create_time&quot;`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//CommentList is 评论列表，Json格式</span></span><br><span class="line"><span class="keyword">type</span> CommentList []OneComment</span><br></pre></td></tr></table></figure>
 <p><strong>输出</strong>：锚点后的20条朋友圈信息（JSON）。创建一个朋友圈整体信息的结构体。</p>
-<p><strong>结构体整体要满足</strong>：<br><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fy6f2yb0clj30s90w2dgr.jpg" alt=""></p>
+<p><strong>结构体整体要满足</strong>：<br><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fy6f2yb0clj30s90w2dgr.jpg"></p>
 <h3 id="DelMoment-删除朋友圈"><a href="#DelMoment-删除朋友圈" class="headerlink" title="DelMoment(删除朋友圈)"></a>DelMoment(删除朋友圈)</h3><p>根据前端发送来的pubish_id，进行对当前朋友圈的一系列删除，包括，相册表，评论表，点赞表和通知表。<br><strong>路由</strong>：”/feed/del”</p>
 <p><strong>输入</strong>：publish_id</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//DelFeedInfo 删除朋友圈后的反馈信息</span></span><br><span class="line"><span class="keyword">type</span> DelFeedInfo <span class="keyword">struct</span> &#123;</span><br><span class="line">	Result <span class="keyword">bool</span>   <span class="string">`json:"result"`</span></span><br><span class="line">	Info   <span class="keyword">string</span> <span class="string">`json:"info"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//DelFeedInfo 删除朋友圈后的反馈信息</span></span><br><span class="line"><span class="keyword">type</span> DelFeedInfo <span class="keyword">struct</span> &#123;</span><br><span class="line">	Result <span class="keyword">bool</span>   <span class="string">`json:&quot;result&quot;`</span></span><br><span class="line">	Info   <span class="keyword">string</span> <span class="string">`json:&quot;info&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>输出</strong>：反馈信息，true or false</p>
 <hr>
 <h2 id="评论接口"><a href="#评论接口" class="headerlink" title="评论接口"></a>评论接口</h2><h3 id="CreateComment-发布评论接口"><a href="#CreateComment-发布评论接口" class="headerlink" title="CreateComment(发布评论接口)"></a>CreateComment(发布评论接口)</h3><p>根据前端发送来的评论信息，建立数据库信息，因为前段发来的评论信息，要有，评论相关文字，评论所属对象，和评论所属朋友圈，故建立表单信息进行接收。</p>
 <p><strong>路由</strong>：”/feed/comment/create”</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//OneComment 用户评价时提交的表单</span></span><br><span class="line"><span class="keyword">type</span> OneComment <span class="keyword">struct</span> &#123;</span><br><span class="line">	UsrID          <span class="keyword">int</span>    <span class="string">`form:"usr_id"`</span></span><br><span class="line">	UsrName        <span class="keyword">string</span> <span class="string">`form:"usr_name"`</span></span><br><span class="line">	CommentCaption <span class="keyword">string</span> <span class="string">`form:"comment_caption"`</span></span><br><span class="line">	PublishID      <span class="keyword">int</span>    <span class="string">`form:"publish_id"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//OneComment 用户评价时提交的表单</span></span><br><span class="line"><span class="keyword">type</span> OneComment <span class="keyword">struct</span> &#123;</span><br><span class="line">	UsrID          <span class="keyword">int</span>    <span class="string">`form:&quot;usr_id&quot;`</span></span><br><span class="line">	UsrName        <span class="keyword">string</span> <span class="string">`form:&quot;usr_name&quot;`</span></span><br><span class="line">	CommentCaption <span class="keyword">string</span> <span class="string">`form:&quot;comment_caption&quot;`</span></span><br><span class="line">	PublishID      <span class="keyword">int</span>    <span class="string">`form:&quot;publish_id&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>输入</strong>：form</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//CreateCommentFeedback 评论创建反馈</span></span><br><span class="line"><span class="keyword">type</span> CreateCommentFeedback <span class="keyword">struct</span> &#123;</span><br><span class="line">	CommentID    <span class="keyword">int64</span> <span class="string">`json:"comment_id"`</span></span><br><span class="line">	CreateResult <span class="keyword">bool</span>  <span class="string">`json:"create_result"`</span></span><br><span class="line">	NoticeStatus <span class="keyword">bool</span>  <span class="string">`json:"notice_status"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//CreateCommentFeedback 评论创建反馈</span></span><br><span class="line"><span class="keyword">type</span> CreateCommentFeedback <span class="keyword">struct</span> &#123;</span><br><span class="line">	CommentID    <span class="keyword">int64</span> <span class="string">`json:&quot;comment_id&quot;`</span></span><br><span class="line">	CreateResult <span class="keyword">bool</span>  <span class="string">`json:&quot;create_result&quot;`</span></span><br><span class="line">	NoticeStatus <span class="keyword">bool</span>  <span class="string">`json:&quot;notice_status&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>输出</strong>：反馈信息，返回告诉客户端，该评论的comment_id，以及评论成功与否，通知是否已经建立等确认信息。</p>
 <h3 id="DelComment-删除评论接口"><a href="#DelComment-删除评论接口" class="headerlink" title="DelComment(删除评论接口)"></a>DelComment(删除评论接口)</h3><p>给出对应的comment_id，删除所有的相关信息。改动涉及：comment表和notice表</p>
 <p><strong>路由</strong>：”/feed/comment/del”</p>
 <p><strong>输入</strong>：comment_id</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//DelCommentFeedback 评论创建反馈</span></span><br><span class="line"><span class="keyword">type</span> DelCommentFeedback <span class="keyword">struct</span> &#123;</span><br><span class="line">	DelResult       <span class="keyword">bool</span>   <span class="string">`json:"del_result"`</span></span><br><span class="line">	DelNoticeResult <span class="keyword">bool</span>   <span class="string">`json:"del_notice_status"`</span></span><br><span class="line">	Info            <span class="keyword">string</span> <span class="string">`json:"info"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//DelCommentFeedback 评论创建反馈</span></span><br><span class="line"><span class="keyword">type</span> DelCommentFeedback <span class="keyword">struct</span> &#123;</span><br><span class="line">	DelResult       <span class="keyword">bool</span>   <span class="string">`json:&quot;del_result&quot;`</span></span><br><span class="line">	DelNoticeResult <span class="keyword">bool</span>   <span class="string">`json:&quot;del_notice_status&quot;`</span></span><br><span class="line">	Info            <span class="keyword">string</span> <span class="string">`json:&quot;info&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>输出</strong>：反馈信息，返回告诉客户端，评论删除与否，评论涉及的通知信息删除与否。</p>
 <hr>
 <h2 id="点赞接口"><a href="#点赞接口" class="headerlink" title="点赞接口"></a>点赞接口</h2><h3 id="LIke（点赞）"><a href="#LIke（点赞）" class="headerlink" title="LIke（点赞）"></a>LIke（点赞）</h3><p>点赞过程中，需要在点赞表中建立一条新信息，相应的，点赞通知的建立，需要通过CreateNotice遍历的在Notice表中建立多条信息。所以需要usr_id ,usr_name ，publish_id 三个信息，以上信息以表单形式传递。</p>
 <p><strong>路由</strong>：”/feed/like/create</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Like is 前端大赞操作发送来的表单</span></span><br><span class="line"><span class="keyword">type</span> Like <span class="keyword">struct</span> &#123;</span><br><span class="line">	UsrID     <span class="keyword">int</span>    <span class="string">`form:"usr_id"`</span></span><br><span class="line">	UsrName   <span class="keyword">string</span> <span class="string">`form:"usr_name"`</span></span><br><span class="line">	PublishID <span class="keyword">int</span>    <span class="string">`form:"publish_id"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Like is 前端大赞操作发送来的表单</span></span><br><span class="line"><span class="keyword">type</span> Like <span class="keyword">struct</span> &#123;</span><br><span class="line">	UsrID     <span class="keyword">int</span>    <span class="string">`form:&quot;usr_id&quot;`</span></span><br><span class="line">	UsrName   <span class="keyword">string</span> <span class="string">`form:&quot;usr_name&quot;`</span></span><br><span class="line">	PublishID <span class="keyword">int</span>    <span class="string">`form:&quot;publish_id&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>输入</strong>：点赞表单：Like结构体</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//CreateLikeFeedback 创建点赞后给出的反馈信息</span></span><br><span class="line"><span class="keyword">type</span> CreateLikeFeedback <span class="keyword">struct</span> &#123;</span><br><span class="line">	LikeID       <span class="keyword">int</span>  <span class="string">`json:"like_id"`</span></span><br><span class="line">	CreateResult <span class="keyword">bool</span> <span class="string">`json:"create_result"`</span></span><br><span class="line">	NoticeStatus <span class="keyword">bool</span> <span class="string">`json:"notice_status"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//CreateLikeFeedback 创建点赞后给出的反馈信息</span></span><br><span class="line"><span class="keyword">type</span> CreateLikeFeedback <span class="keyword">struct</span> &#123;</span><br><span class="line">	LikeID       <span class="keyword">int</span>  <span class="string">`json:&quot;like_id&quot;`</span></span><br><span class="line">	CreateResult <span class="keyword">bool</span> <span class="string">`json:&quot;create_result&quot;`</span></span><br><span class="line">	NoticeStatus <span class="keyword">bool</span> <span class="string">`json:&quot;notice_status&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>输出</strong>：反馈信息，返回告诉客户端，创建的点赞的ID是多少，创建结果如何，通知是否创建成果的信息。</p>
 <h3 id="CancelLike-取消点赞"><a href="#CancelLike-取消点赞" class="headerlink" title="CancelLike(取消点赞)"></a>CancelLike(取消点赞)</h3><p>取消点赞，得到取消点赞的对应like_id即可，删除like表中对应的信息，并同时删除对应的通知信息。</p>
 <p><strong>路由</strong>：”/feed/like/cancel</p>
 <p><strong>输入</strong>：like_id</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//CancelLikeFeedback 取消点赞反馈</span></span><br><span class="line"><span class="keyword">type</span> CancelLikeFeedback <span class="keyword">struct</span> &#123;</span><br><span class="line">	CancelResult    <span class="keyword">bool</span>   <span class="string">`json:"cancel_result"`</span></span><br><span class="line">	DelNoticeResult <span class="keyword">bool</span>   <span class="string">`json:"del_notice_result"`</span></span><br><span class="line">	Info            <span class="keyword">string</span> <span class="string">`json:"info"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//CancelLikeFeedback 取消点赞反馈</span></span><br><span class="line"><span class="keyword">type</span> CancelLikeFeedback <span class="keyword">struct</span> &#123;</span><br><span class="line">	CancelResult    <span class="keyword">bool</span>   <span class="string">`json:&quot;cancel_result&quot;`</span></span><br><span class="line">	DelNoticeResult <span class="keyword">bool</span>   <span class="string">`json:&quot;del_notice_result&quot;`</span></span><br><span class="line">	Info            <span class="keyword">string</span> <span class="string">`json:&quot;info&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>输出</strong>：取消的结果，删除通知的结果，以及相关的反馈信息。以便后期对应做出维护。</p>
 <hr>
 <h2 id="通知接口"><a href="#通知接口" class="headerlink" title="通知接口"></a>通知接口</h2><blockquote>
@@ -475,27 +482,27 @@
 <li>点赞时，是谁点赞了哪条朋友圈</li>
 </ol>
 <p>即为，publish_id,from_id,notice_type至于这条朋友圈的所属者是不是通知对象本身，可以由客户端自行判断。<br>因为通知的结构体如下：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//OneNotice 单个通知信息</span></span><br><span class="line"><span class="keyword">type</span> OneNotice <span class="keyword">struct</span> &#123;</span><br><span class="line">	NoticeID     <span class="keyword">int</span>    <span class="string">`json:"notice_id"`</span></span><br><span class="line">	PublishID    <span class="keyword">int</span>    <span class="string">`json:"publish_id"`</span><span class="comment">//指向对应的朋友圈</span></span><br><span class="line">	NoticeType   <span class="keyword">int</span>    <span class="string">`json:"notice_type"`</span><span class="comment">//0为评论，1为点赞</span></span><br><span class="line">	CommentID    <span class="keyword">int</span>    <span class="string">`json:"comment_id"`</span></span><br><span class="line">	LikeID       <span class="keyword">int</span>    <span class="string">`json:"like_id"`</span></span><br><span class="line">	FromUserName <span class="keyword">string</span> <span class="string">`json:"from_user_name"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//OneNotice 单个通知信息</span></span><br><span class="line"><span class="keyword">type</span> OneNotice <span class="keyword">struct</span> &#123;</span><br><span class="line">	NoticeID     <span class="keyword">int</span>    <span class="string">`json:&quot;notice_id&quot;`</span></span><br><span class="line">	PublishID    <span class="keyword">int</span>    <span class="string">`json:&quot;publish_id&quot;`</span><span class="comment">//指向对应的朋友圈</span></span><br><span class="line">	NoticeType   <span class="keyword">int</span>    <span class="string">`json:&quot;notice_type&quot;`</span><span class="comment">//0为评论，1为点赞</span></span><br><span class="line">	CommentID    <span class="keyword">int</span>    <span class="string">`json:&quot;comment_id&quot;`</span></span><br><span class="line">	LikeID       <span class="keyword">int</span>    <span class="string">`json:&quot;like_id&quot;`</span></span><br><span class="line">	FromUserName <span class="keyword">string</span> <span class="string">`json:&quot;from_user_name&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>当客户端接收到的publish_id为0时，该条Notice意思是：有新的朋友圈信息。<br>当客户端接收到的publish_id不为0时，(如23)，from_user_name:liuxing1，notice_type:1，该条信息的意思是：23号朋友圈有来自liuxing1的点赞<br>当客户端接收到的publish_id不为0时，(如23)，from_user_name:liuxing1，notice_type:0，该条信息的意思是：23号朋友圈有来自liuxing1的评论</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//NoticeList 发送给用户的通知信息</span></span><br><span class="line"><span class="keyword">type</span> NoticeList <span class="keyword">struct</span> &#123;</span><br><span class="line">	Notices []OneNotice <span class="string">`json:"notices"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//NoticeList 发送给用户的通知信息</span></span><br><span class="line"><span class="keyword">type</span> NoticeList <span class="keyword">struct</span> &#123;</span><br><span class="line">	Notices []OneNotice <span class="string">`json:&quot;notices&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>故，以上通知列，可以告知用户一切相关的通知信息，点击这些信息的时候，再调取具体的通知信息给用户呈现。</p>
 <h3 id="GetInfo-根据通知，来获取相关信息的更新"><a href="#GetInfo-根据通知，来获取相关信息的更新" class="headerlink" title="GetInfo(根据通知，来获取相关信息的更新)"></a>GetInfo(根据通知，来获取相关信息的更新)</h3><p><strong>路由</strong>：feed/getinfo<br>以上五种通知，通知1不会单独呈现，只需要用小红点告知用户有最新动态，刷新朋友圈即可。通知2，3，4，5则会单独呈现，2，3点选的时候，会在上方展示相关朋友圈，下方会显示所有的点赞评论信息，即，将当前发生最新动态的朋友圈的最新状态整个从服务端拉取过来。点赞信息的更新类似。</p>
 <p><strong>输入</strong>：通过“session_id”可以得知usr_id,usr_name。只需要publish_id即可进行信息的更新。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//NewMoment 回传的最新单条朋友圈详情</span></span><br><span class="line"><span class="keyword">type</span> NewMoment OneMoment</span><br><span class="line"></span><br><span class="line"><span class="comment">//OneMoment is 单个朋友圈的Json格式</span></span><br><span class="line"><span class="keyword">type</span> OneMoment <span class="keyword">struct</span> &#123;</span><br><span class="line">	PublishID  <span class="keyword">int</span>         <span class="string">`json:"publish_id"`</span></span><br><span class="line">	UserName   <span class="keyword">string</span>      <span class="string">`json:"usr_name"`</span></span><br><span class="line">	Caption    <span class="keyword">string</span>      <span class="string">`json:"caption"`</span></span><br><span class="line">	PicList    []<span class="keyword">string</span>    <span class="string">`json:"pic_list"`</span></span><br><span class="line">	CreateTime <span class="keyword">string</span>      <span class="string">`json:"create_time"`</span></span><br><span class="line">	LikeList   []<span class="keyword">string</span>    <span class="string">`json:"like_list"`</span></span><br><span class="line">	Comments   CommentList <span class="string">`json:"comments"`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//CommentList is 评论列表，Json格式</span></span><br><span class="line"><span class="keyword">type</span> CommentList []OneComment</span><br><span class="line"></span><br><span class="line"><span class="comment">//OneComment 用户评价时提交的表单</span></span><br><span class="line"><span class="keyword">type</span> OneComment <span class="keyword">struct</span> &#123;</span><br><span class="line">	UsrName        <span class="keyword">string</span> <span class="string">`json:"usr_name"`</span></span><br><span class="line">	CommentCaption <span class="keyword">string</span> <span class="string">`form:"comment_caption" json:"comment_caption"`</span></span><br><span class="line">	PublishID      <span class="keyword">int</span>    <span class="string">`form:"publish_id" json:"-"`</span></span><br><span class="line">	CommentID      <span class="keyword">int</span>    <span class="string">`json:"comment_id"`</span></span><br><span class="line">	CreateTime     <span class="keyword">string</span> <span class="string">`json:"create_time"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//NewMoment 回传的最新单条朋友圈详情</span></span><br><span class="line"><span class="keyword">type</span> NewMoment OneMoment</span><br><span class="line"></span><br><span class="line"><span class="comment">//OneMoment is 单个朋友圈的Json格式</span></span><br><span class="line"><span class="keyword">type</span> OneMoment <span class="keyword">struct</span> &#123;</span><br><span class="line">	PublishID  <span class="keyword">int</span>         <span class="string">`json:&quot;publish_id&quot;`</span></span><br><span class="line">	UserName   <span class="keyword">string</span>      <span class="string">`json:&quot;usr_name&quot;`</span></span><br><span class="line">	Caption    <span class="keyword">string</span>      <span class="string">`json:&quot;caption&quot;`</span></span><br><span class="line">	PicList    []<span class="keyword">string</span>    <span class="string">`json:&quot;pic_list&quot;`</span></span><br><span class="line">	CreateTime <span class="keyword">string</span>      <span class="string">`json:&quot;create_time&quot;`</span></span><br><span class="line">	LikeList   []<span class="keyword">string</span>    <span class="string">`json:&quot;like_list&quot;`</span></span><br><span class="line">	Comments   CommentList <span class="string">`json:&quot;comments&quot;`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//CommentList is 评论列表，Json格式</span></span><br><span class="line"><span class="keyword">type</span> CommentList []OneComment</span><br><span class="line"></span><br><span class="line"><span class="comment">//OneComment 用户评价时提交的表单</span></span><br><span class="line"><span class="keyword">type</span> OneComment <span class="keyword">struct</span> &#123;</span><br><span class="line">	UsrName        <span class="keyword">string</span> <span class="string">`json:&quot;usr_name&quot;`</span></span><br><span class="line">	CommentCaption <span class="keyword">string</span> <span class="string">`form:&quot;comment_caption&quot; json:&quot;comment_caption&quot;`</span></span><br><span class="line">	PublishID      <span class="keyword">int</span>    <span class="string">`form:&quot;publish_id&quot; json:&quot;-&quot;`</span></span><br><span class="line">	CommentID      <span class="keyword">int</span>    <span class="string">`json:&quot;comment_id&quot;`</span></span><br><span class="line">	CreateTime     <span class="keyword">string</span> <span class="string">`json:&quot;create_time&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>输出</strong>：单条朋友圈的最新状态。</p>
-<h1 id="实现所需知识树"><a href="#实现所需知识树" class="headerlink" title="实现所需知识树"></a>实现所需知识树</h1><h2 id="Beego框架的使用"><a href="#Beego框架的使用" class="headerlink" title="Beego框架的使用"></a><a href="https://beego.me/docs/quickstart/" target="_blank" rel="noopener">Beego框架的使用</a></h2><p><strong>实例</strong><br><a href="https://github.com/beego/samples/tree/master/WebIM" target="_blank" rel="noopener">samples/WebIM at master · beego/samples · GitHub</a></p>
-<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><p>由于需要保持登录状态，所以这里需要用到Session控制<br><a href="https://studygolang.com/articles/15822?fr=sidebar" target="_blank" rel="noopener">Go基础学习记录之如何在Golang中使用Session  - Go语言中文网 - Golang中文社区</a><br><a href="https://beego.me/docs/mvc/controller/session.md" target="_blank" rel="noopener">Session control - beego: simple &amp; powerful Go app framework</a></p>
-<h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a><a href="https://redis.io" target="_blank" rel="noopener">Redis</a></h2><p><a href="/2018/12/11/Redis教程/">Redis 教程</a></p>
+<h1 id="实现所需知识树"><a href="#实现所需知识树" class="headerlink" title="实现所需知识树"></a>实现所需知识树</h1><h2 id="Beego框架的使用"><a href="#Beego框架的使用" class="headerlink" title="Beego框架的使用"></a><a target="_blank" rel="noopener" href="https://beego.me/docs/quickstart/">Beego框架的使用</a></h2><p><strong>实例</strong><br><a target="_blank" rel="noopener" href="https://github.com/beego/samples/tree/master/WebIM">samples/WebIM at master · beego/samples · GitHub</a></p>
+<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><p>由于需要保持登录状态，所以这里需要用到Session控制<br><a target="_blank" rel="noopener" href="https://studygolang.com/articles/15822?fr=sidebar">Go基础学习记录之如何在Golang中使用Session  - Go语言中文网 - Golang中文社区</a><br><a target="_blank" rel="noopener" href="https://beego.me/docs/mvc/controller/session.md">Session control - beego: simple &amp; powerful Go app framework</a></p>
+<h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a><a target="_blank" rel="noopener" href="https://redis.io/">Redis</a></h2><p><a href="/2018/12/11/Redis%E6%95%99%E7%A8%8B/">Redis 教程</a></p>
 <h1 id="遇到的坑"><a href="#遇到的坑" class="headerlink" title="遇到的坑"></a>遇到的坑</h1><p>Json解析首字母一定要大写</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//CreateCommentFeedback 评论创建反馈</span></span><br><span class="line"><span class="keyword">type</span> CreateCommentFeedback <span class="keyword">struct</span> &#123;</span><br><span class="line">	CommentID    <span class="keyword">int64</span> <span class="string">`json:"comment_id"`</span></span><br><span class="line">	CreateResult <span class="keyword">bool</span>  <span class="string">`json:"create_result"`</span></span><br><span class="line">	NoticeStatus <span class="keyword">bool</span>  <span class="string">`json:"notice_status"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//CreateCommentFeedback 评论创建反馈</span></span><br><span class="line"><span class="keyword">type</span> CreateCommentFeedback <span class="keyword">struct</span> &#123;</span><br><span class="line">	CommentID    <span class="keyword">int64</span> <span class="string">`json:&quot;comment_id&quot;`</span></span><br><span class="line">	CreateResult <span class="keyword">bool</span>  <span class="string">`json:&quot;create_result&quot;`</span></span><br><span class="line">	NoticeStatus <span class="keyword">bool</span>  <span class="string">`json:&quot;notice_status&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>编码JSON的时候，json:”-“可以让其不参与编码，不然还是会编码，不过不会更名。</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PublishID      <span class="keyword">int</span>    <span class="string">`form:"publish_id" json:"-"`</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PublishID      <span class="keyword">int</span>    <span class="string">`form:&quot;publish_id&quot; json:&quot;-&quot;`</span></span><br></pre></td></tr></table></figure>
 <p>若为</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PublishID      <span class="keyword">int</span>    <span class="string">`form:"publish_id"`</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PublishID      <span class="keyword">int</span>    <span class="string">`form:&quot;publish_id&quot;`</span></span><br></pre></td></tr></table></figure>
 <p>编码的时候，还是会有这个字段，并且，显示的是，PublishID:XXX</p>
 <p>redis的操作问题：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	Cli.Set(<span class="string">"liuxing1"</span>, <span class="string">"aaaaa"</span>, <span class="number">30</span>*time.Minute)</span><br><span class="line">	a := Cli.Get(<span class="string">"liuxing1"</span>)</span><br><span class="line">	fmt.Println(a.Val())</span><br><span class="line">	fmt.Println(a.String())</span><br><span class="line">	b := Cli.Del(<span class="string">"liuxing"</span>)</span><br><span class="line">	fmt.Println(b.Val())</span><br><span class="line">	c := Cli.Get(<span class="string">"liuxing1"</span>)</span><br><span class="line">	fmt.Println(c.Val())</span><br><span class="line">	fmt.Println(c.Val()==<span class="string">""</span>)</span><br><span class="line">	fmt.Println(c.Err())</span><br><span class="line">	b = Cli.Del(<span class="string">"liuxing1"</span>)</span><br><span class="line">	fmt.Println(b.Val())</span><br><span class="line">	c = Cli.Get(<span class="string">"liuxing1"</span>)</span><br><span class="line">	fmt.Println(c.Val())</span><br><span class="line">	fmt.Println(c.Val()==<span class="string">""</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	Cli.Set(<span class="string">&quot;liuxing1&quot;</span>, <span class="string">&quot;aaaaa&quot;</span>, <span class="number">30</span>*time.Minute)</span><br><span class="line">	a := Cli.Get(<span class="string">&quot;liuxing1&quot;</span>)</span><br><span class="line">	fmt.Println(a.Val())</span><br><span class="line">	fmt.Println(a.String())</span><br><span class="line">	b := Cli.Del(<span class="string">&quot;liuxing&quot;</span>)</span><br><span class="line">	fmt.Println(b.Val())</span><br><span class="line">	c := Cli.Get(<span class="string">&quot;liuxing1&quot;</span>)</span><br><span class="line">	fmt.Println(c.Val())</span><br><span class="line">	fmt.Println(c.Val()==<span class="string">&quot;&quot;</span>)</span><br><span class="line">	fmt.Println(c.Err())</span><br><span class="line">	b = Cli.Del(<span class="string">&quot;liuxing1&quot;</span>)</span><br><span class="line">	fmt.Println(b.Val())</span><br><span class="line">	c = Cli.Get(<span class="string">&quot;liuxing1&quot;</span>)</span><br><span class="line">	fmt.Println(c.Val())</span><br><span class="line">	fmt.Println(c.Val()==<span class="string">&quot;&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>输出：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">aaaaa</span><br><span class="line">get liuxing1: aaaaa</span><br><span class="line">0</span><br><span class="line">aaaaa</span><br><span class="line">false</span><br><span class="line">&lt;nil&gt;</span><br><span class="line">1</span><br><span class="line"></span><br><span class="line">true</span><br></pre></td></tr></table></figure>
@@ -509,6 +516,26 @@
     
     
     
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2019/03/01/wx_robot/" rel="bookmark">微信机器人业务报警项目的实现</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2019/01/21/xm_ip_service/" rel="bookmark">一次重构项目</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2018/12/11/Koala/" rel="bookmark">Koala结构的入门</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/07/20/MySQL_ODBC配置/" rel="bookmark">Linux下MySQL的ODBC配置</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/07/20/MySQL知识储备/" rel="bookmark">MySQL知识储备</a></div>
+    </li>
+  </ul>
+
         <div class="reward-container">
   <div>Donate comment here.</div>
   <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
@@ -529,6 +556,62 @@
   </div>
 </div>
 
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>vousmevoyez
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2018/12/11/moment/" title="Moments Project 朋友圈设计">http://yoursite.com/2018/12/11/moment/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/LIUVOUS">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/Vousmevoyezxx">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
 
       <footer class="post-footer">
           
@@ -536,11 +619,16 @@
               <a href="/tags/Projects/" rel="tag"><i class="fa fa-tag"></i> Projects</a>
               <a href="/tags/MySQL/" rel="tag"><i class="fa fa-tag"></i> MySQL</a>
               <a href="/tags/Redis/" rel="tag"><i class="fa fa-tag"></i> Redis</a>
-              <a href="/tags/Beego/" rel="tag"><i class="fa fa-tag"></i> Beego</a>
               <a href="/tags/Go/" rel="tag"><i class="fa fa-tag"></i> Go</a>
+              <a href="/tags/Beego/" rel="tag"><i class="fa fa-tag"></i> Beego</a>
           </div>
 
         
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
 
 
         
@@ -565,11 +653,7 @@
 
           </div>
           
-    
-  <div class="comments">
-    <div id="lv-container" data-id="city" data-uid="MTAyMC80MTUyMy8xODA3MA=="></div>
-  </div>
-  
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -644,10 +728,6 @@
       </div>
   </nav>
 </div>
-  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
-    Chat
-  </a>
-  </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
         <a href="https://github.com/liuxing1Tec" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;liuxing1Tec" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
@@ -668,14 +748,26 @@
         <a href="https://youtube.com/yourname" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
       </span>
   </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
 
 
 
       </div>
-        <div class="back-to-top motion-element">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
+
+      
+        <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+        <div class="widget-wrap">
+          <h5 class="widget-title">Tag Cloud</h5>
+          <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="250" height="250" id="resCanvas" style="width:100%">
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beego/" rel="tag">Beego</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Job/" rel="tag">Job</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ODBC/" rel="tag">ODBC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Personal/" rel="tag">Personal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Projects/" rel="tag">Projects</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmake/" rel="tag">cmake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/" rel="tag">json</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/koala/" rel="tag">koala</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/progress/" rel="tag">progress</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/protocol/" rel="tag">protocol</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssl/" rel="tag">ssl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tap/" rel="tag">tap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/" rel="tag">tools</a><span class="tag-list-count">2</span></li></ul>
+            </canvas>
+          </div>
         </div>
+      
 
     </div>
   </aside>
@@ -703,37 +795,17 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">NaNm</span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">134k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">NaN:aN</span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:02</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
-  </div>
 
         
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="总访客量">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="总访问量">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
 
 
 
@@ -761,6 +833,8 @@
 
 <script src="/js/next-boot.js"></script>
 
+<script src="/js/bookmark.js"></script>
+
 
 
 
@@ -768,6 +842,26 @@
 
 
 
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : 27498,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
 
   
 <script src="/js/local-search.js"></script>
@@ -775,32 +869,77 @@
 
 
 
+  <script>
+    (function(d, w, c) {
+      w.ChatraID = '';
+      var s = d.createElement('script');
+      w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments);
+      };
+      s.async = true;
+      s.src = 'https://call.chatra.io/chatra.js';
+      if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+  </script>
 
 
 
 
-
-
-
-
-
-  
-
-  
 
 <script>
-NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
-  window.livereOptions = {
-    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
   };
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'TYgDeE63JNMLHoqVHAB04nhL-gzGzoHsz',
+      appKey     : 'PAKKgkigMAxq9OzUIzf7y6tI',
+      placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-CN' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
 });
 </script>
 
