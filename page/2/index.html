@@ -285,135 +285,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis12/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/blue.gif">
-      <meta itemprop="name" content="vousmevoyez">
-      <meta itemprop="description" content="Swan L">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vousmevoyez">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/05/redis12/" class="post-title-link" itemprop="url">Redis 事务</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-20 19:03:36" itemprop="dateModified" datetime="2020-07-20T19:03:36+08:00">2020-07-20</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/09/05/redis12/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis12/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>649</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Redis-事务"><a href="#Redis-事务" class="headerlink" title="Redis 事务"></a>Redis 事务</h1><p>redis 事务可以一次执行多个命令。</p>
-</br>
-
-<p>常用命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">multi       //开起一个事务，标记一个事务块的开始，multi即multiple</span><br><span class="line"></span><br><span class="line"><span class="built_in">exec</span>        //执行事务块内的命令</span><br><span class="line"></span><br><span class="line">discard     //取消事务</span><br></pre></td></tr></table></figure>
-
-<p>使用步骤：</p>
-<ol>
-<li>先使用 multi 命令标记事务开始</li>
-<li>将多个命令入队( queue ，队列)</li>
-<li>使用 exec 命令执行事务</li>
-</ol>
-<!---more--->
-
-<p>示例：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">multi                   //标记事务开始</span><br><span class="line"><span class="built_in">set</span> name <span class="string">&quot;zhangsan&quot;</span>     //依次输入多个命令。输入一条命令后会提示“QUEUED”，表示此条命令已入队</span><br><span class="line"><span class="built_in">set</span> age 20 </span><br><span class="line">get name </span><br><span class="line"><span class="built_in">exec</span>                    //执行事务，会依次执行事务块内的命令，依次显示执行结果。</span><br><span class="line">//<span class="built_in">exec</span>是执行事务，如果想取消事务，将<span class="built_in">exec</span>换为discard即可。</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g6pmw8jc4pj30g60egq3t.jpg"></p>
-</br>
-</br>
-
-<p>单个 redis 命令的执行是原子性的，但 redis 并没有在事务上增加任何维持原子性的机制，所以 redis 事务的执行不是原子性的。</p>
-</br>
-
-<p>事务可以理解为一个打包的批量执行脚本，但批量指令并非原子化的操作，中间某条指令的失败不会导致前面已做指令的回滚，也不会造成后续的指令不做。</p>
-</br>
-
-<p>比如执行事务时，第一条执行成功，第二条执行失败，此时并不会回滚之前的操作（此处指第一条、第二条命令），而是继续执行后面的命令。但会显示第二条的结果是Fail。</p>
-</br>
-
-<p>即事务中任意命令执行失败，其余的命令依然被执行。</p>
-</br>
-
-<p>在事务执行过程中，其他客户端提交的命令请求不会插入到事务执行命令队列中。</p>
-<p>Redis2.6以后的版本，在服务器内置了Lua环境（Lua解释器），可以通过eval命令执行Lua脚本。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis13/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -552,7 +423,7 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis12/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/blue.gif">
@@ -566,7 +437,7 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/09/05/redis2/" class="post-title-link" itemprop="url">Redis 基础命令</a>
+            <a href="/2019/09/05/redis12/" class="post-title-link" itemprop="url">Redis 事务</a>
         </h2>
 
         <div class="post-meta">
@@ -585,7 +456,7 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-06 14:25:27" itemprop="dateModified" datetime="2019-09-06T14:25:27+08:00">2019-09-06</time>
+                <time title="修改时间：2020-07-20 19:03:36" itemprop="dateModified" datetime="2020-07-20T19:03:36+08:00">2020-07-20</time>
               </span>
 
           
@@ -597,8 +468,8 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/09/05/redis2/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis2/" itemprop="commentCount"></span>
+    <a title="valine" href="/2019/09/05/redis12/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis12/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -608,7 +479,7 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
+              <span>649</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -627,76 +498,41 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Redis-基础命令"><a href="#Redis-基础命令" class="headerlink" title="Redis 基础命令"></a>Redis 基础命令</h1></br>
-## 服务器端命令
-
-<ul>
-<li><p>启动服务： <code>redis-server --service-start</code></p>
-</li>
-<li><p>关闭服务： <code>redis-server --service-stop</code></p>
-</li>
-<li><p>使用redis.conf配置开启服务： <code>redis-server /path/to/redis.conf</code></p>
-</li>
-</ul>
+          <h1 id="Redis-事务"><a href="#Redis-事务" class="headerlink" title="Redis 事务"></a>Redis 事务</h1><p>redis 事务可以一次执行多个命令。</p>
 </br>
-## 客户端命令
-### 1、连接服务器：
-`redis-cli -h 127.0.0.1 -p 6379 -a abcd`
 
-<p>参数说明：</p>
-<ul>
-<li><p>redis-cli    即redis-cli.exe，我们通常缺省后缀.exe</p>
-</li>
-<li><p>-h    即host，服务器的IP地址</p>
-</li>
-<li><p>-p    即port，服务器的端口</p>
-</li>
-<li><p>-a    即auth，Redis服务器的密码</p>
+<p>常用命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">multi       //开起一个事务，标记一个事务块的开始，multi即multiple</span><br><span class="line"></span><br><span class="line"><span class="built_in">exec</span>        //执行事务块内的命令</span><br><span class="line"></span><br><span class="line">discard     //取消事务</span><br></pre></td></tr></table></figure>
+
+<p>使用步骤：</p>
+<ol>
+<li>先使用 multi 命令标记事务开始</li>
+<li>将多个命令入队( queue ，队列)</li>
+<li>使用 exec 命令执行事务</li>
+</ol>
 <!---more--->
 
-</li>
-</ul>
-<p>如果连接远程的Redis服务器，必须指定服务器的IP地址。参数都可缺省，缺省时默认 -h 为 127.0.0.1 ，-p 为 6379 。<br></br><br>连接本地的Redis服务器： <code>redis-cli -a yourPassword</code></p>
-<p>连接远程的Redis服务器： <code>redis-cli -h serverIP -a yourPassword</code><br></br><br>也可以之后再输入密码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">redis-cli</span><br><span class="line"></span><br><span class="line">auth yourPassword</span><br></pre></td></tr></table></figure>
-</br>
-### 2、密码操作
-- 设置/修改密码： `config set requirepass newPassword`，修改密码后需要重新输入密码验证。Reids默认的数据类型是String，比如设置密码为123，会自动作为字符串“123”。
+<p>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">multi                   //标记事务开始</span><br><span class="line"><span class="built_in">set</span> name <span class="string">&quot;zhangsan&quot;</span>     //依次输入多个命令。输入一条命令后会提示“QUEUED”，表示此条命令已入队</span><br><span class="line"><span class="built_in">set</span> age 20 </span><br><span class="line">get name </span><br><span class="line"><span class="built_in">exec</span>                    //执行事务，会依次执行事务块内的命令，依次显示执行结果。</span><br><span class="line">//<span class="built_in">exec</span>是执行事务，如果想取消事务，将<span class="built_in">exec</span>换为discard即可。</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>查看密码： <code>config get requirepass</code></li>
-</ul>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g6pmw8jc4pj30g60egq3t.jpg"></p>
 </br>
-也可以通过修改配置文件来实现：
 </br>
-![requirepass](https://tva1.sinaimg.cn/large/006y8mN6gy1g6opk9rkstj30u00uxwtl.jpg)
-</br>
-推荐使用修改配置文件的方式。
-</br>
-因为本次连接期间，对配置文件的修改（包括密码），只在本次连接期间有效，并不会同步到 redis.conf 中。
 
-<p>断开连接后，下次连接时，使用的仍是配置文件中的参数（包括密码），之前命令行修改的配置参数失效。<br></br><br>redis 命令的关键字不区分大小写，比如以下2句命令等效：</p>
-<pre><code> set name &quot;张三&quot; 
- SET name &quot;张三&quot; </code></pre>
+<p>单个 redis 命令的执行是原子性的，但 redis 并没有在事务上增加任何维持原子性的机制，所以 redis 事务的执行不是原子性的。</p>
 </br>
-## 查看帮助
 
-<ul>
-<li><p>查看服务器端帮助： <code>redis-server --help</code></p>
-</li>
-<li><p>查看客户端帮助： <code>redis-cli --help</code></p>
-</li>
-</ul>
-<blockquote>
-<p>这2个命令不能在redis命令行中使用。</p>
-</blockquote>
-<ul>
-<li>查看某个命令的说明： <code>help command</code> 。</li>
-</ul>
-<blockquote>
-<p>该命令要在redis命令行下使用。</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.vousmevoyez.pro/2019/09/05/redis1/">上一篇：redis 简介</a><br><a target="_blank" rel="noopener" href="https://www.vousmevoyez.pro/2019/09/05/redis3/">下一篇：redis 配置</a></p>
+<p>事务可以理解为一个打包的批量执行脚本，但批量指令并非原子化的操作，中间某条指令的失败不会导致前面已做指令的回滚，也不会造成后续的指令不做。</p>
+</br>
+
+<p>比如执行事务时，第一条执行成功，第二条执行失败，此时并不会回滚之前的操作（此处指第一条、第二条命令），而是继续执行后面的命令。但会显示第二条的结果是Fail。</p>
+</br>
+
+<p>即事务中任意命令执行失败，其余的命令依然被执行。</p>
+</br>
+
+<p>在事务执行过程中，其他客户端提交的命令请求不会插入到事务执行命令队列中。</p>
+<p>Redis2.6以后的版本，在服务器内置了Lua环境（Lua解释器），可以通过eval命令执行Lua脚本。</p>
 
       
     </div>
@@ -927,7 +763,7 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis6/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/blue.gif">
@@ -941,7 +777,7 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/09/05/redis6/" class="post-title-link" itemprop="url">Redis String(字符串)</a>
+            <a href="/2019/09/05/redis2/" class="post-title-link" itemprop="url">Redis 基础命令</a>
         </h2>
 
         <div class="post-meta">
@@ -960,7 +796,7 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-06 14:02:33" itemprop="dateModified" datetime="2019-09-06T14:02:33+08:00">2019-09-06</time>
+                <time title="修改时间：2019-09-06 14:25:27" itemprop="dateModified" datetime="2019-09-06T14:25:27+08:00">2019-09-06</time>
               </span>
 
           
@@ -972,8 +808,8 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/09/05/redis6/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis6/" itemprop="commentCount"></span>
+    <a title="valine" href="/2019/09/05/redis2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis2/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -983,14 +819,14 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
+              <span>1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -1002,8 +838,77 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Redis-String-字符串"><a href="#Redis-String-字符串" class="headerlink" title="Redis String(字符串)"></a>Redis String(字符串)</h1></br>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">getset key newValue     <span class="comment">//给key设置value，并返回旧的value，如果没有旧的value，返回nil。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>  </span><br><span class="line">getset age <span class="number">20</span>           <span class="comment">//age 的值被设置为20，并返回旧的值10</span></span><br><span class="line"></span><br><span class="line">getrange key start end  <span class="comment">//获取value的部分</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> content <span class="string">&quot;hello world!&quot;</span> </span><br><span class="line">getrange content <span class="number">0</span> <span class="number">4</span>    <span class="comment">//返回content对应value的[0,4]上的字符，&quot;hello&quot;，下标</span></span><br><span class="line">getrange content <span class="number">0</span> <span class="number">-1</span>   <span class="comment">//支持负数索引，-1表示最后一个字符</span></span><br><span class="line"></span><br><span class="line">mget key1 key2 ......   <span class="comment">//mget即multiple get，同时获取多个key的value，若某个key不存在，该key返回nil</span></span><br><span class="line"></span><br><span class="line">setex key timeout value <span class="comment">//setex即set expire，给key设置timeout、value，若key已存在，会覆盖原来的timeout、value</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">setex age <span class="number">60</span> <span class="number">10</span>         <span class="comment">//设置age 60s后过期，value为10</span></span><br><span class="line"></span><br><span class="line">setnx key value         <span class="comment">//在 key 不存在时，为 key 设置value，设置成功返回1；若key已存在，不执行（不会替换原来的value），返回0。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>              <span class="comment">//若age已存在，会则覆盖value</span></span><br><span class="line">setnx age <span class="number">20</span>            <span class="comment">//age不存在时才设置，age已存在就不设置（不会覆盖原来的value）</span></span><br><span class="line"></span><br><span class="line">mset key1 value1 key2 value2 ......     <span class="comment">//mset即multiple  set。同时设置多个键值对。因为是set，所以若某个key已存在，会覆盖。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例： </span></span><br><span class="line">mset name <span class="string">&quot;lisi&quot;</span> age <span class="number">20</span> </span><br><span class="line"></span><br><span class="line">msetnx key1 value1 key2 value2 ......   <span class="comment">//msetnx即multiple setnx，当key不存在时才设置该key，已存在就不设置该key</span></span><br><span class="line"></span><br><span class="line">append key content      <span class="comment">//若key已存在，则在value末尾追加content；若key不存在，则为其设置值，此时相当于set key value。返回操作过后，value（新）的长度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">append str <span class="string">&quot;hello&quot;</span>      <span class="comment">//之前str不存在，此句命令相当于set str &quot;hello&quot;</span></span><br><span class="line">append str <span class="string">&quot; world!&quot;</span>    <span class="comment">//之前str已存在，则在其末尾追加&quot; world!&quot;，现在str的值变为&quot;hello world!&quot;</span></span><br><span class="line"></span><br><span class="line">incr key                <span class="comment">//incr即increase，如果value是整数（可以是负整数），将value的值+1，并返回操作后的value。如果value不是整数，提示错误。如果key不存在，先将value初始化为0，再执行+1。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>              <span class="comment">//等价于set age &quot;10&quot;。</span></span><br><span class="line">incr age                <span class="comment">//value的值+1，变为11，并返回11。value是整数才会+1。</span></span><br><span class="line">get age                 <span class="comment">//11</span></span><br><span class="line">incr price              <span class="comment">//之前price不存在，value会先初始化为0，再+1，返回1</span></span><br><span class="line">get price               <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line">incrby key amount       <span class="comment">//同上，只不过是+amout，不是+1。原来的value要是整数，amount也要是整数，否则提示错误。若key不存在，先初始化value为0。支持负整数（即减）。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">20</span> </span><br><span class="line">incrby age <span class="number">5</span>            <span class="comment">//+5</span></span><br><span class="line">get age                 <span class="comment">//25</span></span><br><span class="line"></span><br><span class="line">incrbyfloat key amount  <span class="comment">//同上，只不过原来的value可以是浮点数，增量amount也可以是浮点数。当然，整数也行。支持负数（减）。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> price <span class="number">2.3</span> </span><br><span class="line">incrbyfloat price <span class="number">1.5</span>     </span><br><span class="line">get price               <span class="comment">//3.8</span></span><br><span class="line"></span><br><span class="line">decr key                <span class="comment">//同incr key只不过decr是减。decr即decrease。</span></span><br><span class="line"></span><br><span class="line">decrby key amount       <span class="comment">//同incrby  key  amount，只不过是减</span></span><br></pre></td></tr></table></figure>
+          <h1 id="Redis-基础命令"><a href="#Redis-基础命令" class="headerlink" title="Redis 基础命令"></a>Redis 基础命令</h1></br>
+## 服务器端命令
+
+<ul>
+<li><p>启动服务： <code>redis-server --service-start</code></p>
+</li>
+<li><p>关闭服务： <code>redis-server --service-stop</code></p>
+</li>
+<li><p>使用redis.conf配置开启服务： <code>redis-server /path/to/redis.conf</code></p>
+</li>
+</ul>
+</br>
+## 客户端命令
+### 1、连接服务器：
+`redis-cli -h 127.0.0.1 -p 6379 -a abcd`
+
+<p>参数说明：</p>
+<ul>
+<li><p>redis-cli    即redis-cli.exe，我们通常缺省后缀.exe</p>
+</li>
+<li><p>-h    即host，服务器的IP地址</p>
+</li>
+<li><p>-p    即port，服务器的端口</p>
+</li>
+<li><p>-a    即auth，Redis服务器的密码</p>
+<!---more--->
+
+</li>
+</ul>
+<p>如果连接远程的Redis服务器，必须指定服务器的IP地址。参数都可缺省，缺省时默认 -h 为 127.0.0.1 ，-p 为 6379 。<br></br><br>连接本地的Redis服务器： <code>redis-cli -a yourPassword</code></p>
+<p>连接远程的Redis服务器： <code>redis-cli -h serverIP -a yourPassword</code><br></br><br>也可以之后再输入密码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">redis-cli</span><br><span class="line"></span><br><span class="line">auth yourPassword</span><br></pre></td></tr></table></figure>
+</br>
+### 2、密码操作
+- 设置/修改密码： `config set requirepass newPassword`，修改密码后需要重新输入密码验证。Reids默认的数据类型是String，比如设置密码为123，会自动作为字符串“123”。
+
+<ul>
+<li>查看密码： <code>config get requirepass</code></li>
+</ul>
+</br>
+也可以通过修改配置文件来实现：
+</br>
+![requirepass](https://tva1.sinaimg.cn/large/006y8mN6gy1g6opk9rkstj30u00uxwtl.jpg)
+</br>
+推荐使用修改配置文件的方式。
+</br>
+因为本次连接期间，对配置文件的修改（包括密码），只在本次连接期间有效，并不会同步到 redis.conf 中。
+
+<p>断开连接后，下次连接时，使用的仍是配置文件中的参数（包括密码），之前命令行修改的配置参数失效。<br></br><br>redis 命令的关键字不区分大小写，比如以下2句命令等效：</p>
+<pre><code> set name &quot;张三&quot; 
+ SET name &quot;张三&quot; </code></pre>
+</br>
+## 查看帮助
+
+<ul>
+<li><p>查看服务器端帮助： <code>redis-server --help</code></p>
+</li>
+<li><p>查看客户端帮助： <code>redis-cli --help</code></p>
+</li>
+</ul>
+<blockquote>
+<p>这2个命令不能在redis命令行中使用。</p>
+</blockquote>
+<ul>
+<li>查看某个命令的说明： <code>help command</code> 。</li>
+</ul>
+<blockquote>
+<p>该命令要在redis命令行下使用。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.vousmevoyez.pro/2019/09/05/redis1/">上一篇：redis 简介</a><br><a target="_blank" rel="noopener" href="https://www.vousmevoyez.pro/2019/09/05/redis3/">下一篇：redis 配置</a></p>
+
       
     </div>
 
@@ -1162,7 +1067,7 @@ redis 有序集合和集合一样也是 string 类型元素的集合,且不允�
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis7/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/blue.gif">
@@ -1176,7 +1081,7 @@ redis 有序集合和集合一样也是 string 类型元素的集合,且不允�
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/09/05/redis7/" class="post-title-link" itemprop="url">Redis Hash(哈希表/字典)</a>
+            <a href="/2019/09/05/redis6/" class="post-title-link" itemprop="url">Redis String(字符串)</a>
         </h2>
 
         <div class="post-meta">
@@ -1195,7 +1100,7 @@ redis 有序集合和集合一样也是 string 类型元素的集合,且不允�
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-06 14:03:39" itemprop="dateModified" datetime="2019-09-06T14:03:39+08:00">2019-09-06</time>
+                <time title="修改时间：2019-09-06 14:02:33" itemprop="dateModified" datetime="2019-09-06T14:02:33+08:00">2019-09-06</time>
               </span>
 
           
@@ -1207,8 +1112,8 @@ redis 有序集合和集合一样也是 string 类型元素的集合,且不允�
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/09/05/redis7/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis7/" itemprop="commentCount"></span>
+    <a title="valine" href="/2019/09/05/redis6/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis6/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1218,14 +1123,14 @@ redis 有序集合和集合一样也是 string 类型元素的集合,且不允�
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
+              <span>1.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -1237,34 +1142,8 @@ redis 有序集合和集合一样也是 string 类型元素的集合,且不允�
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Redis-Hash-哈希表-字典"><a href="#Redis-Hash-哈希表-字典" class="headerlink" title="Redis Hash(哈希表/字典)"></a>Redis Hash(哈希表/字典)</h1></br>
-redis hash 可储存多个键值对，适合储存对象的属性。
-</br>
-```c
-hset key fieldName fileValue    //hset即hash set，set这里是设置的意思。往hash中添加一个字段（键值对）
-
-<p>//示例：<br>hset score zhangsan 90          //score是hash的名称，zhangsan 90是一个键值对。若zhangsan这个字段名之前不存在，则添加成功返回1。<br>hset score lisi 85              //一个hash可储存多个键值对（40多亿）。<br>hset score lisi 100             //之前这个hash中已存在lisi这个字段名，会覆盖原来的字段值，返回0.</p>
-<p>hsetnx key fieldName fieldValue //多了后缀nx，同上，只是如果这个hash中已存在fieldName，则不执行操作（不覆盖原来的值），此时返回0。即当这个hash中fieldName不存在时才添加字段。</p>
-<p>hmset key fileName1 fieldValue1 fieldName2 fieldValue2 ……   //同时添加多个字段。hmset即hash multiple set，因为是set所以字段已存在时会覆盖原有的值。</p>
-<p>hget key fieldName              //获取指定字段的值</p>
-<p>hmget key fieldName1 fieldName2 ……  //同时获取一个或多个字段的值</p>
-<p>hgetall key                     //获取所有字段的值，会同时显示fieldName、fieldValue。hgetall即hash get all。</p>
-<p>hdel key fieldName1 fieldName2 …      //删除一个或多个字段</p>
-<p>hexists key fieldName           //检查该字段是否已存在，已存在则返回1，该fieldName不存在或key不存在，则返回0</p>
-<p>hlen key                        //获取hash中的字段（键值对）数量</p>
-<p>hkeys  key                      //获取hash中所有的feildName</p>
-<p>hvals key                       //获取hash中所有的fieldValue</p>
-<p>hscan key cursor [match pattern] [count count]  //迭代hash中的键值对</p>
-<p>hincrby key fieldName acount    //将指定字段的值增加acount。原来的字段值、acount都要是整数，否则提示错误。</p>
-<p>//示例：<br>hincrby score lisi 5            //返回操作后的字段值，假如之前lisi的值是80，则返回85<br>hincrby score lisi -10          //acount支持负整数，即减。</p>
-<p>hincrbyfloat  key fieldName acount  //同上，但是支持浮点数，就是说整数、浮点数都行。</p>
-<p>```<br></br><br><strong>说明</strong>：</p>
-<ul>
-<li>没有 hincr 这个命令 (+1) ；</li>
-<li>没有提供 hdecr 命令 (减) ；</li>
-<li>都带有前缀 h 表示 hash 。</li>
-</ul>
-
+          <h1 id="Redis-String-字符串"><a href="#Redis-String-字符串" class="headerlink" title="Redis String(字符串)"></a>Redis String(字符串)</h1></br>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">getset key newValue     <span class="comment">//给key设置value，并返回旧的value，如果没有旧的value，返回nil。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>  </span><br><span class="line">getset age <span class="number">20</span>           <span class="comment">//age 的值被设置为20，并返回旧的值10</span></span><br><span class="line"></span><br><span class="line">getrange key start end  <span class="comment">//获取value的部分</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> content <span class="string">&quot;hello world!&quot;</span> </span><br><span class="line">getrange content <span class="number">0</span> <span class="number">4</span>    <span class="comment">//返回content对应value的[0,4]上的字符，&quot;hello&quot;，下标</span></span><br><span class="line">getrange content <span class="number">0</span> <span class="number">-1</span>   <span class="comment">//支持负数索引，-1表示最后一个字符</span></span><br><span class="line"></span><br><span class="line">mget key1 key2 ......   <span class="comment">//mget即multiple get，同时获取多个key的value，若某个key不存在，该key返回nil</span></span><br><span class="line"></span><br><span class="line">setex key timeout value <span class="comment">//setex即set expire，给key设置timeout、value，若key已存在，会覆盖原来的timeout、value</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">setex age <span class="number">60</span> <span class="number">10</span>         <span class="comment">//设置age 60s后过期，value为10</span></span><br><span class="line"></span><br><span class="line">setnx key value         <span class="comment">//在 key 不存在时，为 key 设置value，设置成功返回1；若key已存在，不执行（不会替换原来的value），返回0。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>              <span class="comment">//若age已存在，会则覆盖value</span></span><br><span class="line">setnx age <span class="number">20</span>            <span class="comment">//age不存在时才设置，age已存在就不设置（不会覆盖原来的value）</span></span><br><span class="line"></span><br><span class="line">mset key1 value1 key2 value2 ......     <span class="comment">//mset即multiple  set。同时设置多个键值对。因为是set，所以若某个key已存在，会覆盖。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例： </span></span><br><span class="line">mset name <span class="string">&quot;lisi&quot;</span> age <span class="number">20</span> </span><br><span class="line"></span><br><span class="line">msetnx key1 value1 key2 value2 ......   <span class="comment">//msetnx即multiple setnx，当key不存在时才设置该key，已存在就不设置该key</span></span><br><span class="line"></span><br><span class="line">append key content      <span class="comment">//若key已存在，则在value末尾追加content；若key不存在，则为其设置值，此时相当于set key value。返回操作过后，value（新）的长度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">append str <span class="string">&quot;hello&quot;</span>      <span class="comment">//之前str不存在，此句命令相当于set str &quot;hello&quot;</span></span><br><span class="line">append str <span class="string">&quot; world!&quot;</span>    <span class="comment">//之前str已存在，则在其末尾追加&quot; world!&quot;，现在str的值变为&quot;hello world!&quot;</span></span><br><span class="line"></span><br><span class="line">incr key                <span class="comment">//incr即increase，如果value是整数（可以是负整数），将value的值+1，并返回操作后的value。如果value不是整数，提示错误。如果key不存在，先将value初始化为0，再执行+1。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>              <span class="comment">//等价于set age &quot;10&quot;。</span></span><br><span class="line">incr age                <span class="comment">//value的值+1，变为11，并返回11。value是整数才会+1。</span></span><br><span class="line">get age                 <span class="comment">//11</span></span><br><span class="line">incr price              <span class="comment">//之前price不存在，value会先初始化为0，再+1，返回1</span></span><br><span class="line">get price               <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line">incrby key amount       <span class="comment">//同上，只不过是+amout，不是+1。原来的value要是整数，amount也要是整数，否则提示错误。若key不存在，先初始化value为0。支持负整数（即减）。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">20</span> </span><br><span class="line">incrby age <span class="number">5</span>            <span class="comment">//+5</span></span><br><span class="line">get age                 <span class="comment">//25</span></span><br><span class="line"></span><br><span class="line">incrbyfloat key amount  <span class="comment">//同上，只不过原来的value可以是浮点数，增量amount也可以是浮点数。当然，整数也行。支持负数（减）。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> price <span class="number">2.3</span> </span><br><span class="line">incrbyfloat price <span class="number">1.5</span>     </span><br><span class="line">get price               <span class="comment">//3.8</span></span><br><span class="line"></span><br><span class="line">decr key                <span class="comment">//同incr key只不过decr是减。decr即decrease。</span></span><br><span class="line"></span><br><span class="line">decrby key amount       <span class="comment">//同incrby  key  amount，只不过是减</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -1369,6 +1248,105 @@ redis 列表是简单的字符串列表，列表是有序的，列表中的元�
 
 <p>redis 的区间，都是闭区间，[ start ，end ] ，两边都包含。</p>
 
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/blue.gif">
+      <meta itemprop="name" content="vousmevoyez">
+      <meta itemprop="description" content="Swan L">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vousmevoyez">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/05/redis9/" class="post-title-link" itemprop="url">Redis Set(集合)</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-06 14:05:20" itemprop="dateModified" datetime="2019-09-06T14:05:20+08:00">2019-09-06</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/09/05/redis9/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis9/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Redis-Set-集合"><a href="#Redis-Set-集合" class="headerlink" title="Redis Set(集合)"></a>Redis Set(集合)</h1></br>
+redis 的 Set 是 String 类型的无序集合，元素不允许重复。
+
+<p>redis 中集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是 O(1)。</p>
+<p>集合中最大的元素数为 2<sup>32</sup> - 1 (40多亿)。<br></br></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">sadd key value1 value2 ...  <span class="comment">//向集合中添加一个或多个元素。sadd即set add，key是集合的名称。返回此次添加的元素个数。</span></span><br><span class="line"></span><br><span class="line">scard key                   <span class="comment">//返回集合的元素个数</span></span><br><span class="line"></span><br><span class="line">smembers key                <span class="comment">//返回集合中所有的元素</span></span><br><span class="line"></span><br><span class="line">sismember key elementValue  <span class="comment">//判断该集合中是否有elementValue这个元素。有返回1，没有或者key不存在则返回0.</span></span><br><span class="line"></span><br><span class="line">spop key                    <span class="comment">//随机移除并返回集合中的一个元素</span></span><br><span class="line"></span><br><span class="line">srandmember key             <span class="comment">//随机返回集合中的一个元素，并不移除该元素。srandmember即set random  member.</span></span><br><span class="line"><span class="comment">//可带一个可选参数：</span></span><br><span class="line">srandmember key count       <span class="comment">//count是一个整数，指定返回的元素个数。</span></span><br><span class="line"><span class="comment">//count&gt;0：随机返回count个元素，这些元素互不相同。随机确定一个返回的元素后，再从剩余的元素中随机。</span></span><br><span class="line"><span class="comment">//count&lt;0：随机返回count的绝对值个元素，这些元素可能相同。每次都是从整个集合中随机一个。</span></span><br><span class="line"><span class="comment">//count的绝对值大于等于集合的元素个数时，返回集合中所有的元素。</span></span><br><span class="line"></span><br><span class="line">srem key value1 value2 ...  <span class="comment">//移除集合中的一个或多个元素，若集合中没有该元素，会忽略该元素。</span></span><br><span class="line"></span><br><span class="line">smove sourceKey destKey elementValue        <span class="comment">//将元素从一个集合移动到另一个集合。（剪切）</span></span><br><span class="line"></span><br><span class="line">sscan key cursor match pattern count num    <span class="comment">//迭代集合中的元素。cursor指定对每元素的操作。</span></span><br><span class="line"><span class="comment">//2个可选参数：</span></span><br><span class="line"><span class="comment">//match pattern     指定配置模式，只迭代符合pattern的元素</span></span><br><span class="line"><span class="comment">//count num         指定要迭代的元素个数</span></span><br><span class="line"></span><br><span class="line">sinter key1 key2 ...        <span class="comment">//返回这些集合的交集</span></span><br><span class="line"></span><br><span class="line">sinterstore destKey key1 key2 ...           <span class="comment">//多了store，求key1、key2.....这些集合的交集，并将交集中的元素存储在destKey集合中，返回交集中的元素个数</span></span><br><span class="line"><span class="comment">//相同用法的还有：</span></span><br><span class="line"><span class="comment">//sunion    并集</span></span><br><span class="line"><span class="comment">//sdiff     差集</span></span><br></pre></td></tr></table></figure>
       
     </div>
 

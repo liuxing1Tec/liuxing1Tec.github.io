@@ -190,7 +190,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis9/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/blue.gif">
@@ -204,7 +204,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/09/05/redis9/" class="post-title-link" itemprop="url">Redis Set(集合)</a>
+            <a href="/2019/09/05/redis7/" class="post-title-link" itemprop="url">Redis Hash(哈希表/字典)</a>
         </h2>
 
         <div class="post-meta">
@@ -223,7 +223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-06 14:05:20" itemprop="dateModified" datetime="2019-09-06T14:05:20+08:00">2019-09-06</time>
+                <time title="修改时间：2019-09-06 14:03:39" itemprop="dateModified" datetime="2019-09-06T14:03:39+08:00">2019-09-06</time>
               </span>
 
           
@@ -235,8 +235,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/09/05/redis9/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis9/" itemprop="commentCount"></span>
+    <a title="valine" href="/2019/09/05/redis7/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis7/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -246,7 +246,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -265,12 +265,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Redis-Set-集合"><a href="#Redis-Set-集合" class="headerlink" title="Redis Set(集合)"></a>Redis Set(集合)</h1></br>
-redis 的 Set 是 String 类型的无序集合，元素不允许重复。
+          <h1 id="Redis-Hash-哈希表-字典"><a href="#Redis-Hash-哈希表-字典" class="headerlink" title="Redis Hash(哈希表/字典)"></a>Redis Hash(哈希表/字典)</h1></br>
+redis hash 可储存多个键值对，适合储存对象的属性。
+</br>
+```c
+hset key fieldName fileValue    //hset即hash set，set这里是设置的意思。往hash中添加一个字段（键值对）
 
-<p>redis 中集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是 O(1)。</p>
-<p>集合中最大的元素数为 2<sup>32</sup> - 1 (40多亿)。<br></br></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">sadd key value1 value2 ...  <span class="comment">//向集合中添加一个或多个元素。sadd即set add，key是集合的名称。返回此次添加的元素个数。</span></span><br><span class="line"></span><br><span class="line">scard key                   <span class="comment">//返回集合的元素个数</span></span><br><span class="line"></span><br><span class="line">smembers key                <span class="comment">//返回集合中所有的元素</span></span><br><span class="line"></span><br><span class="line">sismember key elementValue  <span class="comment">//判断该集合中是否有elementValue这个元素。有返回1，没有或者key不存在则返回0.</span></span><br><span class="line"></span><br><span class="line">spop key                    <span class="comment">//随机移除并返回集合中的一个元素</span></span><br><span class="line"></span><br><span class="line">srandmember key             <span class="comment">//随机返回集合中的一个元素，并不移除该元素。srandmember即set random  member.</span></span><br><span class="line"><span class="comment">//可带一个可选参数：</span></span><br><span class="line">srandmember key count       <span class="comment">//count是一个整数，指定返回的元素个数。</span></span><br><span class="line"><span class="comment">//count&gt;0：随机返回count个元素，这些元素互不相同。随机确定一个返回的元素后，再从剩余的元素中随机。</span></span><br><span class="line"><span class="comment">//count&lt;0：随机返回count的绝对值个元素，这些元素可能相同。每次都是从整个集合中随机一个。</span></span><br><span class="line"><span class="comment">//count的绝对值大于等于集合的元素个数时，返回集合中所有的元素。</span></span><br><span class="line"></span><br><span class="line">srem key value1 value2 ...  <span class="comment">//移除集合中的一个或多个元素，若集合中没有该元素，会忽略该元素。</span></span><br><span class="line"></span><br><span class="line">smove sourceKey destKey elementValue        <span class="comment">//将元素从一个集合移动到另一个集合。（剪切）</span></span><br><span class="line"></span><br><span class="line">sscan key cursor match pattern count num    <span class="comment">//迭代集合中的元素。cursor指定对每元素的操作。</span></span><br><span class="line"><span class="comment">//2个可选参数：</span></span><br><span class="line"><span class="comment">//match pattern     指定配置模式，只迭代符合pattern的元素</span></span><br><span class="line"><span class="comment">//count num         指定要迭代的元素个数</span></span><br><span class="line"></span><br><span class="line">sinter key1 key2 ...        <span class="comment">//返回这些集合的交集</span></span><br><span class="line"></span><br><span class="line">sinterstore destKey key1 key2 ...           <span class="comment">//多了store，求key1、key2.....这些集合的交集，并将交集中的元素存储在destKey集合中，返回交集中的元素个数</span></span><br><span class="line"><span class="comment">//相同用法的还有：</span></span><br><span class="line"><span class="comment">//sunion    并集</span></span><br><span class="line"><span class="comment">//sdiff     差集</span></span><br></pre></td></tr></table></figure>
+<p>//示例：<br>hset score zhangsan 90          //score是hash的名称，zhangsan 90是一个键值对。若zhangsan这个字段名之前不存在，则添加成功返回1。<br>hset score lisi 85              //一个hash可储存多个键值对（40多亿）。<br>hset score lisi 100             //之前这个hash中已存在lisi这个字段名，会覆盖原来的字段值，返回0.</p>
+<p>hsetnx key fieldName fieldValue //多了后缀nx，同上，只是如果这个hash中已存在fieldName，则不执行操作（不覆盖原来的值），此时返回0。即当这个hash中fieldName不存在时才添加字段。</p>
+<p>hmset key fileName1 fieldValue1 fieldName2 fieldValue2 ……   //同时添加多个字段。hmset即hash multiple set，因为是set所以字段已存在时会覆盖原有的值。</p>
+<p>hget key fieldName              //获取指定字段的值</p>
+<p>hmget key fieldName1 fieldName2 ……  //同时获取一个或多个字段的值</p>
+<p>hgetall key                     //获取所有字段的值，会同时显示fieldName、fieldValue。hgetall即hash get all。</p>
+<p>hdel key fieldName1 fieldName2 …      //删除一个或多个字段</p>
+<p>hexists key fieldName           //检查该字段是否已存在，已存在则返回1，该fieldName不存在或key不存在，则返回0</p>
+<p>hlen key                        //获取hash中的字段（键值对）数量</p>
+<p>hkeys  key                      //获取hash中所有的feildName</p>
+<p>hvals key                       //获取hash中所有的fieldValue</p>
+<p>hscan key cursor [match pattern] [count count]  //迭代hash中的键值对</p>
+<p>hincrby key fieldName acount    //将指定字段的值增加acount。原来的字段值、acount都要是整数，否则提示错误。</p>
+<p>//示例：<br>hincrby score lisi 5            //返回操作后的字段值，假如之前lisi的值是80，则返回85<br>hincrby score lisi -10          //acount支持负整数，即减。</p>
+<p>hincrbyfloat  key fieldName acount  //同上，但是支持浮点数，就是说整数、浮点数都行。</p>
+<p>```<br></br><br><strong>说明</strong>：</p>
+<ul>
+<li>没有 hincr 这个命令 (+1) ；</li>
+<li>没有提供 hdecr 命令 (减) ；</li>
+<li>都带有前缀 h 表示 hash 。</li>
+</ul>
+
       
     </div>
 
