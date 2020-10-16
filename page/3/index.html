@@ -190,149 +190,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://liuxing1tec.github.io/2019/09/05/redis%20Hash(%E5%93%88%E5%B8%8C%E8%A1%A8:%E5%AD%97%E5%85%B8)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/blue.gif">
-      <meta itemprop="name" content="vousmevoyez">
-      <meta itemprop="description" content="Swan L">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vousmevoyez">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/05/redis%20Hash(%E5%93%88%E5%B8%8C%E8%A1%A8:%E5%AD%97%E5%85%B8)/" class="post-title-link" itemprop="url">redis Hash(哈希表/字典)</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-16 14:48:30" itemprop="dateModified" datetime="2020-10-16T14:48:30+08:00">2020-10-16</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/09/05/redis%20Hash(%E5%93%88%E5%B8%8C%E8%A1%A8:%E5%AD%97%E5%85%B8)/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis%20Hash(%E5%93%88%E5%B8%8C%E8%A1%A8:%E5%AD%97%E5%85%B8)/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="redis-Hash-哈希表-字典"><a href="#redis-Hash-哈希表-字典" class="headerlink" title="redis Hash(哈希表/字典)"></a>redis Hash(哈希表/字典)</h1></br>
-
-<p>redis hash 可储存多个键值对，适合储存对象的属性。</p>
-</br>
-
-<pre><code class="sh">hset key fieldName fileValue    //hset即hash set，set这里是设置的意思。往hash中添加一个字段（键值对）
-
-//示例：
-hset score zhangsan 90          //score是hash的名称，zhangsan 90是一个键值对。若zhangsan这个字段名之前不存在，则添加成功返回1。
-hset score lisi 85              //一个hash可储存多个键值对（40多亿）。
-hset score lisi 100             //之前这个hash中已存在lisi这个字段名，会覆盖原来的字段值，返回0.
-
-hsetnx key fieldName fieldValue //多了后缀nx，同上，只是如果这个hash中已存在fieldName，则不执行操作（不覆盖原来的值），此时返回0。即当这个hash中fieldName不存在时才添加字段。
-
-hmset key fileName1 fieldValue1 fieldName2 fieldValue2 ......   //同时添加多个字段。hmset即hash multiple set，因为是set所以字段已存在时会覆盖原有的值。
-
-hget key fieldName              //获取指定字段的值
-
-hmget key fieldName1 fieldName2 ......  //同时获取一个或多个字段的值
-
-hgetall key                     //获取所有字段的值，会同时显示fieldName、fieldValue。hgetall即hash get all。
-
-hdel key fieldName1 fieldName2 ...      //删除一个或多个字段
-
-hexists key fieldName           //检查该字段是否已存在，已存在则返回1，该fieldName不存在或key不存在，则返回0
-
-hlen key                        //获取hash中的字段（键值对）数量
-
-hkeys  key                      //获取hash中所有的feildName
-
-hvals key                       //获取hash中所有的fieldValue
-
-hscan key cursor [match pattern] [count count]  //迭代hash中的键值对
-
-hincrby key fieldName acount    //将指定字段的值增加acount。原来的字段值、acount都要是整数，否则提示错误。
-
-//示例：
-hincrby score lisi 5            //返回操作后的字段值，假如之前lisi的值是80，则返回85
-hincrby score lisi -10          //acount支持负整数，即减。
-
-hincrbyfloat  key fieldName acount  //同上，但是支持浮点数，就是说整数、浮点数都行。</code></pre>
-</br>
-
-<p><strong>说明</strong>：</p>
-<ul>
-<li>没有 hincr 这个命令 (+1) ；</li>
-<li>没有提供 hdecr 命令 (减) ；</li>
-<li>都带有前缀 h 表示 hash 。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://liuxing1tec.github.io/2019/09/05/redis%20KEY%20%E9%94%AE%E7%9A%84%E6%93%8D%E4%BD%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -742,6 +599,149 @@ hincrbyfloat  key fieldName acount  //同上，但是支持浮点数，就是说
 </br>
 
 <p>sorted set 也提供了计算交集、并集的命令，此处不再一一介绍。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://liuxing1tec.github.io/2019/09/05/redis%20Hash(%E5%93%88%E5%B8%8C%E8%A1%A8:%E5%AD%97%E5%85%B8)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/blue.gif">
+      <meta itemprop="name" content="vousmevoyez">
+      <meta itemprop="description" content="Swan L">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vousmevoyez">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/05/redis%20Hash(%E5%93%88%E5%B8%8C%E8%A1%A8:%E5%AD%97%E5%85%B8)/" class="post-title-link" itemprop="url">redis Hash(哈希表/字典)</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-16 14:48:30" itemprop="dateModified" datetime="2020-10-16T14:48:30+08:00">2020-10-16</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/09/05/redis%20Hash(%E5%93%88%E5%B8%8C%E8%A1%A8:%E5%AD%97%E5%85%B8)/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis%20Hash(%E5%93%88%E5%B8%8C%E8%A1%A8:%E5%AD%97%E5%85%B8)/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="redis-Hash-哈希表-字典"><a href="#redis-Hash-哈希表-字典" class="headerlink" title="redis Hash(哈希表/字典)"></a>redis Hash(哈希表/字典)</h1></br>
+
+<p>redis hash 可储存多个键值对，适合储存对象的属性。</p>
+</br>
+
+<pre><code class="sh">hset key fieldName fileValue    //hset即hash set，set这里是设置的意思。往hash中添加一个字段（键值对）
+
+//示例：
+hset score zhangsan 90          //score是hash的名称，zhangsan 90是一个键值对。若zhangsan这个字段名之前不存在，则添加成功返回1。
+hset score lisi 85              //一个hash可储存多个键值对（40多亿）。
+hset score lisi 100             //之前这个hash中已存在lisi这个字段名，会覆盖原来的字段值，返回0.
+
+hsetnx key fieldName fieldValue //多了后缀nx，同上，只是如果这个hash中已存在fieldName，则不执行操作（不覆盖原来的值），此时返回0。即当这个hash中fieldName不存在时才添加字段。
+
+hmset key fileName1 fieldValue1 fieldName2 fieldValue2 ......   //同时添加多个字段。hmset即hash multiple set，因为是set所以字段已存在时会覆盖原有的值。
+
+hget key fieldName              //获取指定字段的值
+
+hmget key fieldName1 fieldName2 ......  //同时获取一个或多个字段的值
+
+hgetall key                     //获取所有字段的值，会同时显示fieldName、fieldValue。hgetall即hash get all。
+
+hdel key fieldName1 fieldName2 ...      //删除一个或多个字段
+
+hexists key fieldName           //检查该字段是否已存在，已存在则返回1，该fieldName不存在或key不存在，则返回0
+
+hlen key                        //获取hash中的字段（键值对）数量
+
+hkeys  key                      //获取hash中所有的feildName
+
+hvals key                       //获取hash中所有的fieldValue
+
+hscan key cursor [match pattern] [count count]  //迭代hash中的键值对
+
+hincrby key fieldName acount    //将指定字段的值增加acount。原来的字段值、acount都要是整数，否则提示错误。
+
+//示例：
+hincrby score lisi 5            //返回操作后的字段值，假如之前lisi的值是80，则返回85
+hincrby score lisi -10          //acount支持负整数，即减。
+
+hincrbyfloat  key fieldName acount  //同上，但是支持浮点数，就是说整数、浮点数都行。</code></pre>
+</br>
+
+<p><strong>说明</strong>：</p>
+<ul>
+<li>没有 hincr 这个命令 (+1) ；</li>
+<li>没有提供 hdecr 命令 (减) ；</li>
+<li>都带有前缀 h 表示 hash 。</li>
+</ul>
 
       
     </div>
