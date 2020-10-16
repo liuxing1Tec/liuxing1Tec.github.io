@@ -124,12 +124,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">23</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">14</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">33</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">47</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -190,7 +190,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis11/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/14/python%20%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/blue.gif">
@@ -204,7 +204,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/09/05/redis11/" class="post-title-link" itemprop="url">Redis 常用命令</a>
+            <a href="/2020/08/14/python%20%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/" class="post-title-link" itemprop="url">python 文件处理</a>
         </h2>
 
         <div class="post-meta">
@@ -216,14 +216,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
+              <time title="创建时间：2020-08-14 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-14T00:00:00+08:00">2020-08-14</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-06 14:15:12" itemprop="dateModified" datetime="2019-09-06T14:15:12+08:00">2019-09-06</time>
+                <time title="修改时间：2020-10-16 14:34:30" itemprop="dateModified" datetime="2020-10-16T14:34:30+08:00">2020-10-16</time>
               </span>
 
           
@@ -235,8 +235,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/09/05/redis11/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis11/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/08/14/python%20%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/14/python%20%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -246,14 +246,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2k</span>
+              <span>3.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -265,8 +265,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Redis-常用命令"><a href="#Redis-常用命令" class="headerlink" title="Redis 常用命令"></a>Redis 常用命令</h1></br>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">auth password       <span class="comment">//验证密码</span></span><br><span class="line"></span><br><span class="line">echo message        <span class="comment">//打印文本</span></span><br><span class="line"></span><br><span class="line">ping                <span class="comment">//测试连接，ping一下Redis服务器，如果连接正常（已连接到Redis服务器）返回PONG。</span></span><br><span class="line"></span><br><span class="line">select dbIndex      <span class="comment">//选择当前使用的数据库，默认使用数据库0，下标，从0开始。</span></span><br><span class="line"></span><br><span class="line">quit                <span class="comment">//关闭当前连接，并退到上一级命令行</span></span><br><span class="line"></span><br><span class="line">time                <span class="comment">//获取服务器上的当前时间。</span></span><br><span class="line"><span class="comment">//有2个返回值，第一个是当前时间的时间戳（s），第二个是当前这一秒已经逝去的微秒数。</span></span><br><span class="line"><span class="comment">//1秒=10^3毫秒=10^6微秒。</span></span><br><span class="line"><span class="comment">//两者组合可显示微秒级的时间。</span></span><br><span class="line"></span><br><span class="line">config <span class="built_in">set</span> param value  <span class="comment">//设置配置参数</span></span><br><span class="line"></span><br><span class="line">config get param    <span class="comment">//获取配置参数的值</span></span><br><span class="line"></span><br><span class="line">config rewrite      <span class="comment">//将本次连接中，这条命令之前，对配置的设置都同步到redis.conf文件中。</span></span><br><span class="line"><span class="comment">//默认对配置的设置、修改只在本次连接期间有效，并不会同步修改redis.conf文件。断开本次连接，会清除本次连接的配置设置，下次连接时，使用的是redis.conf文件中配置。</span></span><br><span class="line"><span class="comment">//比如：</span></span><br><span class="line"><span class="comment">//配置文件中的密码是abc，连接到redis服务器后</span></span><br><span class="line">config <span class="built_in">set</span> requirepass <span class="number">123</span>  <span class="comment">//修改密码为123</span></span><br><span class="line"><span class="comment">//这次连接中，密码不再是abc，而是123。但这个修改并不会同步到redis.conf文件中，redis.conf文件中的密码仍是abc。下次连接时，使用密码123会提示密码错误，需要使用abc。</span></span><br><span class="line"><span class="comment">//有2种方式同步到redis.conf文件中：</span></span><br><span class="line"><span class="comment">//1. 直接在redis.conf文件中修改</span></span><br><span class="line"><span class="comment">//2. 连接到redis服务器后，在命令行修改，然后使用 config rewrite 命令同步到redis.conf中。</span></span><br><span class="line"> </span><br><span class="line">dbsize              <span class="comment">//返回当前数据库中，key的数量</span></span><br><span class="line"></span><br><span class="line">flushdb             <span class="comment">//清除当前数据库中所有的key，即清空当前数据库。flushdb即flush  db。</span></span><br><span class="line"></span><br><span class="line">flushall            <span class="comment">//清除所有数据库中的key，即清空所有数据库。flushall即flush  all。</span></span><br><span class="line"></span><br><span class="line">save                <span class="comment">//将redis数据库中的所有数据同步到.rdb文件中。redis数据库中的数据是常驻内存的，save命令将内存中的redis数据库数据同步写到数据库文件.rdb中。</span></span><br><span class="line"></span><br><span class="line">bgsave              <span class="comment">//同上，只不过bgsave是在后台异步保存。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">.rdb 文件是 redis 的数据库文件，rdb即 redis db。启动 redis 服务的时候，会从 .rdb 文件加载所有的数据库数据到内存。就是说数据库数据有 2 份，一份常驻内存，一份是持久化的磁盘文件。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">.rdb 文件也被称为 redis 数据库的备份文件。可以将一个 .rdb 文件放在redis安装目录下，作为这个  redis 服务器的数据库数据。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">client <span class="built_in">list</span>             <span class="comment">//列出所有的连接</span></span><br><span class="line"></span><br><span class="line">client kill ip:port     <span class="comment">//关闭某个连接。</span></span><br><span class="line"><span class="comment">//6379只是redis服务器、客户端程序通信使用的端口号。建立一个redis数据库连接，会单独使用一个端口号，一个redis客户端可以建立多个数据库连接，一个连接对应一个端口号，并不是使用6379。</span></span><br><span class="line"></span><br><span class="line">shutdown [save/nosave]  <span class="comment">//关闭redis服务器。会自动关闭与所有的redis客户端连接、以及与这些客户端建立的数据库连接，并同步数据集到rdb文件中。</span></span><br><span class="line"><span class="comment">//shutdown命令可带一个可选参数：是否将数据集同步到rdb文件中。save——同步，nosave——不同步。</span></span><br><span class="line"></span><br><span class="line">client kill ip:port     <span class="comment">//是关闭某个数据库连接，quit是关闭redis客户端（会自动关闭这个客户端建立的所有数据库连接），shutdown save是关闭redis服务器（会自动关闭这个redis服务器的所有数据库连接）。</span></span><br><span class="line"></span><br><span class="line">slaveof ip port         <span class="comment">//原本默认本身是主服务器，此句命令会将当前redis服务器作为某个服务器的从服务器。</span></span><br><span class="line"><span class="comment">//示例： </span></span><br><span class="line">slaveof <span class="number">127.23</span><span class="number">.23</span><span class="number">.35</span> <span class="number">6379</span>   <span class="comment">//把当前服务器作为127.23.23.35这台服务器的从服务器。</span></span><br><span class="line"><span class="comment">//变成从服务器后，会丢弃原来数据库的数据集，从主服务器复制、同步数据到从服务器。</span></span><br><span class="line"><span class="comment">//slave，意为奴隶、从属。</span></span><br><span class="line"></span><br><span class="line">sync                        <span class="comment">//从主服务器复制、同步数据集</span></span><br><span class="line"></span><br><span class="line">slave no one                </span><br><span class="line"><span class="comment">//这句命令是关闭这个从服务器的从主服务器复制数据的功能，使这个从服务器变成一个主服务器。使用的仍是作为从服务器时的数据集。</span></span><br><span class="line"><span class="comment">//当主服务器出问题、或者需要做其他用途的时候，可以把一台从服务器作为主服务器，再把其它的从服务器作为这个主服务器的从属，这样就不会影响服务器的运转。</span></span><br></pre></td></tr></table></figure>
+          <h1 id="python-读取-Excel-文档"><a href="#python-读取-Excel-文档" class="headerlink" title="python 读取 Excel 文档"></a>python 读取 Excel 文档</h1><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_excel</span>(<span class="params">self, path</span>):</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        logger.info(<span class="string">&quot;begin read %s&quot;</span> % path)</span><br><span class="line">        <span class="comment"># 读取 Excel 预处理动作↓，使用 xlrd 包将 Excel 文件读入 book 中</span></span><br><span class="line">        book = xlrd.open_workbook(path,encoding_override=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">        data = dict()</span><br><span class="line">        sheets = book.sheets()</span><br><span class="line">        <span class="keyword">for</span> cur <span class="keyword">in</span> sheets:</span><br><span class="line">            sheet_name = cur.name</span><br><span class="line">            nrows = cur.nrows</span><br><span class="line">            ncols = cur.ncols</span><br><span class="line">            logger.info(<span class="string">&quot;nrows=%d,ncols=%d&quot;</span> % (nrows, ncols))</span><br><span class="line">            sheet_val = list()</span><br><span class="line">            <span class="keyword">for</span> idx <span class="keyword">in</span> range(<span class="number">0</span>, nrows):</span><br><span class="line">                line = cur.row_values(idx)</span><br><span class="line">                <span class="comment"># sheet_val 为对应该页面每行数据的 list 数据</span></span><br><span class="line">                sheet_val.append(line)</span><br><span class="line">            <span class="comment"># data 为整个 Excel 文件每一张 sheet 的 Map 数据</span></span><br><span class="line">            data[sheet_name] = sheet_val</span><br><span class="line">        logger.info(<span class="string">&quot;read end, sheet=%d&quot;</span> % len(data))</span><br><span class="line">        <span class="keyword">return</span> data</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        logger.info(<span class="string">&quot;read %s fail, err=%s&quot;</span> % (path, str(e)))</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/14/python%20%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -285,7 +292,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis13/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/14/python%20%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/blue.gif">
@@ -299,7 +306,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/09/05/redis13/" class="post-title-link" itemprop="url">Redis 发布订阅</a>
+            <a href="/2020/08/14/python%20%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">python 语法总结</a>
         </h2>
 
         <div class="post-meta">
@@ -311,14 +318,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
+              <time title="创建时间：2020-08-14 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-14T00:00:00+08:00">2020-08-14</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-06 14:15:21" itemprop="dateModified" datetime="2019-09-06T14:15:21+08:00">2019-09-06</time>
+                <time title="修改时间：2020-10-16 14:34:13" itemprop="dateModified" datetime="2020-10-16T14:34:13+08:00">2020-10-16</time>
               </span>
 
           
@@ -330,8 +337,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/09/05/redis13/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis13/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/08/14/python%20%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/14/python%20%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -341,7 +348,109 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
+              <span>4.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="python-字符串处理"><a href="#python-字符串处理" class="headerlink" title="python 字符串处理"></a>python 字符串处理</h1><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将变量转化成字符串类型</span></span><br><span class="line">str(line)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将字符串全大写/全小写</span></span><br><span class="line">name = name.upper()</span><br><span class="line">name = name.lower()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 类 C 语言中的字符串格式化语言，python 中用 % 处理变量转化</span></span><br><span class="line">ftp_name = <span class="string">&quot;%s_%s&quot;</span>%(cass_id, sec[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># strip()去掉字符串首位多余字符，为空时去掉多余空格</span></span><br><span class="line"><span class="comment"># split()将字符串通过参数中的字符，分割成若干字符串存在数组中</span></span><br><span class="line">plist = pic_advantage.strip().split(<span class="string">&quot;，&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># re模块处理正则表达式，以下为将 code 转化为[^a-zA-Z0-9]字符的函数</span></span><br><span class="line">pattern_code_trim = re.compile(<span class="string">&quot;[^a-zA-Z0-9]&quot;</span>)</span><br><span class="line">src_code_trim = pattern_code_trim.sub(<span class="string">&#x27;&#x27;</span>, code)</span><br><span class="line"></span><br><span class="line"><span class="comment"># python中没有自增</span></span><br><span class="line">i = i + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/14/python%20%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/06/Nginx%20%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/blue.gif">
+      <meta itemprop="name" content="vousmevoyez">
+      <meta itemprop="description" content="Swan L">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vousmevoyez">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/06/Nginx%20%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">Nginx 的配置与基础命令</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-06 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-06T00:00:00+08:00">2020-08-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-16 16:02:18" itemprop="dateModified" datetime="2020-10-16T16:02:18+08:00">2020-10-16</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/08/06/Nginx%20%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/06/Nginx%20%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>958</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -360,51 +469,326 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Redis-发布订阅"><a href="#Redis-发布订阅" class="headerlink" title="Redis 发布订阅"></a>Redis 发布订阅</h1></br>
-redis 发布订阅 (pub/sub) 是一种消息通信模式：发送者 (pub) 发送消息，订阅者 (sub) 接收消息。
-pub 即 publish ，推送。
-sub 即 subscribe ，订阅。
+          <h1 id="NGINX-的配置与基础命令"><a href="#NGINX-的配置与基础命令" class="headerlink" title="NGINX 的配置与基础命令"></a>NGINX 的配置与基础命令</h1><p><strong>nginx 配置</strong></p>
+<p><strong>查看 nginx 配置文件</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/nginx/nginx.conf</span><br><span class="line">cat /etc/nginx/conf.d/xxxxxxxx.conf</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"> &lt;!--more--&gt;</span><br><span class="line"> </span><br><span class="line">可以看到 `stdname` 对应的监听端口设置 nginx 监听 18026 并转发至 stdnameSvr 的 监听端口 19026。</span><br><span class="line"></span><br><span class="line">```conf</span><br><span class="line">server &#123;</span><br><span class="line">        listen       18026;</span><br><span class="line">        server_name  localhost;</span><br><span class="line"></span><br><span class="line">        location /stdname/  &#123;</span><br><span class="line">                fastcgi_pass   127.0.0.1:19026;</span><br><span class="line">                fastcgi_index index.cgi;</span><br><span class="line">                <span class="comment">#fastcgi_param SCRIPT_FILENAME fcgi$fastcgi_script_name;</span></span><br><span class="line">                include        fastcgi_params;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </br>
-订阅者订阅某个 channel（频道），发布者将消息发布到 redis 服务器， redis 服务器将消息推送给这个频道的订阅者。
-channel 管道、通道、频道。
+
+<p><strong>验证 nginx 配置文件是否正确</strong></p>
+<p>进入 nginx 安装目录 sbin 下，输入命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nginx -t</span><br></pre></td></tr></table></figure>
+
+<p>看到如下显示 </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nginx: the configuration file /.../nginx.conf syntax is ok</span><br><span class="line">nginx: configuration file /.../nginx.conf <span class="built_in">test</span> is successful</span><br></pre></td></tr></table></figure>
+
+<p>说明配置文件正确！</p>
+<p><strong>运行 nginx</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/path_of_nginx/nginx -c /path_of_nginx.conf/nginx.conf</span><br></pre></td></tr></table></figure>
+
+<p><code>-c</code>：指定 nginx 运行时使用的 conf 文件路径<br><code>-t</code>：加上<code>-t</code>可以测试 nginx 配置是否正确</p>
+<p><strong>停止 nginx</strong></p>
+<p>查看进程号然后杀死进程</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep nginx</span><br><span class="line"><span class="built_in">kill</span> -QUIT &lt;pid_of_nginx&gt;   //从容停止</span><br><span class="line"><span class="built_in">kill</span> -TERM &lt;pid_of_nginx&gt;   //快速停止</span><br><span class="line"><span class="built_in">kill</span> -INT &lt;pid_of_nginx&gt;    //快速停止</span><br><span class="line"><span class="built_in">kill</span> -9 nginx               //强制停止</span><br></pre></td></tr></table></figure>
+
+<p><strong>重启 nginx</strong></p>
+<p><strong>方法一：</strong><br>找到 nginx 可执行文件路径，然后输入命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+
 </br>
-![订阅发布](https://tva1.sinaimg.cn/large/006y8mN6gy1g6pqnr02aoj30kt08z0tw.jpg)
-</br>
-redis 的 channel 是公共频道，谁都可以发布消息。
-就像微信群、QQ群，谁都可以发送消息，群成员（订阅者）都会收到消息。
+
+<p><strong>方法二：</strong><br>查找当前 nginx 进程号，然后输入命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">kill</span> -HUP &lt;pid_of_nginx&gt;</span><br></pre></td></tr></table></figure>
+
+<p>实现重启 nginx 服务。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/20/Linux%20%E4%B8%8B%20MySQL%20%E7%9A%84%20ODBC%20%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/blue.gif">
+      <meta itemprop="name" content="vousmevoyez">
+      <meta itemprop="description" content="Swan L">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vousmevoyez">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/20/Linux%20%E4%B8%8B%20MySQL%20%E7%9A%84%20ODBC%20%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">Linux 下 MySQL 的 ODBC 配置</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-20 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-20T00:00:00+08:00">2020-07-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-16 15:39:02" itemprop="dateModified" datetime="2020-10-16T15:39:02+08:00">2020-10-16</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/20/Linux%20%E4%B8%8B%20MySQL%20%E7%9A%84%20ODBC%20%E9%85%8D%E7%BD%AE/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/20/Linux%20%E4%B8%8B%20MySQL%20%E7%9A%84%20ODBC%20%E9%85%8D%E7%BD%AE/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在<strong>安装</strong>配置之前，需要先大概了解一下 MyODBC 的架构，MyODBC 体系结构建立在 5 个组件上，如下图所示：</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggwm30f77xj30a20b3aah.jpg"></p>
 <!---more--->
-</br>
-redis 的消息是在线即时消息，类似于广播，只有在线的订阅者（连接到 redis  服务器的订阅者），才会收到消息。
-若当时不在线，并不会收到消息。后面登陆了（连接到服务器），服务器也不会推送之前（这个客户端未收到）的消息。服务器只推送一遍。
-</br>
-</br>
+
+<p><strong>Driver Manager</strong><br>负责管理应用程序和驱动程序间的通信，主要功能包括：解析 DSN (数据源名称，ODBC 的数据源名称在 odbc.ini 文件中配置)，加载和卸载驱动程序，处理 ODBC 调用，将其传递给驱动程序。</p>
+<p><strong>ODBC.INI</strong><br>odbc.ini 是 ODBC 配置文件，记录了连接到服务器所需的驱动信息和数据库信息xxxxxx。Driver Manager 将使用它来确定加载哪个驱动程序（使用数据源名 DSN ）。驱动程序将根据指定的DSN来读取连接参数。</p>
+<p><strong>Connector/ODBC(MyODBC驱动程序)</strong><br>实现 ODBC API 所提供的功能，它负责处理 ODBC 函数调用，将 SQL 请求提交给 MySQL 服务器，并将结果返回给应用程序。</p>
+<p>在 Linux 下配置 mysql ODBC 需要有以下步骤：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 安装 Driver Manager，本案例使用 unixODBC 来作为 Driver Manager。</span><br><span class="line">2. 安装 MySQL 驱动程序，本案例使用 Connector&#x2F;ODBC。</span><br><span class="line">3. 配置 ODBC.INI</span><br></pre></td></tr></table></figure>
+
+<h2 id="第一步：下载安装包"><a href="#第一步：下载安装包" class="headerlink" title="第一步：下载安装包"></a>第一步：下载安装包</h2><p>需要下载两个安装包 <code>unixODBC 2.3.0</code> 和 <code>mysql Connector/ODBC 3.51</code><br>unixODBC 源码包：<code>ftp://ftp.unixodbc.org/pub/unixODBC/unixODBC-2.3.0.tar.gz</code><br>mysql Connector/ODBC 源码包：<code>http://dev.mysql.com/downloads/connector/odbc/3.51.html%23downloads</code><br>选择</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">版本：5.1.11</span><br><span class="line">平台：Oracle&amp;Red Hat Linux6</span><br><span class="line">下载：mysql-connector-odbc-5.1.11-linux-el6-x86-64bit.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h2 id="第二步：安装-unixODBC"><a href="#第二步：安装-unixODBC" class="headerlink" title="第二步：安装 unixODBC"></a>第二步：安装 unixODBC</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf unixODBC-2.3.4.tar.gz</span><br><span class="line"><span class="built_in">cd</span> unixODBC-2.3.4</span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/unixODBC-2.3.4 --includedir=/usr/include --libdir=/usr/<span class="built_in">local</span>/lib -bindir=/usr/bin --sysconfdir=/usr/<span class="built_in">local</span>/etc</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后,可以在/usr/bin目录下有下面的文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-rwxr-xr-x 1 root root      75312 Nov 1 16:22 odbcinst</span><br><span class="line">-rwxr-xr-x 1 root root      10922 Nov 1 16:22 odbc_config</span><br><span class="line">-rwxr-xr-x 1 root root      37650 Nov 1 16:22 iusql</span><br><span class="line">-rwxr-xr-x 1 root root      44400 Nov 1 16:22 isql</span><br><span class="line">-rwxr-xr-x 1 root root      95903 Nov 1 16:22 dltest</span><br></pre></td></tr></table></figure>
+
+<p>在/usr/local/lib目录下面有这些文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">-rwxr-xr-x 1 root root 422955 Nov 1 16:22 libodbcinst.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     20 Nov 1 16:22 libodbcinst.so.1 -&gt; libodbcinst.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     20 Nov 1 16:22 libodbcinst.so -&gt; libodbcinst.so.1.0.0</span><br><span class="line">-rwxr-xr-x 1 root root    981 Nov 1 16:22 libodbcinst.la</span><br><span class="line">-rwxr-xr-x 1 root root 169157 Nov 1 16:22 libodbc.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     16 Nov 1 16:22 libodbc.so.1 -&gt; libodbc.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     16 Nov 1 16:22 libodbc.so -&gt; libodbc.so.1.0.0</span><br><span class="line">-rwxr-xr-x 1 root root    957 Nov 1 16:22 libodbc.la</span><br><span class="line">-rwxr-xr-x 1 root root 489405 Nov 1 16:22 libodbccr.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     18 Nov 1 16:22 libodbccr.so.1 -&gt; libodbccr.so.1.0.0</span><br><span class="line">lrwxrwxrwx 1 root root     18 Nov 1 16:22 libodbccr.so -&gt; libodbccr.so.1.0.0</span><br><span class="line">-rwxr-xr-x 1 root root    969 Nov 1 16:22 libodbccr.la</span><br></pre></td></tr></table></figure>
+
+<h2 id="第三步：安装-mysql-Connector-ODBC"><a href="#第三步：安装-mysql-Connector-ODBC" class="headerlink" title="第三步：安装 mysql Connector/ODBC"></a>第三步：安装 mysql Connector/ODBC</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf mysql-connector-odbc-5.1.11-linux-el6-x86-64bit.tar.gz</span><br><span class="line"><span class="built_in">cd</span> mysql-connector-odbc-5.1.11-linux-el6-x86-64bit/lib</span><br><span class="line">cp libmyodbc5.so /usr/<span class="built_in">local</span>/lib</span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line"><span class="built_in">cd</span> bin</span><br></pre></td></tr></table></figure>
+
+<p><strong>注册驱动</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./myodbc-installer -d -a -n <span class="string">&quot;MySQL ODBC 5.1 Driver&quot;</span> -t <span class="string">&quot;DRIVER=/usr/local/lib/libmyodbc5.so;SETUP=/usr/local/lib/libmyodbc5.so&quot;</span></span><br><span class="line"></span><br><span class="line">//odbc 5.3及以上是libmyodbc5a.so和libmyodbc5w.so。其中c5a是Ansi版，c5w是Unicode版</span><br></pre></td></tr></table></figure>
+
+<p>假如注册的时候报错找不到libodbc.so.2,但是之前确实装成功了unixodbc,可能是因为系统找不到/usr/local/lib库目录，需要添加系统搜索库目录路径：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/ld.so.conf</span><br><span class="line"></span><br><span class="line">//将/usr/<span class="built_in">local</span>/lib直接添加在配置文件里</span><br><span class="line"></span><br><span class="line">ldconfig</span><br><span class="line"></span><br><span class="line">//重新缓存配置文件(为了加快程序执行时对共享库的定位速度，避免使用搜索路径查找共享库的低效率，所以是直接读取库列表文件/etc/ld.so.cache缓存文件并从中进行搜索的)</span><br></pre></td></tr></table></figure>
+
+<h2 id="第四步：配置-ODBC-INI"><a href="#第四步：配置-ODBC-INI" class="headerlink" title="第四步：配置 ODBC.INI"></a>第四步：配置 ODBC.INI</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">odbcinst -j</span><br><span class="line"></span><br><span class="line">unixODBC 2.3.1</span><br><span class="line">DRIVERS............: /etc/odbcinst.ini</span><br><span class="line">SYSTEM DATA SOURCES: /etc/odbc.ini</span><br><span class="line">FILE DATA SOURCES..: /etc/ODBCDataSources</span><br><span class="line">USER DATA SOURCES..: /root/.odbc.ini</span><br><span class="line">SQLULEN Size.......: 8</span><br><span class="line">SQLLEN Size........: 8</span><br><span class="line">SQLSETPOSIROW Size.: 8</span><br></pre></td></tr></table></figure>
+
+<p>编辑文件<code>/etc/odbc.ini</code>，把下面的内容加上去。不同版本<code>mysql</code>驱动的配置方法，有细微差异。此处使用的版本是<code>mysql Connector 3.51</code>。</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysqlDSN]</span></span><br><span class="line"><span class="attr">Driver</span>      = /usr/local/lib/libmyodbc5.so</span><br><span class="line"><span class="attr">Description</span> = MyODBC <span class="number">5</span> Driver DSN</span><br><span class="line"><span class="attr">SERVER</span>      = <span class="number">172.31</span>.<span class="number">108.133</span></span><br><span class="line"><span class="attr">PORT</span>        = <span class="number">3306</span></span><br><span class="line"><span class="attr">USER</span>        = root</span><br><span class="line"><span class="attr">Password</span>    = <span class="number">123456</span></span><br><span class="line"><span class="attr">Database</span>    = PM</span><br><span class="line"><span class="attr">OPTION</span>      = <span class="number">3</span></span><br><span class="line"><span class="attr">charset</span>     = UTF8</span><br></pre></td></tr></table></figure>
+
+<h2 id="第五步：设置环境变量"><a href="#第五步：设置环境变量" class="headerlink" title="第五步：设置环境变量"></a>第五步：设置环境变量</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> DBCINI=/usr/<span class="built_in">local</span>/etc/odbc.ini</span><br><span class="line"><span class="built_in">export</span> DBCSYSINI=/usr/<span class="built_in">local</span>/etc</span><br></pre></td></tr></table></figure>
+
+<h2 id="第六步：重启电脑"><a href="#第六步：重启电脑" class="headerlink" title="第六步：重启电脑"></a>第六步：重启电脑</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+<h2 id="第七步：测试ODBC配置是否成功"><a href="#第七步：测试ODBC配置是否成功" class="headerlink" title="第七步：测试ODBC配置是否成功"></a>第七步：测试ODBC配置是否成功</h2><p>isql 是 unixODBC 带的一个 ODBC 客户端访问工具，使用<code>isql +数据源名</code>来访问目标数据库。如果 ODBC 配置正确，会显示下面的界面。在<code>SQL&gt;</code>提示符下输入 SQL 语句查询数据库。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">isql mysqlDSN</span><br><span class="line"></span><br><span class="line">+---------------------------------------+</span><br><span class="line">| Connected!                           |</span><br><span class="line">|                                      |</span><br><span class="line">| sql-statement                        |</span><br><span class="line">| <span class="built_in">help</span> [tablename]                     |</span><br><span class="line">| quit                                 |</span><br><span class="line">|                                      |</span><br><span class="line">+---------------------------------------+</span><br></pre></td></tr></table></figure>
+
+<h2 id="遇到的问题："><a href="#遇到的问题：" class="headerlink" title="遇到的问题："></a>遇到的问题：</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>在第三步安装 mysql connector/ODBC 中的注册驱动中，我总是会出现<code>./myodbc-installer: error while loading shared libraries: libodbc.so.2: cannot open shared object file: No such file or directory.</code>这种错误，后来发现错误有两点：</p>
+<ol>
+<li>我下载的是 mysql-connector-5.3.6 ，可能版本比较高，而我初次下载用的是unixODBC-2.3.0，版本较低，里面没有 libodbc.so.2 这个库文件（可以用<code>find / -name libodbc.so.2</code>来查）。后来下载了一个 unixODBC-2.3.4 就好了。</li>
+<li>改了版本之后，我发现还是有这个错误，在网上查了下，说是程序查找默认路径为 /lib 和 /usr/lib，而我的 libmyodbc5w.so 和 libmmyodbc5a.so 都在 /usr/local/lib 中，所以查不到，所以需要设置一下共享库路径，以下我贴一下网上查的内容：</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/ld.so.conf</span><br><span class="line">include ld.so.conf.d/*.conf</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;/usr/local/lib&quot;</span> &gt;&gt; /etc/ld.so.conf</span><br><span class="line">ldconfig</span><br></pre></td></tr></table></figure>
+
+<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>如果共享库文件安装到了其它”非 /lib 或 /usr/lib “ 目录下，但是又不想在 /etc/ld.so.conf 中加路径(或者是没有权限加路径)。那可以 export 一个全局变量 LD_LIBRARY_PATH ，然后运行程序的时候就会去这个目录中找共享库。</p>
+<p>LD_LIBRARY_PATH 的意思是告诉 loader 在哪些目录中可以找到共享库。</p>
+<p>可以设置多个搜索目录，这些目录之间用冒号分隔开。</p>
+<p>比如：</p>
+<p>安装了一个 mysql 到 /usr/local/mysql 目录下，其中有一大堆库文件在 /usr/local/mysql/lib 下面，则可以在 .bashrc 或 .bash_profile 或 shell 里加入以下语句即可：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/usr/<span class="built_in">local</span>/mysql/lib:<span class="variable">$LD_LIBRARY_PATH</span>    </span><br></pre></td></tr></table></figure>
+
+<p>一般来讲这只是一种临时的解决方案，在没有权限或临时需要的时候使用。</p>
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p>如果程序需要的库文件比系统目前存在的村文件版本低，可以做一个链接<br>比如：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">error <span class="keyword">while</span> loading shared libraries: libncurses.so.4: cannot open shared</span><br><span class="line">object file: No such file or directory</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls /usr/lib/libncu*</span><br><span class="line">/usr/lib/libncurses.a   /usr/lib/libncurses.so.5</span><br><span class="line">/usr/lib/libncurses.so  /usr/lib/libncurses.so.5.3</span><br></pre></td></tr></table></figure>
+
+<p>可见虽然没有 libncurses.so.4，但有 libncurses.so.5，是可以向下兼容的<br>建一个链接就好了</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s  /usr/lib/libncurses.so.5.3  /usr/lib/libncurses.so.4</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><p>isql 连接数据库失败，重新注册驱动：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/myodbc-installer  -d -a -n <span class="string">&quot;MySQL_UNICODE&quot;</span>  -t <span class="string">&quot;DRIVER=/usr/lib64/libmyodbc8w.so;SETUP=/usr/lib64/libmyodbc8w.so&quot;</span></span><br><span class="line">/usr/bin/myodbc-installer  -d -a -n <span class="string">&quot;MySQL_ANSI&quot;</span>  -t <span class="string">&quot;DRIVER=/usr/lib64/libmyodbc8a.so;SETUP=/usr/lib64/libmyodbc8a.so&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>使用 rpm 命令查看 rpm 包的内容</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qpl xxx.rpm</span><br></pre></td></tr></table></figure>
+
+<p>可以看到<code>mysql-connector-odbc-8.0.20-1.el7.x86_64.rpm</code>的包内容</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">warning: mysql-connector-odbc-8.0.20-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY</span><br><span class="line">/usr/bin/myodbc-installer</span><br><span class="line">/usr/lib64/libmyodbc8a.so</span><br><span class="line">/usr/lib64/libmyodbc8w.so</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20/ChangeLog</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20/INFO_BIN</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20/INFO_SRC</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20/LICENSE.txt</span><br><span class="line">/usr/share/doc/mysql-connector-odbc-8.0.20/README.txt</span><br></pre></td></tr></table></figure>
+
+<p>可以知道 rpm 包 安装的时候各个基础件的安装位置。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/20/MySQL%20%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/blue.gif">
+      <meta itemprop="name" content="vousmevoyez">
+      <meta itemprop="description" content="Swan L">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vousmevoyez">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/20/MySQL%20%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">MySQL 用法总结</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-20 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-20T00:00:00+08:00">2020-07-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-16 11:34:48" itemprop="dateModified" datetime="2020-10-16T11:34:48+08:00">2020-10-16</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/20/MySQL%20%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/20/MySQL%20%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>529</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <div align='center' ><font size='70'>MySQL 用法总结</font></div>
 
 <hr>
-<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><p><strong>1.</strong> 启动一个客户端，连接到服务器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli -a password</span><br></pre></td></tr></table></figure>
-</br>
-**2.** 订阅频道
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subscribe channel1 channel2 ... <span class="comment">//可订阅一个或多个频道</span></span><br></pre></td></tr></table></figure>
-<p>会显示订阅的频道的信息，一个频道显示 3 个条目:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;subscribe&quot;                 &#x2F;&#x2F;固定的值，表示这是一个订阅频道</span><br><span class="line">订阅的频道名</span><br><span class="line">一个int型的数，表示这个频道是当前客户端订阅的第几个频道</span><br></pre></td></tr></table></figure>
-<p>订阅之后，当前命令提示符会阻塞，只能接收 redis 服务器推送的消息，不能再执行命令。所以我们再启动一个客户端推送消息。<br></br><br><strong>3.</strong> 在另一个 redis 客户端推送消息</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">publish channel message         <span class="comment">//channel指定要推送消息到哪个频道，message是要推送的消息</span></span><br></pre></td></tr></table></figure>
-<p>返回当前接收到消息的订阅者的数量。1表示只有一个订阅者收到了这条消息。</p>
-<p>我们看到另一个客户端已接收到消息。一条消息显示3个项：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">“message”                   &#x2F;&#x2F;固定值，表示这是一条消息</span><br><span class="line">这条消息来自哪个订阅频道</span><br><span class="line">消息内容</span><br></pre></td></tr></table></figure>
-</br>
-</br>
-redis 的订阅是临时订阅，只在本次连接期间有效。断开连接后，会清除这个客户端的订阅信息，即取消所有订阅的频道。
-</br>
-谁都可以是发布者，谁都可以发送消息。可以向任何频道发送消息。
-</br>
-</br>
-## 相关命令
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">subscribe channel1 channel2 ...     <span class="comment">//订阅一个或多个频道</span></span><br><span class="line"></span><br><span class="line">unsubscribe channel1 channel2 ...   <span class="comment">//退订一个或多个频道。多了un</span></span><br><span class="line"></span><br><span class="line">psubscribe pattern1 pattern2 ...    <span class="comment">//多了一个p，即pattern，订阅该模式匹配的所有频道，可以有多个匹配模式。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">psubscribe tv       <span class="comment">//订阅频道tv</span></span><br><span class="line">psubscribe *home    <span class="comment">//订阅所有以home结尾的频道</span></span><br><span class="line">psubscribe china*   <span class="comment">//订阅所有以china开头的频道</span></span><br><span class="line"></span><br><span class="line">punsubscribe pattern1 pattern2 ...  <span class="comment">//退订符合匹配的所有频道，可指定多个匹配模式，满足pattern1或者满足pattern2.....,，注意是或。</span></span><br><span class="line"></span><br><span class="line">publish channel message             <span class="comment">//推送消息到某个频道</span></span><br></pre></td></tr></table></figure>
-
-
+<p>[TOC]</p>
+<hr>
+<h1 id="mysql清空表数据后如何让自增ID仍从1开始"><a href="#mysql清空表数据后如何让自增ID仍从1开始" class="headerlink" title="mysql清空表数据后如何让自增ID仍从1开始?"></a>mysql清空表数据后如何让自增ID仍从1开始?</h1><blockquote>
+<p>也就是说如何重排 auto_increment</p>
+</blockquote>
+<p><strong>两种方法：</strong></p>
+<p><strong>1、</strong>清空表时使用<code>truncate</code>命令，而不用<code>delete</code>命令</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">TRUNCATE</span> <span class="keyword">TABLE</span> table_name ;</span><br></pre></td></tr></table></figure>
+<p>使用<code>truncate</code>命令的好处：</p>
+<blockquote>
+<p>1）、速度快<br>2）、可以对自增 ID 进行重排，使自增 ID 仍从1开始计算</p>
+</blockquote>
+<p><strong>2、</strong>清空表数据后，使用alter修改表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name AUTO_INCREMENT = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/20/MySQL%20%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -423,7 +807,7 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis12/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/20/MySQL%E7%9F%A5%E8%AF%86%E5%82%A8%E5%A4%87/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/blue.gif">
@@ -437,7 +821,7 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/09/05/redis12/" class="post-title-link" itemprop="url">Redis 事务</a>
+            <a href="/2020/07/20/MySQL%E7%9F%A5%E8%AF%86%E5%82%A8%E5%A4%87/" class="post-title-link" itemprop="url">MySQL 知识储备</a>
         </h2>
 
         <div class="post-meta">
@@ -449,14 +833,14 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
+              <time title="创建时间：2020-07-20 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-20T00:00:00+08:00">2020-07-20</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-20 19:03:36" itemprop="dateModified" datetime="2020-07-20T19:03:36+08:00">2020-07-20</time>
+                <time title="修改时间：2020-10-16 11:33:36" itemprop="dateModified" datetime="2020-10-16T11:33:36+08:00">2020-10-16</time>
               </span>
 
           
@@ -468,8 +852,8 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/09/05/redis12/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis12/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/07/20/MySQL%E7%9F%A5%E8%AF%86%E5%82%A8%E5%A4%87/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/20/MySQL%E7%9F%A5%E8%AF%86%E5%82%A8%E5%A4%87/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -479,14 +863,14 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>649</span>
+              <span>9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>8 分钟</span>
             </span>
 
         </div>
@@ -498,41 +882,215 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Redis-事务"><a href="#Redis-事务" class="headerlink" title="Redis 事务"></a>Redis 事务</h1><p>redis 事务可以一次执行多个命令。</p>
-</br>
+          <div align='center' ><font size='70'>MySQL知识储备</font></div>
 
-<p>常用命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">multi       //开起一个事务，标记一个事务块的开始，multi即multiple</span><br><span class="line"></span><br><span class="line"><span class="built_in">exec</span>        //执行事务块内的命令</span><br><span class="line"></span><br><span class="line">discard     //取消事务</span><br></pre></td></tr></table></figure>
+<hr>
+<p>[TOC]</p>
+<hr>
+<h1 id="SQL-SELECT-DISTINCT-语句"><a href="#SQL-SELECT-DISTINCT-语句" class="headerlink" title="SQL SELECT DISTINCT 语句"></a>SQL SELECT DISTINCT 语句</h1><p>在表中，一个列可能会包含多个重复值，有时您也许希望仅仅列出不同（distinct）的值。DISTINCT 关键词用于返回唯一不同的值。</p>
+<p><strong>SQL SELECT DISTINCT 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> column_name,column_name</span><br><span class="line"><span class="keyword">FROM</span> table_name;</span><br></pre></td></tr></table></figure>
 
-<p>使用步骤：</p>
-<ol>
-<li>先使用 multi 命令标记事务开始</li>
-<li>将多个命令入队( queue ，队列)</li>
-<li>使用 exec 命令执行事务</li>
-</ol>
 <!---more--->
 
-<p>示例：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">multi                   //标记事务开始</span><br><span class="line"><span class="built_in">set</span> name <span class="string">&quot;zhangsan&quot;</span>     //依次输入多个命令。输入一条命令后会提示“QUEUED”，表示此条命令已入队</span><br><span class="line"><span class="built_in">set</span> age 20 </span><br><span class="line">get name </span><br><span class="line"><span class="built_in">exec</span>                    //执行事务，会依次执行事务块内的命令，依次显示执行结果。</span><br><span class="line">//<span class="built_in">exec</span>是执行事务，如果想取消事务，将<span class="built_in">exec</span>换为discard即可。</span><br></pre></td></tr></table></figure>
+<h1 id="SQL-UPDATE-语句"><a href="#SQL-UPDATE-语句" class="headerlink" title="SQL UPDATE 语句"></a>SQL UPDATE 语句</h1><p>UPDATE 语句用于更新表中已存在的记录。</p>
+<p><strong>SQL UPDATE 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> table_name</span><br><span class="line"><span class="keyword">SET</span> column1=value1,column2=value2,...</span><br><span class="line"><span class="keyword">WHERE</span> some_column=some_value;</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g6pmw8jc4pj30g60egq3t.jpg"></p>
-</br>
-</br>
+<p><strong>请注意</strong> : SQL UPDATE 语句中的 WHERE 子句！WHERE 子句规定哪条记录或者哪些记录需要更新。如果您省略了 WHERE 子句，所有的记录都将被更新！</p>
+<h1 id="SQL-DELETE-语句"><a href="#SQL-DELETE-语句" class="headerlink" title="SQL DELETE 语句"></a>SQL DELETE 语句</h1><p>DELETE 语句用于删除表中的行(记录)。</p>
+<p><strong>SQL DELETE 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> some_column=some_value;</span><br></pre></td></tr></table></figure>
 
-<p>单个 redis 命令的执行是原子性的，但 redis 并没有在事务上增加任何维持原子性的机制，所以 redis 事务的执行不是原子性的。</p>
-</br>
+<p><strong>请注意</strong> : SQL DELETE 语句中的 WHERE 子句！WHERE 子句规定哪条记录或者哪些记录需要删除。如果您省略了 WHERE 子句，所有的记录都将被删除！</p>
+<h1 id="SQL-REGEXP-语句"><a href="#SQL-REGEXP-语句" class="headerlink" title="SQL REGEXP 语句"></a>SQL REGEXP 语句</h1><p>作为一个更为复杂的示例，正则表达式 <code>B[an]*s</code> 匹配下述字符串中的任何一个：<code>Bananas，Baaaaas，Bs</code>，以及以 B 开始，以 s 结束、并在其中包含任意数目 a 或 n 字符的任何其他字符串。</p>
+<p>以下是可用于随 REGEXP 操作符的表的模式。</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ghb5zvmhrhj30ff08r754.jpg"></p>
+<p>应用示例，查找用户表中 Email 格式错误的用户记录：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">users</span></span><br><span class="line"><span class="keyword">WHERE</span> email <span class="keyword">NOT</span> REGEXP <span class="string">&#x27;^[A-Z0-9._%-]+@[A-Z0-9.-]+.[A-Z]&#123;2,4&#125;$&#x27;</span></span><br></pre></td></tr></table></figure>
 
-<p>事务可以理解为一个打包的批量执行脚本，但批量指令并非原子化的操作，中间某条指令的失败不会导致前面已做指令的回滚，也不会造成后续的指令不做。</p>
-</br>
+<p>MySQL 数据库中正则表达式的语法，主要包括各种符号的含义。</p>
+<p><strong>^ 字符</strong></p>
+<p>匹配字符串的开始位置，如 <code>^a</code> 表示以字母 a 开头的字符串。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT &#x27;xxxyyy&#x27; REGEXP &#x27;^xx&#x27;;</span><br><span class="line"> </span><br><span class="line">+<span class="comment">-----------------------+</span></span><br><span class="line">| &#x27;xxxyyy&#x27; REGEXP &#x27;^xx&#x27; |</span><br><span class="line">+<span class="comment">-----------------------+</span></span><br><span class="line">|           1 |</span><br><span class="line">+<span class="comment">-----------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
 
-<p>比如执行事务时，第一条执行成功，第二条执行失败，此时并不会回滚之前的操作（此处指第一条、第二条命令），而是继续执行后面的命令。但会显示第二条的结果是Fail。</p>
-</br>
+<p>查询 xxxyyy 字符串中是否以 xx 开头，结果值为 1，表示值为 true，满足条件。</p>
+<p><strong>$ 字符</strong></p>
+<p>匹配字符串的结束位置，如 <code>X$</code> 表示以字母 X 结尾的字符串。</p>
+<p><strong>. 字符</strong></p>
+<p>这个字符就是英文下的点，它匹配任何一个字符，包括回车、换行等。</p>
+<p><strong>* 字符</strong></p>
+<p>星号匹配 0 个或多个字符，在它之前必须有内容。如：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT &#x27;xxxyyy&#x27; REGEXP &#x27;x*&#x27;;</span><br></pre></td></tr></table></figure>
 
-<p>即事务中任意命令执行失败，其余的命令依然被执行。</p>
-</br>
+<p>这个 SQL 语句，正则匹配为 true。</p>
+<p><strong>+ 字符</strong></p>
+<p>加号匹配 1 个或多个字符，在它之前也必须有内容。加号跟星号的用法类似，只是星号允许出现 0 次，加号则必须至少出现一次。</p>
+<p><strong>? 字符</strong></p>
+<p>问号匹配 0 次或 1 次。</p>
+<p><strong>实例:</strong><br>查询找到所有的名字以 st 开头：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT name FROM person_tbl WHERE name REGEXP &#x27;^st&#x27;;</span><br><span class="line">//查询找到所有的名字以 ok 结尾：</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT name FROM person_tbl WHERE name REGEXP &#x27;ok$&#x27;;</span><br><span class="line">//查询找到所有的名字包函 mar 的字符串：</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT name FROM person_tbl WHERE name REGEXP &#x27;mar&#x27;;</span><br><span class="line">//查询找到所有名称以元音开始和 ok 结束的：</span><br><span class="line">mysql&gt; SELECT name FROM person_tbl WHERE name REGEXP &#x27;^[aeiou]|ok$&#x27;;</span><br></pre></td></tr></table></figure>
 
-<p>在事务执行过程中，其他客户端提交的命令请求不会插入到事务执行命令队列中。</p>
-<p>Redis2.6以后的版本，在服务器内置了Lua环境（Lua解释器），可以通过eval命令执行Lua脚本。</p>
+<p>一个正则表达式中的可以使用以下保留字。</p>
+<p><strong>^</strong><br>所匹配的字符串以后面的字符串开头：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT &quot;fonfo&quot; REGEXP &quot;^fo$&quot;; -&gt; 0（表示不匹配） </span><br><span class="line">mysql&gt; SELECT &quot;fofo&quot; REGEXP &quot;^fo&quot;; -&gt; 1（表示匹配）</span><br></pre></td></tr></table></figure>
+
+<p><strong>$</strong><br>所匹配的字符串以前面的字符串结尾：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT &quot;fono&quot; REGEXP &quot;^fono$&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;fono&quot; REGEXP &quot;^fo$&quot;; -&gt; 0（表示不匹配） </span><br></pre></td></tr></table></figure>
+
+<p><strong>.</strong><br>匹配任何字符（包括新行）：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT &quot;fofo&quot; REGEXP &quot;^f.*&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;fonfo&quot; REGEXP &quot;^f.*&quot;; -&gt; 1（表示匹配）</span><br></pre></td></tr></table></figure>
+
+<p>*<em>a**</em><br>匹配任意多个 a（包括空串)：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT &quot;Ban&quot; REGEXP &quot;^Ba*n&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;Baaan&quot; REGEXP &quot;^Ba*n&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;Bn&quot; REGEXP &quot;^Ba*n&quot;; -&gt; 1（表示匹配）</span><br></pre></td></tr></table></figure>
+
+<p><strong>a+</strong><br>匹配任意多个 a（不包括空串)：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT &quot;Ban&quot; REGEXP &quot;^Ba+n&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;Bn&quot; REGEXP &quot;^Ba+n&quot;; -&gt; 0（表示不匹配）</span><br></pre></td></tr></table></figure>
+
+<p><strong>a?</strong><br>匹配一个或零个 a：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT &quot;Bn&quot; REGEXP &quot;^Ba?n&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;Ban&quot; REGEXP &quot;^Ba?n&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;Baan&quot; REGEXP &quot;^Ba?n&quot;; -&gt; 0（表示不匹配）</span><br></pre></td></tr></table></figure>
+
+<p><strong>de|abc</strong><br>匹配 de 或 abc：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT &quot;pi&quot; REGEXP &quot;pi|apa&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;axe&quot; REGEXP &quot;pi|apa&quot;; -&gt; 0（表示不匹配） </span><br><span class="line">mysql&gt; SELECT &quot;apa&quot; REGEXP &quot;pi|apa&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;apa&quot; REGEXP &quot;^(pi|apa)$&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;pi&quot; REGEXP &quot;^(pi|apa)$&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;pix&quot; REGEXP &quot;^(pi|apa)$&quot;; -&gt; 0（表示不匹配）</span><br></pre></td></tr></table></figure>
+
+<p>*<em>(abc)**</em><br>匹配任意多个abc（包括空串)：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT &quot;pi&quot; REGEXP &quot;^(pi)*$&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;pip&quot; REGEXP &quot;^(pi)*$&quot;; -&gt; 0（表示不匹配） </span><br><span class="line">mysql&gt; SELECT &quot;pipi&quot; REGEXP &quot;^(pi)*$&quot;; -&gt; 1（表示匹配）</span><br></pre></td></tr></table></figure>
+
+<p><strong>{1}</strong><br><strong>{2,3}</strong><br>这是一个更全面的方法，它可以实现前面好几种保留字的功能。<br>*<em>a**</em> 可以写成 <code>a&#123;0,&#125;</code>。<br><strong>a+</strong> 可以写成 <code>a&#123;1,&#125;</code>。<br><strong>a?</strong> 可以写成 <code>a&#123;0,1&#125;</code>。</p>
+<p>在 {} 内只有一个整型参数 i，表示字符只能出现 i 次；在 {} 内有一个整型参数 i，后面跟一个 ,，表示字符可以出现 i 次或 i 次以上；在 {} 内只有一个整型参数 i，后面跟一个 ,，再跟一个整型参数 j, 表示字符只能出现 i 次以上，j 次以下（包括 i 次和 j 次）。其中的整型参数必须大于等于 0，小于等于 RE_DUP_MAX（默认是 255）。 如果有两个参数，第二个必须大于等于第一个。</p>
+<p><strong>[a-dX]</strong> 匹配 <code>“a”、“b”、“c”、“d”</code> 或 <code>“X”</code>。<br>**[^a-dX]** 匹配除 <code>“a”、“b”、“c”、“d”、“X”</code> 以外的任何字符。</p>
+<p><strong>“[”、“]”</strong>必须成对使用：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT &quot;aXbc&quot; REGEXP &quot;[a-dXYZ]&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;aXbc&quot; REGEXP &quot;^[a-dXYZ]$&quot;; -&gt; 0（表示不匹配） </span><br><span class="line">mysql&gt; SELECT &quot;aXbc&quot; REGEXP &quot;^[a-dXYZ]+$&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;aXbc&quot; REGEXP &quot;^[^a-dXYZ]+$&quot;; -&gt; 0（表示不匹配） </span><br><span class="line">mysql&gt; SELECT &quot;gheis&quot; REGEXP &quot;^[^a-dXYZ]+$&quot;; -&gt; 1（表示匹配） </span><br><span class="line">mysql&gt; SELECT &quot;gheisa&quot; REGEXP &quot;^[^a-dXYZ]+$&quot;; -&gt; 0（表示不匹配）</span><br></pre></td></tr></table></figure>
+
+<h1 id="SQL-IN-操作符"><a href="#SQL-IN-操作符" class="headerlink" title="SQL IN 操作符"></a>SQL IN 操作符</h1><p>IN 操作符允许您在 WHERE 子句中规定多个值。</p>
+<p><strong>SQL IN 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> column_name <span class="keyword">IN</span> (value1,value2,...);</span><br></pre></td></tr></table></figure>
+
+<h1 id="SQL-BETWEEN-操作符"><a href="#SQL-BETWEEN-操作符" class="headerlink" title="SQL BETWEEN 操作符"></a>SQL BETWEEN 操作符</h1><p>BETWEEN 操作符选取介于两个值之间的数据范围内的值。这些值可以是数值、文本或者日期。</p>
+<p><strong>SQL BETWEEN 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> column_name <span class="keyword">BETWEEN</span> value1 <span class="keyword">AND</span> value2;</span><br></pre></td></tr></table></figure>
+
+<h1 id="SQL-别名"><a href="#SQL-别名" class="headerlink" title="SQL 别名"></a>SQL 别名</h1><p>通过使用 SQL，可以为表名称或列名称指定别名。基本上，创建别名是为了让列名称的可读性更强。</p>
+<p><strong>列的 SQL 别名语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name <span class="keyword">AS</span> alias_name</span><br><span class="line"><span class="keyword">FROM</span> table_name;</span><br></pre></td></tr></table></figure>
+<p><strong>表的 SQL 别名语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name <span class="keyword">AS</span> alias_name;</span><br></pre></td></tr></table></figure>
+
+<h1 id="SQL-JOIN"><a href="#SQL-JOIN" class="headerlink" title="SQL JOIN"></a>SQL JOIN</h1><p>SQL JOIN 子句用于把来自两个或多个表的行结合起来，基于这些表之间的共同字段。</p>
+<p><code>INNER JOIN</code>：如果表中有至少一个匹配，则返回行<br><code>LEFT JOIN</code>：即使右表中没有匹配，也从左表返回所有的行<br><code>RIGHT JOIN</code>：即使左表中没有匹配，也从右表返回所有的行<br><code>FULL JOIN</code>：只要其中一个表中存在匹配，则返回行</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ghb9w54nksj30qu0l40wf.jpg"></p>
+<h2 id="SQL-INNER-JOIN-关键字"><a href="#SQL-INNER-JOIN-关键字" class="headerlink" title="SQL INNER JOIN 关键字"></a>SQL INNER JOIN 关键字</h2><p>INNER JOIN 关键字在表中存在至少一个匹配时返回行。</p>
+<p><strong>SQL INNER JOIN 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+<p>或：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ghba0un8qgj305k041dfs.jpg"></p>
+<p><strong>注释</strong>：INNER JOIN 与 JOIN 是相同的。</p>
+<h2 id="SQL-LEFT-JOIN-关键字"><a href="#SQL-LEFT-JOIN-关键字" class="headerlink" title="SQL LEFT JOIN 关键字"></a>SQL LEFT JOIN 关键字</h2><p>LEFT JOIN 关键字从左表（table1）返回所有的行，即使右表（table2）中没有匹配。如果右表中没有匹配，则结果为 NULL。</p>
+<p><strong>SQL LEFT JOIN 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+<p>或：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ghbafmyirgj305k041aa0.jpg"></p>
+<p><strong>注释</strong>：在某些数据库中，LEFT JOIN 称为 LEFT OUTER JOIN。<br><strong>注释</strong>：LEFT JOIN 关键字从左表（Websites）返回所有的行，即使右表（access_log）中没有匹配。</p>
+<h2 id="SQL-RIGHT-JOIN-关键字"><a href="#SQL-RIGHT-JOIN-关键字" class="headerlink" title="SQL RIGHT JOIN 关键字"></a>SQL RIGHT JOIN 关键字</h2><p>RIGHT JOIN 关键字从右表（table2）返回所有的行，即使左表（table1）中没有匹配。如果左表中没有匹配，则结果为 NULL。</p>
+<p><strong>SQL RIGHT JOIN 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+<p>或：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ghbagmz2yhj305k041dfs.jpg"></p>
+<p><strong>注释</strong>：在某些数据库中，RIGHT JOIN 称为 RIGHT OUTER JOIN。<br><strong>注释</strong>：RIGHT JOIN 关键字从右表（Websites）返回所有的行，即使左表（access_log）中没有匹配。</p>
+<h2 id="SQL-FULL-OUTER-JOIN-关键字"><a href="#SQL-FULL-OUTER-JOIN-关键字" class="headerlink" title="SQL FULL OUTER JOIN 关键字"></a>SQL FULL OUTER JOIN 关键字</h2><p>FULL OUTER JOIN 关键字只要左表（table1）和右表（table2）其中一个表中存在匹配，则返回行。</p>
+<p>FULL OUTER JOIN 关键字结合了 LEFT JOIN 和 RIGHT JOIN 的结果。</p>
+<p><strong>SQL FULL OUTER JOIN 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">FULL</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> table2</span><br><span class="line"><span class="keyword">ON</span> table1.column_name=table2.column_name;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ghbahzrrmtj305k0413yh.jpg"></p>
+<p><strong>注释</strong>：FULL OUTER JOIN 关键字返回左表（Websites）和右表（access_log）中所有的行。如果 “Websites” 表中的行在 “access_log” 中没有匹配或者 “access_log” 表中的行在 “Websites” 表中没有匹配，也会列出这些行。<br><strong>注释</strong>：MySQL中不支持 FULL OUTER JOIN</p>
+<h1 id="SQL-UNION-操作符"><a href="#SQL-UNION-操作符" class="headerlink" title="SQL UNION 操作符"></a>SQL UNION 操作符</h1><p>UNION 操作符用于合并两个或多个 SELECT 语句的结果集。</p>
+<p>请注意，UNION 内部的每个 SELECT 语句必须拥有相同数量的列。列也必须拥有相似的数据类型。同时，每个 SELECT 语句中的列的顺序必须相同。</p>
+<p><strong>SQL UNION 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s) <span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> column_name(s) <span class="keyword">FROM</span> table2;</span><br></pre></td></tr></table></figure>
+<p><strong>注释</strong>：默认地，UNION 操作符选取不同的值。如果允许重复的值，请使用 UNION ALL。</p>
+<p><strong>SQL UNION ALL 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s) <span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"><span class="keyword">SELECT</span> column_name(s) <span class="keyword">FROM</span> table2;</span><br></pre></td></tr></table></figure>
+<p><strong>注释</strong>：UNION 结果集中的列名总是等于 UNION 中第一个 SELECT 语句中的列名。</p>
+<h1 id="SQL-INSERT-INTO-SELECT-语句"><a href="#SQL-INSERT-INTO-SELECT-语句" class="headerlink" title="SQL INSERT INTO SELECT 语句"></a>SQL INSERT INTO SELECT 语句</h1><p>通过 SQL，您可以从一个表复制信息到另一个表。<br>INSERT INTO SELECT 语句从一个表复制数据，然后把数据插入到一个已存在的表中。目标表中任何已存在的行都不会受影响。</p>
+<p><strong>SQL INSERT INTO SELECT 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//我们可以从一个表中复制所有的列插入到另一个已存在的表中：</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table2</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table1;</span><br><span class="line"></span><br><span class="line">//或者我们可以只复制希望的列插入到另一个已存在的表中：</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table2</span><br><span class="line">(column_name(s))</span><br><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table1;</span><br></pre></td></tr></table></figure>
+
+<h1 id="MySQL-复制表-MySQL的SELECT-INTO-FROM-语句"><a href="#MySQL-复制表-MySQL的SELECT-INTO-FROM-语句" class="headerlink" title="MySQL 复制表(MySQL的SELECT INTO FROM 语句)"></a>MySQL 复制表(MySQL的SELECT INTO FROM 语句)</h1><p><strong>复制表结构及其数据：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name_new <span class="keyword">AS</span> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table_name_old</span><br></pre></td></tr></table></figure>
+
+<p><strong>只复制表结构：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name_new <span class="keyword">AS</span> <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table_name_old <span class="keyword">WHERE</span> <span class="number">1</span>=<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>或者：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name_new <span class="keyword">LIKE</span> table_name_old</span><br></pre></td></tr></table></figure>
+
+<p><strong>只复制表数据：</strong></p>
+<ul>
+<li>如果两个表结构一样：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table_name_new <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table_name_old</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果两个表结构不一样：</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table_name_new(column1,column2...) <span class="keyword">SELECT</span> column1,column2... <span class="keyword">FROM</span> table_name_old</span><br></pre></td></tr></table></figure>
+
+<p><strong>SELECT INTO FROM 和 INSERT INTO SELECT 的区别：</strong></p>
+<p>主要区别：SELECT INTO FROM 要求目标表不存在，因为在插入时会自动创建；INSERT INTO SELECT FROM 要求目标表存在。</p>
+<p><strong>SELECT INTO FROM</strong> ：将查询出来的数据整理到一张新表中保存，表结构与查询结构一致。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *（查询出来的结果） <span class="keyword">INTO</span> newtable（新的表名）<span class="keyword">FROM</span> <span class="keyword">WHERE</span> （后续条件）</span><br></pre></td></tr></table></figure>
+
+<p>即，查询出来结果—&gt;复制一张同结构的空表—&gt;将数据拷贝进去。</p>
+<p><strong>INSERT INTO SELECT</strong> ：为已经存在的表批量添加新数据。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span>  (准备好的表) <span class="keyword">SELECT</span> *（或者取用自己想要的结构）<span class="keyword">FROM</span> 表名 <span class="keyword">WHERE</span> 各种条件</span><br></pre></td></tr></table></figure>
+<p>即，指定一张想要插入数据的表格—&gt;对数据进行加工筛选—&gt;填入一张准备好的表格。</p>
+<h1 id="SQL-约束（Constraints）"><a href="#SQL-约束（Constraints）" class="headerlink" title="SQL 约束（Constraints）"></a>SQL 约束（Constraints）</h1><p>SQL 约束用于规定表中的数据规则。如果存在违反约束的数据行为，行为会被约束终止。</p>
+<p>约束可以在创建表时规定（通过 CREATE TABLE 语句），或者在表创建之后规定（通过 ALTER TABLE 语句）。</p>
+<p><strong>SQL CREATE TABLE + CONSTRAINT 语法</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line">(</span><br><span class="line">column_name1 data_type(<span class="keyword">size</span>) constraint_name,</span><br><span class="line">column_name2 data_type(<span class="keyword">size</span>) constraint_name,</span><br><span class="line">column_name3 data_type(<span class="keyword">size</span>) constraint_name,</span><br><span class="line">....</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>在 SQL 中，我们有如下约束：</p>
+<ul>
+<li><code>NOT NULL</code> - 指示某列不能存储 NULL 值。</li>
+<li><code>UNIQUE</code> - 保证某列的每行必须有唯一的值。</li>
+<li><code>PRIMARY KEY</code> - (<code>NOT NULL</code> 和 <code>UNIQUE</code> 的结合)。确保某列（或两个列多个列的结合）有唯一标识，有助于更容易更快速地找到表中的一个特定的记录。</li>
+<li><code>FOREIGN KEY</code> - 保证一个表中的数据匹配另一个表中的值的参照完整性。</li>
+<li><code>CHECK</code> - 保证列中的值符合指定的条件。</li>
+<li><code>DEFAULT</code> - 规定没有给列赋值时的默认值。</li>
+</ul>
+<h1 id="SQL-ALTER-TABLE-语句"><a href="#SQL-ALTER-TABLE-语句" class="headerlink" title="SQL ALTER TABLE 语句"></a>SQL ALTER TABLE 语句</h1><p>ALTER TABLE 语句用于在已有的表中添加、删除或修改列。</p>
+<p><strong>SQL ALTER TABLE 语法：</strong></p>
+<p>如需在表中添加列，请使用下面的语法:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">ADD</span> column_name datatype</span><br></pre></td></tr></table></figure>
+
+<p>如需删除表中的列，请使用下面的语法（请注意，某些数据库系统不允许这种在数据库表中删除列的方式）：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">COLUMN</span> column_name</span><br></pre></td></tr></table></figure>
+
+<p>要改变表中列的数据类型，请使用下面的语法：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line"><span class="keyword">MODIFY</span> <span class="keyword">COLUMN</span> column_name datatype</span><br></pre></td></tr></table></figure>
+
+<h1 id="SQL-AUTO-INCREMENT-字段"><a href="#SQL-AUTO-INCREMENT-字段" class="headerlink" title="SQL AUTO INCREMENT 字段"></a>SQL AUTO INCREMENT 字段</h1><p>AUTO-INCREMENT 会在新记录插入表中时生成一个唯一的数字。</p>
+<p><strong>AUTO INCREMENT 字段</strong><br>我们通常希望在每次插入新记录时，自动地创建主键字段的值。</p>
+<h1 id="SQL-CREATE-VIEW-语句"><a href="#SQL-CREATE-VIEW-语句" class="headerlink" title="SQL CREATE VIEW 语句"></a>SQL CREATE VIEW 语句</h1><p>在 SQL 中，视图是基于 SQL 语句的结果集的可视化的表。</p>
+<p>视图包含行和列，就像一个真实的表。视图中的字段就是来自一个或多个数据库中的真实的表中的字段。</p>
+<p>您可以向视图添加 SQL 函数、WHERE 以及 JOIN 语句，也可以呈现数据，就像这些数据来自于某个单一的表一样。</p>
+<p><strong>SQL CREATE VIEW 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> view_name <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> condition</span><br></pre></td></tr></table></figure>
+<p><strong>注释：</strong>视图总是显示最新的数据！每当用户查询视图时，数据库引擎通过使用视图的 SQL 语句重建数据。</p>
+<h1 id="SQL-撤销视图"><a href="#SQL-撤销视图" class="headerlink" title="SQL 撤销视图"></a>SQL 撤销视图</h1><p>您可以通过 DROP VIEW 命令来删除视图。</p>
+<p><strong>SQL DROP VIEW 语法：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> view_name</span><br></pre></td></tr></table></figure>
+
+<h1 id="MySQL中修改表名，表属性名等操作"><a href="#MySQL中修改表名，表属性名等操作" class="headerlink" title="MySQL中修改表名，表属性名等操作"></a>MySQL中修改表名，表属性名等操作</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">CHANGE</span> 原列名 新列名  类型； <span class="comment">--修改表的列属性名</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">MODIFY</span> 列名 类型 ；  <span class="comment">--修改表的类类型</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">DROP</span> 列名；  <span class="comment">--删除表的某一列</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">ADD</span>  列名 类型；<span class="comment">--添加某一列</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 <span class="keyword">RENAME</span> 新表名； <span class="comment">--修改表名</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -552,7 +1110,7 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis4/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/18/Docker%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/blue.gif">
@@ -566,7 +1124,7 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/09/05/redis4/" class="post-title-link" itemprop="url">Redis KEY键的操作</a>
+            <a href="/2020/07/18/Docker%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="post-title-link" itemprop="url">Docker 基础知识</a>
         </h2>
 
         <div class="post-meta">
@@ -578,14 +1136,14 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
+              <time title="创建时间：2020-07-18 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-18T00:00:00+08:00">2020-07-18</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-06 13:59:12" itemprop="dateModified" datetime="2019-09-06T13:59:12+08:00">2019-09-06</time>
+                <time title="修改时间：2020-10-16 15:47:34" itemprop="dateModified" datetime="2020-10-16T15:47:34+08:00">2020-10-16</time>
               </span>
 
           
@@ -597,8 +1155,8 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/09/05/redis4/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis4/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/07/18/Docker%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/18/Docker%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -627,16 +1185,108 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Redis-KEY键的操作"><a href="#Redis-KEY键的操作" class="headerlink" title="Redis KEY键的操作"></a>Redis KEY键的操作</h1></br>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> key value       <span class="comment">//设置、修改值</span></span><br><span class="line"></span><br><span class="line">get key             <span class="comment">//如果key不存在，返回nil，表示空。</span></span><br><span class="line"></span><br><span class="line">type key            <span class="comment">//返回key对应的value的数据类型</span></span><br><span class="line"></span><br><span class="line">rename key newKey   <span class="comment">//重命名key，即修改键的名称。当key和newKey重名时，或者key不存在时，会提示错误。如果newKey已存在，会覆盖原来的值。</span></span><br><span class="line"></span><br><span class="line">renamenx key newKey <span class="comment">//多了nx。返回一个整数。如果newKey不存在，则执行重命名，返回1；如果newKey已存在，不执行重命名，返回0。就是说newKey不存在时才执行。</span></span><br><span class="line"></span><br><span class="line">randomkey           <span class="comment">//从当前数据库中随机返回一个key</span></span><br><span class="line"></span><br><span class="line">keys  pattern       <span class="comment">//返回所有满足pattern的key</span></span><br><span class="line"></span><br><span class="line">keys person*        <span class="comment">//示例：假设当前数据库中有3个key——person1，person2，person3，则该命令会返回所有以person开头的key，即person1、person2、person3</span></span><br><span class="line"></span><br><span class="line">exists key          <span class="comment">//检测key是否存在，存在返回1，不存在返回0</span></span><br><span class="line"></span><br><span class="line">dump key            <span class="comment">//序列化指定的key，返回序列化得到的二进制数据。</span></span><br><span class="line"></span><br><span class="line">del  key            <span class="comment">//删除指定的键值对。若key存在，则删除key，并返回1；若key不存在，直接返回0.</span></span><br><span class="line"></span><br><span class="line">expire key seconds  <span class="comment">//设置key的过期时间，以秒为单位</span></span><br><span class="line"></span><br><span class="line">expire age <span class="number">60</span>       <span class="comment">//示例：60s后age过期，会自动删除age。</span></span><br><span class="line"></span><br><span class="line">expireat key timestamp              <span class="comment">//设置key的过期时间。多了at。timestamp是时间戳，到了timestamp指定的时间，key过期，自动删除key。时间戳以秒为单位。</span></span><br><span class="line"></span><br><span class="line">pexpire  key  milliseconds          <span class="comment">//设置key的过期时间，以毫秒为单位。多了前缀p</span></span><br><span class="line"></span><br><span class="line">pexpireat key milliseconds-timestamp<span class="comment">//设置key的过期时间，时间戳，以毫秒为单位。多了前缀p、后缀at。</span></span><br><span class="line"></span><br><span class="line">move key db         <span class="comment">//将键值对移到指定的数据库，相当于剪切。返回db——当前使用的数据库的index。</span></span><br><span class="line"></span><br><span class="line">select db           <span class="comment">//Redis默认使用数据库0，也可以用显式指定当前使用的数据库。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>      <span class="comment">//默认使用数据库0</span></span><br><span class="line">move age <span class="number">1</span>      <span class="comment">//将age键值对移到数据库1中。返回1——表示数据库1</span></span><br><span class="line">exists age      <span class="comment">//此时使用的仍是数据库0，返回0——表示当前数据库中不存在age</span></span><br><span class="line">select <span class="number">1</span>        <span class="comment">//选择（切换）到数据库1</span></span><br><span class="line">exists age      <span class="comment">//返回1——表示存在age</span></span><br></pre></td></tr></table></figure>
-<!---more--->
-</br>
-</br>
-![select](https://tva1.sinaimg.cn/large/006y8mN6gy1g6oqr11vylj30di0a6jtd.jpg)
-</br>
-端口号后面的 [1] 表示当前使用的是数据库 1 。使用数据库 0 时默认缺省。
+          <h1 id="Docker基础知识"><a href="#Docker基础知识" class="headerlink" title="Docker基础知识"></a>Docker基础知识</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run ubuntu:15.10 /bin/<span class="built_in">echo</span> <span class="string">&quot;Hello world&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>redis 中 key 、value 加不加引号均可，都默认作为 String 处理。</p>
+<p><strong>参数含义：</strong></p>
+<ul>
+<li><code>docker</code>：Docker 的二进制执行文件。</li>
+<li><code>run</code>：与前面的 docker 组合来运行一个容器。</li>
+<li><code>ubuntu:15.10</code>：指定要运行的镜像，Docker 首先从本地主机上查找镜像是否存在，如果不存在，Docker 就会从镜像仓库 Docker Hub 下载公共镜像。</li>
+<li><code>/bin/echo &quot;Hello world&quot;</code>：在启动的容器里执行的命令</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -i -t ubuntu:15.10 /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数含义：</strong></p>
+<ul>
+<li><code>-t</code>：在新容器内指定一个伪终端或终端。</li>
+<li><code>-i</code>：允许你对容器内的标准输入 <code>stdin</code> 进行交互</li>
+<li>可以通过运行 <code>exit</code> 命令或者使用 <code>ctrl+D</code> 来退出容器，会导致容器停止</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -P training/webapp python app.py</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-d</code>：让容器在后台运行。</li>
+<li><code>-P</code>：将容器内部使用的网络端口随机映射到我们使用的主机上。</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit &lt;CONTAINER ID&gt; &lt;REPOSITORY&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数含义：</strong><br><code>-a</code>：提交的镜像作者;<br><code>-c</code>：使用Dockerfile指令来创建镜像;<br><code>-m</code>：提交时的说明文字;<br><code>-p</code>：在commit时，将容器暂停</p>
+<table>
+<thead>
+<tr>
+<th>commend</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>docker ps</code></td>
+<td>查看正在运行的容器</td>
+</tr>
+<tr>
+<td><code>docker ps -a</code></td>
+<td>查看所有容器</td>
+</tr>
+<tr>
+<td><code>docker stop &lt;CONTAINER ID/REPOSITORY&gt;</code></td>
+<td>关闭容器</td>
+</tr>
+<tr>
+<td><code>docker logs &lt;CONTAINER ID/REPOSITORY&gt;</code></td>
+<td>查看容器内的标准输出</td>
+</tr>
+<tr>
+<td><code>docker pull &lt;IMAGE_NAME&gt;</code></td>
+<td>载入镜像</td>
+</tr>
+<tr>
+<td><code>docker restart &lt;CONTAINER ID&gt;</code></td>
+<td>重启停止的容器</td>
+</tr>
+<tr>
+<td><code>docker attach &lt;CONTAINER ID&gt;</code></td>
+<td>进入后台运行中的容器</td>
+</tr>
+<tr>
+<td><code>docker exec &lt;CONTAINER ID&gt;</code></td>
+<td>退出容器，不会导致容器的停止</td>
+</tr>
+<tr>
+<td><code>docker export &lt;CONTAINER ID&gt; &gt; xxx.tar</code></td>
+<td>导出本地某个容器</td>
+</tr>
+<tr>
+<td>`cat docker/xxx.tar</td>
+<td>docker import - <EPOSITORY>:<TAG>`</td>
+</tr>
+<tr>
+<td><code>docker import &lt;URL&gt; &lt;EPOSITORY&gt;</code></td>
+<td>导入容器快照</td>
+</tr>
+<tr>
+<td><code>docker rm -f &lt;CONTAINER ID&gt;</code></td>
+<td>删除容器<code>-f</code>:强制删除;<code>-no-prune</code>:不要删除未带标签的父镜像</td>
+</tr>
+<tr>
+<td><code>docker container prune</code></td>
+<td>清理掉所有处于终止状态的容器</td>
+</tr>
+<tr>
+<td><code>docker rm $(docker container ls -aq)</code></td>
+<td>删除所有容器</td>
+</tr>
+<tr>
+<td><code>docker commit &lt;CONTAINER ID&gt; &lt;REPOSITORY&gt;</code></td>
+<td>把容器打包成镜像</td>
+</tr>
+<tr>
+<td><code>docker inspect &lt;REPOSITORY&gt;:&lt;CONTAINER ID&gt;</code></td>
+<td>查看镜像的详细信息</td>
+</tr>
+<tr>
+<td><code>docker rm $(docker container ls -f &quot;status=exited&quot; -q)</code></td>
+<td>同时删除多个符合筛选条件(状态为“exited”)的容器</td>
+</tr>
+</tbody></table>
 
       
     </div>
@@ -656,7 +1306,7 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/18/Docker%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/blue.gif">
@@ -670,7 +1320,7 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/09/05/redis3/" class="post-title-link" itemprop="url">Redis 配置</a>
+            <a href="/2020/07/18/Docker%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">Docker 知识总结</a>
         </h2>
 
         <div class="post-meta">
@@ -682,14 +1332,14 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
+              <time title="创建时间：2020-07-18 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-18T00:00:00+08:00">2020-07-18</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-06 14:26:21" itemprop="dateModified" datetime="2019-09-06T14:26:21+08:00">2019-09-06</time>
+                <time title="修改时间：2020-10-16 15:47:49" itemprop="dateModified" datetime="2020-10-16T15:47:49+08:00">2020-10-16</time>
               </span>
 
           
@@ -701,8 +1351,8 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/09/05/redis3/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis3/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/07/18/Docker%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/18/Docker%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -712,114 +1362,7 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.7k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Redis-配置"><a href="#Redis-配置" class="headerlink" title="Redis 配置"></a>Redis 配置</h1><h2 id="redis-conf-中的部分参数说明"><a href="#redis-conf-中的部分参数说明" class="headerlink" title="redis.conf 中的部分参数说明"></a>redis.conf 中的部分参数说明</h2><blockquote>
-<p>redis.conf 配置的是 redis 服务器。</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">bind <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>      <span class="comment">//设置redis服务器的ip地址</span></span><br><span class="line"></span><br><span class="line">port <span class="number">6379</span>           <span class="comment">//指定端口号</span></span><br><span class="line"></span><br><span class="line">timeout <span class="number">300</span>         <span class="comment">//当客户端闲置多长时间后关闭连接，如果指定为 0，表示关闭该功能。默认为0，需要修改。</span></span><br><span class="line"></span><br><span class="line">loglevel notice     <span class="comment">//指定日志记录级别，redis 总共支持四个级别：debug、verbose、notice、warning，默认为 notice</span></span><br><span class="line"></span><br><span class="line">logfile <span class="built_in">stdout</span>      <span class="comment">//日志记录方式，需要修改为标准输出。默认为空串&quot;&quot;。</span></span><br><span class="line"></span><br><span class="line">databases <span class="number">16</span>        <span class="comment">//设置数据库的数量</span></span><br><span class="line"></span><br><span class="line">save <span class="number">900</span> <span class="number">1</span>          <span class="comment">//指定在多长时间内，有多少次更新操作，就将数据同步到数据文件，可以多个条件配合使用，默认是3个。900s=15minutes</span></span><br><span class="line"></span><br><span class="line">save <span class="number">300</span> <span class="number">10</span>         <span class="comment">//300s=5minutes</span></span><br><span class="line"></span><br><span class="line">save <span class="number">60</span> <span class="number">10000</span>       <span class="comment">//60s=1minute</span></span><br><span class="line"></span><br><span class="line">rdbcompression yes  <span class="comment">//指定存储至本地数据库时是否压缩数据，默认为 yes，redis 采用 LZF 压缩，如果为了节省 CPU 时间，可以关闭该选项，但会导致数据库文件变的巨大</span></span><br><span class="line"></span><br><span class="line">dbfilename dump.rdb <span class="comment">//指定本地数据库文件名，默认值为 dump.rdb</span></span><br><span class="line"></span><br><span class="line">dir ./              <span class="comment">//指定本地数据库存放目录</span></span><br><span class="line"></span><br><span class="line">requirepass foobared<span class="comment">//设置 redis 连接密码，如果配置了连接密码，客户端在连接 redis 时需要提供密码，默认关闭</span></span><br><span class="line"></span><br><span class="line">maxclients <span class="number">128</span>      <span class="comment">//设置同一时间最大客户端连接数，默认是注释了的</span></span><br><span class="line"></span><br><span class="line">maxmemory <span class="number">536870912</span> <span class="comment">//指定 redis 最大内存限制，512M。默认是注释了的，默认单位字节。</span></span><br><span class="line"></span><br><span class="line">appendonly yes      <span class="comment">//指定是否在每次更新操作后进行日志记录，redis 在默认情况下是异步的把数据写入磁盘，如果不开启，可能会在断电时导致一段时间内的数据丢失。因为 redis 本身同步数据文件是按上面 save 条件来同步的，所以有的数据会在一段时间内只存在于内存中。默认为 no</span></span><br><span class="line"></span><br><span class="line">appendfilename <span class="string">&quot;appendonly.aof&quot;</span> <span class="comment">//指定日志文件名，默认为 appendonly.aof</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//指定日志更新条件，有3个值：always、everysec、no，默认使用everysec（其余2条是注释了的）</span></span><br><span class="line"><span class="meta"># appendfsync always<span class="comment">//表示每次更新操作后手动调用 fsync() 将数据写到磁盘（慢，安全）</span></span></span><br><span class="line">appendfsync everysec<span class="comment">//表示每秒同步一次（折中，默认值）</span></span><br><span class="line"><span class="meta"># appendfsync no    <span class="comment">//表示等操作系统进行数据缓存同步到磁盘（快）</span></span></span><br><span class="line"></span><br><span class="line">activerehashing yes <span class="comment">//指定是否激活重置哈希，默认为yes </span></span><br></pre></td></tr></table></figure>
-<!---more--->
-
-<p>redis 在启动时会把数据加载到内存中，达到最大内存后，redis 会先尝试清除已到期或即将到期的 Key，当此方法处理 后，仍然到达最大内存设置，将无法再进行写入操作，但仍然可以进行读取操作。redis 新的 vm 机制，会把 Key 存放内存，Value 会存放在 swap 区。</p>
-<h2 id="命令行设置配置参数"><a href="#命令行设置配置参数" class="headerlink" title="命令行设置配置参数"></a>命令行设置配置参数</h2><p>设置配置参数： <code>CONFIG SET key value</code><br>查看配置参数： <code>CONFIG GET key</code><br>示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CONFIG SET timeout 300 &#x2F;&#x2F;设置timeout为300s</span><br><span class="line"></span><br><span class="line">CONFIG GET timeout     &#x2F;&#x2F;查看timeout的配置值</span><br><span class="line"></span><br><span class="line">CONFIG GET *           &#x2F;&#x2F;查看所有的配置参数</span><br></pre></td></tr></table></figure>
-
-
-</br>
-[上一篇：redis 简介](https://www.vousmevoyez.pro/2019/09/05/redis2/)
-[下一篇：redis 配置](https://www.vousmevoyez.pro/2019/09/05/redis4/)
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/blue.gif">
-      <meta itemprop="name" content="vousmevoyez">
-      <meta itemprop="description" content="Swan L">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vousmevoyez">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/05/redis2/" class="post-title-link" itemprop="url">Redis 基础命令</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-06 14:25:27" itemprop="dateModified" datetime="2019-09-06T14:25:27+08:00">2019-09-06</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/09/05/redis2/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis2/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
+              <span>1.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -838,515 +1381,252 @@ redis 的订阅是临时订阅，只在本次连接期间有效。断开连接�
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Redis-基础命令"><a href="#Redis-基础命令" class="headerlink" title="Redis 基础命令"></a>Redis 基础命令</h1></br>
-## 服务器端命令
+          <h1 id="Docker-端口映射"><a href="#Docker-端口映射" class="headerlink" title="Docker 端口映射"></a>Docker 端口映射</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -p 8080:18026 &lt;REPOSITORY&gt;:&lt;TAG&gt; /bin/bash</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li><p>启动服务： <code>redis-server --service-start</code></p>
-</li>
-<li><p>关闭服务： <code>redis-server --service-stop</code></p>
-</li>
-<li><p>使用redis.conf配置开启服务： <code>redis-server /path/to/redis.conf</code></p>
-</li>
-</ul>
+<p><code>-p</code>：是容器内部端口绑定到指定的主机端口。这里指将主机的8080端口映射到容器的18026端口。-p可以多个端口映射同时存在以实现复杂功能</p>
 </br>
-## 客户端命令
-### 1、连接服务器：
-`redis-cli -h 127.0.0.1 -p 6379 -a abcd`
 
-<p>参数说明：</p>
-<ul>
-<li><p>redis-cli    即redis-cli.exe，我们通常缺省后缀.exe</p>
-</li>
-<li><p>-h    即host，服务器的IP地址</p>
-</li>
-<li><p>-p    即port，服务器的端口</p>
-</li>
-<li><p>-a    即auth，Redis服务器的密码</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -p 127.0.0.1:8080:18026 &lt;REPOSITORY&gt;:&lt;TAG&gt; /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>这样我们就可以通过访问 127.0.0.1:8080 来访问容器的 18026 端口。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/18/Docker%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/06/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/blue.gif">
+      <meta itemprop="name" content="vousmevoyez">
+      <meta itemprop="description" content="Swan L">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vousmevoyez">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/06/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">redis 学习笔记</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-06T00:00:00+08:00">2019-09-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-16 14:40:02" itemprop="dateModified" datetime="2020-10-16T14:40:02+08:00">2020-10-16</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/09/06/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/06/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>186</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="redis学习笔记"><a href="#redis学习笔记" class="headerlink" title="redis学习笔记"></a>redis学习笔记</h1></br>
+
+<h2 id="1-redis-简介"><a href="#1-redis-简介" class="headerlink" title="1-redis 简介"></a>1-<a target="_blank" rel="noopener" href="https://liuxing1tec.github.io/2019/09/05/redis1/">redis 简介</a></h2></br>
+
+<h2 id="2-redis-基础命令"><a href="#2-redis-基础命令" class="headerlink" title="2-redis 基础命令"></a>2-<a target="_blank" rel="noopener" href="https://liuxing1tec.github.io/2019/09/05/redis2/">redis 基础命令</a></h2></br>
+
+<h2 id="3-redis-配置"><a href="#3-redis-配置" class="headerlink" title="3-redis 配置"></a>3-<a target="_blank" rel="noopener" href="https://liuxing1tec.github.io/2019/09/05/redis3/">redis 配置</a></h2></br>
+
 <!---more--->
 
-</li>
-</ul>
-<p>如果连接远程的Redis服务器，必须指定服务器的IP地址。参数都可缺省，缺省时默认 -h 为 127.0.0.1 ，-p 为 6379 。<br></br><br>连接本地的Redis服务器： <code>redis-cli -a yourPassword</code></p>
-<p>连接远程的Redis服务器： <code>redis-cli -h serverIP -a yourPassword</code><br></br><br>也可以之后再输入密码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">redis-cli</span><br><span class="line"></span><br><span class="line">auth yourPassword</span><br></pre></td></tr></table></figure>
-</br>
-### 2、密码操作
-- 设置/修改密码： `config set requirepass newPassword`，修改密码后需要重新输入密码验证。Reids默认的数据类型是String，比如设置密码为123，会自动作为字符串“123”。
+<h2 id="4-Redis-KEY键的操作"><a href="#4-Redis-KEY键的操作" class="headerlink" title="4-Redis KEY键的操作"></a>4-<a target="_blank" rel="noopener" href="https://liuxing1tec.github.io/2019/09/05/redis4/">Redis KEY键的操作</a></h2></br>
 
-<ul>
-<li>查看密码： <code>config get requirepass</code></li>
-</ul>
-</br>
-也可以通过修改配置文件来实现：
-</br>
-![requirepass](https://tva1.sinaimg.cn/large/006y8mN6gy1g6opk9rkstj30u00uxwtl.jpg)
-</br>
-推荐使用修改配置文件的方式。
-</br>
-因为本次连接期间，对配置文件的修改（包括密码），只在本次连接期间有效，并不会同步到 redis.conf 中。
+<h2 id="5-redis-数据类型"><a href="#5-redis-数据类型" class="headerlink" title="5-redis 数据类型"></a>5-<a target="_blank" rel="noopener" href="https://liuxing1tec.github.io/2019/09/05/redis5/">redis 数据类型</a></h2></br>
 
-<p>断开连接后，下次连接时，使用的仍是配置文件中的参数（包括密码），之前命令行修改的配置参数失效。<br></br><br>redis 命令的关键字不区分大小写，比如以下2句命令等效：</p>
-<pre><code> set name &quot;张三&quot; 
- SET name &quot;张三&quot; </code></pre>
-</br>
-## 查看帮助
+<h2 id="6-redis-String-字符串"><a href="#6-redis-String-字符串" class="headerlink" title="6-redis String(字符串)"></a>6-<a target="_blank" rel="noopener" href="https://liuxing1tec.github.io/2019/09/05/redis6/">redis String(字符串)</a></h2></br>
 
-<ul>
-<li><p>查看服务器端帮助： <code>redis-server --help</code></p>
-</li>
-<li><p>查看客户端帮助： <code>redis-cli --help</code></p>
-</li>
-</ul>
+<h2 id="7-redis-Hash-哈希表-字典"><a href="#7-redis-Hash-哈希表-字典" class="headerlink" title="7-redis Hash(哈希表/字典)"></a>7-<a target="_blank" rel="noopener" href="https://liuxing1tec.github.io/2019/09/05/redis7/">redis Hash(哈希表/字典)</a></h2></br>
+
+<h2 id="8-redis-List-列表"><a href="#8-redis-List-列表" class="headerlink" title="8-redis List(列表)"></a>8-<a target="_blank" rel="noopener" href="https://liuxing1tec.github.io/2019/09/05/redis8/">redis List(列表)</a></h2></br>
+
+<h2 id="9-redis-Set-集合"><a href="#9-redis-Set-集合" class="headerlink" title="9-redis Set(集合)"></a>9-<a target="_blank" rel="noopener" href="https://liuxing1tec.github.io/2019/09/05/redis9/">redis Set(集合)</a></h2></br>
+
+<h2 id="10-redis-Sorted-Set-有序集合"><a href="#10-redis-Sorted-Set-有序集合" class="headerlink" title="10-redis Sorted Set(有序集合)"></a>10-<a target="_blank" rel="noopener" href="https://liuxing1tec.github.io/2019/09/05/redis10/">redis Sorted Set(有序集合)</a></h2></br>
+
+<h2 id="11-redis-常用命令"><a href="#11-redis-常用命令" class="headerlink" title="11-redis 常用命令"></a>11-<a target="_blank" rel="noopener" href="https://liuxing1tec.github.io/2019/09/05/redis11/">redis 常用命令</a></h2></br>
+
+<h2 id="12-redis-事务"><a href="#12-redis-事务" class="headerlink" title="12-redis 事务"></a>12-<a target="_blank" rel="noopener" href="https://liuxing1tec.github.io/2019/09/05/redis12/">redis 事务</a></h2></br>
+
+<h2 id="13-redis-发布订阅"><a href="#13-redis-发布订阅" class="headerlink" title="13-redis 发布订阅"></a>13-<a target="_blank" rel="noopener" href="https://liuxing1tec.github.io/2019/09/05/redis13/">redis 发布订阅</a></h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/Markdown%20%E8%AF%AD%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/blue.gif">
+      <meta itemprop="name" content="vousmevoyez">
+      <meta itemprop="description" content="Swan L">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vousmevoyez">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/05/Markdown%20%E8%AF%AD%E6%B3%95/" class="post-title-link" itemprop="url">Markdown 语法</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-16 15:16:26" itemprop="dateModified" datetime="2020-10-16T15:16:26+08:00">2020-10-16</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/09/05/Markdown%20%E8%AF%AD%E6%B3%95/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/Markdown%20%E8%AF%AD%E6%B3%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="欢迎使用-Markdown"><a href="#欢迎使用-Markdown" class="headerlink" title="欢迎使用 Markdown"></a>欢迎使用 Markdown</h1><p><strong>Markdown是一种轻量级的「标记语言」</strong></p>
+<p><img src="https://www.mdeditor.com/images/logos/markdown.png" alt="markdown" title="markdown"></p>
+<p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面，Markdown文件的后缀名便是“.md”</p>
 <blockquote>
-<p>这2个命令不能在redis命令行中使用。</p>
+<p>Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如<del>Pandoc</del>，Pandao；要么基于网站，如GitHub和Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。</p>
 </blockquote>
-<ul>
-<li>查看某个命令的说明： <code>help command</code> 。</li>
-</ul>
-<blockquote>
-<p>该命令要在redis命令行下使用。</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.vousmevoyez.pro/2019/09/05/redis1/">上一篇：redis 简介</a><br><a target="_blank" rel="noopener" href="https://www.vousmevoyez.pro/2019/09/05/redis3/">下一篇：redis 配置</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/blue.gif">
-      <meta itemprop="name" content="vousmevoyez">
-      <meta itemprop="description" content="Swan L">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vousmevoyez">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/05/redis5/" class="post-title-link" itemprop="url">Redis 数据结构</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-06 14:01:58" itemprop="dateModified" datetime="2019-09-06T14:01:58+08:00">2019-09-06</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/09/05/redis5/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis5/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Redis-数据结构"><a href="#Redis-数据结构" class="headerlink" title="Redis 数据结构"></a>Redis 数据结构</h1></br>
-redis 支持五种数据类型： string（字符串），hash（哈希），list（列表），set（集合）及 zset ( sorted set :有序集合)。
-</br>
-## string 字符串
-</br>
-示例： `set name "zhangsan"`
-
-<p>key 、 value 都是 string 类型， key 、 value 引不引都行，习惯上 key 不加引号， value 随意。</p>
-<p>string 是 redis 的基础数据类型。<br></br></p>
-<h2 id="hash-哈希表-字典"><a href="#hash-哈希表-字典" class="headerlink" title="hash 哈希表/字典"></a>hash 哈希表/字典</h2></br>
-redis hash 是一个 string 类型的 field 和 value 的映射表，一个 hash 可储存多个键值对。
-
-<p>一个对象往往有多个属性（键值对形式）， hash 特别适合存储对象。</p>
-<p>redis 中一个 hash 可以存储 2<sup>32</sup> - 1个 键值对（40多亿）。<br></br><br>示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hmset zhangsan name &quot;zhangsan&quot; age 12 gender male score 90</span><br></pre></td></tr></table></figure>
-<p><code>hmset</code> : hm 即 hash multiple ，set 这里表示设置，不是集合。</p>
-<p><code>zhangsan</code> : 即这张 hash 表的名称。 redis 是 key-value 数据库， zhangsan 就是 key ，后面的一堆属性看做一个整体（value）。</p>
-<!---more--->
-</br>
-## list 列表
-</br>
-redis 列表是简单的字符串列表，按照插入顺序排序。可以添加一个元素（字符串）到列表的头部（左边）或者尾部（右边）。
-
-<p>一个列表最多可以包含 2<sup>32</sup> - 1 个元素 (40多亿)。<br></br><br>示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lpush students &quot;zhangsan&quot; &quot;lisi&quot; &quot;wangwu&quot;</span><br></pre></td></tr></table></figure>
-<p><code>lpush</code> : list push ，往 list 中添加元素。</p>
-<p><code>students</code> : 即这个列表的名称（key）。列表中的元素看做一个整体（value）。<br></br></p>
-<h2 id="set-集合"><a href="#set-集合" class="headerlink" title="set 集合"></a>set 集合</h2></br>
-redis set 是 string 类型的无序集合。集合成员是唯一的（不允许重复）。
-
-<p>redis 中集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是 O(1)。</p>
-<p>集合的最大成员数为 2<sup>32</sup> - 1 (40多亿)。<br></br><br>示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sadd mySet &quot;zhangsan&quot; &quot;lisi&quot; &quot;wangwu&quot;</span><br></pre></td></tr></table></figure>
-<p><code>sadd</code> : set add ，往集合中添加元素。</p>
-<p><code>mySet</code> : 即集合名称（key）。把集合中的所有元素作为一个整体（value）。<br></br></p>
-<h2 id="sorted-set-有序集合"><a href="#sorted-set-有序集合" class="headerlink" title="sorted set 有序集合"></a>sorted set 有序集合</h2></br>
-redis 有序集合和集合一样也是 string 类型元素的集合,且不允许出现重复的成员。
-
-<p>但 sorted set 的每个元素都会关联一个 int 型或 double 型的数。 redis 正是通过这个数来为集合中的成员进行从小到大的排序。</p>
-<p>有序集合的成员不允许重复，但分数(score)可以重复。</p>
-<p>有序集合是通过哈希表实现的，添加，删除，查找的复杂度都是O(1)。</p>
-<p>集合的最大成员数为 2<sup>32</sup> - 1 (40多亿)。<br></br><br>示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zadd sortedSet 2 &quot;zhangsan&quot; 2.9 &quot;lisi&quot; 1.3 &quot;wangwu&quot;</span><br></pre></td></tr></table></figure>
-<p><code>zadd</code> : z 代表有序集合。</p>
-<p><code>sortedSet</code> : 即有序集合的名称（key）。把有序集合中的所有元素（包括分数）看做一个整体（value）。</p>
-<p><code>2 &quot;zhangsan&quot;</code> : 2 就是 “zhangsan” 的 score ，顺序就是根据 score 进行升序排列的。 score 可以是 int 、 double 型。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/blue.gif">
-      <meta itemprop="name" content="vousmevoyez">
-      <meta itemprop="description" content="Swan L">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vousmevoyez">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/05/redis6/" class="post-title-link" itemprop="url">Redis String(字符串)</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-06 14:02:33" itemprop="dateModified" datetime="2019-09-06T14:02:33+08:00">2019-09-06</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/09/05/redis6/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis6/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Redis-String-字符串"><a href="#Redis-String-字符串" class="headerlink" title="Redis String(字符串)"></a>Redis String(字符串)</h1></br>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">getset key newValue     <span class="comment">//给key设置value，并返回旧的value，如果没有旧的value，返回nil。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>  </span><br><span class="line">getset age <span class="number">20</span>           <span class="comment">//age 的值被设置为20，并返回旧的值10</span></span><br><span class="line"></span><br><span class="line">getrange key start end  <span class="comment">//获取value的部分</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> content <span class="string">&quot;hello world!&quot;</span> </span><br><span class="line">getrange content <span class="number">0</span> <span class="number">4</span>    <span class="comment">//返回content对应value的[0,4]上的字符，&quot;hello&quot;，下标</span></span><br><span class="line">getrange content <span class="number">0</span> <span class="number">-1</span>   <span class="comment">//支持负数索引，-1表示最后一个字符</span></span><br><span class="line"></span><br><span class="line">mget key1 key2 ......   <span class="comment">//mget即multiple get，同时获取多个key的value，若某个key不存在，该key返回nil</span></span><br><span class="line"></span><br><span class="line">setex key timeout value <span class="comment">//setex即set expire，给key设置timeout、value，若key已存在，会覆盖原来的timeout、value</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">setex age <span class="number">60</span> <span class="number">10</span>         <span class="comment">//设置age 60s后过期，value为10</span></span><br><span class="line"></span><br><span class="line">setnx key value         <span class="comment">//在 key 不存在时，为 key 设置value，设置成功返回1；若key已存在，不执行（不会替换原来的value），返回0。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>              <span class="comment">//若age已存在，会则覆盖value</span></span><br><span class="line">setnx age <span class="number">20</span>            <span class="comment">//age不存在时才设置，age已存在就不设置（不会覆盖原来的value）</span></span><br><span class="line"></span><br><span class="line">mset key1 value1 key2 value2 ......     <span class="comment">//mset即multiple  set。同时设置多个键值对。因为是set，所以若某个key已存在，会覆盖。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例： </span></span><br><span class="line">mset name <span class="string">&quot;lisi&quot;</span> age <span class="number">20</span> </span><br><span class="line"></span><br><span class="line">msetnx key1 value1 key2 value2 ......   <span class="comment">//msetnx即multiple setnx，当key不存在时才设置该key，已存在就不设置该key</span></span><br><span class="line"></span><br><span class="line">append key content      <span class="comment">//若key已存在，则在value末尾追加content；若key不存在，则为其设置值，此时相当于set key value。返回操作过后，value（新）的长度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">append str <span class="string">&quot;hello&quot;</span>      <span class="comment">//之前str不存在，此句命令相当于set str &quot;hello&quot;</span></span><br><span class="line">append str <span class="string">&quot; world!&quot;</span>    <span class="comment">//之前str已存在，则在其末尾追加&quot; world!&quot;，现在str的值变为&quot;hello world!&quot;</span></span><br><span class="line"></span><br><span class="line">incr key                <span class="comment">//incr即increase，如果value是整数（可以是负整数），将value的值+1，并返回操作后的value。如果value不是整数，提示错误。如果key不存在，先将value初始化为0，再执行+1。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">10</span>              <span class="comment">//等价于set age &quot;10&quot;。</span></span><br><span class="line">incr age                <span class="comment">//value的值+1，变为11，并返回11。value是整数才会+1。</span></span><br><span class="line">get age                 <span class="comment">//11</span></span><br><span class="line">incr price              <span class="comment">//之前price不存在，value会先初始化为0，再+1，返回1</span></span><br><span class="line">get price               <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line">incrby key amount       <span class="comment">//同上，只不过是+amout，不是+1。原来的value要是整数，amount也要是整数，否则提示错误。若key不存在，先初始化value为0。支持负整数（即减）。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> age <span class="number">20</span> </span><br><span class="line">incrby age <span class="number">5</span>            <span class="comment">//+5</span></span><br><span class="line">get age                 <span class="comment">//25</span></span><br><span class="line"></span><br><span class="line">incrbyfloat key amount  <span class="comment">//同上，只不过原来的value可以是浮点数，增量amount也可以是浮点数。当然，整数也行。支持负数（减）。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="built_in">set</span> price <span class="number">2.3</span> </span><br><span class="line">incrbyfloat price <span class="number">1.5</span>     </span><br><span class="line">get price               <span class="comment">//3.8</span></span><br><span class="line"></span><br><span class="line">decr key                <span class="comment">//同incr key只不过decr是减。decr即decrease。</span></span><br><span class="line"></span><br><span class="line">decrby key amount       <span class="comment">//同incrby  key  amount，只不过是减</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/blue.gif">
-      <meta itemprop="name" content="vousmevoyez">
-      <meta itemprop="description" content="Swan L">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vousmevoyez">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/05/redis8/" class="post-title-link" itemprop="url">Redis List(列表)</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-06 14:04:52" itemprop="dateModified" datetime="2019-09-06T14:04:52+08:00">2019-09-06</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/09/05/redis8/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis8/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Redis-List-列表"><a href="#Redis-List-列表" class="headerlink" title="Redis List(列表)"></a>Redis List(列表)</h1></br>
-redis 列表是简单的字符串列表，列表是有序的，列表中的元素可以重复。
-
-<p>可以添加一个元素到列表的头部（左边）或者尾部（右边）</p>
-<p>一个列表最多可以包含 2<sup>32</sup> - 1 个元素 (40多亿)。<br></br></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">lpush key value1 value2 ......  <span class="comment">//往列表的头部（左边）推入一个或多个元素，lpush的l表示left。key是列表名称，把列表中的所有元素作为一个整体（value）。若key不存在，会自动创建。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line">lpush students <span class="string">&quot;zhangsan&quot;</span> <span class="string">&quot;lisi&quot;</span> <span class="string">&quot;wangwu&quot;</span>   <span class="comment">//返回操作后列表中的总元素个数</span></span><br><span class="line"><span class="comment">//先在列表头部添加“zhangsan”，再在列表头部添加“lisi”，接着在列表头部添加“wangwu”，最后列表的前三个元素依次是&quot;wangwu&quot;、“lisi”、“zhangsan”。</span></span><br><span class="line"></span><br><span class="line">lpushx key value1 value2 ...... <span class="comment">//同上，只是key不存在时，不执行操作（不会自动创建）。要key已存在且key时list类型时才会添加元素。</span></span><br><span class="line"></span><br><span class="line">lpop key                        <span class="comment">//弹出列表的第一个元素，会从列表中移除并返回该元素。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//l表示left，列表的头部。</span></span><br><span class="line"></span><br><span class="line">rpush key value1 value2 ......  <span class="comment">//在列表尾部推入1个或多个元素。</span></span><br><span class="line"></span><br><span class="line">rpushx key value1 value2 ...... <span class="comment">//尾部，key已存在时才会推入。</span></span><br><span class="line"></span><br><span class="line">rpop                            <span class="comment">//弹出列表的最后一个元素</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//r表示right，列表的尾部。</span></span><br><span class="line"><span class="comment">//上面的l、r命令是一一对应的。</span></span><br><span class="line"></span><br><span class="line">rpoplpush sourceKey destKey     <span class="comment">//弹出sourceKey的最后一个元素，并在destKey的头部推入元素，即剪切。返回该元素。rpoplpush即对sourceKey执行rpop，对destKey执行lpush。</span></span><br><span class="line"></span><br><span class="line">blpop key1 key2 ... timeout     <span class="comment">//弹出一个或多个的列表的第一个元素，如果列表为空会阻塞列表直到等待超时或发现可弹出元素为止。blpop即bind  lpop。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例： </span></span><br><span class="line">blpop students <span class="number">60</span>               <span class="comment">//60s</span></span><br><span class="line"></span><br><span class="line">brpop key1 key2 ...... timeout</span><br><span class="line"></span><br><span class="line">brpoplpush sourceKey destKey timeout</span><br><span class="line"></span><br><span class="line">llen key                        <span class="comment">//返回列表中的元素个数</span></span><br><span class="line"></span><br><span class="line">lset key index value            <span class="comment">//给指定索引处的元素设置值（即修改元素值）</span></span><br><span class="line"></span><br><span class="line">lindex key index                <span class="comment">//根据index索引元素，返回指定位置上的元素</span></span><br><span class="line"></span><br><span class="line">lrange key start end            <span class="comment">//返回[start，end]区间上的所有元素。start、end是索引，比如0  -1  就是返回所有元素。</span></span><br><span class="line"></span><br><span class="line">ltrim key start end             <span class="comment">//修剪列表，只保留[start，end]区间上的元素，其余元素会被删除。</span></span><br><span class="line"></span><br><span class="line">linsert key before/after value1 value2  <span class="comment">//在元素value1之前/之后插入元素value2。value2是要插入的元素。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例： </span></span><br><span class="line">linsert student before <span class="string">&quot;lisi&quot;</span> <span class="string">&quot;zhangsan&quot;</span><span class="comment">//在lisi的前面插入zhangsan</span></span><br><span class="line"><span class="comment">//插入成功，返回操作后列表的总长度；若value1不存在，返回-1；若key不存在或key是一个空的list，则返回0.</span></span><br><span class="line"></span><br><span class="line">lrem key count value            <span class="comment">//移除列表中值为value的所有元素。lrem即list remove。count是一个整数，表示要删除的个数、搜索方向。</span></span><br><span class="line"><span class="comment">//count&gt;0：从表头向表尾搜索，移除count个值为value的元素</span></span><br><span class="line"><span class="comment">//count&lt;0：从表尾向表头搜索，移除count的绝对值个值为value的元素</span></span><br><span class="line"><span class="comment">//count=0：移除表中所有的值为value的元素。要遍历列表，从哪边开始结果、速度都是一样的。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//示例： </span></span><br><span class="line">lrem scores <span class="number">0</span> <span class="number">90</span>                <span class="comment">//移除列表中所有的90</span></span><br></pre></td></tr></table></figure>
-</br>
-以上几个命令中，l 表示 list 。 index 从 0 开始，支持负数索引，index 要是已存在的
-
-<p>redis 的区间，都是闭区间，[ start ，end ] ，两边都包含。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/redis9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/blue.gif">
-      <meta itemprop="name" content="vousmevoyez">
-      <meta itemprop="description" content="Swan L">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vousmevoyez">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/05/redis9/" class="post-title-link" itemprop="url">Redis Set(集合)</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-06 14:05:20" itemprop="dateModified" datetime="2019-09-06T14:05:20+08:00">2019-09-06</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/09/05/redis9/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis9/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Redis-Set-集合"><a href="#Redis-Set-集合" class="headerlink" title="Redis Set(集合)"></a>Redis Set(集合)</h1></br>
-redis 的 Set 是 String 类型的无序集合，元素不允许重复。
-
-<p>redis 中集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是 O(1)。</p>
-<p>集合中最大的元素数为 2<sup>32</sup> - 1 (40多亿)。<br></br></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">sadd key value1 value2 ...  <span class="comment">//向集合中添加一个或多个元素。sadd即set add，key是集合的名称。返回此次添加的元素个数。</span></span><br><span class="line"></span><br><span class="line">scard key                   <span class="comment">//返回集合的元素个数</span></span><br><span class="line"></span><br><span class="line">smembers key                <span class="comment">//返回集合中所有的元素</span></span><br><span class="line"></span><br><span class="line">sismember key elementValue  <span class="comment">//判断该集合中是否有elementValue这个元素。有返回1，没有或者key不存在则返回0.</span></span><br><span class="line"></span><br><span class="line">spop key                    <span class="comment">//随机移除并返回集合中的一个元素</span></span><br><span class="line"></span><br><span class="line">srandmember key             <span class="comment">//随机返回集合中的一个元素，并不移除该元素。srandmember即set random  member.</span></span><br><span class="line"><span class="comment">//可带一个可选参数：</span></span><br><span class="line">srandmember key count       <span class="comment">//count是一个整数，指定返回的元素个数。</span></span><br><span class="line"><span class="comment">//count&gt;0：随机返回count个元素，这些元素互不相同。随机确定一个返回的元素后，再从剩余的元素中随机。</span></span><br><span class="line"><span class="comment">//count&lt;0：随机返回count的绝对值个元素，这些元素可能相同。每次都是从整个集合中随机一个。</span></span><br><span class="line"><span class="comment">//count的绝对值大于等于集合的元素个数时，返回集合中所有的元素。</span></span><br><span class="line"></span><br><span class="line">srem key value1 value2 ...  <span class="comment">//移除集合中的一个或多个元素，若集合中没有该元素，会忽略该元素。</span></span><br><span class="line"></span><br><span class="line">smove sourceKey destKey elementValue        <span class="comment">//将元素从一个集合移动到另一个集合。（剪切）</span></span><br><span class="line"></span><br><span class="line">sscan key cursor match pattern count num    <span class="comment">//迭代集合中的元素。cursor指定对每元素的操作。</span></span><br><span class="line"><span class="comment">//2个可选参数：</span></span><br><span class="line"><span class="comment">//match pattern     指定配置模式，只迭代符合pattern的元素</span></span><br><span class="line"><span class="comment">//count num         指定要迭代的元素个数</span></span><br><span class="line"></span><br><span class="line">sinter key1 key2 ...        <span class="comment">//返回这些集合的交集</span></span><br><span class="line"></span><br><span class="line">sinterstore destKey key1 key2 ...           <span class="comment">//多了store，求key1、key2.....这些集合的交集，并将交集中的元素存储在destKey集合中，返回交集中的元素个数</span></span><br><span class="line"><span class="comment">//相同用法的还有：</span></span><br><span class="line"><span class="comment">//sunion    并集</span></span><br><span class="line"><span class="comment">//sdiff     差集</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png" alt="Pandao editor.md" title="Pandao editor.md"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/05/Markdown%20%E8%AF%AD%E6%B3%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1364,7 +1644,7 @@ redis 的 Set 是 String 类型的无序集合，元素不允许重复。
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1432,14 +1712,14 @@ redis 的 Set 是 String 类型的无序集合，元素不允许重复。
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">47</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1479,7 +1759,7 @@ redis 的 Set 是 String 类型的无序集合，元素不允许重复。
           <h5 class="widget-title">Tag Cloud</h5>
           <div id="myCanvasContainer" class="widget tagcloud">
             <canvas width="250" height="250" id="resCanvas" style="width:100%">
-              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beego/" rel="tag">Beego</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Job/" rel="tag">Job</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ODBC/" rel="tag">ODBC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Personal/" rel="tag">Personal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Projects/" rel="tag">Projects</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmake/" rel="tag">cmake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/" rel="tag">json</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/koala/" rel="tag">koala</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/progress/" rel="tag">progress</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/protocol/" rel="tag">protocol</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssl/" rel="tag">ssl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tap/" rel="tag">tap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/" rel="tag">tools</a><span class="tag-list-count">2</span></li></ul>
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/" rel="tag">C/C++</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/" rel="tag">MacOS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Personal/" rel="tag">Personal</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PgSQL/" rel="tag">PgSQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Project/" rel="tag">Project</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a><span class="tag-list-count">16</span></li></ul>
             </canvas>
           </div>
         </div>
@@ -1512,13 +1792,13 @@ redis 的 Set 是 String 类型的无序集合，元素不允许重复。
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">134k</span>
+    <span title="站点总字数">183k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:02</span>
+    <span title="站点阅读时长">2:47</span>
 </div>
 
         
