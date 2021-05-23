@@ -190,170 +190,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://liuxing1tec.github.io/2019/09/05/redis%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/blue.gif">
-      <meta itemprop="name" content="vousmevoyez">
-      <meta itemprop="description" content="Swan L">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vousmevoyez">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/05/redis%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">redis 数据结构</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-16 14:47:06" itemprop="dateModified" datetime="2020-10-16T14:47:06+08:00">2020-10-16</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/09/05/redis%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="redis-数据结构"><a href="#redis-数据结构" class="headerlink" title="redis 数据结构"></a>redis 数据结构</h1></br>
-
-<p>redis 支持五种数据类型： string（字符串），hash（哈希），list（列表），set（集合）及 zset ( sorted set :有序集合)。</p>
-</br>
-
-<h2 id="string-字符串"><a href="#string-字符串" class="headerlink" title="string 字符串"></a>string 字符串</h2></br>
-
-<p>示例： <code>set name &quot;zhangsan&quot;</code></p>
-<p>key 、 value 都是 string 类型， key 、 value 引不引都行，习惯上 key 不加引号， value 随意。</p>
-<p>string 是 redis 的基础数据类型。</p>
-</br>
-
-<h2 id="hash-哈希表-字典"><a href="#hash-哈希表-字典" class="headerlink" title="hash 哈希表/字典"></a>hash 哈希表/字典</h2></br>
-
-<p>redis hash 是一个 string 类型的 field 和 value 的映射表，一个 hash 可储存多个键值对。</p>
-<p>一个对象往往有多个属性（键值对形式）， hash 特别适合存储对象。</p>
-<p>redis 中一个 hash 可以存储 2<sup>32</sup> - 1个 键值对（40多亿）。</p>
-</br>
-
-<p>示例：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hmset zhangsan name <span class="string">&quot;zhangsan&quot;</span> age 12 gender male score 90</span><br></pre></td></tr></table></figure>
-
-<p><code>hmset</code> : hm 即 hash multiple ，set 这里表示设置，不是集合。</p>
-<p><code>zhangsan</code> : 即这张 hash 表的名称。 redis 是 key-value 数据库， zhangsan 就是 key ，后面的一堆属性看做一个整体（value）。</p>
-<!---more--->
-
-</br>
-
-<h2 id="list-列表"><a href="#list-列表" class="headerlink" title="list 列表"></a>list 列表</h2></br>
-
-<p>redis 列表是简单的字符串列表，按照插入顺序排序。可以添加一个元素（字符串）到列表的头部（左边）或者尾部（右边）。</p>
-<p>一个列表最多可以包含 2<sup>32</sup> - 1 个元素 (40多亿)。</p>
-</br>
-
-<p>示例：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lpush students <span class="string">&quot;zhangsan&quot;</span> <span class="string">&quot;lisi&quot;</span> <span class="string">&quot;wangwu&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p><code>lpush</code> : list push ，往 list 中添加元素。</p>
-<p><code>students</code> : 即这个列表的名称（key）。列表中的元素看做一个整体（value）。</p>
-</br>
-
-<h2 id="set-集合"><a href="#set-集合" class="headerlink" title="set 集合"></a>set 集合</h2></br>
-
-<p>redis set 是 string 类型的无序集合。集合成员是唯一的（不允许重复）。</p>
-<p>redis 中集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是 O(1)。</p>
-<p>集合的最大成员数为 2<sup>32</sup> - 1 (40多亿)。</p>
-</br>
-
-<p>示例：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sadd mySet <span class="string">&quot;zhangsan&quot;</span> <span class="string">&quot;lisi&quot;</span> <span class="string">&quot;wangwu&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p><code>sadd</code> : set add ，往集合中添加元素。</p>
-<p><code>mySet</code> : 即集合名称（key）。把集合中的所有元素作为一个整体（value）。</p>
-</br>
-
-<h2 id="sorted-set-有序集合"><a href="#sorted-set-有序集合" class="headerlink" title="sorted set 有序集合"></a>sorted set 有序集合</h2></br>
-
-<p>redis 有序集合和集合一样也是 string 类型元素的集合,且不允许出现重复的成员。</p>
-<p>但 sorted set 的每个元素都会关联一个 int 型或 double 型的数。 redis 正是通过这个数来为集合中的成员进行从小到大的排序。</p>
-<p>有序集合的成员不允许重复，但分数(score)可以重复。</p>
-<p>有序集合是通过哈希表实现的，添加，删除，查找的复杂度都是O(1)。</p>
-<p>集合的最大成员数为 2<sup>32</sup> - 1 (40多亿)。</p>
-</br>
-
-<p>示例：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zadd sortedSet 2 <span class="string">&quot;zhangsan&quot;</span> 2.9 <span class="string">&quot;lisi&quot;</span> 1.3 <span class="string">&quot;wangwu&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p><code>zadd</code> : z 代表有序集合。</p>
-<p><code>sortedSet</code> : 即有序集合的名称（key）。把有序集合中的所有元素（包括分数）看做一个整体（value）。</p>
-<p><code>2 &quot;zhangsan&quot;</code> : 2 就是 “zhangsan” 的 score ，顺序就是根据 score 进行升序排列的。 score 可以是 int 、 double 型。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://liuxing1tec.github.io/2019/09/05/redis%20%E7%AE%80%E4%BB%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -506,6 +342,154 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://liuxing1tec.github.io/2019/09/05/redis%20%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/blue.gif">
+      <meta itemprop="name" content="vousmevoyez">
+      <meta itemprop="description" content="Swan L">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vousmevoyez">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/05/redis%20%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85/" class="post-title-link" itemprop="url">redis 发布订阅</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-05T00:00:00+08:00">2019-09-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-16 14:53:23" itemprop="dateModified" datetime="2020-10-16T14:53:23+08:00">2020-10-16</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/09/05/redis%20%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis%20%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="redis-发布订阅"><a href="#redis-发布订阅" class="headerlink" title="redis 发布订阅"></a>redis 发布订阅</h1></br>
+
+<p>redis 发布订阅 (pub/sub) 是一种消息通信模式：发送者 (pub) 发送消息，订阅者 (sub) 接收消息。<br>pub 即 publish ，推送。<br>sub 即 subscribe ，订阅。</p>
+</br>
+
+<p>订阅者订阅某个 channel（频道），发布者将消息发布到 redis 服务器， redis 服务器将消息推送给这个频道的订阅者。<br>channel 管道、通道、频道。</p>
+</br>
+
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g6pqnr02aoj30kt08z0tw.jpg" alt="订阅发布"></p>
+</br>
+
+<p>redis 的 channel 是公共频道，谁都可以发布消息。<br>就像微信群、QQ群，谁都可以发送消息，群成员（订阅者）都会收到消息。</p>
+<!---more--->
+
+</br>
+
+<p>redis 的消息是在线即时消息，类似于广播，只有在线的订阅者（连接到 redis  服务器的订阅者），才会收到消息。<br>若当时不在线，并不会收到消息。后面登陆了（连接到服务器），服务器也不会推送之前（这个客户端未收到）的消息。服务器只推送一遍。</p>
+</br>
+</br>
+
+<hr>
+<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><p><strong>1.</strong> 启动一个客户端，连接到服务器</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli -a password</span><br></pre></td></tr></table></figure>
+
+</br>
+
+<p><strong>2.</strong> 订阅频道</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subscribe channel1 channel2 ... //可订阅一个或多个频道</span><br></pre></td></tr></table></figure>
+
+<p>会显示订阅的频道的信息，一个频道显示 3 个条目:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;subscribe&quot;</span>                 //固定的值，表示这是一个订阅频道</span><br><span class="line">订阅的频道名</span><br><span class="line">一个int型的数，表示这个频道是当前客户端订阅的第几个频道</span><br></pre></td></tr></table></figure>
+
+<p>订阅之后，当前命令提示符会阻塞，只能接收 redis 服务器推送的消息，不能再执行命令。所以我们再启动一个客户端推送消息。</p>
+</br>
+
+<p><strong>3.</strong> 在另一个 redis 客户端推送消息</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">publish channel message         //channel指定要推送消息到哪个频道，message是要推送的消息</span><br></pre></td></tr></table></figure>
+
+<p>返回当前接收到消息的订阅者的数量。1表示只有一个订阅者收到了这条消息。</p>
+<p>我们看到另一个客户端已接收到消息。一条消息显示3个项：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;message&quot;</span>                   //固定值，表示这是一条消息</span><br><span class="line">这条消息来自哪个订阅频道</span><br><span class="line">消息内容</span><br></pre></td></tr></table></figure>
+
+</br>
+</br>
+
+<p>redis 的订阅是临时订阅，只在本次连接期间有效。断开连接后，会清除这个客户端的订阅信息，即取消所有订阅的频道。</p>
+</br>
+
+<p>谁都可以是发布者，谁都可以发送消息。可以向任何频道发送消息。</p>
+</br>
+</br>
+
+<h2 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">subscribe channel1 channel2 ...     //订阅一个或多个频道</span><br><span class="line"></span><br><span class="line">unsubscribe channel1 channel2 ...   //退订一个或多个频道。多了un</span><br><span class="line"></span><br><span class="line">psubscribe pattern1 pattern2 ...    //多了一个p，即pattern，订阅该模式匹配的所有频道，可以有多个匹配模式。</span><br><span class="line"></span><br><span class="line">//示例：</span><br><span class="line">psubscribe tv       //订阅频道tv</span><br><span class="line">psubscribe *home    //订阅所有以home结尾的频道</span><br><span class="line">psubscribe china*   //订阅所有以china开头的频道</span><br><span class="line"></span><br><span class="line">punsubscribe pattern1 pattern2 ...  //退订符合匹配的所有频道，可指定多个匹配模式，满足pattern1或者满足pattern2.....,，注意是或。</span><br><span class="line"></span><br><span class="line">publish channel message             //推送消息到某个频道</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://liuxing1tec.github.io/2019/09/05/redis%20%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -609,7 +593,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://liuxing1tec.github.io/2019/09/05/OpenSSL/">
+    <link itemprop="mainEntityOfPage" href="http://liuxing1tec.github.io/2019/09/05/redis%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/blue.gif">
@@ -623,7 +607,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/09/05/OpenSSL/" class="post-title-link" itemprop="url">OpenSSL</a>
+            <a href="/2019/09/05/redis%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">redis 数据结构</a>
         </h2>
 
         <div class="post-meta">
@@ -642,7 +626,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-16 14:18:50" itemprop="dateModified" datetime="2020-10-16T14:18:50+08:00">2020-10-16</time>
+                <time title="修改时间：2020-10-16 14:47:06" itemprop="dateModified" datetime="2020-10-16T14:47:06+08:00">2020-10-16</time>
               </span>
 
           
@@ -654,8 +638,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/09/05/OpenSSL/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/OpenSSL/" itemprop="commentCount"></span>
+    <a title="valine" href="/2019/09/05/redis%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/redis%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -665,14 +649,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>8.2k</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>7 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -684,19 +668,77 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="OpenSSL-API"><a href="#OpenSSL-API" class="headerlink" title="OpenSSL API"></a>OpenSSL API</h1><h2 id="什么是-SSL？"><a href="#什么是-SSL？" class="headerlink" title="什么是 SSL？"></a>什么是 SSL？</h2><p>SSL 是一个缩写，代表的是 Secure Sockets Layer（安全套接层）。它是支持在Internet 上进行安全通信的标准，并且将数据密码术集成到了协议之中。数据在离开您的计算机之前就已经被加密，然后只有 到达它预定的目标后才被解密。证书和密码学算法支持了这一切的运转，使用 OpenSSL，您将有机会切身体会它们。</p>
-<p>理论上，如果加密的数据在到达目标之前被截取或窃听，那些数据是不可能被破解的。不过，由于计算机的变化一年比一年快，而且密码翻译方法有了新的发展，因此，SSL 中使用的加密协议被破解的可能性也在增大。</p>
-<p>可以将 SSL 和安全连接用于 Internet 上任何类型的协议，不管是 HTTP、POP3，还是 FTP。还可以用 SSL 来保护 Telnet 会话。虽然可以用 SSL 保护任何连接，但是不必对每一类连接都使用 SSL。如果连接传输敏感信息，则应使用 SSL。</p>
-<h2 id="什么是-OpenSSL？"><a href="#什么是-OpenSSL？" class="headerlink" title="什么是 OpenSSL？"></a>什么是 OpenSSL？</h2><p>OpenSSL 不仅仅是 SSL。它可以实现消息摘要、文件的加密和解密、数字证书、数字签名 和随机数字。关于 OpenSSL 库的内容非常多，远不是一篇文章可以容纳的。</p>
-<p>OpenSSL 不只是 API，它还是一个命令行工具。命令行工具可以完成与 API 同样的工作， 而且更进一步，可以测试 SSL 服务器和客户机。它还让开发人员对 OpenSSL 的能力有一个认识。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/09/05/OpenSSL/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <h1 id="redis-数据结构"><a href="#redis-数据结构" class="headerlink" title="redis 数据结构"></a>redis 数据结构</h1></br>
+
+<p>redis 支持五种数据类型： string（字符串），hash（哈希），list（列表），set（集合）及 zset ( sorted set :有序集合)。</p>
+</br>
+
+<h2 id="string-字符串"><a href="#string-字符串" class="headerlink" title="string 字符串"></a>string 字符串</h2></br>
+
+<p>示例： <code>set name &quot;zhangsan&quot;</code></p>
+<p>key 、 value 都是 string 类型， key 、 value 引不引都行，习惯上 key 不加引号， value 随意。</p>
+<p>string 是 redis 的基础数据类型。</p>
+</br>
+
+<h2 id="hash-哈希表-字典"><a href="#hash-哈希表-字典" class="headerlink" title="hash 哈希表/字典"></a>hash 哈希表/字典</h2></br>
+
+<p>redis hash 是一个 string 类型的 field 和 value 的映射表，一个 hash 可储存多个键值对。</p>
+<p>一个对象往往有多个属性（键值对形式）， hash 特别适合存储对象。</p>
+<p>redis 中一个 hash 可以存储 2<sup>32</sup> - 1个 键值对（40多亿）。</p>
+</br>
+
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hmset zhangsan name <span class="string">&quot;zhangsan&quot;</span> age 12 gender male score 90</span><br></pre></td></tr></table></figure>
+
+<p><code>hmset</code> : hm 即 hash multiple ，set 这里表示设置，不是集合。</p>
+<p><code>zhangsan</code> : 即这张 hash 表的名称。 redis 是 key-value 数据库， zhangsan 就是 key ，后面的一堆属性看做一个整体（value）。</p>
+<!---more--->
+
+</br>
+
+<h2 id="list-列表"><a href="#list-列表" class="headerlink" title="list 列表"></a>list 列表</h2></br>
+
+<p>redis 列表是简单的字符串列表，按照插入顺序排序。可以添加一个元素（字符串）到列表的头部（左边）或者尾部（右边）。</p>
+<p>一个列表最多可以包含 2<sup>32</sup> - 1 个元素 (40多亿)。</p>
+</br>
+
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lpush students <span class="string">&quot;zhangsan&quot;</span> <span class="string">&quot;lisi&quot;</span> <span class="string">&quot;wangwu&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>lpush</code> : list push ，往 list 中添加元素。</p>
+<p><code>students</code> : 即这个列表的名称（key）。列表中的元素看做一个整体（value）。</p>
+</br>
+
+<h2 id="set-集合"><a href="#set-集合" class="headerlink" title="set 集合"></a>set 集合</h2></br>
+
+<p>redis set 是 string 类型的无序集合。集合成员是唯一的（不允许重复）。</p>
+<p>redis 中集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是 O(1)。</p>
+<p>集合的最大成员数为 2<sup>32</sup> - 1 (40多亿)。</p>
+</br>
+
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sadd mySet <span class="string">&quot;zhangsan&quot;</span> <span class="string">&quot;lisi&quot;</span> <span class="string">&quot;wangwu&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>sadd</code> : set add ，往集合中添加元素。</p>
+<p><code>mySet</code> : 即集合名称（key）。把集合中的所有元素作为一个整体（value）。</p>
+</br>
+
+<h2 id="sorted-set-有序集合"><a href="#sorted-set-有序集合" class="headerlink" title="sorted set 有序集合"></a>sorted set 有序集合</h2></br>
+
+<p>redis 有序集合和集合一样也是 string 类型元素的集合,且不允许出现重复的成员。</p>
+<p>但 sorted set 的每个元素都会关联一个 int 型或 double 型的数。 redis 正是通过这个数来为集合中的成员进行从小到大的排序。</p>
+<p>有序集合的成员不允许重复，但分数(score)可以重复。</p>
+<p>有序集合是通过哈希表实现的，添加，删除，查找的复杂度都是O(1)。</p>
+<p>集合的最大成员数为 2<sup>32</sup> - 1 (40多亿)。</p>
+</br>
+
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zadd sortedSet 2 <span class="string">&quot;zhangsan&quot;</span> 2.9 <span class="string">&quot;lisi&quot;</span> 1.3 <span class="string">&quot;wangwu&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>zadd</code> : z 代表有序集合。</p>
+<p><code>sortedSet</code> : 即有序集合的名称（key）。把有序集合中的所有元素（包括分数）看做一个整体（value）。</p>
+<p><code>2 &quot;zhangsan&quot;</code> : 2 就是 “zhangsan” 的 score ，顺序就是根据 score 进行升序排列的。 score 可以是 int 、 double 型。</p>
+
       
     </div>
 
@@ -1533,7 +1575,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

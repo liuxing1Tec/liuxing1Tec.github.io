@@ -689,124 +689,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://liuxing1tec.github.io/2020/07/20/MySQL%20%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/blue.gif">
-      <meta itemprop="name" content="vousmevoyez">
-      <meta itemprop="description" content="Swan L">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vousmevoyez">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/07/20/MySQL%20%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">MySQL 用法总结</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-07-20 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-20T00:00:00+08:00">2020-07-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-16 11:34:48" itemprop="dateModified" datetime="2020-10-16T11:34:48+08:00">2020-10-16</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/07/20/MySQL%20%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/20/MySQL%20%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>529</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <div align='center' ><font size='70'>MySQL 用法总结</font></div>
-
-<hr>
-<p>[TOC]</p>
-<hr>
-<h1 id="mysql清空表数据后如何让自增ID仍从1开始"><a href="#mysql清空表数据后如何让自增ID仍从1开始" class="headerlink" title="mysql清空表数据后如何让自增ID仍从1开始?"></a>mysql清空表数据后如何让自增ID仍从1开始?</h1><blockquote>
-<p>也就是说如何重排 auto_increment</p>
-</blockquote>
-<p><strong>两种方法：</strong></p>
-<p><strong>1、</strong>清空表时使用<code>truncate</code>命令，而不用<code>delete</code>命令</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">TRUNCATE</span> <span class="keyword">TABLE</span> table_name ;</span><br></pre></td></tr></table></figure>
-<p>使用<code>truncate</code>命令的好处：</p>
-<blockquote>
-<p>1）、速度快<br>2）、可以对自增 ID 进行重排，使自增 ID 仍从1开始计算</p>
-</blockquote>
-<p><strong>2、</strong>清空表数据后，使用alter修改表</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name AUTO_INCREMENT = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/07/20/MySQL%20%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://liuxing1tec.github.io/2020/07/20/MySQL%E7%9F%A5%E8%AF%86%E5%82%A8%E5%A4%87/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1110,6 +992,233 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://liuxing1tec.github.io/2020/07/20/MySQL%20%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/blue.gif">
+      <meta itemprop="name" content="vousmevoyez">
+      <meta itemprop="description" content="Swan L">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vousmevoyez">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/20/MySQL%20%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">MySQL 用法总结</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-20 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-20T00:00:00+08:00">2020-07-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-16 11:34:48" itemprop="dateModified" datetime="2020-10-16T11:34:48+08:00">2020-10-16</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/20/MySQL%20%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/20/MySQL%20%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>529</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <div align='center' ><font size='70'>MySQL 用法总结</font></div>
+
+<hr>
+<p>[TOC]</p>
+<hr>
+<h1 id="mysql清空表数据后如何让自增ID仍从1开始"><a href="#mysql清空表数据后如何让自增ID仍从1开始" class="headerlink" title="mysql清空表数据后如何让自增ID仍从1开始?"></a>mysql清空表数据后如何让自增ID仍从1开始?</h1><blockquote>
+<p>也就是说如何重排 auto_increment</p>
+</blockquote>
+<p><strong>两种方法：</strong></p>
+<p><strong>1、</strong>清空表时使用<code>truncate</code>命令，而不用<code>delete</code>命令</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">TRUNCATE</span> <span class="keyword">TABLE</span> table_name ;</span><br></pre></td></tr></table></figure>
+<p>使用<code>truncate</code>命令的好处：</p>
+<blockquote>
+<p>1）、速度快<br>2）、可以对自增 ID 进行重排，使自增 ID 仍从1开始计算</p>
+</blockquote>
+<p><strong>2、</strong>清空表数据后，使用alter修改表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name AUTO_INCREMENT = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/20/MySQL%20%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://liuxing1tec.github.io/2020/07/18/Docker%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/blue.gif">
+      <meta itemprop="name" content="vousmevoyez">
+      <meta itemprop="description" content="Swan L">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vousmevoyez">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/18/Docker%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">Docker 知识总结</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-18 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-18T00:00:00+08:00">2020-07-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-16 15:47:49" itemprop="dateModified" datetime="2020-10-16T15:47:49+08:00">2020-10-16</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/18/Docker%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/18/Docker%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Docker-端口映射"><a href="#Docker-端口映射" class="headerlink" title="Docker 端口映射"></a>Docker 端口映射</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -p 8080:18026 &lt;REPOSITORY&gt;:&lt;TAG&gt; /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p><code>-p</code>：是容器内部端口绑定到指定的主机端口。这里指将主机的8080端口映射到容器的18026端口。-p可以多个端口映射同时存在以实现复杂功能</p>
+</br>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -p 127.0.0.1:8080:18026 &lt;REPOSITORY&gt;:&lt;TAG&gt; /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>这样我们就可以通过访问 127.0.0.1:8080 来访问容器的 18026 端口。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/18/Docker%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://liuxing1tec.github.io/2020/07/18/Docker%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1306,115 +1415,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://liuxing1tec.github.io/2020/07/18/Docker%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/blue.gif">
-      <meta itemprop="name" content="vousmevoyez">
-      <meta itemprop="description" content="Swan L">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vousmevoyez">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/07/18/Docker%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">Docker 知识总结</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-07-18 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-18T00:00:00+08:00">2020-07-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-16 15:47:49" itemprop="dateModified" datetime="2020-10-16T15:47:49+08:00">2020-10-16</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/07/18/Docker%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/18/Docker%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Docker-端口映射"><a href="#Docker-端口映射" class="headerlink" title="Docker 端口映射"></a>Docker 端口映射</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -p 8080:18026 &lt;REPOSITORY&gt;:&lt;TAG&gt; /bin/bash</span><br></pre></td></tr></table></figure>
-
-<p><code>-p</code>：是容器内部端口绑定到指定的主机端口。这里指将主机的8080端口映射到容器的18026端口。-p可以多个端口映射同时存在以实现复杂功能</p>
-</br>
-
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -p 127.0.0.1:8080:18026 &lt;REPOSITORY&gt;:&lt;TAG&gt; /bin/bash</span><br></pre></td></tr></table></figure>
-
-<p>这样我们就可以通过访问 127.0.0.1:8080 来访问容器的 18026 端口。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/07/18/Docker%20%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://liuxing1tec.github.io/2019/09/06/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1537,7 +1537,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://liuxing1tec.github.io/2019/09/05/Markdown%20%E8%AF%AD%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://liuxing1tec.github.io/2019/09/05/OpenSSL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/blue.gif">
@@ -1551,7 +1551,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/09/05/Markdown%20%E8%AF%AD%E6%B3%95/" class="post-title-link" itemprop="url">Markdown 语法</a>
+            <a href="/2019/09/05/OpenSSL/" class="post-title-link" itemprop="url">OpenSSL</a>
         </h2>
 
         <div class="post-meta">
@@ -1570,7 +1570,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-16 15:16:26" itemprop="dateModified" datetime="2020-10-16T15:16:26+08:00">2020-10-16</time>
+                <time title="修改时间：2020-10-16 14:18:50" itemprop="dateModified" datetime="2020-10-16T14:18:50+08:00">2020-10-16</time>
               </span>
 
           
@@ -1582,8 +1582,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/09/05/Markdown%20%E8%AF%AD%E6%B3%95/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/Markdown%20%E8%AF%AD%E6%B3%95/" itemprop="commentCount"></span>
+    <a title="valine" href="/2019/09/05/OpenSSL/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/OpenSSL/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1593,14 +1593,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.5k</span>
+              <span>8.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>7 分钟</span>
             </span>
 
         </div>
@@ -1612,16 +1612,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="欢迎使用-Markdown"><a href="#欢迎使用-Markdown" class="headerlink" title="欢迎使用 Markdown"></a>欢迎使用 Markdown</h1><p><strong>Markdown是一种轻量级的「标记语言」</strong></p>
-<p><img src="https://www.mdeditor.com/images/logos/markdown.png" alt="markdown" title="markdown"></p>
-<p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面，Markdown文件的后缀名便是“.md”</p>
-<blockquote>
-<p>Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如<del>Pandoc</del>，Pandao；要么基于网站，如GitHub和Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。</p>
-</blockquote>
-<p><img src="https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png" alt="Pandao editor.md" title="Pandao editor.md"></p>
+          <h1 id="OpenSSL-API"><a href="#OpenSSL-API" class="headerlink" title="OpenSSL API"></a>OpenSSL API</h1><h2 id="什么是-SSL？"><a href="#什么是-SSL？" class="headerlink" title="什么是 SSL？"></a>什么是 SSL？</h2><p>SSL 是一个缩写，代表的是 Secure Sockets Layer（安全套接层）。它是支持在Internet 上进行安全通信的标准，并且将数据密码术集成到了协议之中。数据在离开您的计算机之前就已经被加密，然后只有 到达它预定的目标后才被解密。证书和密码学算法支持了这一切的运转，使用 OpenSSL，您将有机会切身体会它们。</p>
+<p>理论上，如果加密的数据在到达目标之前被截取或窃听，那些数据是不可能被破解的。不过，由于计算机的变化一年比一年快，而且密码翻译方法有了新的发展，因此，SSL 中使用的加密协议被破解的可能性也在增大。</p>
+<p>可以将 SSL 和安全连接用于 Internet 上任何类型的协议，不管是 HTTP、POP3，还是 FTP。还可以用 SSL 来保护 Telnet 会话。虽然可以用 SSL 保护任何连接，但是不必对每一类连接都使用 SSL。如果连接传输敏感信息，则应使用 SSL。</p>
+<h2 id="什么是-OpenSSL？"><a href="#什么是-OpenSSL？" class="headerlink" title="什么是 OpenSSL？"></a>什么是 OpenSSL？</h2><p>OpenSSL 不仅仅是 SSL。它可以实现消息摘要、文件的加密和解密、数字证书、数字签名 和随机数字。关于 OpenSSL 库的内容非常多，远不是一篇文章可以容纳的。</p>
+<p>OpenSSL 不只是 API，它还是一个命令行工具。命令行工具可以完成与 API 同样的工作， 而且更进一步，可以测试 SSL 服务器和客户机。它还让开发人员对 OpenSSL 的能力有一个认识。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/09/05/Markdown%20%E8%AF%AD%E6%B3%95/#more" rel="contents">
+              <a class="btn" href="/2019/09/05/OpenSSL/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1782,7 +1780,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
